@@ -122,8 +122,11 @@ Your formal school work — everything tied to your degree that isn't code.
 
 **Note:** Anything containing code goes in Development instead, including programming assignments. Studies holds the documents, requirements, and submissions.
 
-`[Visual — interactive folder tree]` The Studies folder, one term deep — branded folder icons, click a folder to expand its children. Replaces the earlier "real term" file-manager window mock.
-Structure: Studies/ → BS Computer Science/ → { Courses/ → { Y1T1/, Y2T1/ → { Algorithms and Complexity/, Life and Works of Rizal/, Software Engineering/ } }, Curriculum/, Grade Slips/, Graduation Requirements/, Organizations/ }
+`[Visual — interactive folder tree, inside the Studies panel]` Branded folder icons; collapsed by default with a small "Collapse | Expand" toolbar above the top folder; click a folder to expand its children. Shows only after the Studies card is clicked. Replaces the earlier "real term" file-manager window mock.
+Structure: Studies/ → BS Computer Science/ → { Courses/ → { Y1T1/ → { CC 100 - Introduction to Computing, CC 101 - Computer Programming, GEd 101 - Understanding the Self, GEd 102 - Mathematics in the Modern World, GEd 105 - Readings in Philippine History, MATH 101 - Differential Calculus, NSTP 111 - National Service Training Program 1, PATHFit 1 - Movement Competency Training }, Y1T2/, Y2T1/, Y2T2/ }, Curriculum/, Grade Slips/, Graduation Requirements/, Organizations/ }
+Y1T1 is populated with a real BSIT first-term schedule (supplied by a student) as a worked example.
+
+The Development, Upskilling (by topic / by platform), and Career folder structures below render as the same interactive tree (collapsed by default, click to expand), each inside its own folder panel. The four folder cards sit on one row.
 
 ---
 

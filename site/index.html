@@ -103,7 +103,7 @@ if(v&&window.matchMedia('(min-width:761px)').matches){v.src=v.dataset.src;}})();
 <p class="cover"><b>Why it matters:</b> If you decide where something should go every single time you save a file, things eventually end up scattered across Downloads, Desktop, course folders, and random project directories. A few clear categories remove most of that decision‑making.</p>
 </div></div><div class="band"><div class="in"><h2 class="h2">The four folders</h2>
 <p class="mut" style="font-size:14px">Click a folder to see what goes in it.</p>
-<div class="grid2">
+<div class="grid2 fgrid">
 <button class="fcard" data-st="c1" data-on="stu" data-mode="eq" data-k="c1" data-v="stu" data-act="pick"><span class="ft">Studies</span><span class="fd">Formal school work that isn't code</span></button>
 <button class="fcard" data-st="c1" data-on="dev" data-mode="eq" data-k="c1" data-v="dev" data-act="pick"><span class="ft">Development</span><span class="fd">Anything that involves code</span></button>
 <button class="fcard" data-st="c1" data-on="ups" data-mode="eq" data-k="c1" data-v="ups" data-act="pick"><span class="ft">Upskilling</span><span class="fd">Learning outside your curriculum</span></button>
@@ -121,22 +121,20 @@ if(v&&window.matchMedia('(min-width:761px)').matches){v.src=v.dataset.src;}})();
 <li>School organizations</li>
 </ul>
 <div class="note"><span class="nl">NOTE</span>Anything containing code goes in Development instead, including programming assignments. Studies holds the documents, requirements, and submissions.</div>
+<div class="ftree" role="group" aria-label="The Studies folder">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div>
+<ul class="ftkids ftroot"><li><details class="ftfolder"><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Studies</span></summary><ul class="ftkids"><li><details class="ftfolder"><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">BS Computer Science</span></summary><ul class="ftkids"><li><details class="ftfolder"><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Courses</span></summary><ul class="ftkids"><li><details class="ftfolder"><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y1T1</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">CC 100 - Introduction to Computing</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">CC 101 - Computer Programming</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">GEd 101 - Understanding the Self</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">GEd 102 - Mathematics in the Modern World</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">GEd 105 - Readings in Philippine History</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">MATH 101 - Differential Calculus</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">NSTP 111 - National Service Training Program 1</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">PATHFit 1 - Movement Competency Training</span></li></ul></details></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y1T2</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y2T1</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y2T2</span></li></ul></details></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Curriculum</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Grade Slips</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Graduation Requirements</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Organizations</span></li></ul></details></li></ul></details></li></ul>
+</div>
 </div>
 <div class="fpanel" data-st="c1" data-on="dev" data-mode="eq">
 <h3 class="h3">Development</h3>
 <p><b>Anything that involves code.</b> Programming assignments, lab exercises, school software projects, your capstone, tutorial practice, personal projects, hackathons, code for an organization.</p>
 <p>One rule, no exceptions: <b>if it contains code, it lives here.</b> Not in your school folder, not in a course folder, not on the Desktop.</p>
 <p><span class="wa-badge wa-badge--rose">HOW I DO IT</span> </p>
-<div class="panel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm cpy" data-k="dev" data-act="copy">Copy</button>
-<pre class="tree" data-cs="1">Development/
-├── school/
-│   ├── Y2T1/
-│   └── Y2T2/
-├── learning/
-├── personal/
-├── hackathons/
-├── experiments/
-└── archive/</pre></div>
+<div class="ftree" role="group" aria-label="The Development folder">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div>
+<ul class="ftkids ftroot"><li><details class="ftfolder"><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Development</span></summary><ul class="ftkids"><li><details class="ftfolder"><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">school</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y2T1</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y2T2</span></li></ul></details></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">learning</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">personal</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">hackathons</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">experiments</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">archive</span></li></ul></details></li></ul>
+</div>
 <ul class="wa-list wa-list--ul">
 <li><span class="mono">school/</span> — code written for classes, kept by term so it stays findable</li>
 <li><span class="mono">learning/</span> — code written while following courses and tutorials</li>
@@ -151,24 +149,17 @@ if(v&&window.matchMedia('(min-width:761px)').matches){v.src=v.dataset.src;}})();
 <button class="chip" data-st="c3" data-on="plat" data-mode="eq" data-k="c3" data-v="plat" data-act="pick">By platform</button>
 </div>
 <div class="fpanel" data-st="c3" data-on="topic" data-mode="eq" style="margin:0">
-<div class="panel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm cpy" data-k="upt" data-act="copy">Copy</button>
-<pre class="tree" data-cs="1">Upskilling/
-├── web-development/
-├── cloud/
-├── ai-and-data/
-├── design/
-├── certificates/
-└── resources/</pre></div>
+<div class="ftree" role="group" aria-label="Upskilling organized by topic">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div>
+<ul class="ftkids ftroot"><li><details class="ftfolder"><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Upskilling</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">web‑development</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">cloud</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">ai‑and‑data</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">design</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">certificates</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">resources</span></li></ul></details></li></ul>
+</div>
 <p style="font-size:14.5px" class="mut">By topic works for most students. When you look for something later you remember the subject, not the website — and one topic usually spans several platforms.</p>
 </div>
 <div class="fpanel" data-st="c3" data-on="plat" data-mode="eq" style="margin:0">
-<div class="panel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm cpy" data-k="upp" data-act="copy">Copy</button>
-<pre class="tree" data-cs="1">Upskilling/
-├── coursera/
-├── udemy/
-├── youtube/
-├── freecodecamp/
-└── certificates/</pre></div>
+<div class="ftree" role="group" aria-label="Upskilling organized by platform">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div>
+<ul class="ftkids ftroot"><li><details class="ftfolder"><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Upskilling</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">coursera</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">udemy</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">youtube</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">freecodecamp</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">certificates</span></li></ul></details></li></ul>
+</div>
 <p style="font-size:14.5px" class="mut">By platform works if you're enrolled in a structured multi‑course program and think of your learning that way.</p>
 </div>
 <p>Pick one and stay consistent. Mixing both is what makes things hard to find.</p>
@@ -177,13 +168,10 @@ if(v&&window.matchMedia('(min-width:761px)').matches){v.src=v.dataset.src;}})();
 <div class="fpanel" data-st="c1" data-on="car" data-mode="eq">
 <h3 class="h3">Career</h3>
 <p>Documents you'll need when applying for internships and jobs. The only folder that outlives your degree.</p>
-<div class="panel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm cpy" data-k="car" data-act="copy">Copy</button>
-<pre class="tree" data-cs="1">Career/
-├── resume/
-├── certificates/
-├── portfolio/
-├── applications/
-└── interview-prep/</pre></div>
+<div class="ftree" role="group" aria-label="The Career folder">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div>
+<ul class="ftkids ftroot"><li><details class="ftfolder"><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Career</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">resume</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">certificates</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">portfolio</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">applications</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">interview‑prep</span></li></ul></details></li></ul>
+</div>
 <ul class="wa-list wa-list--ul">
 <li><span class="mono">certificates/</span> — copies of anything worth listing, including the ones from Upskilling</li>
 <li><span class="mono">portfolio/</span> — screenshots, project descriptions, links</li>
@@ -191,12 +179,7 @@ if(v&&window.matchMedia('(min-width:761px)').matches){v.src=v.dataset.src;}})();
 </ul>
 <p>Most students only create this when they urgently need it. Make it now, even empty.</p>
 </div>
-<figure class="shot">
-<div class="ftree" role="group" aria-label="The Studies folder, expandable">
-<ul class="ftkids ftroot"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Studies</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">BS Computer Science</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Courses</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y1T1</span></li><li><details class="ftfolder"><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y2T1</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Algorithms and Complexity</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Life and Works of Rizal</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Software Engineering</span></li></ul></details></li></ul></details></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Curriculum</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Grade Slips</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Graduation Requirements</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Organizations</span></li></ul></details></li></ul></details></li></ul>
-</div>
-<figcaption class="cap">The <span class="cap-tag">Studies</span> folder, one term deep. Click a folder to open it.</figcaption>
-</figure>
+
 </div></div><div class="band"><div class="in"><h2 class="h2">How to decide where something goes</h2>
 <div class="casc">
 <p><span class="a">1 — Does it contain code?</span> Yes → Development. Stop here.</p>

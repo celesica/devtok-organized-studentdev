@@ -199,6 +199,15 @@
       var cid = el.getAttribute("data-ck");
       checks[cid] = !checks[cid]; saveChecks(); render(); return;
     }
+    if (act === "texp" || act === "tcol") {
+      // open or close every folder in this tree at once
+      var tree = el.closest(".ftree");
+      if (tree) {
+        var open = act === "texp";
+        Array.prototype.forEach.call(tree.querySelectorAll("details"), function (d) { d.open = open; });
+      }
+      return;
+    }
     if (act === "copy") {
       // matches the export: prefer every [data-l] line, else the [data-cs] block
       var wrap = el.closest("[data-cw]") || el.parentNode;

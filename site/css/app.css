@@ -253,8 +253,19 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
    design system's cool accent, set against the muted-ink caption. */
 .shot .cap .cap-tag{color:var(--lilac-signal);font-weight:600}
 
+/* ---- Four folder cards on one row (descriptions wrap as needed) ---- */
+.grid2.fgrid{grid-template-columns:repeat(4,1fr)}
+.grid2.fgrid .fcard{min-width:0}
+@media(max-width:820px){.grid2.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.grid2.fgrid{grid-template-columns:1fr}}
+
 /* ---- Interactive folder tree: branded folder glyphs, click to expand ---- */
 .ftree{border:1px solid var(--border-strong);border-radius:12px;background:var(--plum-900);box-shadow:var(--shadow-md),var(--shadow-inset-top);padding:14px 14px;margin:16px 0;overflow-x:auto;font-family:var(--font-mono)}
+/* the lowkey Collapse | Expand controls above the top folder */
+.fttools{display:flex;align-items:center;gap:8px;margin:0 0 10px 2px}
+.fttool{background:none;border:none;color:var(--muted-ink);font-family:var(--font-tech);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;padding:2px 5px;border-radius:5px;transition:color 120ms,background 120ms}
+.fttool:hover,.fttool:focus-visible{color:var(--parchment);background:var(--parchment-a06);outline:none}
+.ftsep{color:var(--border-strong);font-size:11px;user-select:none}
 .ftree details{margin:0}
 .ftree ul.ftkids{list-style:none;margin:0 0 0 11px;padding:0 0 0 15px;border-left:1px solid var(--border-hairline)}
 .ftree ul.ftroot{margin:0;padding:0;border-left:none}
