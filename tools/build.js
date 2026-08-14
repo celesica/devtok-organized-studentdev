@@ -243,7 +243,7 @@ function applyStartCopy(body) {
 
   swap(
     "Jazzy's real setup — Studies, Development, Upskilling, Career.",
-    "Recommended folder setup — Studies, Development, Upskilling, Career.",
+    `<span class="cap-tag">Recommended folder setup</span> — Studies, Development, Upskilling, Career.`,
     "folder-setup-caption"
   );
 
@@ -415,6 +415,10 @@ main{padding-bottom:104px}
 
 /* ---- Section closer: lamp card, with the label in ember ---- */
 p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-badge:first-child){line-height:1.9}
+
+/* The "Recommended folder setup" label reads as a tag — Lilac Signal, the
+   design system's cool accent, set against the muted-ink caption. */
+.shot .cap .cap-tag{color:var(--lilac-signal);font-weight:600}
 
 .closer .k{color:var(--ember)}
 .closer::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--gradient-lamp)}
