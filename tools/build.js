@@ -105,7 +105,31 @@ function convert(html) {
   s = s.replace(/\{\{[^}]*\}\}/g, "");
   s = s.replace(/class="\s*"/g, "");
 
+  s = numberedTableToOl(s);
+
   return s;
+}
+
+/* A .tbl whose every row is a mono numeral followed by one text cell is a
+   numbered index, not tabular data — the export built it as a table only
+   because it predates the list component. Render it with the design system's
+   numbered list (.wa-list--ol: rose mono numerals) instead. The all-numeric
+   test leaves the filename-example tables (fix, final, …) as tables. */
+function numberedTableToOl(html) {
+  return html.replace(/<table class="tbl">\s*(?:<tbody>)?([\s\S]*?)(?:<\/tbody>)?\s*<\/table>/g, (whole, body) => {
+    if (/<th\b/.test(body)) return whole;
+    const rows = body.match(/<tr>[\s\S]*?<\/tr>/g) || [];
+    if (rows.length < 2) return whole;
+    const items = [];
+    for (const row of rows) {
+      const m = row.match(/^<tr><td class="mono">\d{1,3}<\/td><td>([\s\S]*?)<\/td><\/tr>$/);
+      if (!m) return whole;                       // any non-numbered row: keep the table
+      items.push(m[1]);
+    }
+    return `<ol class="wa-list wa-list--ol">\n` +
+      items.map(t => `<li>${t}</li>`).join("\n") +
+      `\n</ol>`;
+  });
 }
 
 /* ---------- 3. sections ---------- */
@@ -290,11 +314,11 @@ main{padding-bottom:104px}
     linear-gradient(to top,var(--ink-plum) 0,rgba(20,13,26,0) 22%),
     linear-gradient(100deg,rgba(13,8,18,.9) 0,rgba(13,8,18,.87) 44%,rgba(13,8,18,.74) 62%,rgba(20,13,26,.3) 80%,rgba(20,13,26,0) 100%)}
 /* The copy sits against the left edge, not in the centred column the rest of
-   the document uses, so the desk stays in frame on the right. Top padding is 0
-   because the band's :first-child rule already sets 44px above — the same
-   offset every other section starts at, so the eyebrow lines up tab to tab. */
+   the document uses, so the desk stays in frame on the right. The generous top
+   and bottom padding sits the group lower and roughly centres it in the band —
+   the owner preferred that to a top-aligned header. */
 .hero-in{position:relative;z-index:1;margin:0;max-width:none;
-  padding:0 clamp(24px,4vw,56px) 40px clamp(24px,7vw,104px)}
+  padding:64px clamp(24px,4vw,56px) 72px clamp(24px,7vw,104px)}
 .hero-in>*{max-width:min(62ch,58%)}
 /* Title and subhead break at fixed points (the .hbr breaks), not wherever the
    container happens to wrap, so the two-line shape holds at every desktop width. */
