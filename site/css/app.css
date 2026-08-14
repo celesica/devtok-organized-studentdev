@@ -266,6 +266,9 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
 .fttool{background:none;border:none;color:var(--muted-ink);font-family:var(--font-tech);font-size:11px;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;padding:2px 5px;border-radius:5px;transition:color 120ms,background 120ms}
 .fttool:hover,.fttool:focus-visible{color:var(--parchment);background:var(--parchment-a06);outline:none}
 .ftsep{color:var(--border-strong);font-size:11px;user-select:none}
+/* a second paragraph inside a note; a folder name coloured in Ember */
+.note .np{display:block;margin-top:8px}
+.fdir{color:var(--ember);font-weight:700}
 .ftree details{margin:0}
 .ftree ul.ftkids{list-style:none;margin:0 0 0 11px;padding:0 0 0 15px;border-left:1px solid var(--border-hairline)}
 .ftree ul.ftroot{margin:0;padding:0;border-left:none}

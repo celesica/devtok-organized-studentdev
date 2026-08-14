@@ -120,7 +120,7 @@ Your formal school work — everything tied to your degree that isn't code.
 - OJT and internship paperwork
 - School organizations
 
-**Note:** Anything containing code goes in Development instead, including programming assignments. Studies holds the documents, requirements, and submissions.
+**Note:** The main distinction is that **Studies holds your school documents and requirements**. If an assignment includes code, the instructions, rubric, report, or submission receipt can stay here while the working code goes in Development.
 
 `[Visual — interactive folder tree, inside the Studies panel]` Branded folder icons; collapsed by default with a small "Collapse | Expand" toolbar above the top folder; click a folder to expand its children. Shows only after the Studies card is clicked. Replaces the earlier "real term" file-manager window mock.
 Structure: Studies/ → BS Computer Science/ → { Courses/ → { Y1T1/ → { CC 100 - Introduction to Computing, CC 101 - Computer Programming, GEd 101 - Understanding the Self, GEd 102 - Mathematics in the Modern World, GEd 105 - Readings in Philippine History, MATH 101 - Differential Calculus, NSTP 111 - National Service Training Program 1, PATHFit 1 - Movement Competency Training }, Y1T2/, Y2T1/, Y2T2/ }, Curriculum/, Grade Slips/, Graduation Requirements/, Organizations/ }
@@ -142,9 +142,9 @@ The Development, Upskilling (by topic / by platform), and Career folder structur
 - Hackathon projects
 - Code you write for an organization
 
-One rule, no exceptions: **if it contains code, it lives here.** Not in your school folder, not in a course folder, not on the Desktop.
+**Note:** A simple rule you can use: **If you're actively writing code in it, keep the working project under Development.** Keeping your code in one main location also gives you one place to look when opening projects in your editor or terminal.
 
-`[Visual — Class A]` `[Badge] HOW I DO IT`
+`[Badge] HOW I DO IT` — interactive folder tree (collapsed by default):
 
 ```
 Development/
@@ -158,9 +158,15 @@ Development/
 └── archive/
 ```
 
-- **`school/`** — code written for classes, kept by term so it stays findable
-- **`learning/`** — code written while following courses and tutorials
-- **`archive/`** — projects you've stopped working on
+Folder names below render bold, in Ember:
+- **`school/`** — programming assignments and school projects, grouped by term
+- **`learning/`** — code written while following tutorials, courses, or documentation
+- **`personal/`** — projects you build outside school
+- **`hackathons/`** — hackathon work
+- **`experiments/`** — small tests and ideas that aren't full projects yet
+- **`archive/`** — projects you're no longer actively working on
+
+**Note:** You don't need all of these folders immediately. Start with the categories you actually use.
 
 ---
 
