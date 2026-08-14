@@ -90,10 +90,16 @@ markup in the export ever changes, the replacement throws rather than silently
 doing nothing, so the mismatch surfaces at build time.
 
 `HERO` is also where the header video lives: a muted, looping, controlless
-`<video>` behind an angled plum wash (`.hero-wash`), which turns top-down below
-760px so the copy keeps a readable ground on a phone. The wash is CSS, not a
-treatment baked into the footage, so legibility does not depend on the file
-loading. There is no play/pause control by design — the loop always runs.
+`<video>` behind an angled plum wash (`.hero-wash`). The copy sits against the
+left edge so the desk stays in frame on the right; the wash is dark enough to
+read against while the laptop stays faintly visible behind the text. No
+play/pause control by design — the loop always runs.
+
+Below 760px the header reverts to its pre-video form: no footage, the ordinary
+centred column, a solid TL;DR card. The video is not merely hidden — an inline
+script assigns its `src` from `data-src` only when `matchMedia('(min-width:761px)')`
+matches, so a phone reader never downloads the 2.5 MB file. The wash is CSS,
+not baked into the footage, so legibility never depends on the file loading.
 
 Everything else in the guide still comes through verbatim.
 

@@ -29,12 +29,21 @@
 
 <section class="view sec" data-route="00-start" role="tabpanel" aria-label="00 Start here">
 <div class="band hero-band">
-<video class="hero-vid" src="assets/cozy-desk-loop.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+<video class="hero-vid" data-src="assets/cozy-desk-loop.mp4" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
 <div class="hero-wash" aria-hidden="true"></div>
+<script>
+/* Load the header footage only where it is shown. The video is display:none
+   below 760px, but a bare src would still be fetched — 2.5 MB a phone reader
+   never sees. Assigning src from data-src behind a media query keeps that off
+   mobile data. Runs inline during parse so playback still starts immediately. */
+(function(){var v=document.currentScript.parentNode.querySelector('.hero-vid');
+if(v&&window.matchMedia('(min-width:761px)').matches){v.src=v.dataset.src;}})();
+</script>
 <div class="in hero-in">
 <div class="eyebrow"><span>Field guide</span></div>
 <h1 class="h1 hero-title">Get Organized as a Student Developer</h1>
 <p class="hero-sub">Build a Better System for Classes, Projects, and Your Coding Workspace</p>
+<p class="hero-lede">This guide walks through how to set up an organization system for your school files, your coding projects, and the things you learn on your own. It's built for CS, IT, and engineering students who write code as part of their coursework.</p>
 <p class="meta">Prepped by: Jazzy &middot; DevTok Pinas</p>
 <div class="tldr"><span class="k">TL;DR</span><p>You don't need a complicated productivity system. You need four main folders, a clear rule for where each type of file goes, a calendar that actually reminds you, and a short routine for when things get messy. Everything here works whether you're starting a term, in the middle of one, or between them.</p></div>
 </div></div><div class="band"><div class="in"><h2 class="h2">What this guide covers</h2>

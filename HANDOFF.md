@@ -9,7 +9,9 @@ Ran the pre-event verification pass on the built site and prepared the Netlify d
 
 The one real bug: the calendar week mock in section 04 overflowed at 375px (434px against a 375px viewport). Five `1fr` columns cannot go below their min-content width, and "Algorithms" alone is wider than a fifth of a phone screen. Fixed in `tools/build.js` — two columns below 640px plus `min-width:0` on `.calday` — and rebuilt.
 
-Then reworked the section 00 header to the owner's design: the lede paragraph is gone so the subhead is the only descriptive line, the meta reads `Prepped by: Jazzy · DevTok Pinas` (no date), and `planning/Cozy Desk Loop.mp4` now runs as a full-bleed looping background. The copy sits on an angled plum wash — near-opaque behind the text, clear by ~80% across so the desk stays visible — which turns top-down below 760px. No play control; the loop always runs. Autoplay confirmed on both `http` and `file://` with default autoplay policy (it is muted, so the policy allows it).
+Then reworked the section 00 header to the owner's design, iterating with them over screenshots. The subhead plus the original lede paragraph both stay; the meta reads `Prepped by: Jazzy · DevTok Pinas` (no date). `planning/Cozy Desk Loop.mp4` runs as a full-bleed looping background, and the copy is pinned to the **left** (not the document's centred column) so the laptop and lamp stay in frame on the right, faintly visible behind the text through an angled plum wash. No play control; the loop always runs. Autoplay confirmed on both `http` and `file://` (muted, so the policy allows it).
+
+**Mobile keeps the pre-video header.** Below 760px there is no footage, the header uses the ordinary centred column, and the TL;DR is a solid card again — the original design before this change. The mp4 is not merely hidden: an inline `matchMedia('(min-width:761px)')` guard assigns its `src` only on desktop, so a phone reader downloads **0 bytes** of the 2.5 MB video (verified over the network at 375px). Desktop still fetches and plays it.
 
 ## State: working
 Site verified and committed. Host is decided (Netlify); the connect step is the owner's to run.

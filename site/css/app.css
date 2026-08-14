@@ -203,23 +203,33 @@ main{padding-bottom:104px}
    legible, so it is CSS rather than a treatment baked into the video. */
 .hero-band{position:relative;isolation:isolate;overflow:hidden;background:var(--plum-900)}
 .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none}
+/* Not fully opaque on the left: the wash is dark enough to read against while
+   the laptop and lamp stay faintly legible behind the copy. */
 .hero-wash{position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:
     linear-gradient(to top,var(--ink-plum) 0,rgba(20,13,26,0) 22%),
-    linear-gradient(100deg,rgba(13,8,18,.97) 0,rgba(13,8,18,.94) 46%,rgba(13,8,18,.8) 62%,rgba(20,13,26,.34) 80%,rgba(20,13,26,0) 100%)}
-.hero-in{position:relative;z-index:1;padding-top:64px;padding-bottom:72px;max-width:64ch}
+    linear-gradient(100deg,rgba(13,8,18,.9) 0,rgba(13,8,18,.87) 44%,rgba(13,8,18,.74) 62%,rgba(20,13,26,.3) 80%,rgba(20,13,26,0) 100%)}
+/* The copy sits against the left edge, not in the centred column the rest of
+   the document uses, so the desk stays in frame on the right. */
+.hero-in{position:relative;z-index:1;margin:0;max-width:none;
+  padding:64px clamp(24px,4vw,56px) 72px clamp(24px,7vw,104px)}
+.hero-in>*{max-width:min(62ch,58%)}
 .hero-title{text-transform:none;font-size:clamp(34px,5.4vw,58px);line-height:1.08;margin:12px 0 10px}
 .hero-sub{font-family:var(--font-tech);font-weight:600;font-size:clamp(18px,2.6vw,26px);line-height:1.3;color:var(--amber-glow);margin:0 0 20px}
-/* Narrow screens have no room for an angled wash — the footage would sit under
-   the copy the whole width. Switch to top-down so the type keeps its ground. */
-@media (max-width:760px){
-  .hero-wash{background:
-    linear-gradient(to top,var(--ink-plum) 0,rgba(20,13,26,0) 26%),
-    linear-gradient(to bottom,rgba(13,8,18,.42) 0,rgba(13,8,18,.9) 34%,rgba(13,8,18,.97) 100%)}
-  .hero-in{padding-top:180px;max-width:none}
-}
+.hero-lede{font-size:17.5px;color:var(--muted-ink);margin:0 0 18px}
 /* Over footage the panel reads as glass rather than a card cut out of the page. */
 .hero-in .tldr{background:rgba(13,8,18,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+/* Phones get the header as it was before the footage: no video, the ordinary
+   centred column, a solid TL;DR card. A background video under body copy on a
+   small screen costs legibility and data for nothing. */
+@media (max-width:760px){
+  .hero-vid,.hero-wash{display:none}
+  .hero-band{background:none}
+  .hero-in{max-width:920px;margin:0 auto;padding:0 24px}
+  .hero-in>*{max-width:none}
+  .hero-lede{max-width:68ch}
+  .hero-in .tldr{background:var(--surface-card);backdrop-filter:none;-webkit-backdrop-filter:none}
+}
 .tldr{position:relative;overflow:hidden;border:1px solid var(--border-strong);border-radius:var(--radius-lg);background:var(--surface-card);padding:18px 24px 20px;margin:26px 0 0;box-shadow:var(--shadow-md),var(--shadow-inset-top)}
 .tldr::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-xp)}
 .tldr .k{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.28em;color:var(--neon-rose)}
