@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/warm-arcade-jazzy-celesica-design-system-b48c44e4-824f-4fc0-9906-fb1bba08d723/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/warm-arcade-jazzy-celesica-design-system-b48c44e4-824f-4fc0-9906-fb1bba08d723/tokens/colors.css">
+<link rel="stylesheet" href="_ds/warm-arcade-jazzy-celesica-design-system-b48c44e4-824f-4fc0-9906-fb1bba08d723/tokens/typography.css">
+<link rel="stylesheet" href="_ds/warm-arcade-jazzy-celesica-design-system-b48c44e4-824f-4fc0-9906-fb1bba08d723/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/warm-arcade-jazzy-celesica-design-system-b48c44e4-824f-4fc0-9906-fb1bba08d723/tokens/effects.css">
+<link rel="stylesheet" href="_ds/warm-arcade-jazzy-celesica-design-system-b48c44e4-824f-4fc0-9906-fb1bba08d723/tokens/motion.css">
+<link rel="stylesheet" href="_ds/warm-arcade-jazzy-celesica-design-system-b48c44e4-824f-4fc0-9906-fb1bba08d723/tokens/base.css">
+<link rel="stylesheet" href="_ds/warm-arcade-jazzy-celesica-design-system-b48c44e4-824f-4fc0-9906-fb1bba08d723/components/components.css">
+<link rel="stylesheet" href="_ds/warm-arcade-jazzy-celesica-design-system-b48c44e4-824f-4fc0-9906-fb1bba08d723/styles.css">
+<script src="_ds/warm-arcade-jazzy-celesica-design-system-b48c44e4-824f-4fc0-9906-fb1bba08d723/_ds_bundle.js"></script>
+<style>
+body{margin:0;background:var(--ink-plum);color:var(--parchment);font-family:var(--font-body);font-size:16px;line-height:1.62}
+a{color:var(--neon-rose)}a:hover{color:var(--ember)}
+.tksec{padding:0 0 56px}
+.band{padding:38px 0 46px;border-top:1px solid rgba(255,92,138,.28)}
+.band:first-child{border-top:none;padding-top:44px}
+.band:nth-child(even){background:var(--surface-card)}
+.band:nth-child(even) .tkpanel{background:var(--ink-plum)}
+.band:nth-child(even) .tkcard{background:var(--ink-plum)}
+.in{max-width:920px;margin:0 auto;padding:0 24px}
+.tkh1,.tkh2{text-transform:capitalize}
+.tkh1{font-family:var(--font-editorial);font-weight:600;font-size:clamp(29px,4.2vw,42px);line-height:1.14;color:var(--parchment);margin:10px 0 14px;text-shadow:var(--glow-text-rose)}
+.tkh2{font-family:var(--font-tech);font-weight:600;font-size:22px;color:var(--parchment);margin:0 0 10px}
+.tkh3{font-family:var(--font-tech);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--amber-glow);margin:26px 0 8px}
+.tkeyebrow{font-family:var(--font-tech);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--ember)}
+.tkmut{color:var(--muted-ink)}
+.tkpanel{background:var(--plum-900);border:1px solid var(--border-hairline);border-radius:12px;padding:16px 18px;position:relative;margin:12px 0}
+.tktree{font-family:var(--font-mono);font-size:13px;line-height:1.6;color:var(--parchment);overflow-x:auto;white-space:pre;margin:0}
+.tkcpy{position:absolute;top:8px;right:8px}
+.tknote{border-left:2px solid var(--wine);background:var(--parchment-a06);padding:10px 16px;border-radius:0 8px 8px 0;font-size:14.5px;color:var(--muted-ink);margin:12px 0}
+.tkchips{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0 8px}
+.tkchip{font-family:var(--font-tech);font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid var(--border-hairline);background:var(--parchment-a06);color:var(--muted-ink);cursor:pointer;transition:all 160ms var(--ease-standard)}
+.tkchip:hover{transform:translateY(-2px);color:var(--parchment);border-color:var(--neon-rose);box-shadow:var(--glow-rose-soft)}
+.tkgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:16px 0}
+.tkcard{background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:18px;padding:18px 20px;box-shadow:var(--shadow-md),var(--shadow-inset-top)}
+.tkcard .tt{font-family:var(--font-tech);font-size:16px;color:var(--parchment)}
+.tkcard .uw{font-size:13.5px;color:var(--muted-ink);margin:4px 0 10px}
+.tkcard .pv{font-family:var(--font-mono);font-size:12px;color:var(--muted-ink);background:var(--plum-900);border:1px solid var(--border-hairline);border-radius:8px;padding:8px 10px;margin:0 0 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tkli{padding:2px 0;font-size:14.5px}
+.tkli .bx{font-family:var(--font-mono);color:var(--wine);margin-right:8px}
+.tktbl{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0}
+.tktbl th{font-family:var(--font-tech);text-transform:uppercase;font-size:11px;letter-spacing:.14em;color:var(--muted-ink);text-align:left;padding:8px 12px;border-bottom:1px solid var(--border-strong)}
+.tktbl td{padding:9px 12px;border-bottom:1px solid var(--border-hairline);vertical-align:top}
+.tkmono{font-family:var(--font-mono);font-size:13px}
+.gterm{border-bottom:1px solid var(--border-hairline);padding:10px 0;display:flex;gap:14px;flex-wrap:wrap;align-items:baseline}
+.gterm .gt{font-family:var(--font-tech);font-size:15px;color:var(--parchment);min-width:150px}
+.gterm .gd{flex:1;font-size:14.5px;color:var(--muted-ink);min-width:240px}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(13,8,18,.78);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;padding:20px}
+.mbox{background:var(--surface-card);border:1px solid var(--border-strong);border-radius:18px;max-width:720px;width:100%;max-height:85vh;overflow:auto;padding:22px 24px;box-shadow:var(--shadow-lg)}
+.mpre{font-family:var(--font-mono);font-size:13px;line-height:1.65;white-space:pre-wrap;background:var(--plum-900);border:1px solid var(--border-hairline);border-radius:10px;padding:14px 16px;margin:12px 0;color:var(--parchment)}
+button:focus-visible,a:focus-visible{outline:none;box-shadow:0 0 0 2px var(--ink-plum),0 0 0 4px var(--lilac-signal)}
+.wa-list{margin:12px 0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</helmet>
+<div style="background:var(--surface-ground);color:var(--text-body)">
+<section class="tksec"><div class="band"><div class="in">
+<p class="tkeyebrow">toolkit · reference library</p>
+<h1 class="tkh1">The toolkit</h1>
+<p>Everything reusable, in one tab. This is where you land months later wanting a template, a checklist, or a prompt — not a lesson. <b>Every item has a copy button.</b></p>
+<div class="tkchips">
+<button class="tkchip" data-j="jtpl" onClick="{{jump}}">Templates</button>
+<button class="tkchip" data-j="jchk" onClick="{{jump}}">Checklists</button>
+<button class="tkchip" data-j="jpr" onClick="{{jump}}">Prompts</button>
+<button class="tkchip" data-j="jgl" onClick="{{jump}}">Glossary</button>
+<button class="tkchip" data-j="jtools" onClick="{{jump}}">Tools</button>
+</div>
+</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jtpl">Templates</h2>
+<p class="tkmut" style="font-size:14.5px">Nine copyable structures. Adjust names to your program and language.</p>
+<sc-for list="{{tpls}}" as="t" hint-placeholder-count="3">
+<div style="margin:22px 0">
+<p style="margin:0 0 2px"><span style="font-family:var(--font-tech);font-size:16px">{{t.title}}</span> <span class="tkmono" style="color:var(--ember);margin-left:8px">{{t.badge}}</span></p>
+<p class="tkmut" style="font-size:14px;margin:2px 0 8px">{{t.note}}</p>
+<div class="tkpanel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" data-k="{{t.id}}" onClick="{{copy}}">{{t.cpLabel}}</button>
+<pre class="tktree" data-cs="1">{{t.tree}}</pre></div>
+</div>
+</sc-for>
+</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jchk">Checklists</h2>
+<p class="tkmut" style="font-size:14.5px">Five recurring routines plus the reset. These five only — checklist overload is how systems die.</p>
+<div class="tkgrid">
+<sc-for list="{{cls}}" as="c" hint-placeholder-count="3">
+<div class="tkcard" data-cw="1">
+<p class="tt" style="margin:0 0 8px">{{c.title}}</p>
+<button class="wa-btn wa-btn--ghost wa-btn--sm" style="float:right;margin-top:-34px" data-k="{{c.id}}" onClick="{{copy}}">{{c.cpLabel}}</button>
+<sc-for list="{{c.groups}}" as="g" hint-placeholder-count="2">
+<p class="tkh3" style="margin:12px 0 4px">{{g.h}}</p>
+<sc-for list="{{g.items}}" as="i" hint-placeholder-count="3">
+<div class="tkli" data-l="1"><span class="bx">[ ]</span>{{i}}</div>
+</sc-for>
+</sc-for>
+</div>
+</sc-for>
+</div>
+</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jpr">Prompts</h2>
+<p class="tkmut" style="font-size:14.5px">Copy, replace the bracketed parts, paste into ChatGPT, Claude, or Gemini. Grouped by job.</p>
+<sc-for list="{{pgroups}}" as="pg" hint-placeholder-count="2">
+<h3 class="tkh3">{{pg.h}}</h3>
+<div class="tkgrid">
+<sc-for list="{{pg.items}}" as="p" hint-placeholder-count="2">
+<div class="tkcard">
+<p class="tt" style="margin:0">{{p.t}}</p>
+<p class="uw"><b>Use this when:</b> {{p.uw}}</p>
+<p class="pv">{{p.pv}}</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="{{p.id}}" onClick="{{openP}}">View prompt</button>
+</div>
+</sc-for>
+</div>
+</sc-for>
+</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jgl">Glossary</h2>
+<p class="tkmut" style="font-size:14.5px">The twelve words, one sentence each. The link jumps to the section that teaches it.</p>
+<div>
+<sc-for list="{{gloss}}" as="g" hint-placeholder-count="6">
+<div class="gterm"><span class="gt">{{g.t}}</span><span class="gd">{{g.d}}</span><a href="{{g.href}}" class="tkmono" style="font-size:12px">{{g.s}}</a></div>
+</sc-for>
+</div>
+</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jtools">Tools to install</h2>
+<p><b>Install a tool because it solves a problem you currently have</b> — not because a listicle says every developer needs twenty-five extensions. Free and student-accessible only.</p>
+<h3 class="tkh3">Now — the four essentials</h3>
+<table class="tktbl"><thead><tr><th>Job</th><th>Tool</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Write code</td><td>VS Code</td><td>Free, works everywhere</td></tr>
+<tr><td>Run your language</td><td>Python / Node.js / Java</td><td>Whatever your classes use</td></tr>
+<tr><td>Track changes</td><td>Git</td><td>Separate from GitHub</td></tr>
+<tr><td>Type commands</td><td>Terminal</td><td>Built into VS Code</td></tr>
+</tbody></table>
+<p class="tkmut" style="font-size:14px">One afternoon. All free.</p>
+<h3 class="tkh3">Soon</h3>
+<table class="tktbl"><tbody>
+<tr><td>Install packages</td><td>pip / npm — comes with your language</td></tr>
+<tr><td>Format code</td><td>Prettier, Black</td></tr>
+<tr><td>Catch mistakes</td><td>ESLint, Pylint</td></tr>
+<tr><td>Manage passwords</td><td>Bitwarden</td></tr>
+</tbody></table>
+<h3 class="tkh3">Later — when a project needs it</h3>
+<table class="tktbl"><tbody>
+<tr><td>Test APIs</td><td>Postman, Thunder Client</td></tr>
+<tr><td>Work with databases</td><td>DBeaver, TablePlus</td></tr>
+<tr><td>Containers</td><td>Docker</td></tr>
+<tr><td>Deploy</td><td>Vercel, Netlify, Render</td></tr>
+</tbody></table>
+<h3 class="tkh3">VS Code extensions</h3>
+<p>You don't need twenty-five.</p>
+<ul class="wa-list wa-list--ul">
+<li>The language extension for what you're learning</li>
+<li>Prettier, for formatting</li>
+<li>GitLens, for a clearer view of your project's history</li>
+</ul>
+<p><b>Everything else:</b> add it when you hit a problem it solves. Extensions slow the editor down, and most of them you'll never open.</p>
+</div></div></section>
+<sc-if value="{{mOpen}}" hint-placeholder-val="{{ false }}">
+<div class="modal" onClick="{{closeBg}}">
+<div class="mbox" role="dialog" aria-modal="true">
+<p style="font-family:var(--font-tech);font-size:18px;margin:0">{{mT}}</p>
+<p class="tkmut" style="font-size:14px;margin:4px 0 0"><b>Use this when:</b> {{mUw}}</p>
+<div data-cw="1"><pre class="mpre" data-cs="1">{{mBody}}</pre>
+<div style="display:flex;gap:10px">
+<button class="wa-btn wa-btn--primary wa-btn--sm" data-k="modal" onClick="{{copy}}">{{mCp}}</button>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" onClick="{{closeP}}">Close</button>
+</div></div>
+</div>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;1200px&quot;,&quot;height&quot;:&quot;900px&quot;}}">
+const TPLS=[
+{id:'t1',title:'T1 · Studies hierarchy — minimal',badge:'',note:'For a first-year, or anyone who wants the smallest workable structure.',tree:'Studies/\n└── [Your Program]/\n    └── Courses/\n        └── Y1T1/\n            ├── [Subject 1]/\n            ├── [Subject 2]/\n            └── [Subject 3]/'},
+{id:'t2',title:'T2 · Studies hierarchy — standard',badge:'RECOMMENDED',note:'',tree:'Studies/\n└── BS Computer Science/\n    ├── Courses/\n    │   ├── Y1T1/\n    │   ├── Y1T2/\n    │   └── Y2T1/\n    │       ├── Algorithms and Complexity/\n    │       ├── Life and Works of Rizal/\n    │       └── Software Engineering/\n    ├── Curriculum/\n    ├── Grade Slips/\n    ├── Graduation Requirements/\n    └── Organizations/'},
+{id:'t3',title:'T3 · Studies hierarchy — detailed',badge:'',note:'For upper years with thesis, OJT, and scholarship requirements. Thesis code goes in Development/ — this folder holds the documents.',tree:'Studies/\n└── BS Computer Science/\n    ├── Courses/\n    │   └── Y3T2/\n    │       └── Software Engineering/\n    │           ├── assignments/\n    │           ├── lectures/\n    │           └── exams/\n    ├── Curriculum/\n    ├── Grade Slips/\n    ├── Graduation Requirements/\n    ├── Thesis/\n    │   ├── proposal/\n    │   ├── adviser-feedback/\n    │   └── defense/\n    ├── OJT/\n    ├── Scholarship and Aid/\n    └── Organizations/'},
+{id:'t4',title:'T4 · Development hierarchy',badge:'',note:'school/ by term · learning/ course code · personal/ your projects · experiments/ things you are trying · archive/ stopped projects.',tree:'Development/\n├── school/\n│   ├── Y2T1/\n│   └── Y2T2/\n├── learning/\n├── personal/\n├── hackathons/\n├── experiments/\n└── archive/'},
+{id:'t5',title:'T5 · Upskilling — by topic',badge:'RECOMMENDED',note:'',tree:'Upskilling/\n├── web-development/\n├── cloud/\n├── ai-and-data/\n├── design/\n├── certificates/\n└── resources/'},
+{id:'t5b',title:'T5b · Upskilling — by platform',badge:'',note:'Pick one. Mixing both is what makes things hard to find.',tree:'Upskilling/\n├── coursera/\n├── udemy/\n├── youtube/\n├── freecodecamp/\n└── certificates/'},
+{id:'t6',title:'T6 · Career hierarchy',badge:'',note:'',tree:'Career/\n├── resume/\n├── certificates/\n├── portfolio/\n├── applications/\n│   └── [company-name]/\n└── interview-prep/'},
+{id:'t7',title:'T7 · Project starter structure',badge:'',note:'What is actually required: README.md, a dependency file, and .gitignore. Everything else depends on the project.',tree:'project-name/\n├── src/\n├── tests/\n├── docs/\n├── README.md\n├── .gitignore\n├── .env.example\n└── requirements.txt        (or package.json)'},
+{id:'t8',title:'T8 · README template',badge:'',note:'The test: download your own project into an empty folder and set it up using only the README. If that works, it is done.',tree:'# Project Name\n\nOne sentence on what this does.\n\n## What it does\nTwo or three sentences. What problem it solves,\nor what it was built for.\n\n## Requirements\n- Python 3.11 (or Node 20, etc.)\n- Anything else that must be installed first\n\n## Setup\n1. Clone or download this repository\n2. Install dependencies:\n   pip install -r requirements.txt\n3. Copy .env.example to .env and fill in your values\n4. Run it:\n   python main.py\n\n## Notes\nAnything a person would trip over.\n\n## Built with\nList the main tools or frameworks.'},
+{id:'t9',title:'T9 · .gitignore starters',badge:'',note:'Always include .env — it is the file holding your keys.',tree:'# Python\n__pycache__/\n*.pyc\n.venv/\nvenv/\n.env\n.DS_Store\n\n# Node / JavaScript\nnode_modules/\ndist/\nbuild/\n.env\n.DS_Store\n\n# Java\n*.class\ntarget/\nbuild/\n.env\n.DS_Store'}
+];
+const CLS=[
+{id:'cl1',title:'CL1 · Start of term',groups:[
+{h:'Files',items:['Create this term\'s folder in Studies/Courses/','Add a folder per subject','Create this term\'s folder in Development/school/']},
+{h:'Calendar',items:['Add each class as a repeating event for the whole term','Put room, professor, meeting link, and LMS link in each event','Add known exam and submission dates','Set notifications']},
+{h:'Accounts',items:['Confirm LMS access for every subject','Bookmark each subject\'s LMS page']},
+{h:'Notes',items:['Add this term\'s subjects to your notes tool']}]},
+{id:'cl2',title:'CL2 · New project',groups:[
+{h:'Setup',items:['Give it a clear name — lowercase, dashes, no spaces','Decide where it belongs in Development/','Create the folder','Open the folder in your editor, not a file','Initialize Git','Add a .gitignore before your first commit','Create README.md','Create the dependency file','If it uses keys, create .env and .env.example']}]},
+{id:'cl3',title:'CL3 · Before pushing to GitHub',groups:[
+{h:'Check',items:['No keys or passwords anywhere in the code','.env is listed in .gitignore','node_modules/ or equivalent is ignored','README explains what it is and how to run it','Commit messages describe what changed','It runs from a fresh copy']}]},
+{id:'cl4',title:'CL4 · Project finish',groups:[
+{h:'Wrap up',items:['Delete leftover test files','Update the README to match what it actually does now','Take screenshots for your portfolio','Commit and push everything','Add the deployment link to the README, if there is one','Write two lines on what you learned','Move it to personal/ if worth showing, or archive/ if done']}]},
+{id:'cl5',title:'CL5 · Security basics',groups:[
+{h:'Once',items:['Set up a password manager','Change your email password first','Turn on two-factor auth: email, GitHub, school portal','Save recovery codes somewhere offline','Create a personal professional email','Set it as recovery on GitHub and LinkedIn']},
+{h:'Ongoing',items:['Studies, Upskilling, Career syncing to cloud storage','Development NOT syncing to cloud storage','Code pushed to GitHub']}]},
+{id:'cl6',title:'CL6 · The 20-minute reset',groups:[
+{h:'Files',items:['Empty or file everything in Downloads','Clear the Desktop','File loose documents into the right term and subject']},
+{h:'School',items:['Check your LMS for anything new','Add new deadlines to your calendar','Look at the week ahead']},
+{h:'Development',items:['Commit and push work in progress','Delete leftover test files','Move finished projects to archive/']},
+{h:'Upskilling',items:['File anything new you saved','Delete what you won\'t realistically use']},
+{h:'Backups',items:['Confirm cloud sync is running','Check nothing important exists only on your laptop']}]}
+];
+const PR=[
+{g:'Organization',items:[
+{id:'p1',t:'P1 · Design a folder structure for my term',uw:'you\'re starting a term and want a structure that fits your actual subjects.',b:'I\'m a [year level] [program] student. This term I\'m taking:\n[list your subjects].\n\nI already organize my files into four top-level folders:\nStudies (school documents), Development (all code),\nUpskilling (self-directed learning), Career (job materials).\n\nSuggest a folder structure for this term\'s school files.\nKeep it simple — don\'t create folders I won\'t use. Explain\nwhy each folder exists.'},
+{id:'p2',t:'P2 · Where should this go?',uw:'you\'re not sure which folder something belongs in.',b:'I organize my files into four folders:\n- Studies: school documents, requirements, submissions\n- Development: anything containing code, no exceptions\n- Upskilling: material I\'m learning from\n- Career: things I\'ll use after graduation\n\nWhere should this go, and why: [describe the file or project]'},
+{id:'p3',t:'P3 · Review my folder structure',uw:'your folders feel cluttered but you\'re not sure why.',b:'Here\'s my current folder structure:\n\n[paste your directory tree]\n\nPoint out: folders that overlap, folders that are empty or\nunused, anything filed in the wrong place, and anything\nthat\'s more nested than it needs to be. Suggest specific\nchanges, not general advice.'},
+{id:'p4',t:'P4 · Help me clean Downloads and Desktop',uw:'both have become storage.',b:'Here\'s what\'s currently in my Downloads and Desktop:\n\n[paste the file list]\n\nGroup these into categories and tell me where each group\nshould go. My folders are Studies, Development, Upskilling,\nand Career. Flag anything I can safely delete.'},
+{id:'p5',t:'P5 · What should I archive?',uw:'your Development folder has too many projects.',b:'Here are the projects in my Development folder, with the\nlast time I touched each one:\n\n[paste the list]\n\nWhich should I archive, which should I keep active, and\nwhich are worth cleaning up for a portfolio? Explain your\nreasoning for each.'}]},
+{g:'Projects',items:[
+{id:'p6',t:'P6 · Recommend a project structure',uw:'you\'re starting something and don\'t know how to lay it out.',b:'I\'m building [describe the project] using [language/framework].\nI\'m a [beginner/intermediate] and working [alone/in a team of N].\n\nSuggest a folder structure. Keep it as simple as the project\nactually needs — don\'t add folders for things I\'m not doing.\nExplain what each folder is for.'},
+{id:'p7',t:'P7 · Help me plan a project',uw:'you have an idea but no plan.',b:'I want to build [describe the idea]. I know [languages you\nknow] and I have about [time available].\n\nBreak this into stages, starting with the smallest version\nthat actually works. For each stage, tell me what I\'d need\nto learn. Don\'t write the code — I want to build it myself.'},
+{id:'p8',t:'P8 · Break this assignment into steps',uw:'something is due and it\'s too big to start.',b:'I have this assignment: [paste the description]\n\nIt\'s due on [date] and today is [date].\n\nBreak it into three or four steps with suggested dates.\nAssume I can work on it a few hours a week alongside other\nsubjects.'}]},
+{g:'Git and documentation',items:[
+{id:'p9',t:'P9 · Generate a README outline',uw:'your project has no documentation.',b:'Here\'s my project structure:\n\n[paste the tree]\n\nIt\'s a [describe what it does] built with [tools].\n\nWrite a README outline with the sections it needs. Leave\nplaceholders for anything only I would know. Keep it short —\na student project, not a company product.'},
+{id:'p10',t:'P10 · Improve my commit message',uw:'you\'re about to write "fix" again.',b:'I changed: [describe what you did]\n\nWrite a commit message under 60 characters that says what\nchanged. Give me two options.'},
+{id:'p11',t:'P11 · What should Git ignore?',uw:'you\'re setting up a new project.',b:'I\'m working on a [language/framework] project.\n\nWhat should be in my .gitignore, and why is each entry\nthere? Include anything related to keys or secrets.'}]},
+{g:'Learning',items:[
+{id:'p12',t:'P12 · Explain this repository',uw:'you\'ve opened someone else\'s project and can\'t find anything.',b:'Here\'s the file structure of a project I\'m trying to\nunderstand:\n\n[paste the tree]\n\nExplain what each main folder is probably for, where the\ncode likely starts running, and which files I should read\nfirst. I\'m a student and new to this kind of project.'},
+{id:'p13',t:'P13 · Help me understand this code',uw:'you need to understand something, not have it written for you.',b:'Here\'s some code I\'m trying to understand:\n\n[paste the code]\n\nExplain what it does, step by step, in plain language.\nDon\'t rewrite or improve it — I want to understand what\'s\nalready there. Ask me questions if something depends on\ncontext you don\'t have.'},
+{id:'p14',t:'P14 · Organize my learning resources',uw:'you\'ve saved a lot and used none of it.',b:'Here\'s everything I\'ve saved to learn from:\n\n[paste your list of courses, bookmarks, playlists, PDFs]\n\nSort these into: learning now, reference, archive, and\ndelete. For anything you put in "learning now," suggest an\norder. Be honest about what I\'m realistically not going to\nget to.'}]},
+{g:'Self-check',items:[
+{id:'p15',t:'P15 · Question my system',uw:'you want to know if your setup actually works.',b:'Here\'s how I currently organize my files:\n\n[describe your structure]\n\nAsk me questions that would reveal whether this actually\nworks — especially about finding old files, deciding where\nnew things go, and what happens at the end of a term. Don\'t\ngive me advice yet, just ask.'}]}
+];
+const GLOSS=[
+{t:'Folder',d:'A location on your computer where files sit. Nothing special about it.',s:'03',href:'#/03-projects'},
+{t:'Project',d:'A folder containing everything needed to run what\'s inside it: the code, a README, and a list of what must be installed.',s:'03',href:'#/03-projects'},
+{t:'Workspace',d:'What your editor shows when you open a whole project folder rather than a single file: the file tree, a terminal, and search across everything.',s:'07',href:'#/07-workspace'},
+{t:'Repository (repo)',d:'A project that Git is tracking. It holds the files and their history.',s:'03',href:'#/03-projects'},
+{t:'Remote',d:'A copy of your repository stored online, usually on GitHub.',s:'03',href:'#/03-projects'},
+{t:'Git',d:'The tool on your computer that records the history of your project as you work.',s:'03',href:'#/03-projects'},
+{t:'GitHub',d:'A website that stores Git repositories online so others can see them and work with you.',s:'03',href:'#/03-projects'},
+{t:'Commit',d:'One saved snapshot in your project\'s history, with a short description of what changed.',s:'03',href:'#/03-projects'},
+{t:'Clone',d:'Downloading a copy of a repository from GitHub to your computer.',s:'09',href:'#/09-groups'},
+{t:'Push',d:'Uploading your commits from your computer to GitHub.',s:'03',href:'#/03-projects'},
+{t:'Terminal',d:'The text window where you type commands instead of clicking. Built into VS Code.',s:'07',href:'#/07-workspace'},
+{t:'Dependency',d:'Something your project needs installed in order to run. Listed in requirements.txt or package.json.',s:'03',href:'#/03-projects'}
+];
+const ALLP=PR.flatMap(g=>g.items);
+class Component extends DCLogic {
+  state={open:null,copied:''};
+  componentDidMount(){
+    this._eh=(e)=>{if(e.key==='Escape'&&this.state.open)this.setState({open:null})};
+    window.addEventListener('keydown',this._eh);
+  }
+  componentWillUnmount(){window.removeEventListener('keydown',this._eh)}
+  renderVals(){
+    const st=this.state;
+    const lab=(id)=>st.copied===id?'Copied':'Copy';
+    const open=ALLP.find(p=>p.id===st.open);
+    return {
+      tpls:TPLS.map(t=>({...t,cpLabel:lab(t.id)})),
+      cls:CLS.map(c=>({...c,cpLabel:lab(c.id)})),
+      pgroups:PR.map(g=>({h:g.g,items:g.items.map(p=>({...p,pv:p.b.split('\n')[0].slice(0,64)+'…'}))})),
+      gloss:GLOSS,
+      mOpen:!!open, mT:open?open.t:'', mUw:open?open.uw:'', mBody:open?open.b:'', mCp:lab('modal'),
+      jump:(e)=>{const el=document.getElementById(e.currentTarget.dataset.j);if(el)window.scrollTo({top:el.getBoundingClientRect().top+window.pageYOffset-70})},
+      openP:(e)=>this.setState({open:e.currentTarget.dataset.id}),
+      closeP:()=>this.setState({open:null}),
+      closeBg:(e)=>{if(e.target===e.currentTarget)this.setState({open:null})},
+      copy:(e)=>{const b=e.currentTarget,k=b.dataset.k||'modal',w=b.closest('[data-cw]');let txt='';
+        if(w){const ls=w.querySelectorAll('[data-l]');const src=w.querySelector('[data-cs]');
+          txt=ls.length?Array.prototype.map.call(ls,x=>x.textContent).join('\n'):(src?src.textContent:'')}
+        if(navigator.clipboard)navigator.clipboard.writeText(txt);
+        this.setState({copied:k});clearTimeout(this._ct);this._ct=setTimeout(()=>this.setState({copied:''}),1600)}
+    };
+  }
+}
+</script>
+</body>
+</html>
