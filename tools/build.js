@@ -149,8 +149,8 @@ if(v&&window.matchMedia('(min-width:761px)').matches){v.src=v.dataset.src;}})();
 </script>
 <div class="in hero-in">
 <div class="eyebrow"><span>Field guide</span></div>
-<h1 class="h1 hero-title">Get Organized as a Student Developer</h1>
-<p class="hero-sub">Build a Better System for Classes, Projects, and Your Coding Workspace</p>
+<h1 class="h1 hero-title">Get Organized as a <br class="hbr">Student Developer</h1>
+<p class="hero-sub">Build a Better System for Classes, Projects, and <br class="hbr">Your Coding Workspace</p>
 <p class="hero-lede">This guide walks through how to set up an organization system for your school files, your coding projects, and the things you learn on your own. It's built for CS, IT, and engineering students who write code as part of their coursework.</p>
 <p class="meta">Prepped by: Jazzy &middot; DevTok Pinas</p>
 <div class="tldr"><span class="k">TL;DR</span><p>You don't need a complicated productivity system. You need four main folders, a clear rule for where each type of file goes, a calendar that actually reminds you, and a short routine for when things get messy. Everything here works whether you're starting a term, in the middle of one, or between them.</p></div>
@@ -290,13 +290,20 @@ main{padding-bottom:104px}
     linear-gradient(to top,var(--ink-plum) 0,rgba(20,13,26,0) 22%),
     linear-gradient(100deg,rgba(13,8,18,.9) 0,rgba(13,8,18,.87) 44%,rgba(13,8,18,.74) 62%,rgba(20,13,26,.3) 80%,rgba(20,13,26,0) 100%)}
 /* The copy sits against the left edge, not in the centred column the rest of
-   the document uses, so the desk stays in frame on the right. */
+   the document uses, so the desk stays in frame on the right. Top padding is 0
+   because the band's :first-child rule already sets 44px above — the same
+   offset every other section starts at, so the eyebrow lines up tab to tab. */
 .hero-in{position:relative;z-index:1;margin:0;max-width:none;
-  padding:64px clamp(24px,4vw,56px) 72px clamp(24px,7vw,104px)}
+  padding:0 clamp(24px,4vw,56px) 40px clamp(24px,7vw,104px)}
 .hero-in>*{max-width:min(62ch,58%)}
-.hero-title{text-transform:none;font-size:clamp(34px,5.4vw,58px);line-height:1.08;margin:12px 0 10px}
-.hero-sub{font-family:var(--font-tech);font-weight:600;font-size:clamp(18px,2.6vw,26px);line-height:1.3;color:var(--amber-glow);margin:0 0 20px}
+/* Title and subhead break at fixed points (the .hbr breaks), not wherever the
+   container happens to wrap, so the two-line shape holds at every desktop width. */
+.hero-title{text-transform:none;font-size:clamp(34px,5.4vw,58px);line-height:1.08;margin:12px 0 10px;max-width:none}
+.hero-sub{font-family:var(--font-tech);font-weight:600;font-size:clamp(18px,2.6vw,26px);line-height:1.3;color:var(--amber-glow);margin:0 0 20px;max-width:none}
 .hero-lede{font-size:17.5px;color:var(--muted-ink);margin:0 0 18px}
+/* The fixed breaks are a desktop device; mobile wraps in its own column. */
+.hbr{display:none}
+@media (min-width:761px){.hbr{display:inline}}
 /* Over footage the panel reads as glass rather than a card cut out of the page. */
 .hero-in .tldr{background:rgba(13,8,18,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 /* Phones get the header as it was before the footage: no video, the ordinary
@@ -327,7 +334,9 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
 .closer>*{position:relative;z-index:1}
 
 /* ---- Chrome-style tabs: folder shape, hairline dividers, flared feet ---- */
-.tabbar{align-items:flex-end;padding:10px 18px 0;border-bottom:none}
+/* A full-width rose hairline under the bar separates the nav from the section
+   content below it — the active tab's rose wash sits flush on this line. */
+.tabbar{align-items:flex-end;padding:10px 18px 0;border-bottom:1px solid rgba(255,92,138,.28)}
 .tab{position:relative;margin:0 2px;padding:10px 16px 11px;border:none;border-radius:9px 9px 0 0;background-color:transparent;background-image:none}
 /* the divider Chrome draws between neighbouring tabs */
 .tab+.tab{background-image:linear-gradient(to bottom,transparent 26%,var(--border-hairline) 26%,var(--border-hairline) 74%,transparent 74%);background-size:1px 100%;background-position:left center;background-repeat:no-repeat}
