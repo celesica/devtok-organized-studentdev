@@ -284,6 +284,18 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
 .ftree .ficon{flex:none;width:22px;height:16px;border-radius:3px 3px 5px 5px;background:var(--gradient-cta);position:relative;box-shadow:var(--glow-rose-soft)}
 .ftree .ficon::before{content:"";position:absolute;top:-3px;left:3px;width:9px;height:4px;border-radius:3px 3px 0 0;background:var(--ember)}
 .ftree .fname{font-size:13px;color:var(--parchment)}
+/* File nodes: a small document glyph with a folded corner and a type tag
+   (Ember for .pdf, Lilac Signal for .md), sat in a folder-width slot so the
+   filenames line up with folder names. */
+.ftree .ficon{width:20px;height:15px}
+.ftree .fdoc{flex:none;position:relative;width:14px;height:18px;margin:0 3px;border-radius:2px;background:var(--parchment);overflow:hidden}
+.ftree .fdoc::before{content:"";position:absolute;top:0;right:0;width:0;height:0;border-top:6px solid var(--plum-900);border-left:6px solid transparent}
+.ftree .fdoc::after{content:attr(data-ext);position:absolute;left:0;right:0;bottom:0;height:8px;line-height:8px;text-align:center;font-family:var(--font-mono);font-size:6.5px;font-weight:700;letter-spacing:.02em;color:var(--ink-plum)}
+.ftree .fdoc--pdf::after{background:var(--ember)}
+.ftree .fdoc--md::after{background:var(--lilac-signal)}
+/* a sub-heading inside a folder panel; second paragraph inside a side note */
+.fpanel .subh{font-size:19px;margin-top:26px}
+.pn p + p{margin-top:10px}
 
 .closer .k{color:var(--ember)}
 .closer::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--gradient-lamp)}

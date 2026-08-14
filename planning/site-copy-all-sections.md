@@ -172,23 +172,35 @@ Folder names below render bold, in Ember:
 
 ### UPSKILLING
 
-Learning you do outside your curriculum. This holds the material you learn *from*, not the code you write.
+Learning you do outside your formal curriculum. This folder holds the material you learn from, while Development holds the code you write while learning.
 
-`[Visual — Class A]` `[Badge] RECOMMENDED`
+For example, if you take a React course:
+- Course notes → Upskilling
+- Downloaded slides → Upskilling
+- Resources → Upskilling
+- Certificate → Upskilling
+- React project you build during the course → Development
 
-**Option 1 — by topic (recommended)**
+**By topic** `[Badge] RECOMMENDED` — interactive tree (topic, then source nested inside):
 
 ```
 Upskilling/
 ├── web-development/
+│   ├── freecodecamp/
+│   ├── coursera/
+│   └── youtube/
 ├── cloud/
+│   ├── aws/
+│   └── coursera/
 ├── ai-and-data/
+│   ├── deeplearning-ai/
+│   └── youtube/
 ├── design/
-├── certificates/
-└── resources/
+└── certificates/
 ```
+This works well if you usually remember **what you were learning first**, then where you learned it.
 
-**Option 2 — by platform**
+**By source**
 
 ```
 Upskilling/
@@ -198,22 +210,17 @@ Upskilling/
 ├── freecodecamp/
 └── certificates/
 ```
+This works if you usually remember **where you learned something first** — the platform or channel — more than the topic.
 
-**Which to pick**
-
-- **By topic** works for most students. When you look for something later you remember the subject, not the website — and one topic usually spans several platforms.
-- **By platform** works if you're enrolled in a structured multi-course program and think of your learning that way.
-- Pick one and stay consistent. Mixing both is what makes things hard to find.
-
-**Note:** Code you write while following a course goes in `Development/learning/`. Upskilling holds slides, notes, downloads, and certificates.
+**Note:** Pick a structure that feels natural to you and stay reasonably consistent. There isn't one correct setup. The goal is to make your learning materials easy to find later.
 
 ---
 
 ### CAREER
 
-Documents you'll need when applying for internships and jobs. The only folder that outlives your degree.
+Documents and material you'll need for internships, jobs, and other professional opportunities.
 
-`[Visual — Class A]`
+`[Visual — interactive folder tree with PDF/MD file icons]`
 
 ```
 Career/
@@ -221,14 +228,43 @@ Career/
 ├── certificates/
 ├── portfolio/
 ├── applications/
+│   ├── accenture/
+│   │   ├── job-posting.pdf
+│   │   ├── resume.pdf
+│   │   ├── cover-letter.pdf
+│   │   └── notes.md
+│   ├── ibm/
+│   │   ├── job-posting.pdf
+│   │   ├── resume.pdf
+│   │   └── notes.md
+│   └── canva/
+│       ├── job-posting.pdf
+│       ├── resume.pdf
+│       ├── cover-letter.pdf
+│       └── notes.md
 └── interview-prep/
 ```
 
-- **`certificates/`** — copies of anything worth listing, including the ones from Upskilling
-- **`portfolio/`** — screenshots, project descriptions, links
-- **`applications/`** — one folder per company you apply to
+- **`resume/`** — your master resume and reusable resume versions
+- **`certificates/`** — certificates, credentials, and achievements worth keeping for applications
+- **`portfolio/`** — project screenshots, descriptions, links, case studies, and other work you may want to show employers
+- **`applications/`** — one folder per company, with the files and notes related to that application
+- **`interview-prep/`** — interview questions, technical review notes, company research, and other preparation materials
 
-Most students only create this when they urgently need it. Make it now, even empty.
+A lot of students only create a Career folder when application season starts. It's easier to build it gradually while you're still in school.
+
+#### Organizing your applications
+
+For each internship or job application, create a folder for the company or role. Inside it, keep the exact materials connected to that application:
+
+- **`job-posting.pdf`** — save a copy of the original posting in case it gets removed later
+- **`resume.pdf`** — the exact resume version you submitted
+- **`cover-letter.pdf`** — the cover letter you sent, if one was required
+- **`notes.md`** — recruiter details, interview dates, application status, questions, or anything else you want to remember
+
+This becomes especially useful once you start applying to several companies. You can quickly see what you submitted, what the role originally asked for, and any notes you made along the way.
+
+`[SideNote]` **Prefer tracking applications visually?** You can also create an application tracker in Notion with fields like company, role, status, date applied, interview dates, and follow-up dates. You can attach or link the same job posting, resume, cover letter, and notes there while still keeping the actual files organized in your Career folder. `[/SideNote]`
 
 ---
 
