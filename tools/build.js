@@ -176,9 +176,10 @@ if(v&&window.matchMedia('(min-width:761px)').matches){v.src=v.dataset.src;}})();
 <h1 class="h1 hero-title">Get Organized as a <br class="hbr">Student Developer</h1>
 <p class="hero-sub">Build a Better System for Classes, Projects, and <br class="hbr">Your Coding Workspace</p>
 <p class="meta">Prepped by: Jazzy &middot; DevTok Pinas</p>
-<p class="hero-lede">The system I use to keep my school files, coding projects, and self-learning organized in one place. I'm sharing it as a starting point for CS, IT, engineering, and other students who code, especially if your files and projects have started ending up everywhere.</p>
-<p class="hero-lede">You don't have to copy everything exactly. Take what makes sense for you, try it for a semester, and adjust it as you go.</p>
-<div class="tldr"><span class="k">TL;DR</span><p>I keep four main folders for my student-developer life: Studies, Development, Upskilling, and Career. From there, I use a few simple rules for where things go, keep my deadlines outside the LMS, use Git and GitHub for code, and do a quick reset whenever things start getting messy.</p><p>You can set up the basic version of this today and improve it over time.</p></div>
+<p class="hero-lede">This guide walks you through a practical way to organize your school files, coding projects, self-learning, deadlines, and development workspace.</p>
+<p class="hero-lede">It's built for CS, IT, engineering, and other students who write code as part of school or on their own. You don't need to be an advanced developer to use it, and you don't need to copy every part exactly.</p>
+<p class="hero-lede">Use the system as a starting point, keep what works for you, and adjust it as your needs change.</p>
+<div class="tldr"><span class="k">TL;DR</span><p>Having a simple system can save time, energy, and brainpower because you don't have to keep deciding where things go or trying to remember everything yourself.</p><p>A good starting point is four main folders: <b>Studies, Development, Upskilling, and Career</b>. From there, you can use a few clear rules for where files go, keep important deadlines, use GitHub for code, and run a short reset whenever things start getting messy.</p><p>You can set up the basic version today and improve it over time.</p></div>
 </div></div>`;
 
 function sectionBody(label) {
@@ -209,29 +210,33 @@ function applyStartCopy(body) {
   swap(
     /<h2 class="h2">Why this matters<\/h2>\s*<ul class="wa-list wa-list--ul">[\s\S]*?<\/ul>/,
     `<h2 class="h2">Why I think this matters</h2>
-<p>As technical students, we juggle a lot at once: classes, coding projects, deadlines, tools, self-learning, org work, and career prep. Having a simple system saves time, energy, and brainpower because you don't have to keep deciding where things go or trying to remember everything yourself.</p>
-<p>Without a clear system, small problems start adding up:</p>
+<p>As technical students, we already have a lot competing for our attention. A clear system reduces the number of small decisions you have to make every day and gives your school work, projects, and responsibilities a predictable place to go.</p>
+<p>Without one, small problems start adding up:</p>
 <ul class="wa-list wa-list--ul">
 <li>You waste time looking for files you know you saved somewhere.</li>
 <li>Good projects get buried inside old semester folders.</li>
-<li>Deadlines live only inside your LMS.</li>
+<li>Assignment deadlines live only inside your LMS.</li>
 <li>You redo work because you can't find what you already made.</li>
-<li>Projects worth showing for internships or jobs are harder to find later.</li>
-</ul>`,
+<li>Coding projects become harder to manage as you start using Git, GitHub, dependencies, and API keys.</li>
+<li>Projects worth showing for internships or jobs can be difficult to find later.</li>
+</ul>
+<p>A simple system makes all of this easier to manage.</p>`,
     "why-this-matters"
   );
 
   swap(
     /<h2 class="h2">What you'll have at the end<\/h2>\s*<ul class="wa-list wa-list--ul">[\s\S]*?<\/ul>/,
     `<h2 class="h2">What you'll have at the end</h2>
+<p>By the end of this guide, you'll have:</p>
 <ul class="wa-list wa-list--ul">
-<li>Four main folders with a clear rule for what goes in each</li>
-<li>A school structure you set up once per term</li>
-<li>An understanding of how coding projects are organized and opened</li>
-<li>A calendar setup for classes, deadlines, and tasks</li>
-<li>A basic backup and password setup</li>
-<li>A place for your notes and school dashboard</li>
-<li>A reset routine for the weeks when everything gets messy</li>
+<li>Four main folders with a clear purpose for each one</li>
+<li>A school structure you can reuse every term</li>
+<li>A better understanding of how coding projects are organized</li>
+<li>A calendar that reminds you before things are due</li>
+<li>A basic password and backup setup</li>
+<li>A place for notes and school organization</li>
+<li>A cleaner coding workspace</li>
+<li>A reset routine for when things drift</li>
 </ul>`,
     "what-youll-have"
   );

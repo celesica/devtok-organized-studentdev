@@ -31,14 +31,18 @@
 
 `Prepped by: Jazzy · DevTok Pinas`
 
-The system I use to keep my school files, coding projects, and self-learning organized in one place. I'm sharing it as a starting point for CS, IT, engineering, and other students who code, especially if your files and projects have started ending up everywhere.
+This guide walks you through a practical way to organize your school files, coding projects, self-learning, deadlines, and development workspace.
 
-You don't have to copy everything exactly. Take what makes sense for you, try it for a semester, and adjust it as you go.
+It's built for CS, IT, engineering, and other students who write code as part of school or on their own. You don't need to be an advanced developer to use it, and you don't need to copy every part exactly.
+
+Use the system as a starting point, keep what works for you, and adjust it as your needs change.
 
 `[TLDR]`
-**TL;DR:** I keep four main folders for my student-developer life: Studies, Development, Upskilling, and Career. From there, I use a few simple rules for where things go, keep my deadlines outside the LMS, use Git and GitHub for code, and do a quick reset whenever things start getting messy.
+**TL;DR:** Having a simple system can save time, energy, and brainpower because you don't have to keep deciding where things go or trying to remember everything yourself.
 
-You can set up the basic version of this today and improve it over time.
+A good starting point is four main folders: **Studies, Development, Upskilling, and Career**. From there, you can use a few clear rules for where files go, keep important deadlines, use GitHub for code, and run a short reset whenever things start getting messy.
+
+You can set up the basic version today and improve it over time.
 `[/TLDR]`
 
 ---
@@ -64,27 +68,33 @@ You can set up the basic version of this today and improve it over time.
 
 ## Why I think this matters
 
-As technical students, we juggle a lot at once: classes, coding projects, deadlines, tools, self-learning, org work, and career prep. Having a simple system saves time, energy, and brainpower because you don't have to keep deciding where things go or trying to remember everything yourself.
+As technical students, we already have a lot competing for our attention. A clear system reduces the number of small decisions you have to make every day and gives your school work, projects, and responsibilities a predictable place to go.
 
-Without a clear system, small problems start adding up:
+Without one, small problems start adding up:
 
 - You waste time looking for files you know you saved somewhere.
 - Good projects get buried inside old semester folders.
-- Deadlines live only inside your LMS.
+- Assignment deadlines live only inside your LMS.
 - You redo work because you can't find what you already made.
-- Projects worth showing for internships or jobs are harder to find later.
+- Coding projects become harder to manage as you start using Git, GitHub, dependencies, and API keys.
+- Projects worth showing for internships or jobs can be difficult to find later.
+
+A simple system makes all of this easier to manage.
 
 ---
 
 ## What you'll have at the end
 
-- Four main folders with a clear rule for what goes in each
-- A school structure you set up once per term
-- An understanding of how coding projects are organized and opened
-- A calendar setup for classes, deadlines, and tasks
-- A basic backup and password setup
-- A place for your notes and school dashboard
-- A reset routine for the weeks when everything gets messy
+By the end of this guide, you'll have:
+
+- Four main folders with a clear purpose for each one
+- A school structure you can reuse every term
+- A better understanding of how coding projects are organized
+- A calendar that reminds you before things are due
+- A basic password and backup setup
+- A place for notes and school organization
+- A cleaner coding workspace
+- A reset routine for when things drift
 
 `[Visual — Class C]` Recommended folder setup — Studies, Development, Upskilling, Career.
 
