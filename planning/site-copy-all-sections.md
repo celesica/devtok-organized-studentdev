@@ -100,9 +100,9 @@ You don't need a system that stays perfectly organized all semester. You just ne
 # SECTION 01
 ## Your Four Main Folders
 
-**What this section covers:** The four top-level folders that hold everything you make, and how to decide which one something belongs in.
+**What this section covers:** Four top-level folders you can use to separate school files, code, self-learning, and career material.
 
-**Why it matters:** Most people decide where to save a file at the moment they save it, which is why things end up in Downloads. Decide once, in advance, and saving stops being a decision.
+**Why it matters:** If you decide where something should go every single time you save a file, things eventually end up scattered across Downloads, Desktop, course folders, and random project directories. A few clear categories remove most of that decision-making.
 
 `[Visual — Class B2]` Four folders diagram.
 
@@ -121,6 +121,9 @@ Your formal school work — everything tied to your degree that isn't code.
 - School organizations
 
 **Note:** Anything containing code goes in Development instead, including programming assignments. Studies holds the documents, requirements, and submissions.
+
+`[Visual — interactive folder tree]` The Studies folder, one term deep — branded folder icons, click a folder to expand its children. Replaces the earlier "real term" file-manager window mock.
+Structure: Studies/ → BS Computer Science/ → { Courses/ → { Y1T1/, Y2T1/ → { Algorithms and Complexity/, Life and Works of Rizal/, Software Engineering/ } }, Curriculum/, Grade Slips/, Graduation Requirements/, Organizations/ }
 
 ---
 

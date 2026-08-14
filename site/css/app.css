@@ -253,6 +253,24 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
    design system's cool accent, set against the muted-ink caption. */
 .shot .cap .cap-tag{color:var(--lilac-signal);font-weight:600}
 
+/* ---- Interactive folder tree: branded folder glyphs, click to expand ---- */
+.ftree{border:1px solid var(--border-strong);border-radius:12px;background:var(--plum-900);box-shadow:var(--shadow-md),var(--shadow-inset-top);padding:14px 14px;margin:16px 0;overflow-x:auto;font-family:var(--font-mono)}
+.ftree details{margin:0}
+.ftree ul.ftkids{list-style:none;margin:0 0 0 11px;padding:0 0 0 15px;border-left:1px solid var(--border-hairline)}
+.ftree ul.ftroot{margin:0;padding:0;border-left:none}
+.ftrow,.ftleaf{display:flex;align-items:center;gap:9px;padding:5px 7px;border-radius:7px;white-space:nowrap}
+.ftrow{cursor:pointer;list-style:none;outline:none}
+.ftrow::-webkit-details-marker{display:none}
+.ftrow::marker{content:""}
+.ftrow:hover,.ftleaf:hover{background:var(--parchment-a06)}
+.ftfolder>summary.ftrow:focus-visible{box-shadow:var(--ring-focus)}
+.ftcaret{flex:none;width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid var(--muted-ink);transition:transform 120ms var(--ease-standard)}
+.ftfolder[open]>summary .ftcaret{transform:rotate(90deg)}
+.ftleaf .ftcaret{visibility:hidden}
+.ftree .ficon{flex:none;width:22px;height:16px;border-radius:3px 3px 5px 5px;background:var(--gradient-cta);position:relative;box-shadow:var(--glow-rose-soft)}
+.ftree .ficon::before{content:"";position:absolute;top:-3px;left:3px;width:9px;height:4px;border-radius:3px 3px 0 0;background:var(--ember)}
+.ftree .fname{font-size:13px;color:var(--parchment)}
+
 .closer .k{color:var(--ember)}
 .closer::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--gradient-lamp)}
 .closer>*{position:relative;z-index:1}
