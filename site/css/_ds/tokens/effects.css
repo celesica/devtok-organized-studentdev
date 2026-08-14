@@ -1,0 +1,31 @@
+:root{
+/* Glow recipe — always two shadows: tight core + wide haze */
+--glow-rose:0 0 12px rgba(255,92,138,.55),0 0 48px rgba(255,92,138,.22); /* @kind shadow */
+--glow-rose-soft:0 0 8px rgba(255,92,138,.35),0 0 32px rgba(255,92,138,.14); /* @kind shadow */
+--glow-ember:0 0 12px rgba(255,122,69,.50),0 0 46px rgba(255,122,69,.20); /* @kind shadow */
+--glow-amber:0 0 14px rgba(255,184,77,.45),0 0 52px rgba(255,184,77,.18); /* @kind shadow */
+--glow-lilac:0 0 10px rgba(201,160,245,.40),0 0 40px rgba(201,160,245,.14); /* @kind shadow */
+
+--glow-text-rose:0 0 10px rgba(255,92,138,.5),0 0 40px rgba(255,92,138,.2); /* @kind shadow */
+--glow-text-ember:0 0 10px rgba(255,122,69,.5),0 0 40px rgba(255,122,69,.2); /* @kind shadow */
+--glow-text-amber:0 0 10px rgba(255,184,77,.5),0 0 40px rgba(255,184,77,.2); /* @kind shadow */
+
+/* Depth — plum shadows, never neutral grey/black */
+--shadow-sm:0 1px 2px rgba(13,8,18,.45);
+--shadow-md:0 6px 18px rgba(13,8,18,.55);
+--shadow-lg:0 18px 48px rgba(13,8,18,.62);
+--shadow-inset-top:inset 0 1px 0 rgba(246,237,227,.06); /* @kind shadow */
+--shadow-inset-lamp:inset 0 24px 60px rgba(255,184,77,.05); /* @kind shadow */
+
+--ring-focus:0 0 0 2px var(--ink-plum),0 0 0 4px var(--lilac-signal); /* @kind shadow */
+
+/* Textures — tiling assets */
+--tex-plumnoise:url("../assets/textures/tex-plumnoise.png"); /* @kind other */
+--tex-parchment:url("../assets/textures/tex-parchment.png"); /* @kind other */
+--tex-dither:url("../assets/textures/tex-dither.png"); /* @kind other */
+--tex-blinds:url("../assets/textures/tex-blinds.png"); /* @kind other */
+--pat-constellation:url("../assets/textures/pat-constellation.png"); /* @kind other */
+
+--blur-panel:blur(14px); /* @kind other */
+--blur-scrim:blur(6px); /* @kind other */
+}

@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Organized as a Student Developer</title>
+<meta name="description" content="A field guide for student developers: four folders, a rule for where files go, a calendar that reminds you, and a reset routine. DevTok Pinas.">
+<link rel="stylesheet" href="css/_ds/styles.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============================ TAB BAR ============================ -->
+<nav class="tabbar" role="tablist" aria-label="Guide sections">
+  <a class="tab" role="tab" data-route="00-start"      href="#/00-start"><span class="n">00</span>Start</a>
+  <a class="tab" role="tab" data-route="01-folders"    href="#/01-folders"><span class="n">01</span>Folders</a>
+  <a class="tab" role="tab" data-route="02-school"     href="#/02-school"><span class="n">02</span>School</a>
+  <a class="tab" role="tab" data-route="03-projects"   href="#/03-projects"><span class="n">03</span>Projects</a>
+  <a class="tab" role="tab" data-route="04-calendar"   href="#/04-calendar"><span class="n">04</span>Calendar</a>
+  <a class="tab" role="tab" data-route="05-protecting" href="#/05-protecting"><span class="n">05</span>Protect</a>
+  <a class="tab" role="tab" data-route="06-notion"     href="#/06-notion"><span class="n">06</span>Notion</a>
+  <a class="tab" role="tab" data-route="07-workspace"  href="#/07-workspace"><span class="n">07</span>Workspace</a>
+  <a class="tab" role="tab" data-route="08-reset"      href="#/08-reset"><span class="n">08</span>Reset</a>
+  <a class="tab" role="tab" data-route="09-bonus"      href="#/09-bonus"><span class="n">09</span>Bonus</a>
+  <a class="tab tk" role="tab" data-route="toolkit"    href="#/toolkit">Toolkit</a>
+</nav>
+
+<main id="main">
+
+<!-- ============================ 00 · START ============================ -->
+<section class="view" data-route="00-start" role="tabpanel" aria-label="00 Start here">
+  <div class="dochead">
+    <div class="fieldguide">Field Guide</div>
+    <h1 class="title">Get Organized as a Student Developer</h1>
+    <div class="subtitle">Build a Better System for Classes, Projects, and Your Coding Workspace</div>
+    <p class="lede">This guide walks through how to set up an organization system for your school files, your coding projects, and the things you learn on your own. It's built for CS, IT, and engineering students who write code as part of their coursework, and you don't need to be an advanced programmer to follow it.</p>
+    <div class="byline">August 2026 · Jazzy · DevTok Pinas</div>
+    <div class="tldr">
+      <div class="k">TL;DR</div>
+      <p>You don't need a complicated productivity system. You need four main folders, a clear rule for where each type of file goes, a calendar that actually reminds you, and a short routine for when things get messy. Everything here works whether you're starting a term, in the middle of one, or between them.</p>
+    </div>
+  </div>
+
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>00 · start here</span><span class="lvl">FOUNDATION</span></div>
+
+    <h2 class="h2">What this guide covers</h2>
+    <div class="tblwrap"><table class="tbl">
+      <thead><tr><th>Section</th><th>What it covers</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">01</td><td>Your four main folders and what goes in each</td></tr>
+        <tr><td class="mono">02</td><td>School files, naming, and organizing by term</td></tr>
+        <tr><td class="mono">03</td><td>Coding projects — what they are and how much structure they need</td></tr>
+        <tr><td class="mono">04</td><td>Setting up your calendar and tasks</td></tr>
+        <tr><td class="mono">05</td><td>Passwords, backups, and keeping work safe</td></tr>
+        <tr><td class="mono">06</td><td>Using Notion for notes and school organization</td></tr>
+        <tr><td class="mono">07</td><td>Setting up your coding workspace and tools</td></tr>
+        <tr><td class="mono">08</td><td>The 20-minute reset</td></tr>
+        <tr><td class="mono">09</td><td>Bonus — group projects and shared repositories</td></tr>
+      </tbody>
+    </table></div>
+
+    <h2 class="h2">Why this matters for a student developer</h2>
+    <p class="mut">A weak system costs you in specific ways:</p>
+    <ul class="wa-list wa-list--ul">
+      <li><b>Time lost searching</b> for a file you know you saved somewhere.</li>
+      <li><b>Work you can't show.</b> Good projects buried where nobody will find them when internship applications open.</li>
+      <li><b>Missed deadlines</b>, because they only existed inside your LMS.</li>
+      <li><b>Repeated work.</b> Rebuilding something you already made.</li>
+      <li><b>Real risk.</b> Lost files with no backup, or a password published inside your code.</li>
+    </ul>
+
+    <h2 class="h2">What you'll have at the end</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>Four main folders with a clear rule for what goes in each</li>
+      <li>A school structure you set up once per term</li>
+      <li>An understanding of how coding projects are organized and opened</li>
+      <li>A calendar that reminds you before things are due</li>
+      <li>A password and backup setup that takes one afternoon</li>
+      <li>A checklist for when things drift</li>
+    </ul>
+
+    <h3 class="h3">Jazzy's real setup</h3>
+    <div class="shot">
+      <div class="win" aria-label="A file manager window showing three top-level folders side by side">
+        <div class="wbar"><span class="wdot r"></span><span class="wdot a"></span><span class="wdot e"></span><span class="wtitle">Home</span></div>
+        <div class="wbody">
+          <div class="folder"><span class="ficon"></span><span class="fname">Studies</span></div>
+          <div class="folder"><span class="ficon"></span><span class="fname">Development</span></div>
+          <div class="folder"><span class="ficon"></span><span class="fname">Upskilling</span></div>
+          <div class="folder"><span class="ficon"></span><span class="fname">Career</span></div>
+        </div>
+      </div>
+      <div class="cap">The three (soon four) folders this whole system rests on. Aspirational, not before/after.</div>
+    </div>
+
+    <div class="closer">
+      <div class="k">UNDERSTAND</div>
+      <p>The goal isn't a system that never gets messy. It's knowing where things go, and knowing how to get back on track when they don't.</p>
+    </div>
+  </div></div></div>
+
+  <nav class="pnrow" aria-label="Section navigation">
+    <span class="pnav disabled"><span class="pl">Start</span>Introduction</span>
+    <a class="pnav next" data-route="01-folders" href="#/01-folders"><span class="pl">Next</span>01 · Your Four Main Folders</a>
+  </nav>
+</section>
+
+<!-- ============================ 01 · FOLDERS ============================ -->
+<section class="view" data-route="01-folders" role="tabpanel" aria-label="01 Your four main folders">
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>01 · your four main folders</span><span class="lvl">FOUNDATION</span></div>
+    <h1 class="h1">Your Four Main Folders</h1>
+    <p class="cover"><b>What this section covers:</b> The four top-level folders that hold everything you make, and how to decide which one something belongs in.</p>
+    <p class="cover"><b>Why it matters:</b> Most people decide where to save a file at the moment they save it, which is why things end up in Downloads. Decide once, in advance, and saving stops being a decision.</p>
+
+    <h3 class="h3">The four folders — click to explore</h3>
+    <div data-component="explorer">
+      <div class="grid2">
+        <button class="fcard" data-target="fp-studies"><span class="ft">Studies</span><span class="fd">Formal school work that isn't code</span></button>
+        <button class="fcard" data-target="fp-dev"><span class="ft">Development</span><span class="fd">Anything that involves code</span></button>
+        <button class="fcard" data-target="fp-up"><span class="ft">Upskilling</span><span class="fd">Learning outside your curriculum</span></button>
+        <button class="fcard" data-target="fp-career"><span class="ft">Career</span><span class="fd">Job materials — outlives your degree</span></button>
+      </div>
+
+      <div class="fpanel" id="fp-studies">
+        <h3 class="h3">Studies</h3>
+        <p>Your formal school work — everything tied to your degree that isn't code.</p>
+        <p class="mut"><b>What goes here:</b> subjects, assignments, lecture files, exams · curriculum and grade slips · graduation requirements and student aid documents · thesis or capstone documents · OJT and internship paperwork · school organizations.</p>
+        <div class="note"><span class="nl">NOTE</span>Anything containing code goes in Development instead, including programming assignments. Studies holds the documents, requirements, and submissions.</div>
+      </div>
+
+      <div class="fpanel" id="fp-dev">
+        <h3 class="h3">Development</h3>
+        <p><b>Anything that involves code.</b> All of it, regardless of where it came from.</p>
+        <p class="mut"><b>What goes here:</b> programming assignments and lab exercises · school software projects and your capstone · practice code from tutorials and online courses · personal projects and experiments · hackathon projects · code you write for an organization.</p>
+        <p>One rule, no exceptions: <b>if it contains code, it lives here.</b> Not in your school folder, not in a course folder, not on the Desktop.</p>
+        <div class="badges"><span class="wa-badge wa-badge--rose">HOW I DO IT</span></div>
+        <div class="panel">
+          <div class="cpy"><button class="copybtn" data-copy="#tree-dev">Copy</button></div>
+<pre class="tree" id="tree-dev">Development/
+├── school/
+│   ├── Y2T1/
+│   └── Y2T2/
+├── learning/
+├── personal/
+├── hackathons/
+├── experiments/
+└── archive/</pre>
+        </div>
+        <ul class="wa-list wa-list--ul">
+          <li><span class="mono">school/</span> — code written for classes, kept by term so it stays findable</li>
+          <li><span class="mono">learning/</span> — code written while following courses and tutorials</li>
+          <li><span class="mono">archive/</span> — projects you've stopped working on</li>
+        </ul>
+      </div>
+
+      <div class="fpanel" id="fp-up">
+        <h3 class="h3">Upskilling</h3>
+        <p>Learning you do outside your curriculum. This holds the material you learn <i>from</i>, not the code you write.</p>
+        <div class="badges"><span class="wa-badge wa-badge--amber">RECOMMENDED</span></div>
+        <div data-component="select" data-default="up-topic">
+          <div class="chiprow">
+            <button class="chip" data-target="up-topic">By topic (recommended)</button>
+            <button class="chip" data-target="up-platform">By platform</button>
+          </div>
+          <div class="lpanel" id="up-topic">
+            <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#tree-up-topic">Copy</button></div>
+<pre class="tree" id="tree-up-topic">Upskilling/
+├── web-development/
+├── cloud/
+├── ai-and-data/
+├── design/
+├── certificates/
+└── resources/</pre></div>
+            <p class="mut">When you look for something later you remember the subject, not the website — and one topic usually spans several platforms.</p>
+          </div>
+          <div class="lpanel" id="up-platform">
+            <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#tree-up-plat">Copy</button></div>
+<pre class="tree" id="tree-up-plat">Upskilling/
+├── coursera/
+├── udemy/
+├── youtube/
+├── freecodecamp/
+└── certificates/</pre></div>
+            <p class="mut">Works if you're enrolled in a structured multi-course program and think of your learning that way.</p>
+          </div>
+        </div>
+        <p>Pick one and stay consistent. Mixing both is what makes things hard to find.</p>
+        <div class="note"><span class="nl">NOTE</span>Code you write while following a course goes in <span class="mono">Development/learning/</span>. Upskilling holds slides, notes, downloads, and certificates.</div>
+      </div>
+
+      <div class="fpanel" id="fp-career">
+        <h3 class="h3">Career</h3>
+        <p>Documents you'll need when applying for internships and jobs. The only folder that outlives your degree.</p>
+        <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#tree-career">Copy</button></div>
+<pre class="tree" id="tree-career">Career/
+├── resume/
+├── certificates/
+├── portfolio/
+├── applications/
+└── interview-prep/</pre></div>
+        <ul class="wa-list wa-list--ul">
+          <li><span class="mono">certificates/</span> — copies of anything worth listing, including the ones from Upskilling</li>
+          <li><span class="mono">portfolio/</span> — screenshots, project descriptions, links</li>
+          <li><span class="mono">applications/</span> — one folder per company you apply to</li>
+        </ul>
+        <p>Most students only create this when they urgently need it. Make it now, even empty.</p>
+      </div>
+    </div>
+
+    <h2 class="h2">The code rule</h2>
+    <p><b>Anything containing code goes in Development.</b> School assignments, lab exercises, tutorial practice, capstone code, personal projects — all of it, one location, no exceptions. The binary rule cannot be got wrong.</p>
+    <div class="casc">
+      <p><span class="mono">1.</span> Does it contain code? <span class="a">→ Development. Stop.</span></p>
+      <p><span class="mono">2.</span> Does it stop mattering when the term ends? <span class="a">→ Studies.</span></p>
+      <p><span class="mono">3.</span> Is it material you're learning from? <span class="a">→ Upskilling.</span></p>
+      <p><span class="mono">4.</span> Does it outlive the degree? <span class="a">→ Career.</span></p>
+    </div>
+    <div class="note"><span class="nl">SPLIT</span>When something has both code and documents (assignments, capstone, thesis): code to Development, documents to Studies, plus a short pointer file in Studies noting where the code is. This is the standard pattern, not an exception.</div>
+
+    <h2 class="h2">How to decide where something goes</h2>
+    <div class="tblwrap"><table class="tbl">
+      <thead><tr><th>Situation</th><th>Where it goes</th></tr></thead>
+      <tbody>
+        <tr><td>A 30-line lab exercise</td><td>Development → <span class="mono">school/</span></td></tr>
+        <tr><td>A semester-long software project</td><td>Development → <span class="mono">school/</span></td></tr>
+        <tr><td>Code you write following a React course</td><td>Development → <span class="mono">learning/</span></td></tr>
+        <tr><td>That course's slides and notes</td><td>Upskilling</td></tr>
+        <tr><td>Your assignment brief and submission receipt</td><td>Studies</td></tr>
+        <tr><td>A certificate from that course</td><td>Upskilling and Career</td></tr>
+        <tr><td>Your thesis document</td><td>Studies</td></tr>
+        <tr><td>Your thesis code</td><td>Development</td></tr>
+        <tr><td>Minutes from an org meeting</td><td>Studies → <span class="mono">Organizations/</span></td></tr>
+        <tr><td>The org website you're building</td><td>Development</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="pn"><div class="k">HOW I DO IT</div><p>Keeping every line of code in one place is what made this work for me. Before that I had code in course folders, code on the Desktop, and code in Development, and I could never remember which. One location means one place to look.</p></div>
+
+    <h2 class="h2">Where does this go?</h2>
+    <p class="mut">Click an item to reveal the right folder and why.</p>
+    <div data-component="reveal">
+      <div class="grid2">
+        <button class="ibtn"><span class="it">Algorithms assignment</span><span class="ans">Development → school/. It contains code, and the code rule wins over everything else.</span></button>
+        <button class="ibtn"><span class="it">A React course on YouTube</span><span class="ans">Upskilling. It's material you learn from. The code you write following it goes in Development/learning/.</span></button>
+        <button class="ibtn"><span class="it">Your resume</span><span class="ans">Career. It's a job material that outlives the degree.</span></button>
+        <button class="ibtn"><span class="it">A hackathon project</span><span class="ans">Development. It contains code — same rule, no exception.</span></button>
+        <button class="ibtn"><span class="it">Minutes from an org meeting</span><span class="ans">Studies → Organizations/. It's part of school life and tied to your school years.</span></button>
+        <button class="ibtn"><span class="it">A script that renames files</span><span class="ans">Development. It's code, even if it's tiny and personal.</span></button>
+      </div>
+      <div class="ctl"><button class="btn" data-reset>Reset</button></div>
+    </div>
+
+    <h2 class="h2">Key takeaways</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>Four folders: Studies, Development, Upskilling, Career.</li>
+      <li><b>Anything containing code goes in Development</b> — school, tutorials, personal, org work, all of it.</li>
+      <li>Upskilling by topic works better than by platform for most students.</li>
+      <li>School org files sit under Studies; resume-worthy org work goes in Career.</li>
+      <li>Personal life stays outside this system.</li>
+    </ul>
+
+    <div class="closer"><div class="k">DO</div><p>Create the four folders now. It takes under a minute.</p></div>
+  </div></div></div>
+
+  <nav class="pnrow" aria-label="Section navigation">
+    <a class="pnav" data-route="00-start" href="#/00-start"><span class="pl">Previous</span>00 · Start Here</a>
+    <a class="pnav next" data-route="02-school" href="#/02-school"><span class="pl">Next</span>02 · Organizing Your School Files</a>
+  </nav>
+</section>
+
+<!-- ============================ 02 · SCHOOL ============================ -->
+<section class="view" data-route="02-school" role="tabpanel" aria-label="02 Organizing your school files">
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>02 · organizing your school files</span><span class="lvl">FOUNDATION</span></div>
+    <h1 class="h1">Organizing Your School Files</h1>
+    <p class="cover"><b>What this section covers:</b> A folder structure for coursework, a naming convention, and what to do if you already have years of files scattered around.</p>
+    <p class="cover"><b>Why it matters:</b> School generates your highest volume of files, every term. A structure you set up once and reuse removes almost all the decisions.</p>
+
+    <h2 class="h2">The structure</h2>
+    <p>Program → Term → Subject. Keep the inside of each subject simple.</p>
+    <div class="badges"><span class="wa-badge wa-badge--amber">RECOMMENDED</span></div>
+    <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#tree-studies">Copy</button></div>
+<pre class="tree" id="tree-studies">Studies/
+└── BS Computer Science/
+    ├── Courses/
+    │   ├── Y1T1/
+    │   └── Y2T1/
+    │       ├── Algorithms and Complexity/
+    │       ├── Life and Works of Rizal/
+    │       └── Software Engineering/
+    ├── Curriculum/
+    ├── Grade Slips/
+    ├── Graduation Requirements/
+    └── Organizations/</pre></div>
+    <ul class="wa-list wa-list--ul">
+      <li>Use this if you don't already have something that works. Other arrangements are in the toolkit.</li>
+      <li>Most subjects only need a few folders inside. Don't create folders you aren't using.</li>
+      <li>Set it up once at the start of each term. It takes a few minutes.</li>
+    </ul>
+    <details class="exp"><summary>Learn more — term-first vs subject-first</summary><div class="expb">
+      <p><b>Subject-first</b> (Program → Subject → Term) keeps one subject together across years. Useful if you retake subjects.</p>
+      <p><b>Term-first</b> works better for most students because school runs on terms, and because finished terms move out of your way on their own.</p>
+    </div></details>
+
+    <h2 class="h2">Naming files</h2>
+    <div data-component="revealall">
+      <div class="ctl"><button class="btn" data-revealall data-label="Reveal better names">Reveal better names</button></div>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>Instead of</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">Assignment final v2.docx</td><td class="mono"><span class="rev">2026-08-15-algorithms-assignment.docx</span></td></tr>
+          <tr><td class="mono">Aug 15 notes</td><td class="mono"><span class="rev">2026-08-15-lecture-notes.md</span></td></tr>
+          <tr><td class="mono">stuff2</td><td class="mono"><span class="rev">midterm-reviewer</span></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <ul class="wa-list wa-list--ul">
+      <li><b>Dates: year-month-day.</b> <span class="mono">2026-08-15</span>. Files then sort in date order automatically.</li>
+      <li><b>No spaces — use dashes.</b> <span class="wa-badge wa-badge--lilac">CONVENTION</span> Spaces cause problems in the terminal and in code projects.</li>
+      <li><b>Be descriptive.</b> The name should still make sense in six months.</li>
+    </ul>
+
+    <h2 class="h2">What happens at the end of a term</h2>
+    <p>Nothing. The term folder stays exactly where it is.</p>
+    <ul class="wa-list wa-list--ul">
+      <li>You don't archive it, sort it, or clean it out</li>
+      <li>The only action is creating next term's folder</li>
+      <li>Old work stays where you'd naturally look for it</li>
+    </ul>
+    <p class="mut"><b>Why this works:</b> a degree is around twelve terms, so the list never gets long. Organizing by year and term means finished work moves out of your way without you doing anything.</p>
+    <div class="note"><span class="nl">NOTE</span>Coding projects are different — they don't end on a schedule, which is why <span class="mono">Development/</span> keeps an <span class="mono">archive/</span> folder.</div>
+
+    <h2 class="h2">If you already have years of scattered files</h2>
+    <div class="badges"><span class="wa-badge wa-badge--amber">RECOMMENDED</span></div>
+    <p>Don't reorganize everything at once. That usually takes longer than expected and gets abandoned halfway.</p>
+    <ol class="wa-list wa-list--ol">
+      <li>Create one folder named <span class="mono">_UNSORTED_2026-08</span>, with the date in the name.</li>
+      <li>Move everything loose into it. Don't sort as you go.</li>
+      <li>Build the new structure beside it, empty.</li>
+      <li>Use the new structure from now on.</li>
+      <li>When you need an old file, take it out and file it properly at that point.</li>
+    </ol>
+    <p class="mut">After a few months, most of what's left is material you never needed.</p>
+    <div class="note"><span class="nl">NOTE</span>About ten minutes, not a weekend. The point is to stop the mess growing, not to fix the past.</div>
+
+    <h2 class="h2">Key takeaways</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>Program → Term → Subject, set up once per term.</li>
+      <li><span class="mono">YYYY-MM-DD</span> and no spaces so files sort themselves.</li>
+      <li>Finished terms stay where they are. No archiving step.</li>
+      <li>If you have a backlog, move it aside rather than reorganizing it.</li>
+    </ul>
+
+    <div class="closer"><div class="k">DO</div><p>Set up the folders for this term only, and move anything loose into a single dated unsorted folder.</p></div>
+  </div></div></div>
+
+  <nav class="pnrow" aria-label="Section navigation">
+    <a class="pnav" data-route="01-folders" href="#/01-folders"><span class="pl">Previous</span>01 · Your Four Main Folders</a>
+    <a class="pnav next" data-route="03-projects" href="#/03-projects"><span class="pl">Next</span>03 · Your Coding Projects</a>
+  </nav>
+</section>
+
+<!-- ============================ 03 · PROJECTS ============================ -->
+<section class="view" data-route="03-projects" role="tabpanel" aria-label="03 Your coding projects">
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>03 · your coding projects</span><span class="lvl">BUILDING</span></div>
+    <h1 class="h1">Your Coding Projects</h1>
+    <p class="cover"><b>What this section covers:</b> The difference between a folder, a project, an editor workspace, and a repository — plus how much structure a project actually needs.</p>
+    <p class="cover"><b>Why it matters:</b> These terms get used interchangeably, which makes tutorials and instructions confusing. Once you can tell them apart, most of that confusion goes away.</p>
+
+    <h2 class="h2">The five layers — build the stack</h2>
+    <p class="mut">Each layer answers one question and earns one word. Click Next to add them one at a time.</p>
+    <div class="c7grid" data-component="stack">
+      <div>
+        <button class="lrow"><span class="ln">1</span><span class="lw">Folder</span><span class="lq">where is it?</span></button>
+        <button class="lrow"><span class="ln">2</span><span class="lw">Project</span><span class="lq">could someone run it?</span></button>
+        <button class="lrow"><span class="ln">3</span><span class="lw">Editor</span><span class="lq">how do I open all of it?</span></button>
+        <button class="lrow"><span class="ln">4</span><span class="lw">Git</span><span class="lq">what changed?</span></button>
+        <button class="lrow"><span class="ln">5</span><span class="lw">GitHub</span><span class="lq">where does it live online?</span></button>
+        <div class="ctl">
+          <button class="btn" data-stack-back>Back</button>
+          <button class="btn primary" data-stack-next>Next</button>
+          <button class="btn" data-stack-reset>Reset</button>
+          <span class="ctr" data-stack-count></span>
+        </div>
+      </div>
+      <div>
+        <div class="lpanel">
+          <h3 class="h3">Layer 1 — The folder</h3>
+          <p>A location on your computer where the files sit.</p>
+          <ul class="wa-list wa-list--ul"><li>A normal folder, like any other</li><li>It lives inside <span class="mono">Development/</span> — including for school work</li><li>Everything below is something added <i>to</i> this folder</li></ul>
+          <div class="note"><span class="nl">NOTE</span>Don't put a coding project inside a synced folder like Google Drive, OneDrive, or Dropbox. Sync conflicts with the tools you'll use and can corrupt the project. On Windows, check whether Documents is syncing to OneDrive — it often is.</div>
+        </div>
+        <div class="lpanel">
+          <h3 class="h3">Layer 2 — The project</h3>
+          <p>The same folder, once it contains everything needed to run.</p>
+          <ul class="wa-list wa-list--ul"><li><b>A README file</b> — plain text saying what this is and how to start it</li><li><b>A dependency file</b> — <span class="mono">requirements.txt</span> for Python, <span class="mono">package.json</span> for JavaScript</li><li><b>The code</b>, organized rather than loose</li></ul>
+          <div class="anchor">A project is a folder that knows how to run itself.</div>
+        </div>
+        <div class="lpanel">
+          <h3 class="h3">Layer 3 — Opening it in your editor</h3>
+          <p>When someone says "open the project in VS Code," they mean opening the <b>folder</b>, not a file.</p>
+          <ul class="wa-list wa-list--ul"><li><b>Open a file</b> — a text editor with one document in it.</li><li><b>Open a folder</b> — the full file list, a terminal pointed at the right location, search across the whole project, and tools that can see how files relate.</li></ul>
+          <div class="note"><span class="nl">NOTE</span>This is the most common reason a beginner's screen doesn't match the tutorial. Use File → Open Folder.</div>
+        </div>
+        <div class="lpanel">
+          <h3 class="h3">Layer 4 — Git</h3>
+          <p>A tool that records the history of your project as you work.</p>
+          <ul class="wa-list wa-list--ul"><li>Each meaningful change is a <b>commit</b> — a snapshot with a short description</li><li>You can return to any earlier version</li><li>It replaces keeping <span class="mono">final</span>, <span class="mono">final2</span>, <span class="mono">final-v3</span> copies</li></ul>
+        </div>
+        <div class="lpanel">
+          <h3 class="h3">Layer 5 — GitHub</h3>
+          <p>A website where your project's history is stored online.</p>
+          <ul class="wa-list wa-list--ul"><li><b>Git</b> tracks changes on your computer</li><li><b>GitHub</b> is where you upload that history so others can see it</li><li>Uploading is <b>pushing</b>; downloading someone else's project is <b>cloning</b></li></ul>
+          <div class="note"><span class="nl">NOTE</span>GitHub is for code and the files around code. Not general cloud storage — your thesis PDF and lecture slides don't belong there.</div>
+        </div>
+      </div>
+    </div>
+    <p class="mut">Five layers, five words, used interchangeably by everyone. Naming them is most of the fix.</p>
+
+    <h2 class="h2">Open file vs open folder</h2>
+    <div class="grid2">
+      <div>
+        <div class="vsc solo" aria-label="VS Code with a single file open">
+          <div class="vtop"><span>main.py</span></div>
+          <div class="vmain"><div class="vedit">1  print("hello")<br>2<br>3</div></div>
+        </div>
+        <div class="cap mut" style="font-family:var(--font-tech);font-size:13px;margin-top:8px">Open a file — one document, nothing else.</div>
+      </div>
+      <div>
+        <div class="vsc" aria-label="VS Code with a whole folder open, showing Explorer, Editor, Terminal, Source Control">
+          <div class="vtop"><span>schedule-tracker</span></div>
+          <div class="vmain">
+            <div class="vside"><span class="hot" style="top:6px;left:6px">Explorer</span><br>src/<br>README.md<br>.gitignore<br>requirements.txt</div>
+            <div class="vedit"><span class="hot" style="top:6px;left:6px">Editor</span><br><br>1  import calendar</div>
+          </div>
+          <div class="vterm"><span class="hot" style="top:-2px;left:6px">Terminal · Source Control</span><br>$ python src/main.py</div>
+        </div>
+        <div class="cap mut" style="font-family:var(--font-tech);font-size:13px;margin-top:8px">Open a folder — file tree, terminal, search, source control.</div>
+      </div>
+    </div>
+    <div class="badges"><span class="wa-badge wa-badge--ember">TOOL-SPECIFIC</span></div>
+
+    <h2 class="h2">Commit messages</h2>
+    <div data-component="revealall">
+      <div class="ctl"><button class="btn" data-revealall data-label="Reveal better messages">Reveal better messages</button></div>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>Instead of</th><th>Write</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">fix</td><td class="mono"><span class="rev">Initialize project structure</span></td></tr>
+          <tr><td class="mono">fix2</td><td class="mono"><span class="rev">Add login form</span></td></tr>
+          <tr><td class="mono">asdf</td><td class="mono"><span class="rev">Implement email validation</span></td></tr>
+          <tr><td class="mono">final</td><td class="mono"><span class="rev">Update installation instructions</span></td></tr>
+        </tbody>
+      </table></div>
+    </div>
+
+    <h2 class="h2">How much structure a project needs</h2>
+    <p>Not every project needs the full setup. Select a type to see what it actually needs.</p>
+    <div data-component="select" data-default="ld-ex">
+      <div class="chiprow">
+        <button class="chip" data-target="ld-ex">Short exercise</button>
+        <button class="chip" data-target="ld-assign">Course assignment</button>
+        <button class="chip" data-target="ld-port">Portfolio project</button>
+        <button class="chip" data-target="ld-team">Team project</button>
+      </div>
+      <div class="lpanel" id="ld-ex">
+        <div class="panel"><pre class="tree">exercise.py</pre></div>
+        <p>One file. <span class="mut">Does not need: folders, a README, or Git.</span></p>
+      </div>
+      <div class="lpanel" id="ld-assign">
+        <div class="panel"><pre class="tree">assignment/
+├── main.py
+└── README.md</pre></div>
+        <p>One folder, README if there are instructions worth keeping. <span class="mut">Does not need: a full src/tests split.</span></p>
+      </div>
+      <div class="lpanel" id="ld-port">
+        <div class="panel"><pre class="tree">project-name/
+├── src/
+├── README.md
+├── .gitignore
+└── requirements.txt</pre></div>
+        <p>Organized folders, README, <span class="mono">.gitignore</span>, dependency file, on GitHub. <span class="mut">Does not need: shared access or CI.</span></p>
+      </div>
+      <div class="lpanel" id="ld-team">
+        <div class="panel"><pre class="tree">project-name/
+├── src/
+├── tests/
+├── docs/
+├── README.md
+├── .gitignore
+├── .env.example
+└── requirements.txt</pre></div>
+        <p>All of the above, plus shared access (Section 09). <span class="mut">Does not need: anything you're not actually using yet.</span></p>
+      </div>
+    </div>
+    <ul class="wa-list wa-list--ul">
+      <li>Adding structure a project doesn't need makes it harder to work on</li>
+      <li>Start small. Adding structure later is easier than removing it</li>
+      <li>You're allowed to have a project that's one file</li>
+    </ul>
+
+    <h2 class="h2">One project, every layer</h2>
+    <p class="mut">A class schedule tracker carried through the section. Here's the whole road — today we cover the first half.</p>
+    <div class="flow">
+      <span class="fst">IDEA</span><span class="fsep">→</span>
+      <span class="fst">FOLDER</span><span class="fsep">→</span>
+      <span class="fst">EDITOR</span><span class="fsep">→</span>
+      <span class="fst">GIT</span><span class="fsep">→</span>
+      <span class="fst">BUILD</span><span class="fsep">→</span>
+      <span class="fst">COMMIT</span><span class="fsep">→</span>
+      <span class="fst">GITHUB</span><span class="fsep">→</span>
+      <span class="fst adv">DOCUMENT</span><span class="fsep">→</span>
+      <span class="fst adv">DEPLOY</span><span class="fsep">→</span>
+      <span class="fst adv">PORTFOLIO</span>
+    </div>
+    <div class="badges"><span class="wa-badge wa-badge--lilac">ADVANCED</span> <span class="mut">Dashed stages link to the toolkit rather than being explained live.</span></div>
+
+    <h2 class="h2">Project tree explorer</h2>
+    <p class="mut">One example project — click a file to see what it is and whether it's required. Not a universal tree.</p>
+    <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#tree-proj">Copy</button></div>
+<pre class="tree" id="tree-proj">schedule-tracker/
+├── src/
+├── README.md
+├── .gitignore
+├── .env.example
+└── requirements.txt</pre></div>
+    <div data-component="reveal">
+      <div class="grid2">
+        <button class="ibtn"><span class="it">src/ <span class="wa-badge wa-badge--lilac">CONVENTION</span></span><span class="ans">Where your source code lives. Conventional once a project has more than a couple of files — keeps code separate from config.</span></button>
+        <button class="ibtn"><span class="it">README.md <span class="wa-badge wa-badge--lilac">CONVENTION</span></span><span class="ans">Says what this is and how to run it. Required the moment anyone else — including future you — needs to run it.</span></button>
+        <button class="ibtn"><span class="it">.gitignore <span class="wa-badge wa-badge--lilac">CONVENTION</span></span><span class="ans">The list of files Git should skip — secrets, generated folders. Needed as soon as the project uses Git.</span></button>
+        <button class="ibtn"><span class="it">.env.example <span class="wa-badge wa-badge--muted">OPTIONAL</span></span><span class="ans">A blank copy of your .env so teammates know what keys they need. Only needed when the project uses secrets.</span></button>
+        <button class="ibtn"><span class="it">requirements.txt <span class="wa-badge wa-badge--lilac">CONVENTION</span></span><span class="ans">The dependency file — what must be installed to run this. Required for anything with dependencies.</span></button>
+      </div>
+      <div class="ctl"><button class="btn" data-reset>Reset</button></div>
+    </div>
+
+    <h2 class="h2">Moving work up a level</h2>
+    <p>When school or practice work turns out well:</p>
+    <ul class="wa-list wa-list--ul">
+      <li>Move it from <span class="mono">Development/school/</span> or <span class="mono">learning/</span> into <span class="mono">personal/</span></li>
+      <li>Add a README explaining what it does and how to run it</li>
+      <li>Put it on GitHub</li>
+    </ul>
+    <div class="badges"><span class="wa-badge wa-badge--lilac">ADVANCED</span></div>
+    <p class="mut">This matters most at internship time. Work sitting in a term subfolder is work nobody will look at.</p>
+
+    <div class="pn"><div class="k">HOW I DO IT</div><p>What helped me most was checking my own projects the way a stranger would: download it into an empty folder and try to run it using only the README. If that works, it's set up properly.</p></div>
+
+    <h2 class="h2">Key takeaways</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>A folder is a location. A project is a folder containing everything needed to run.</li>
+      <li>"Open the project" means open the folder, not a file.</li>
+      <li>Git tracks changes locally. GitHub stores that history online.</li>
+      <li>Match structure to what the project is for. Small things stay small.</li>
+    </ul>
+
+    <div class="closer"><div class="k">UNDERSTAND</div><p>Open one of your existing coding folders as a folder in your editor, and see what appears that didn't before.</p></div>
+  </div></div></div>
+
+  <nav class="pnrow" aria-label="Section navigation">
+    <a class="pnav" data-route="02-school" href="#/02-school"><span class="pl">Previous</span>02 · Organizing Your School Files</a>
+    <a class="pnav next" data-route="04-calendar" href="#/04-calendar"><span class="pl">Next</span>04 · Your Calendar and Tasks</a>
+  </nav>
+</section>
+
+<!-- ============================ 04 · CALENDAR ============================ -->
+<section class="view" data-route="04-calendar" role="tabpanel" aria-label="04 Your calendar and tasks">
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>04 · your calendar and tasks</span><span class="lvl">BUILDING</span></div>
+    <h1 class="h1">Your Calendar and Tasks</h1>
+    <p class="cover"><b>What this section covers:</b> Setting up Google Calendar for your class schedule, deadlines, and everything else you're responsible for.</p>
+    <p class="cover"><b>Why it matters:</b> A printed schedule or a screenshot of your Canvas calendar tells you what's happening. It doesn't remind you, hold your meeting links, or update when something changes.</p>
+
+    <h2 class="h2">Why a calendar app instead of a printed schedule</h2>
+    <div class="badges"><span class="wa-badge wa-badge--ember">TOOL-SPECIFIC</span></div>
+    <ul class="wa-list wa-list--ul">
+      <li><b>It reminds you.</b> Notifications on your phone before class or a deadline.</li>
+      <li><b>It holds the details.</b> Zoom or Meet links, room numbers, LMS links, professor names — inside the event, one tap away.</li>
+      <li><b>It updates.</b> A room change or moved deadline is one edit, not a reprint.</li>
+      <li><b>It's searchable.</b> Find when an exam was, months later.</li>
+      <li><b>It's on every device.</b> Phone, laptop, browser.</li>
+      <li><b>It repeats.</b> Set your class schedule once for the whole term.</li>
+    </ul>
+    <p class="mut">We'll use Google Calendar because it's free with any Google account and includes Tasks. Any calendar app with reminders works the same way.</p>
+
+    <h2 class="h2">Step 1 — Make separate calendars</h2>
+    <p>Instead of putting everything in one calendar, create a few and give each its own color.</p>
+    <div class="badges"><span class="wa-badge wa-badge--amber">RECOMMENDED</span></div>
+    <ul class="wa-list wa-list--ul">
+      <li><b>Classes</b> — your recurring schedule</li>
+      <li><b>Deadlines</b> — submissions, exams, defenses</li>
+      <li><b>Org and events</b> — meetings, activities</li>
+      <li><b>Personal</b> — work, family, rest</li>
+    </ul>
+    <div class="calweek" aria-label="A week view with four color-separated calendars">
+      <div class="calday"><div class="dh">Mon</div><div class="calev cls">Algorithms 9AM</div><div class="calev per">Gym 6PM</div></div>
+      <div class="calday"><div class="dh">Tue</div><div class="calev cls">Software Eng 1PM</div><div class="calev ddl">Lab due</div></div>
+      <div class="calday"><div class="dh">Wed</div><div class="calev cls">Algorithms 9AM</div><div class="calev org">CS Society 5PM</div></div>
+      <div class="calday"><div class="dh">Thu</div><div class="calev cls">Rizal 10AM</div><div class="calev per">Practice 7PM</div></div>
+      <div class="calday"><div class="dh">Fri</div><div class="calev cls">Software Eng 1PM</div><div class="calev ddl">Quiz</div></div>
+    </div>
+    <p class="mut"><b>Why separate:</b> you can hide a whole calendar when you don't need it, and colors tell you what kind of day you're looking at before you read anything.</p>
+
+    <h2 class="h2">Step 2 — Add your class schedule</h2>
+    <p>Add each class once as a <b>repeating event</b> for the whole term. Click through the fields to build one.</p>
+    <div data-component="event">
+      <div class="ev">
+        <div class="evh">CS 3202 — Algorithms and Complexity<span class="tm">MWF · 9:00–10:00 · repeats to end of term</span></div>
+        <button class="evr"><span class="fl">Location</span>Room number, or building and floor<span class="why">So you never wander looking for the room on day one.</span></button>
+        <button class="evr vid"><span class="fl">Video link</span>The Zoom or Meet link, if online or hybrid<span class="why">The single biggest reason to do this — stop searching your email five minutes before class.</span></button>
+        <button class="evr"><span class="fl">Description</span>Professor's name, section, LMS link, consultation hours<span class="why">Everything about the class in one place you already open daily.</span></button>
+        <button class="evr"><span class="fl">Notification</span>30 minutes before, or enough time to get there<span class="why">The reminder is the whole point of using an app.</span></button>
+      </div>
+      <div class="ctl"><button class="btn primary" data-ev-next>Add details</button><button class="btn" data-ev-reset>Reset</button></div>
+    </div>
+
+    <h2 class="h2">Step 3 — Set up Tasks</h2>
+    <p>Calendar events are for things happening at a set time. Tasks are for work that needs doing. Google Tasks lists appear inside Calendar, and each list gets a color that shows on the day a task is due.</p>
+    <p class="mut"><b>Suggested lists:</b> Assignments · Study and practice · Exams and quizzes · Group projects · Org work · Personal.</p>
+    <div class="note"><span class="nl">NOTE</span>Tasks has no labels or tags, so lists are how you separate categories. Keep the number small — six is plenty.</div>
+
+    <h2 class="h2">Step 4 — What actually goes in tasks</h2>
+    <p>Add things the day you hear about them, not the day they're due.</p>
+    <div class="tblwrap"><table class="tbl">
+      <thead><tr><th>Task</th><th>Give it a date</th></tr></thead>
+      <tbody>
+        <tr><td>Assignment</td><td>Two or three earlier dates, one per step</td></tr>
+        <tr><td>Practice coding</td><td>A recurring slot, e.g. Tue and Thu evenings</td></tr>
+        <tr><td>Quiz or exam review</td><td>Start three or four days ahead</td></tr>
+        <tr><td>Group project work</td><td>Your own part, with your own date</td></tr>
+        <tr><td>Org work</td><td>Whatever you committed to</td></tr>
+        <tr><td>Rest and self-care</td><td>Yes, actually schedule it</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Break big things into steps.</b> An assignment due in two weeks becomes: outline it, build it, review it. Three tasks with three dates.</p>
+    <div class="note"><span class="nl">NOTE</span>The due date shouldn't be the first time your system hears about an assignment.</div>
+
+    <h2 class="h2">Step 5 — Notifications</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>Classes — 30 minutes before</li>
+      <li>Deadlines — one day before <i>and</i> two hours before</li>
+      <li>Exams — three days before</li>
+      <li>Turn off anything you've started ignoring. Notifications you dismiss without reading are worse than none.</li>
+    </ul>
+
+    <div class="pn"><div class="k">HOW I DO IT</div><p>The change that mattered most for me wasn't the color coding — it was putting the meeting link inside the event. Everything else is organization. That one is time you get back every single day.</p></div>
+
+    <h2 class="h2">Key takeaways</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>Separate calendars with distinct colors: classes, deadlines, org, personal.</li>
+      <li>Add classes once as repeating events, with room, link, professor, and LMS link inside.</li>
+      <li>Use Tasks lists for work; add things the day you hear about them.</li>
+      <li>Break large assignments into steps with their own dates.</li>
+      <li>Set reminders you'll actually respond to.</li>
+    </ul>
+
+    <div class="closer"><div class="k">DO</div><p>Add this term's full class schedule as repeating events, with the room and meeting link in each one.</p></div>
+  </div></div></div>
+
+  <nav class="pnrow" aria-label="Section navigation">
+    <a class="pnav" data-route="03-projects" href="#/03-projects"><span class="pl">Previous</span>03 · Your Coding Projects</a>
+    <a class="pnav next" data-route="05-protecting" href="#/05-protecting"><span class="pl">Next</span>05 · Protecting Your Work</a>
+  </nav>
+</section>
+
+<!-- ============================ 05 · PROTECTING ============================ -->
+<section class="view" data-route="05-protecting" role="tabpanel" aria-label="05 Protecting your work">
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>05 · protecting your work</span><span class="lvl">BUILDING</span></div>
+    <h1 class="h1">Protecting Your Work</h1>
+    <p class="cover"><b>What this section covers:</b> Password management, backing up your files, and keeping passwords out of your code.</p>
+    <p class="cover"><b>Why it matters:</b> These are one-afternoon setups that prevent problems which are difficult or impossible to reverse.</p>
+
+    <h2 class="h2">Use a password manager</h2>
+    <div class="badges"><span class="wa-badge wa-badge--amber">RECOMMENDED</span></div>
+    <p>Reusing one password across accounts means one leak exposes all of them. A password manager creates and remembers a different password for every account, so you only memorize one.</p>
+    <p class="mut"><b>Bitwarden</b> is free, works on every platform, and is what I use. 1Password and Proton Pass work the same way.</p>
+    <ol class="wa-list wa-list--ol">
+      <li>Create the account with a strong master password you can remember</li>
+      <li>Save the recovery information somewhere offline</li>
+      <li>Install the browser extension and the phone app</li>
+      <li>Change your most important passwords first: email, GitHub, school portal, bank</li>
+    </ol>
+    <p><b>Turn on two-factor authentication</b> for email, GitHub, and your school portal. Save the recovery codes somewhere that isn't the laptop they protect.</p>
+
+    <h2 class="h2">Your school email</h2>
+    <p>Your school email stops working after you graduate, and anything using it as the recovery address becomes hard to recover.</p>
+    <ul class="wa-list wa-list--ul">
+      <li>Create a personal professional email now</li>
+      <li>Use it for GitHub, LinkedIn, your portfolio, and anything you keep after school</li>
+      <li>Keep the school email for school</li>
+    </ul>
+    <div class="note"><span class="nl">NOTE</span>Ten minutes now, a real problem later.</div>
+
+    <h2 class="h2">Backing up your files</h2>
+    <p class="mut">Three different jobs. Click a destination to focus it.</p>
+    <div data-component="dests">
+      <div class="dests">
+        <div class="dest" data-dest="laptop">
+          <div class="dt">Your laptop</div>
+          <div class="destitem">The copy you work on</div>
+        </div>
+        <div class="dest" data-dest="cloud">
+          <div class="dt">Cloud storage</div>
+          <div class="destitem yes">Studies/</div>
+          <div class="destitem yes">Upskilling/</div>
+          <div class="destitem yes">Career/</div>
+          <div class="destitem no">Development/ — never sync</div>
+        </div>
+        <div class="dest" data-dest="github">
+          <div class="dt">GitHub</div>
+          <div class="destitem">The history of your code</div>
+        </div>
+      </div>
+      <div class="ctl"><button class="btn" data-dest-reset>Reset</button></div>
+    </div>
+    <p><b>Do not sync <span class="mono">Development/</span>.</b> Sync services conflict with the files Git creates and can corrupt a project. Code is backed up by pushing it to GitHub, which does the job properly.</p>
+    <div class="note"><span class="nl">NOTE</span>If your only copy of something is on one device, it isn't backed up.</div>
+
+    <h2 class="h2">Keys and passwords inside code</h2>
+    <p>When a project connects to another service, that service gives you a <b>key</b> — effectively a password for your app. Click through what usually goes wrong.</p>
+    <div data-component="steps">
+      <div class="steppanel">
+        <div class="panel"><pre class="code">API_KEY = <span class="bad">"sk_live_51H8xY2..."</span>  <span class="cm"># pasted straight in</span></pre></div>
+        <p>Step 1 — The key gets pasted into the code and everything works.</p>
+      </div>
+      <div class="steppanel">
+        <div class="panel"><pre class="code"><span class="cm"># pushed to a public repo</span>
+API_KEY = <span class="bad">"sk_live_51H8xY2..."</span>  <span class="cm"># now visible to everyone</span></pre></div>
+        <p>Step 2 — The project goes onto GitHub with the key inside it. Public repositories are scanned automatically for keys.</p>
+      </div>
+      <div class="steppanel">
+        <div class="panel"><pre class="code"><span class="cm"># current file — key removed</span>
+API_KEY = os.environ["API_KEY"]
+<span class="cm"># ...but the old commit still shows: </span><span class="bad">sk_live_51H8xY2...</span></pre></div>
+        <p>Step 3 — Deleting the line later doesn't remove it. Git keeps the history. <span class="mut">This is the one nobody knows.</span></p>
+      </div>
+      <div class="steppanel">
+        <div class="panel"><pre class="code"><span class="cm"># .env  (stays on your computer)</span>
+API_KEY=sk_live_51H8xY2...
+
+<span class="cm"># .gitignore</span>
+.env
+
+<span class="cm"># .env.example  (safe to commit)</span>
+API_KEY=</pre></div>
+        <p>Step 4 — The corrected setup: keys in <span class="mono">.env</span>, <span class="mono">.env</span> listed in <span class="mono">.gitignore</span>, a blank <span class="mono">.env.example</span> for teammates.</p>
+      </div>
+      <div class="ctl"><button class="btn" data-step-back>Back</button><button class="btn primary" data-step-next>Next</button><button class="btn" data-step-reset>Reset</button><span class="ctr" data-step-count></span></div>
+    </div>
+    <div class="note"><span class="nl">NOTE</span><span class="mono">.gitignore</span> is also where generated folders like <span class="mono">node_modules</span> go. They're large, rebuildable, and don't belong in a repository.</div>
+
+    <h2 class="h2">Key takeaways</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>Use a password manager and a different password everywhere.</li>
+      <li>Two-factor authentication on email, GitHub, and school portal.</li>
+      <li>Create a personal professional email before you graduate.</li>
+      <li>Sync Studies, Upskilling, and Career to the cloud. Never sync Development.</li>
+      <li>Code is backed up on GitHub. Keys go in <span class="mono">.env</span>, never in the code.</li>
+    </ul>
+
+    <div class="closer"><div class="k">DO</div><p>Set up a password manager today and change your email password first.</p></div>
+  </div></div></div>
+
+  <nav class="pnrow" aria-label="Section navigation">
+    <a class="pnav" data-route="04-calendar" href="#/04-calendar"><span class="pl">Previous</span>04 · Your Calendar and Tasks</a>
+    <a class="pnav next" data-route="06-notion" href="#/06-notion"><span class="pl">Next</span>06 · Notion for Notes and School</a>
+  </nav>
+</section>
+
+<!-- ============================ 06 · NOTION ============================ -->
+<section class="view" data-route="06-notion" role="tabpanel" aria-label="06 Notion for notes and school">
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>06 · notion for notes and school</span><span class="lvl">GOING DEEPER</span></div>
+    <h1 class="h1">Notion for Notes and School Organization</h1>
+    <p class="cover"><b>What this section covers:</b> Using Notion as a place to keep notes, track subjects, and see what's coming — with a template you can copy.</p>
+    <p class="cover"><b>Why it matters:</b> Your folders hold files and your calendar holds time. Notes and progress need somewhere too, and keeping them in scattered documents makes them hard to review before an exam.</p>
+    <div class="badges"><span class="wa-badge wa-badge--rose">HOW I DO IT</span></div>
+
+    <h2 class="h2">What a dashboard is for</h2>
+    <p>A dashboard shows you what needs attention. It doesn't store your files — your folders do that.</p>
+    <div class="grid2">
+      <div class="panel"><b>What belongs in it</b><ul class="wa-list wa-list--ul mut"><li>Notes per subject</li><li>Current deadlines</li><li>Links to your LMS, class recordings, and drive folders</li><li>Progress on projects and courses</li></ul></div>
+      <div class="panel"><b>What doesn't</b><ul class="wa-list wa-list--ul mut"><li>Files. Link to them or keep them in your folders.</li><li>Anything you already track in your calendar.</li></ul></div>
+    </div>
+
+    <h2 class="h2">The template</h2>
+    <div class="ndash" aria-label="A Notion-style dashboard mockup">
+      <div class="ncard"><div class="nh">Algorithms</div><div class="nrow">Lecture notes</div><div class="nrow">LMS link</div><div class="nrow">Reviewer</div></div>
+      <div class="ncard"><div class="nh">Software Eng</div><div class="nrow">Project board</div><div class="nrow">Meeting notes</div><div class="nrow">Repo link</div></div>
+      <div class="ncard"><div class="nh">Deadlines</div><div class="nrow">Lab · Aug 18</div><div class="nrow">Quiz · Aug 22</div><div class="nrow">Defense · Sep 3</div></div>
+      <div class="ncard"><div class="nh">Term overview</div><div class="nrow">6 subjects</div><div class="nrow">2 certificates</div><div class="nrow">1 capstone</div></div>
+    </div>
+    <p class="mut">The template includes: a page per subject with notes and links · a term overview · a simple deadline list · a place for course and certificate tracking.</p>
+    <p><a href="#/toolkit" data-route="toolkit">Copy the template in the Toolkit →</a></p>
+    <p class="mut"><b>How to use it:</b> duplicate it, rename the subjects to yours, and use it for one term before changing anything.</p>
+
+    <h2 class="h2">Keeping it maintainable</h2>
+    <div class="badges"><span class="wa-badge wa-badge--amber">RECOMMENDED</span></div>
+    <ul class="wa-list wa-list--ul">
+      <li>Start with fewer pages than you think you need</li>
+      <li>Add something only when you've missed it twice</li>
+      <li>If keeping it updated takes longer than the schoolwork it tracks, simplify it</li>
+    </ul>
+    <div class="note"><span class="nl">NOTE</span>Systems with many linked databases usually get abandoned within a few weeks. A simple one you actually open beats a detailed one you don't.</div>
+
+    <h2 class="h2">Other options</h2>
+    <ul class="wa-list wa-list--ul">
+      <li><b>Obsidian</b> — works offline, files stay on your computer, better for long-term note-taking. Different enough that it deserves its own session.</li>
+      <li><b>OneNote, Google Docs, or a notebook</b> — all fine. The tool matters far less than using one consistently.</li>
+    </ul>
+
+    <h2 class="h2">Key takeaways</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>A dashboard surfaces what needs attention; it doesn't store files.</li>
+      <li>Copy the template, rename the subjects, use it for a term before changing it.</li>
+      <li>Start small and add only what you've missed.</li>
+      <li>Obsidian and OneNote work too. Consistency matters more than the app.</li>
+    </ul>
+
+    <div class="closer"><div class="k">COPY</div><p>Duplicate the Notion template and add this term's subjects.</p></div>
+  </div></div></div>
+
+  <nav class="pnrow" aria-label="Section navigation">
+    <a class="pnav" data-route="05-protecting" href="#/05-protecting"><span class="pl">Previous</span>05 · Protecting Your Work</a>
+    <a class="pnav next" data-route="07-workspace" href="#/07-workspace"><span class="pl">Next</span>07 · Setting Up Your Coding Workspace</a>
+  </nav>
+</section>
+
+<!-- ============================ 07 · WORKSPACE ============================ -->
+<section class="view" data-route="07-workspace" role="tabpanel" aria-label="07 Setting up your coding workspace">
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>07 · setting up your coding workspace</span><span class="lvl">GOING DEEPER</span></div>
+    <h1 class="h1">Setting Up Your Coding Workspace</h1>
+    <p class="cover"><b>What this section covers:</b> What a coding workspace is, and what to install so you can actually work.</p>
+    <p class="cover"><b>Why it matters:</b> "Set up your workspace" gets said a lot without anyone explaining what it means. It's your editor, your tools, and your project folder working together.</p>
+
+    <h2 class="h2">What a coding workspace is</h2>
+    <p>Three things, not one:</p>
+    <ol class="wa-list wa-list--ol">
+      <li><b>Where your code lives</b> — the project folder inside <span class="mono">Development/</span></li>
+      <li><b>What you open it with</b> — your editor, with the folder open, not a file</li>
+      <li><b>What's installed</b> — the tools that let the code run</li>
+    </ol>
+    <p class="mut">Section 03 covered the first two. This section is the third.</p>
+
+    <h2 class="h2">What to install, by job</h2>
+    <div class="badges"><span class="wa-badge wa-badge--amber">RECOMMENDED</span></div>
+    <p>Install things because you need them, not because a list says every developer has them. Filter by when.</p>
+    <div data-component="filter" data-default="now">
+      <div class="chiprow">
+        <button class="chip" data-filter="now">Now</button>
+        <button class="chip" data-filter="soon">Soon</button>
+        <button class="chip" data-filter="later">Later</button>
+        <button class="chip" data-filter="all">All</button>
+      </div>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>Job</th><th>Tool</th><th>When</th></tr></thead>
+        <tbody>
+          <tr data-when="now"><td>Write code</td><td class="mono">VS Code</td><td>Now</td></tr>
+          <tr data-when="now"><td>Run your language</td><td class="mono">Python, Node.js, Java</td><td>Now</td></tr>
+          <tr data-when="now"><td>Track changes</td><td class="mono">Git</td><td>Now</td></tr>
+          <tr data-when="now"><td>Type commands</td><td class="mono">Terminal (in VS Code)</td><td>Now</td></tr>
+          <tr data-when="soon"><td>Install packages</td><td class="mono">pip, npm</td><td>Soon</td></tr>
+          <tr data-when="soon"><td>Format code</td><td class="mono">Prettier or Black</td><td>Soon</td></tr>
+          <tr data-when="soon"><td>Catch mistakes</td><td class="mono">ESLint, Pylint</td><td>Soon</td></tr>
+          <tr data-when="later"><td>Test APIs</td><td class="mono">Postman or Thunder Client</td><td>Later</td></tr>
+          <tr data-when="later"><td>Work with databases</td><td class="mono">DBeaver, TablePlus</td><td>Later</td></tr>
+          <tr data-when="later"><td>Containers</td><td class="mono">Docker</td><td>Later</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <div class="note"><span class="nl">NOTE</span>Everything in the "Now" row is free and takes one afternoon.</div>
+
+    <h2 class="h2">Extensions</h2>
+    <div class="badges"><span class="wa-badge wa-badge--ember">TOOL-SPECIFIC</span></div>
+    <p>You don't need twenty-five VS Code extensions.</p>
+    <p class="mut"><b>Worth having early:</b> the language extension for what you're learning (Python, or the JavaScript pack) · a formatter (Prettier) · GitLens, if you want a clearer view of your project's history.</p>
+    <p><b>Add anything else only when you hit a specific problem it solves.</b> Extensions slow the editor down and most of them you'll never open.</p>
+
+    <h2 class="h2">Keeping the workspace usable</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>Close projects you're not working on. One project open at a time.</li>
+      <li>Keep the terminal open at the project folder rather than typing <span class="mono">cd</span> repeatedly.</li>
+      <li>Delete leftover test files — <span class="mono">test.py</span>, <span class="mono">untitled1.js</span> — as you go.</li>
+      <li>If your editor is slow, it's usually extensions or a synced folder.</li>
+    </ul>
+    <div class="shot">
+      <div class="vsc" aria-label="A VS Code window annotated with Explorer, Editor, Terminal, Source Control and Extensions">
+        <div class="vtop"><span>schedule-tracker</span></div>
+        <div class="vmain">
+          <div class="vside"><span class="hot" style="top:6px;left:6px">Explorer</span><span class="hot" style="bottom:6px;left:6px">Source Control</span><br>src/<br>README.md<br>requirements.txt<br><br><br>⑂ main</div>
+          <div class="vedit"><span class="hot" style="top:6px;left:6px">Editor</span><span class="hot" style="top:6px;right:6px">Extensions</span><br><br>1  import calendar</div>
+        </div>
+        <div class="vterm"><span class="hot" style="top:-2px;left:6px">Terminal</span><br>$ python src/main.py</div>
+      </div>
+      <div class="cap">One project open, four regions doing four jobs: Explorer, Editor, Terminal, Source Control.</div>
+    </div>
+
+    <h2 class="h2">Key takeaways</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>A workspace is your project folder, your editor with the folder open, and your installed tools.</li>
+      <li>Install the "Now" row first. It's one afternoon and it's free.</li>
+      <li>Add tools and extensions when a problem needs them, not in advance.</li>
+    </ul>
+
+    <div class="closer"><div class="k">DO</div><p>Check you have the four essentials installed: editor, your language, Git, and a terminal you can reach.</p></div>
+  </div></div></div>
+
+  <nav class="pnrow" aria-label="Section navigation">
+    <a class="pnav" data-route="06-notion" href="#/06-notion"><span class="pl">Previous</span>06 · Notion for Notes and School</a>
+    <a class="pnav next" data-route="08-reset" href="#/08-reset"><span class="pl">Next</span>08 · The 20-Minute Reset</a>
+  </nav>
+</section>
+
+<!-- ============================ 08 · RESET ============================ -->
+<section class="view" data-route="08-reset" role="tabpanel" aria-label="08 The 20-minute reset">
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>08 · the 20-minute reset</span><span class="lvl">FOUNDATION</span></div>
+    <h1 class="h1">The 20-Minute Reset</h1>
+    <p class="cover"><b>What this section covers:</b> A short routine for getting back on track when things have drifted.</p>
+    <p class="cover"><b>Why it matters:</b> Every system gets disorganized during exams and deadline weeks. That's expected. What matters is a way back that doesn't require rebuilding anything.</p>
+
+    <h2 class="h2">When to run it</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>End of the week — pick a day and keep it</li>
+      <li>After a heavy deadline week</li>
+      <li>Before a new term starts</li>
+    </ul>
+    <p class="mut">On a schedule, not when you feel behind.</p>
+
+    <h2 class="h2">The checklist</h2>
+    <p class="mut">Checkable, and your progress is saved in this browser. Click anywhere on a row.</p>
+    <div data-component="checklist" data-key="reset">
+      <div class="ctl">
+        <button class="btn" data-ck-reset>Reset all</button>
+        <button class="btn" data-ck-copy>Copy as text</button>
+        <span class="ckprog" data-ck-prog></span>
+      </div>
+      <div class="ckgroup"><div class="ckh">Files</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Empty or file everything in Downloads</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Clear the Desktop</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Put loose documents into the right term and subject folder</span></button>
+      </div>
+      <div class="ckgroup"><div class="ckh">School</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Open your LMS and check what's coming</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Add new deadlines to your calendar</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Look at the week ahead</span></button>
+      </div>
+      <div class="ckgroup"><div class="ckh">Development</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Commit and push anything you've been working on</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Delete leftover test files</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Move finished projects to archive/</span></button>
+      </div>
+      <div class="ckgroup"><div class="ckh">Upskilling</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">File anything new you saved</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Delete resources you won't realistically use</span></button>
+      </div>
+      <div class="ckgroup"><div class="ckh">Accounts and backups</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Confirm your cloud sync is actually running</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Check nothing important exists only on your laptop</span></button>
+      </div>
+    </div>
+    <div class="note"><span class="nl">NOTE</span>Twenty minutes, not an afternoon. If it's taking longer, you're reorganizing rather than resetting.</div>
+
+    <h2 class="h2">Key takeaways</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>Run it weekly, on a set day.</li>
+      <li>It's recovery, not maintenance.</li>
+      <li>Every item is a small action, not a project.</li>
+    </ul>
+
+    <div class="closer"><div class="k">COPY</div><p>The checklist is in the toolkit. Save it somewhere you'll see it weekly.</p></div>
+
+    <h2 class="h2">Closing</h2>
+    <p>You now have four folders, a structure for school files, an understanding of how coding projects work, a calendar that reminds you, and a routine for getting back on track.</p>
+    <p>You don't need to set all of it up today. Start with the four folders and this term's subjects. Add the rest as you need it.</p>
+    <div class="anchor">Your system doesn't need to stay perfect. It just needs to be easy to return to.</div>
+  </div></div></div>
+
+  <nav class="pnrow" aria-label="Section navigation">
+    <a class="pnav" data-route="07-workspace" href="#/07-workspace"><span class="pl">Previous</span>07 · Setting Up Your Coding Workspace</a>
+    <a class="pnav next" data-route="09-bonus" href="#/09-bonus"><span class="pl">Next</span>09 · Bonus — Group Projects</a>
+  </nav>
+</section>
+
+<!-- ============================ 09 · BONUS ============================ -->
+<section class="view" data-route="09-bonus" role="tabpanel" aria-label="09 Bonus group projects">
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>09 · bonus — group projects</span><span class="lvl">GOING DEEPER</span></div>
+    <h1 class="h1">Group Projects and Shared Repositories</h1>
+    <div class="badges"><span class="wa-badge wa-badge--lilac">ADVANCED</span> <span class="mut">Reference material. Covered live only if there's time.</span></div>
+    <p class="cover"><b>What this section covers:</b> Setting up a group project so everyone can work on it.</p>
+    <p class="cover"><b>Why it matters:</b> Most group project problems are setup problems, and they're much cheaper to fix in week one than the week before defense.</p>
+
+    <h2 class="h2">What usually goes wrong</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>The working version is on one person's laptop and they're unreachable</li>
+      <li>The same file gets passed around in a group chat under different names</li>
+      <li>A teammate can't get the project running, doesn't want to ask twice, and stops contributing</li>
+      <li>The account holding everything belongs to someone who stops responding</li>
+    </ul>
+
+    <h2 class="h2">Setting it up</h2>
+    <p>On day one, before anyone writes code:</p>
+    <ol class="wa-list wa-list--ol">
+      <li><b>One repository.</b> Everyone gets access immediately.</li>
+      <li><b>One person listed as owner</b>, but everyone has full access, so nobody is blocked.</li>
+      <li><b>Everyone downloads it and runs it once.</b> Fix problems now, while they're small.</li>
+      <li><b>Write the README on day one.</b> It's how a teammate gets started without messaging you.</li>
+    </ol>
+    <div class="note"><span class="nl">NOTE</span>The teammate who can't get it running usually won't say so twice. Checking on day one prevents most uneven-workload problems.</div>
+
+    <h2 class="h2">Where a capstone lives</h2>
+    <div class="grid2">
+      <div class="dest"><div class="dt">Development</div><div class="destitem yes">The code, in the repository</div></div>
+      <div class="dest"><div class="dt">Studies</div><div class="destitem yes">Requirements, forms, adviser feedback, defense slides</div></div>
+    </div>
+    <div class="casc"><p><span class="mono">pointer.txt</span> in Studies <span class="a">→ names where the code is, with the link</span></p></div>
+    <p class="mut">Same split as any assignment with both a program and a written component.</p>
+
+    <h2 class="h2">Key takeaways</h2>
+    <ul class="wa-list wa-list--ul">
+      <li>Set up the shared repository on day one with access for everyone.</li>
+      <li>Confirm every teammate can run it before real work starts.</li>
+      <li>Capstone code goes in Development; paperwork goes in Studies, linked by a note.</li>
+    </ul>
+  </div></div></div>
+
+  <nav class="pnrow" aria-label="Section navigation">
+    <a class="pnav" data-route="08-reset" href="#/08-reset"><span class="pl">Previous</span>08 · The 20-Minute Reset</a>
+    <a class="pnav next" data-route="toolkit" href="#/toolkit"><span class="pl">Next</span>The Toolkit →</a>
+  </nav>
+</section>
+
+<!-- ============================ TOOLKIT ============================ -->
+<section class="view" data-route="toolkit" role="tabpanel" aria-label="Toolkit library">
+  <div class="dochead">
+    <div class="fieldguide">Library</div>
+    <h1 class="title">The Toolkit</h1>
+    <p class="lede">Everything reusable, in one place — templates, checklists, prompts, a glossary, and tools. Not a lesson. Grab what you need and go. Every item has a copy button.</p>
+  </div>
+
+  <!-- TEMPLATES -->
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>templates</span></div>
+    <h2 class="h2">Folder structures &amp; starters</h2>
+
+    <h3 class="h3">Studies hierarchy — minimal</h3>
+    <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-min">Copy</button></div>
+<pre class="tree" id="t-min">Studies/
+└── [Your Program]/
+    └── Courses/
+        └── Y1T1/
+            ├── [Subject 1]/
+            ├── [Subject 2]/
+            └── [Subject 3]/</pre></div>
+
+    <h3 class="h3">Studies hierarchy — standard <span class="wa-badge wa-badge--amber">RECOMMENDED</span></h3>
+    <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-std">Copy</button></div>
+<pre class="tree" id="t-std">Studies/
+└── BS Computer Science/
+    ├── Courses/
+    │   ├── Y1T1/
+    │   ├── Y1T2/
+    │   └── Y2T1/
+    │       ├── Algorithms and Complexity/
+    │       ├── Life and Works of Rizal/
+    │       └── Software Engineering/
+    ├── Curriculum/
+    ├── Grade Slips/
+    ├── Graduation Requirements/
+    └── Organizations/</pre></div>
+
+    <h3 class="h3">Studies hierarchy — detailed</h3>
+    <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-det">Copy</button></div>
+<pre class="tree" id="t-det">Studies/
+└── BS Computer Science/
+    ├── Courses/
+    │   └── Y3T2/
+    │       └── Software Engineering/
+    │           ├── assignments/
+    │           ├── lectures/
+    │           └── exams/
+    ├── Curriculum/
+    ├── Grade Slips/
+    ├── Graduation Requirements/
+    ├── Thesis/
+    │   ├── proposal/
+    │   ├── adviser-feedback/
+    │   └── defense/
+    ├── OJT/
+    ├── Scholarship and Aid/
+    └── Organizations/</pre></div>
+    <div class="note"><span class="nl">NOTE</span>Thesis <i>code</i> goes in <span class="mono">Development/</span>, not here. This folder holds the documents.</div>
+
+    <h3 class="h3">Development hierarchy</h3>
+    <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-dev">Copy</button></div>
+<pre class="tree" id="t-dev">Development/
+├── school/
+│   ├── Y2T1/
+│   └── Y2T2/
+├── learning/
+├── personal/
+├── hackathons/
+├── experiments/
+└── archive/</pre></div>
+
+    <h3 class="h3">Upskilling — by topic <span class="wa-badge wa-badge--amber">RECOMMENDED</span></h3>
+    <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-uptop">Copy</button></div>
+<pre class="tree" id="t-uptop">Upskilling/
+├── web-development/
+├── cloud/
+├── ai-and-data/
+├── design/
+├── certificates/
+└── resources/</pre></div>
+
+    <h3 class="h3">Upskilling — by platform</h3>
+    <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-upplat">Copy</button></div>
+<pre class="tree" id="t-upplat">Upskilling/
+├── coursera/
+├── udemy/
+├── youtube/
+├── freecodecamp/
+└── certificates/</pre></div>
+
+    <h3 class="h3">Career hierarchy</h3>
+    <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-career">Copy</button></div>
+<pre class="tree" id="t-career">Career/
+├── resume/
+├── certificates/
+├── portfolio/
+├── applications/
+│   └── [company-name]/
+└── interview-prep/</pre></div>
+
+    <h3 class="h3">Project starter structure</h3>
+    <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-proj">Copy</button></div>
+<pre class="tree" id="t-proj">project-name/
+├── src/
+├── tests/
+├── docs/
+├── README.md
+├── .gitignore
+├── .env.example
+└── requirements.txt        (or package.json)</pre></div>
+    <p class="mut"><b>What's actually required:</b> <span class="mono">README.md</span>, a dependency file, and <span class="mono">.gitignore</span>. Everything else depends on the project.</p>
+
+    <h3 class="h3">README template</h3>
+    <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-readme">Copy</button></div>
+<pre class="tree" id="t-readme"># Project Name
+
+One sentence on what this does.
+
+## What it does
+Two or three sentences. What problem it solves, or what
+it was built for.
+
+## Requirements
+- Python 3.11 (or Node 20, etc.)
+- Anything else that must be installed first
+
+## Setup
+1. Clone or download this repository
+2. Install dependencies:
+   pip install -r requirements.txt
+3. Copy .env.example to .env and fill in your values
+4. Run it:
+   python main.py
+
+## Notes
+Anything a person would trip over. Known issues, things
+that aren't finished.
+
+## Built with
+List the main tools or frameworks.</pre></div>
+    <p class="mut"><b>The test:</b> download your own project into an empty folder and set it up using only the README. If that works, it's done.</p>
+
+    <h3 class="h3">.gitignore starters</h3>
+    <div class="grid2">
+      <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-gi-py">Copy</button></div><b class="mono">Python</b>
+<pre class="tree" id="t-gi-py">__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+.DS_Store</pre></div>
+      <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-gi-node">Copy</button></div><b class="mono">Node / JavaScript</b>
+<pre class="tree" id="t-gi-node">node_modules/
+dist/
+build/
+.env
+.DS_Store</pre></div>
+      <div class="panel"><div class="cpy"><button class="copybtn" data-copy="#t-gi-java">Copy</button></div><b class="mono">Java</b>
+<pre class="tree" id="t-gi-java">*.class
+target/
+build/
+.env
+.DS_Store</pre></div>
+    </div>
+    <div class="note"><span class="nl">NOTE</span>Always include <span class="mono">.env</span>. It's the file holding your keys.</div>
+  </div></div></div>
+
+  <!-- CHECKLISTS -->
+  <div class="sec"><div class="band alt"><div class="in">
+    <div class="eyebrow"><span>checklists</span></div>
+    <h2 class="h2">Five recurring routines</h2>
+
+    <h3 class="h3">Start of term</h3>
+    <div data-component="checklist" data-key="tk-term">
+      <div class="ctl"><button class="btn" data-ck-reset>Reset</button><button class="btn" data-ck-copy>Copy</button><span class="ckprog" data-ck-prog></span></div>
+      <div class="ckgroup"><div class="ckh">Files</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Create this term's folder in Studies/Courses/</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Add a folder per subject</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Create this term's folder in Development/school/</span></button>
+      </div>
+      <div class="ckgroup"><div class="ckh">Calendar</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Add each class as a repeating event for the whole term</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Put room, professor, meeting link, and LMS link in each event</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Add known exam and submission dates</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Set notifications</span></button>
+      </div>
+      <div class="ckgroup"><div class="ckh">Accounts and access</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Confirm LMS access for every subject</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Bookmark each subject's LMS page</span></button>
+      </div>
+      <div class="ckgroup"><div class="ckh">Notes</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Add this term's subjects to your notes tool</span></button>
+      </div>
+    </div>
+
+    <h3 class="h3">New project</h3>
+    <div data-component="checklist" data-key="tk-newproj">
+      <div class="ctl"><button class="btn" data-ck-reset>Reset</button><button class="btn" data-ck-copy>Copy</button><span class="ckprog" data-ck-prog></span></div>
+      <div class="ckgroup"><div class="ckh">Setup</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Give it a clear name — lowercase, dashes, no spaces</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Decide where it belongs in Development/</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Create the folder</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Open the folder in your editor, not a file</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Initialize Git</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Add a .gitignore before your first commit</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Create README.md</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Create the dependency file</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">If it uses keys, create .env and .env.example</span></button>
+      </div>
+    </div>
+
+    <h3 class="h3">Before pushing to GitHub</h3>
+    <div data-component="checklist" data-key="tk-push">
+      <div class="ctl"><button class="btn" data-ck-reset>Reset</button><button class="btn" data-ck-copy>Copy</button><span class="ckprog" data-ck-prog></span></div>
+      <div class="ckgroup"><div class="ckh">Before you push</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">No keys or passwords anywhere in the code</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">.env is listed in .gitignore</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">node_modules/ or equivalent is ignored</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">README explains what it is and how to run it</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Commit messages describe what changed</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">It runs from a fresh copy</span></button>
+      </div>
+    </div>
+
+    <h3 class="h3">Project finish</h3>
+    <div data-component="checklist" data-key="tk-finish">
+      <div class="ctl"><button class="btn" data-ck-reset>Reset</button><button class="btn" data-ck-copy>Copy</button><span class="ckprog" data-ck-prog></span></div>
+      <div class="ckgroup"><div class="ckh">Wrapping up</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Delete leftover test files</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Update the README to match what it actually does now</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Take screenshots for your portfolio</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Commit and push everything</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Add the deployment link to the README, if there is one</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Write two lines on what you learned</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Move it to personal/ if it's worth showing, or archive/ if it's done</span></button>
+      </div>
+    </div>
+
+    <h3 class="h3">Security basics</h3>
+    <div data-component="checklist" data-key="tk-security">
+      <div class="ctl"><button class="btn" data-ck-reset>Reset</button><button class="btn" data-ck-copy>Copy</button><span class="ckprog" data-ck-prog></span></div>
+      <div class="ckgroup"><div class="ckh">Once</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Set up a password manager</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Change your email password first</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Turn on two-factor authentication: email, GitHub, school portal</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Save recovery codes somewhere offline</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Create a personal professional email</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Set it as the recovery address on GitHub and LinkedIn</span></button>
+      </div>
+      <div class="ckgroup"><div class="ckh">Ongoing</div>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Studies/, Upskilling/, Career/ syncing to cloud storage</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Development/ not syncing to cloud storage</span></button>
+        <button class="ckrow"><span class="ckbox"></span><span class="ckt">Code pushed to GitHub</span></button>
+      </div>
+    </div>
+
+    <h3 class="h3">The 20-minute reset</h3>
+    <p class="mut">The full reset checklist lives on <a href="#/08-reset" data-route="08-reset">Section 08</a>, with progress saved.</p>
+  </div></div></div>
+
+  <!-- PROMPTS -->
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>prompts</span></div>
+    <h2 class="h2">AI prompt library</h2>
+    <p class="mut">Copy, replace the bracketed parts, paste into ChatGPT, Claude, or Gemini. Click a card for the full prompt.</p>
+
+    <h3 class="h3">Organization</h3>
+    <div class="pgrid">
+      <div class="pcard" data-title="P1 · Design a folder structure for my term" data-use="Use this when you're starting a term and want a structure that fits your actual subjects."><span class="tt">P1 · Folder structure for my term</span><span class="uw">Use this when: starting a term.</span><span class="pv">I'm a [year level] [program] student…</span><span class="pview">View ↗</span><pre class="pfull" hidden>I'm a [year level] [program] student. This term I'm taking:
+[list your subjects].
+
+I already organize my files into four top-level folders:
+Studies (school documents), Development (all code),
+Upskilling (self-directed learning), Career (job materials).
+
+Suggest a folder structure for this term's school files.
+Keep it simple — don't create folders I won't use. Explain
+why each folder exists.</pre></div>
+      <div class="pcard" data-title="P2 · Where should this go?" data-use="Use this when you're not sure which folder something belongs in."><span class="tt">P2 · Where should this go?</span><span class="uw">Use this when: unsure which folder.</span><span class="pv">I organize my files into four folders…</span><span class="pview">View ↗</span><pre class="pfull" hidden>I organize my files into four folders:
+- Studies: school documents, requirements, submissions
+- Development: anything containing code, no exceptions
+- Upskilling: material I'm learning from
+- Career: things I'll use after graduation
+
+Where should this go, and why: [describe the file or project]</pre></div>
+      <div class="pcard" data-title="P3 · Review my folder structure" data-use="Use this when your folders feel cluttered but you're not sure why."><span class="tt">P3 · Review my folder structure</span><span class="uw">Use this when: folders feel cluttered.</span><span class="pv">Here's my current folder structure…</span><span class="pview">View ↗</span><pre class="pfull" hidden>Here's my current folder structure:
+
+[paste your directory tree]
+
+Point out: folders that overlap, folders that are empty or
+unused, anything filed in the wrong place, and anything
+that's more nested than it needs to be. Suggest specific
+changes, not general advice.</pre></div>
+      <div class="pcard" data-title="P4 · Help me clean Downloads and Desktop" data-use="Use this when both have become storage."><span class="tt">P4 · Clean Downloads &amp; Desktop</span><span class="uw">Use this when: both became storage.</span><span class="pv">Here's what's currently in my Downloads…</span><span class="pview">View ↗</span><pre class="pfull" hidden>Here's what's currently in my Downloads and Desktop:
+
+[paste the file list]
+
+Group these into categories and tell me where each group
+should go. My folders are Studies, Development, Upskilling,
+and Career. Flag anything I can safely delete.</pre></div>
+      <div class="pcard" data-title="P5 · What should I archive?" data-use="Use this when your Development folder has too many projects."><span class="tt">P5 · What should I archive?</span><span class="uw">Use this when: too many projects.</span><span class="pv">Here are the projects in my Development folder…</span><span class="pview">View ↗</span><pre class="pfull" hidden>Here are the projects in my Development folder, with the
+last time I touched each one:
+
+[paste the list]
+
+Which should I archive, which should I keep active, and
+which are worth cleaning up for a portfolio? Explain your
+reasoning for each.</pre></div>
+    </div>
+
+    <h3 class="h3">Projects</h3>
+    <div class="pgrid">
+      <div class="pcard" data-title="P6 · Recommend a project structure" data-use="Use this when you're starting something and don't know how to lay it out."><span class="tt">P6 · Recommend a project structure</span><span class="uw">Use this when: laying out a new project.</span><span class="pv">I'm building [describe the project]…</span><span class="pview">View ↗</span><pre class="pfull" hidden>I'm building [describe the project] using [language/framework].
+I'm a [beginner/intermediate] and working [alone/in a team of N].
+
+Suggest a folder structure. Keep it as simple as the project
+actually needs — don't add folders for things I'm not doing.
+Explain what each folder is for.</pre></div>
+      <div class="pcard" data-title="P7 · Help me plan a project" data-use="Use this when you have an idea but no plan."><span class="tt">P7 · Help me plan a project</span><span class="uw">Use this when: idea but no plan.</span><span class="pv">I want to build [describe the idea]…</span><span class="pview">View ↗</span><pre class="pfull" hidden>I want to build [describe the idea]. I know [languages you
+know] and I have about [time available].
+
+Break this into stages, starting with the smallest version
+that actually works. For each stage, tell me what I'd need
+to learn. Don't write the code — I want to build it myself.</pre></div>
+      <div class="pcard" data-title="P8 · Break this assignment into steps" data-use="Use this when something is due and it's too big to start."><span class="tt">P8 · Break an assignment into steps</span><span class="uw">Use this when: too big to start.</span><span class="pv">I have this assignment: [paste]…</span><span class="pview">View ↗</span><pre class="pfull" hidden>I have this assignment: [paste the description]
+
+It's due on [date] and today is [date].
+
+Break it into three or four steps with suggested dates.
+Assume I can work on it a few hours a week alongside other
+subjects.</pre></div>
+    </div>
+
+    <h3 class="h3">Git and documentation</h3>
+    <div class="pgrid">
+      <div class="pcard" data-title="P9 · Generate a README outline" data-use="Use this when your project has no documentation."><span class="tt">P9 · Generate a README outline</span><span class="uw">Use this when: no documentation yet.</span><span class="pv">Here's my project structure…</span><span class="pview">View ↗</span><pre class="pfull" hidden>Here's my project structure:
+
+[paste the tree]
+
+It's a [describe what it does] built with [tools].
+
+Write a README outline with the sections it needs. Leave
+placeholders for anything only I would know. Keep it short —
+a student project, not a company product.</pre></div>
+      <div class="pcard" data-title="P10 · Improve my commit message" data-use="Use this when you're about to write &quot;fix&quot; again."><span class="tt">P10 · Improve my commit message</span><span class="uw">Use this when: about to write "fix" again.</span><span class="pv">I changed: [describe what you did]…</span><span class="pview">View ↗</span><pre class="pfull" hidden>I changed: [describe what you did]
+
+Write a commit message under 60 characters that says what
+changed. Give me two options.</pre></div>
+      <div class="pcard" data-title="P11 · What should Git ignore?" data-use="Use this when you're setting up a new project."><span class="tt">P11 · What should Git ignore?</span><span class="uw">Use this when: setting up a project.</span><span class="pv">I'm working on a [language/framework] project…</span><span class="pview">View ↗</span><pre class="pfull" hidden>I'm working on a [language/framework] project.
+
+What should be in my .gitignore, and why is each entry
+there? Include anything related to keys or secrets.</pre></div>
+    </div>
+
+    <h3 class="h3">Learning</h3>
+    <div class="pgrid">
+      <div class="pcard" data-title="P12 · Explain this repository" data-use="Use this when you've opened someone else's project and can't find anything."><span class="tt">P12 · Explain this repository</span><span class="uw">Use this when: lost in someone's repo.</span><span class="pv">Here's the file structure of a project…</span><span class="pview">View ↗</span><pre class="pfull" hidden>Here's the file structure of a project I'm trying to
+understand:
+
+[paste the tree]
+
+Explain what each main folder is probably for, where the
+code likely starts running, and which files I should read
+first. I'm a student and new to this kind of project.</pre></div>
+      <div class="pcard" data-title="P13 · Help me understand this code" data-use="Use this when you need to understand something, not have it written for you."><span class="tt">P13 · Help me understand this code</span><span class="uw">Use this when: need understanding, not code.</span><span class="pv">Here's some code I'm trying to understand…</span><span class="pview">View ↗</span><pre class="pfull" hidden>Here's some code I'm trying to understand:
+
+[paste the code]
+
+Explain what it does, step by step, in plain language.
+Don't rewrite or improve it — I want to understand what's
+already there. Ask me questions if something depends on
+context you don't have.</pre></div>
+      <div class="pcard" data-title="P14 · Organize my learning resources" data-use="Use this when you've saved a lot and used none of it."><span class="tt">P14 · Organize my learning resources</span><span class="uw">Use this when: saved a lot, used none.</span><span class="pv">Here's everything I've saved to learn from…</span><span class="pview">View ↗</span><pre class="pfull" hidden>Here's everything I've saved to learn from:
+
+[paste your list of courses, bookmarks, playlists, PDFs]
+
+Sort these into: learning now, reference, archive, and
+delete. For anything you put in "learning now," suggest an
+order. Be honest about what I'm realistically not going to
+get to.</pre></div>
+    </div>
+
+    <h3 class="h3">Self-check</h3>
+    <div class="pgrid">
+      <div class="pcard" data-title="P15 · Question my system" data-use="Use this when you want to know if your setup actually works."><span class="tt">P15 · Question my system</span><span class="uw">Use this when: does my setup actually work?</span><span class="pv">Here's how I currently organize my files…</span><span class="pview">View ↗</span><pre class="pfull" hidden>Here's how I currently organize my files:
+
+[describe your structure]
+
+Ask me questions that would reveal whether this actually
+works — especially about finding old files, deciding where
+new things go, and what happens at the end of a term. Don't
+give me advice yet, just ask.</pre></div>
+    </div>
+  </div></div></div>
+
+  <!-- GLOSSARY -->
+  <div class="sec"><div class="band alt"><div class="in">
+    <div class="eyebrow"><span>glossary</span></div>
+    <h2 class="h2">Twelve words, defined</h2>
+    <div>
+      <div class="gterm"><span class="gt">Folder</span><span class="gd">A location on your computer where files sit. Nothing special about it.</span><a class="glink" href="#/03-projects" data-route="03-projects">§03</a></div>
+      <div class="gterm"><span class="gt">Project</span><span class="gd">A folder containing everything needed to run what's inside it: the code, a README, and a list of what must be installed.</span><a class="glink" href="#/03-projects" data-route="03-projects">§03</a></div>
+      <div class="gterm"><span class="gt">Workspace</span><span class="gd">What your editor shows when you open a whole project folder rather than a single file: the file tree, a terminal, and search across everything.</span><a class="glink" href="#/07-workspace" data-route="07-workspace">§07</a></div>
+      <div class="gterm"><span class="gt">Repository (repo)</span><span class="gd">A project that Git is tracking. It holds the files and their history.</span><a class="glink" href="#/03-projects" data-route="03-projects">§03</a></div>
+      <div class="gterm"><span class="gt">Remote</span><span class="gd">A copy of your repository stored online, usually on GitHub.</span><a class="glink" href="#/03-projects" data-route="03-projects">§03</a></div>
+      <div class="gterm"><span class="gt">Git</span><span class="gd">The tool on your computer that records the history of your project as you work.</span><a class="glink" href="#/03-projects" data-route="03-projects">§03</a></div>
+      <div class="gterm"><span class="gt">GitHub</span><span class="gd">A website that stores Git repositories online so others can see them and work with you.</span><a class="glink" href="#/03-projects" data-route="03-projects">§03</a></div>
+      <div class="gterm"><span class="gt">Commit</span><span class="gd">One saved snapshot in your project's history, with a short description of what changed.</span><a class="glink" href="#/03-projects" data-route="03-projects">§03</a></div>
+      <div class="gterm"><span class="gt">Clone</span><span class="gd">Downloading a copy of a repository from GitHub to your computer.</span><a class="glink" href="#/03-projects" data-route="03-projects">§03</a></div>
+      <div class="gterm"><span class="gt">Push</span><span class="gd">Uploading your commits from your computer to GitHub.</span><a class="glink" href="#/03-projects" data-route="03-projects">§03</a></div>
+      <div class="gterm"><span class="gt">Terminal</span><span class="gd">The text window where you type commands instead of clicking. Built into VS Code.</span><a class="glink" href="#/07-workspace" data-route="07-workspace">§07</a></div>
+      <div class="gterm"><span class="gt">Dependency</span><span class="gd">Something your project needs installed in order to run. Listed in requirements.txt or package.json.</span><a class="glink" href="#/03-projects" data-route="03-projects">§03</a></div>
+    </div>
+  </div></div></div>
+
+  <!-- TOOLS -->
+  <div class="sec"><div class="band"><div class="in">
+    <div class="eyebrow"><span>tools to install</span></div>
+    <h2 class="h2">Organized by job, filtered by when</h2>
+    <p class="mut">Install things because you need them, not because a list says every developer has them.</p>
+    <div data-component="filter" data-default="now">
+      <div class="chiprow">
+        <button class="chip" data-filter="now">Now</button>
+        <button class="chip" data-filter="soon">Soon</button>
+        <button class="chip" data-filter="later">Later</button>
+        <button class="chip" data-filter="all">All</button>
+      </div>
+      <div class="tblwrap"><table class="tbl">
+        <thead><tr><th>Job</th><th>Tool</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr data-when="now"><td>Write code</td><td class="mono">VS Code</td><td>Free, works everywhere</td></tr>
+          <tr data-when="now"><td>Run your language</td><td class="mono">Python / Node.js / Java</td><td>Whatever your classes use</td></tr>
+          <tr data-when="now"><td>Track changes</td><td class="mono">Git</td><td>Separate from GitHub</td></tr>
+          <tr data-when="now"><td>Type commands</td><td class="mono">Terminal</td><td>Built into VS Code</td></tr>
+          <tr data-when="soon"><td>Install packages</td><td class="mono">pip / npm</td><td>Comes with your language</td></tr>
+          <tr data-when="soon"><td>Format code</td><td class="mono">Prettier, Black</td><td>Keeps code tidy automatically</td></tr>
+          <tr data-when="soon"><td>Catch mistakes</td><td class="mono">ESLint, Pylint</td><td>Flags problems as you type</td></tr>
+          <tr data-when="soon"><td>Manage passwords</td><td class="mono">Bitwarden</td><td>Free, every platform</td></tr>
+          <tr data-when="later"><td>Test APIs</td><td class="mono">Postman, Thunder Client</td><td>When you build one</td></tr>
+          <tr data-when="later"><td>Work with databases</td><td class="mono">DBeaver, TablePlus</td><td>When a class needs it</td></tr>
+          <tr data-when="later"><td>Containers</td><td class="mono">Docker</td><td>Later, only if required</td></tr>
+          <tr data-when="later"><td>Deploy</td><td class="mono">Vercel, Netlify, Render</td><td>When you have something to ship</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+    <h3 class="h3">VS Code extensions</h3>
+    <p class="mut">You don't need twenty-five. <b>Worth having early:</b> the language extension for what you're learning · Prettier, for formatting · GitLens, for a clearer view of your history. Everything else: add it when you hit a problem it solves.</p>
+  </div></div></div>
+
+  <nav class="pnrow" aria-label="Section navigation">
+    <a class="pnav" data-route="00-start" href="#/00-start"><span class="pl">Back to</span>00 · Start Here</a>
+    <span class="pnav next disabled"><span class="pl">Library</span>End of Toolkit</span>
+  </nav>
+</section>
+
+</main>
+
+<script src="js/router.js"></script>
+<script src="js/components.js"></script>
+</body>
+</html>

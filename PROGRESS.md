@@ -1,9 +1,9 @@
 # Progress — Get Organized as a Student Developer
 
-Phase: **planning complete, site build not yet started.**
+Phase: **site regenerated from the Claude Design exports; awaiting owner review before deploy.**
 
 ## Current phase
-Architect docs written and approved. Local git repo initialized. Next is creating the GitHub repo, finalizing the host, then building `site/` route by route.
+`site/` is now generated from the `.dc.html` exports by `tools/build.js`, so it matches the owner's design and copy exactly. Verified in headless Chrome. Nothing is pushed — everything stays local until review.
 
 ## Done
 - 2026-08-14 — Read all planning inputs (brief, site copy, interactive components, toolkit, Warm Arcade `_ds`, `.dc.html` exports).
@@ -12,17 +12,35 @@ Architect docs written and approved. Local git repo initialized. Next is creatin
 - 2026-08-14 — Resolved palette decision: dark Ink-Plum ground, match Claude Design exports (not the brief's cream page).
 - 2026-08-14 — Resolved assets decision: fully built, zero image files (screenshots addable later).
 - 2026-08-14 — `git init` on `main`; added `.gitignore`; wrote `CLAUDE.md`, `PROGRESS.md`, `HANDOFF.md`.
+- 2026-08-14 — Created private GitHub repo `celesica/devtok-organized-studentdev`; pushed `3d83c77`.
+- 2026-08-14 — Built `site/`: shell, tab bar, hash router, keyboard nav, all 10 guide views, full `/toolkit`, all interactive components, `site/README.md`.
+- 2026-08-14 — Verified v1 in headless Chrome: 26 behavioural assertions pass.
+- 2026-08-14 — Fixed list markers: the markup was missing the design system's `.wa-list` classes.
+- 2026-08-14 — Archived v1 to `docs/history/site-v1-2026-08-14/`.
+- 2026-08-14 — Wrote `tools/build.js` + `tools/toolkit.js`; regenerated `site/` from the exports so copy and design match the owner's file. Toolkit content had to be expanded from JS data arrays via `<sc-for>` loops.
+- 2026-08-14 — Rewrote `site/js/components.js` as a state machine replacing the export's React runtime; 38 assertions pass, no console errors, `file://` works, no 375px overflow.
+- 2026-08-14 — Restored the built mockups into all seven screenshot slots (`tools/mockups.js`); dropped the export's fixed-height wrappers so they size themselves.
+- 2026-08-14 — Replaced my per-section prev/next with the export's own shared bar ("Previous — 01 Folders" / "Next — 03 Projects") and its `LABELS`.
+- 2026-08-14 — Seeded component defaults from the export's initial state; without them the stack, tools filter, ladder and upskilling toggle all opened on nothing.
+- 2026-08-14 — Active tab restyled to the rose wash + rose border + soft glow the owner asked for.
+- 2026-08-14 — Badges restyled as pill tags, a step smaller, moved to the head of their line (a first attempt crossed element boundaries and moved one into the wrong band; fixed with a tempered pattern and verified tag-for-tag against the export).
+- 2026-08-14 — Section closers take the design system's lamp-card wash with an ember label; tabs reshaped Chrome-style with dividers and flared feet; prev/next pinned to the viewport foot.
+- 2026-08-14 — Fixed the router bug where `closest("[data-route]")` matched the enclosing section, so every in-page click re-navigated and scrolled to top (and its `preventDefault` blocked `<details>` from opening).
+- 2026-08-14 — Section 00 header rebuilt from `site-copy-all-sections.md`: gold subtitle, full lede, labelled TL;DR.
+- 2026-08-14 — Added `site/js/reveal.js`: one subsection at a time per section, with a right-hand dot rail, a Continue button, and scroll/wheel advance. Off below 860px and on the toolkit.
 
 ## In progress
-- Nothing actively mid-edit. Awaiting GitHub repo creation (`gh` CLI not installed on this machine — needs install or web creation).
+- Owner is reviewing section by section. v1 is served at :8081 for comparison while v2 runs at :8080.
 
 ## Next up
-- Create the GitHub repo and push `main`.
-- Finalize host (GitHub Pages vs Cloudflare Pages — both deploy from the repo; leaning Cloudflare for mobile-data load speed, Pages for simplicity).
-- Build `site/`: shell + tab bar + router + keyboard nav first, then guide sections 00→09, then `/toolkit`.
+- Owner reviews the site locally (`site/index.html`, or `python3 -m http.server 8000` inside `site/`).
+- Commit the `site/` build and push.
+- Connect Netlify and/or Cloudflare Pages with publish directory `site` (no build command, no rewrite rules — hash routing).
+- Resolve the open content items: section 09 closer, Notion template URL, recording URL, presenter sign-off.
 
 ## Watching
 - Fonts load from Google Fonts CDN (as the `_ds` ships). Fine for MVP; self-host woff2 for production hardening if load speed on PH mobile data disappoints.
+- GitHub Pages free tier needs a public repo; the repo is private, so Netlify or Cloudflare are the viable hosts unless visibility changes.
 
 ## Deferred
 - `.claude/rules/` — not needed yet (one small codebase, nothing to path-scope).
@@ -31,7 +49,11 @@ Architect docs written and approved. Local git repo initialized. Next is creatin
 - Real screenshots for credibility slots — owner may supply later; slots will accept them.
 
 ## Known issues
-- None yet (no site code).
+- The seven screenshot slots render as empty labelled placeholders, matching the export. Owner to supply images, or the v1 built mockups can be restored from the archive.
+- Section 09 has no section-closer box, matching the export.
+- Headings render Title Case because the export's CSS sets `text-transform:capitalize`, which the readme's sentence-case rule would not. Kept for parity with the export.
+- Section 06 links (Notion template, previous session recording) have no real URLs yet.
+- The presenter sign-off at the end of section 08 is unwritten in the copy doc, so it is absent from the site.
 
 ## Settled — do not reopen without a new fact
 - Plain static HTML/CSS/JS, no framework, no build step.
@@ -40,3 +62,4 @@ Architect docs written and approved. Local git repo initialized. Next is creatin
 - Fully-built visuals, zero images.
 - Two routes only: `/` guide, `/toolkit` library.
 - `planning/` is read-only source of truth; copy and planning docs stay in sync.
+- `site/index.html` and `site/css/app.css` are generated by `tools/`; never hand-edited.

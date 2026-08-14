@@ -1,0 +1,111 @@
+:root{
+/* ---- Core palette (strict) ---- */
+--ink-plum:#140D1A;
+--neon-rose:#FF5C8A;
+--ember:#FF7A45;
+--amber-glow:#FFB84D;
+--lilac-signal:#C9A0F5;
+--parchment:#F6EDE3;
+--wine:#7A2E48;
+--deep-plum:#241533;
+--muted-ink:#B4A7C2; /* lightened 2026-08-14 for legibility on plum grounds */
+
+/* ---- Derived plum ladder (dark ground steps) ---- */
+--plum-900:#0D0812;
+--plum-800:#140D1A;
+--plum-700:#1B1226;
+--plum-600:#241533;
+--plum-500:#2F1C42;
+--plum-400:#3D2553;
+
+/* ---- Derived parchment ladder (light ground steps) ---- */
+--parchment-100:#FFFBF6;
+--parchment-200:#F6EDE3;
+--parchment-300:#EADDCE;
+--parchment-400:#DCCBB8;
+
+/* ---- Accent alphas (glow + wash ingredients) ---- */
+--rose-a55:rgba(255,92,138,.55);
+--rose-a22:rgba(255,92,138,.22);
+--rose-a12:rgba(255,92,138,.12);
+--ember-a50:rgba(255,122,69,.50);
+--ember-a20:rgba(255,122,69,.20);
+--amber-a45:rgba(255,184,77,.45);
+--amber-a18:rgba(255,184,77,.18);
+--lilac-a40:rgba(201,160,245,.40);
+--lilac-a14:rgba(201,160,245,.14);
+--parchment-a70:rgba(246,237,227,.70);
+--parchment-a12:rgba(246,237,227,.12);
+--parchment-a06:rgba(246,237,227,.06);
+--ink-a60:rgba(20,13,26,.60);
+
+/* ---- Signature gradient ---- */
+--gradient-xp:linear-gradient(90deg,#7A2E48 0%,#FF5C8A 50%,#FF7A45 100%); /* @kind color */
+--gradient-cta:linear-gradient(90deg,#FF5C8A 0%,#FF7A45 100%); /* @kind color */ /* buttons + small controls — no dark wine head */
+--gradient-xp-diag:linear-gradient(135deg,#7A2E48 0%,#FF5C8A 50%,#FF7A45 100%); /* @kind color */
+--gradient-lamp:radial-gradient(120% 90% at 78% 8%,rgba(255,184,77,.22) 0%,rgba(255,122,69,.08) 38%,rgba(20,13,26,0) 70%); /* @kind color */
+--gradient-protect:linear-gradient(180deg,rgba(20,13,26,0) 0%,rgba(20,13,26,.72) 55%,#140D1A 100%); /* @kind color */
+
+/* ---- Semantic: dark mode is the default surface ---- */
+--surface-ground:var(--ink-plum);
+--surface-raised:var(--deep-plum);
+--surface-sunken:var(--plum-900);
+--surface-card:var(--plum-700);
+--surface-overlay:rgba(13,8,18,.78);
+--surface-inset:var(--parchment-a06);
+
+--text-display:var(--parchment);
+--text-body:var(--parchment);
+--text-muted:var(--muted-ink);
+--text-inverse:var(--ink-plum);
+--text-accent:var(--neon-rose);
+--text-script:var(--amber-glow);
+
+--border-hairline:rgba(122,46,72,.55);
+--border-strong:var(--wine);
+--border-accent:var(--neon-rose);
+
+--accent-primary:var(--neon-rose);
+--accent-secondary:var(--ember);
+--accent-light:var(--amber-glow);
+--accent-cool:var(--lilac-signal);
+
+--state-success:var(--amber-glow);
+--state-warning:var(--ember);
+--state-danger:var(--neon-rose);
+--state-info:var(--lilac-signal);
+
+--focus-ring:var(--lilac-signal);
+}
+
+/* ---- Light mode ---- */
+html[data-theme="light"],[data-theme="light"]{
+--surface-ground:var(--parchment-200);
+--surface-raised:var(--parchment-100);
+--surface-sunken:var(--parchment-300);
+--surface-card:var(--parchment-100);
+--surface-overlay:rgba(20,13,26,.55);
+--surface-inset:rgba(122,46,72,.06);
+
+--text-display:var(--ink-plum);
+--text-body:var(--ink-plum);
+--text-muted:#6B5A73;
+--text-inverse:var(--parchment);
+--text-accent:var(--wine);
+--text-script:var(--wine);
+
+--border-hairline:rgba(122,46,72,.28);
+--border-strong:var(--wine);
+--border-accent:var(--wine);
+
+/* Light mode keeps the bloom, but tighter and warmer — light on cream reads as
+   diffusion, so the haze radius halves and the alphas drop by roughly half. */
+--glow-rose:0 0 8px rgba(255,92,138,.30),0 0 22px rgba(255,122,69,.14); /* @kind shadow */
+--glow-rose-soft:0 0 6px rgba(255,92,138,.20),0 0 16px rgba(255,122,69,.10); /* @kind shadow */
+--glow-ember:0 0 8px rgba(255,122,69,.30),0 0 22px rgba(255,184,77,.14); /* @kind shadow */
+--glow-amber:0 0 8px rgba(255,184,77,.32),0 0 24px rgba(255,122,69,.14); /* @kind shadow */
+--glow-lilac:0 0 7px rgba(201,160,245,.26),0 0 20px rgba(201,160,245,.10); /* @kind shadow */
+--glow-text-rose:0 0 8px rgba(255,92,138,.28),0 0 20px rgba(255,122,69,.12); /* @kind shadow */
+--glow-text-ember:0 0 8px rgba(255,122,69,.28),0 0 20px rgba(255,184,77,.12); /* @kind shadow */
+--glow-text-amber:0 0 8px rgba(255,184,77,.30),0 0 20px rgba(255,122,69,.12); /* @kind shadow */
+}

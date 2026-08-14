@@ -17,9 +17,10 @@ This is a **static website being built for a live event** (DevTok Pinas, Aug 15 
 A companion website that **replaces a slide deck** for a 90-minute live Discord screen-share, then survives as a permanent, bookmarkable reference for student developers (primarily first-year Filipino CS/IT students). The motive: students are never taught where their work lives, so they lose files, coursework, and portfolio-ready projects. The site gives them four folders, a rule for what goes where, a calendar that reminds them, and a reset routine. Success = it gets **bookmarked and forwarded**. It is explicitly **not** a landing page — nothing is sold; no funnel, CTA, testimonials, or pricing.
 
 ```
-planning/   read-only source of truth (brief, copy, components, toolkit, Warm Arcade _ds)
-docs/       prd.md + architecture.md (the design artifacts) + docs/history/ (archived notes)
-site/       the deployable static site (built route by route) — not yet created
+planning/   read-only source of truth (brief, copy, components, the .dc.html exports, Warm Arcade _ds)
+tools/      the build that generates site/ from the exports — see tools/README.md
+docs/       prd.md + architecture.md (the design artifacts) + docs/history/ (archived builds)
+site/       the deployable static site — GENERATED, do not hand-edit
 ```
 
 **Commands:** there is no build step, no bundler, no test suite, and no linter. Preview with:
@@ -32,6 +33,7 @@ cd site && python3 -m http.server 8000    # then open http://localhost:8000
 
 - **The site must run with no build step.** It opens from `file://` (double-click `index.html`) and via `python3 -m http.server`. No framework, no bundler, no npm, no ES-module bare imports, no `fetch()` of local partials (blocked on `file://`). Breaking this breaks the presenter's ability to run it offline.
 - **`planning/` is read-only.** Never modify anything under `planning/`. It is the source of truth the build renders.
+- **`site/index.html` and `site/css/app.css` are generated.** Edit the `.dc.html` exports in `planning/` and rerun `cd tools && node toolkit.js && node build.js`. Hand-edits to those two files are lost on the next build.
 - **Copy and docs stay in sync.** When site copy changes, update the matching `planning/` doc (`site-copy-all-sections.md`, `toolkit.md`) in the same change, and vice-versa. Copy on the site must always match `planning/`. Never invent copy — pull it from `planning/`.
 - **Tab switching is instant.** No transition >150ms, no content fade-in. Only one section visible at a time. This is a presentation requirement, not a preference — slow switches are visible over Discord.
 - **Design system is law.** Use the Warm Arcade `_ds` tokens exactly (copied into `site/css/_ds/`). No invented colors. No cyan/teal/green/blue, no pure `#000`/`#FFF`. Mono numbers, raster glyphs only, **no emoji ever**, sentence-case headings. Meaning never carried by color alone.
