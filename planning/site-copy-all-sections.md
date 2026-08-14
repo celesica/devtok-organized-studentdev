@@ -29,12 +29,16 @@
 # Get Organized as a Student Developer
 ### Build a Better System for Classes, Projects, and Your Coding Workspace
 
-This guide walks through how to set up an organization system for your school files, your coding projects, and the things you learn on your own. It's built for CS, IT, and engineering students who write code as part of their coursework.
-
 `Prepped by: Jazzy · DevTok Pinas`
 
+The system I use to keep my school files, coding projects, and self-learning organized in one place. I'm sharing it as a starting point for CS, IT, engineering, and other students who code, especially if your files and projects have started ending up everywhere.
+
+You don't have to copy everything exactly. Take what makes sense for you, try it for a semester, and adjust it as you go.
+
 `[TLDR]`
-**TL;DR:** You don't need a complicated productivity system. You need four main folders, a clear rule for where each type of file goes, a calendar that actually reminds you, and a short routine for when things get messy. Everything here works whether you're starting a term, in the middle of one, or between them.
+**TL;DR:** I keep four main folders for my student-developer life: Studies, Development, Upskilling, and Career. From there, I use a few simple rules for where things go, keep my deadlines outside the LMS, use Git and GitHub for code, and do a quick reset whenever things start getting messy.
+
+You can set up the basic version of this today and improve it over time.
 `[/TLDR]`
 
 ---
@@ -58,15 +62,17 @@ This guide walks through how to set up an organization system for your school fi
 
 ---
 
-## Why this matters for a student developer
+## Why I think this matters
 
-A weak system costs you in specific ways:
+As technical students, we juggle a lot at once: classes, coding projects, deadlines, tools, self-learning, org work, and career prep. Having a simple system saves time, energy, and brainpower because you don't have to keep deciding where things go or trying to remember everything yourself.
 
-- **Time lost searching** for a file you know you saved somewhere.
-- **Work you can't show.** Good projects buried where nobody will find them when internship applications open.
-- **Missed deadlines**, because they only existed inside your LMS.
-- **Repeated work.** Rebuilding something you already made.
-- **Real risk.** Lost files with no backup, or a password published inside your code.
+Without a clear system, small problems start adding up:
+
+- You waste time looking for files you know you saved somewhere.
+- Good projects get buried inside old semester folders.
+- Deadlines live only inside your LMS.
+- You redo work because you can't find what you already made.
+- Projects worth showing for internships or jobs are harder to find later.
 
 ---
 
@@ -75,14 +81,15 @@ A weak system costs you in specific ways:
 - Four main folders with a clear rule for what goes in each
 - A school structure you set up once per term
 - An understanding of how coding projects are organized and opened
-- A calendar that reminds you before things are due
-- A password and backup setup that takes one afternoon
-- A checklist for when things drift
+- A calendar setup for classes, deadlines, and tasks
+- A basic backup and password setup
+- A place for your notes and school dashboard
+- A reset routine for the weeks when everything gets messy
 
-`[Visual — Class C]` Jazzy's real four-folder setup.
+`[Visual — Class C]` Recommended folder setup — Studies, Development, Upskilling, Career.
 
 `[SectionCloser: UNDERSTAND]`
-The goal isn't a system that never gets messy. It's knowing where things go, and knowing how to get back on track when they don't.
+You don't need a system that stays perfectly organized all semester. You just need one that makes it easy to know **where something belongs** and easy to clean things up when you fall behind.
 `[/SectionCloser]`
 
 ---

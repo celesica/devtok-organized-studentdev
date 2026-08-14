@@ -175,9 +175,10 @@ if(v&&window.matchMedia('(min-width:761px)').matches){v.src=v.dataset.src;}})();
 <div class="eyebrow"><span>Field guide</span></div>
 <h1 class="h1 hero-title">Get Organized as a <br class="hbr">Student Developer</h1>
 <p class="hero-sub">Build a Better System for Classes, Projects, and <br class="hbr">Your Coding Workspace</p>
-<p class="hero-lede">This guide walks through how to set up an organization system for your school files, your coding projects, and the things you learn on your own. It's built for CS, IT, and engineering students who write code as part of their coursework.</p>
 <p class="meta">Prepped by: Jazzy &middot; DevTok Pinas</p>
-<div class="tldr"><span class="k">TL;DR</span><p>You don't need a complicated productivity system. You need four main folders, a clear rule for where each type of file goes, a calendar that actually reminds you, and a short routine for when things get messy. Everything here works whether you're starting a term, in the middle of one, or between them.</p></div>
+<p class="hero-lede">The system I use to keep my school files, coding projects, and self-learning organized in one place. I'm sharing it as a starting point for CS, IT, engineering, and other students who code, especially if your files and projects have started ending up everywhere.</p>
+<p class="hero-lede">You don't have to copy everything exactly. Take what makes sense for you, try it for a semester, and adjust it as you go.</p>
+<div class="tldr"><span class="k">TL;DR</span><p>I keep four main folders for my student-developer life: Studies, Development, Upskilling, and Career. From there, I use a few simple rules for where things go, keep my deadlines outside the LMS, use Git and GitHub for code, and do a quick reset whenever things start getting messy.</p><p>You can set up the basic version of this today and improve it over time.</p></div>
 </div></div>`;
 
 function sectionBody(label) {
@@ -189,7 +190,64 @@ function sectionBody(label) {
     const before = body;
     body = body.replace(/<div class="band"><div class="in">\s*<div class="eyebrow"><span>Field guide<\/span>[\s\S]*?<\/div><\/div>/, HERO);
     if (body === before) throw new Error("hero block not matched — check the 00 header markup");
+    body = applyStartCopy(body);
   }
+  return body;
+}
+
+/* Owner-directed copy for the Start page, applied over the export. Each swap
+   throws if its anchor is gone, so a changed export surfaces at build time
+   rather than silently keeping stale words. Mirrored in
+   planning/site-copy-all-sections.md. */
+function applyStartCopy(body) {
+  const swap = (re, replacement, name) => {
+    const next = body.replace(re, replacement);
+    if (next === body) throw new Error("Start copy not matched: " + name);
+    body = next;
+  };
+
+  swap(
+    /<h2 class="h2">Why this matters<\/h2>\s*<ul class="wa-list wa-list--ul">[\s\S]*?<\/ul>/,
+    `<h2 class="h2">Why I think this matters</h2>
+<p>As technical students, we juggle a lot at once: classes, coding projects, deadlines, tools, self-learning, org work, and career prep. Having a simple system saves time, energy, and brainpower because you don't have to keep deciding where things go or trying to remember everything yourself.</p>
+<p>Without a clear system, small problems start adding up:</p>
+<ul class="wa-list wa-list--ul">
+<li>You waste time looking for files you know you saved somewhere.</li>
+<li>Good projects get buried inside old semester folders.</li>
+<li>Deadlines live only inside your LMS.</li>
+<li>You redo work because you can't find what you already made.</li>
+<li>Projects worth showing for internships or jobs are harder to find later.</li>
+</ul>`,
+    "why-this-matters"
+  );
+
+  swap(
+    /<h2 class="h2">What you'll have at the end<\/h2>\s*<ul class="wa-list wa-list--ul">[\s\S]*?<\/ul>/,
+    `<h2 class="h2">What you'll have at the end</h2>
+<ul class="wa-list wa-list--ul">
+<li>Four main folders with a clear rule for what goes in each</li>
+<li>A school structure you set up once per term</li>
+<li>An understanding of how coding projects are organized and opened</li>
+<li>A calendar setup for classes, deadlines, and tasks</li>
+<li>A basic backup and password setup</li>
+<li>A place for your notes and school dashboard</li>
+<li>A reset routine for the weeks when everything gets messy</li>
+</ul>`,
+    "what-youll-have"
+  );
+
+  swap(
+    "Jazzy's real setup — Studies, Development, Upskilling, Career.",
+    "Recommended folder setup — Studies, Development, Upskilling, Career.",
+    "folder-setup-caption"
+  );
+
+  swap(
+    /<div class="closer"><span class="k">UNDERSTAND<\/span><p>[\s\S]*?<\/p><\/div>/,
+    `<div class="closer"><span class="k">UNDERSTAND</span><p>You don't need a system that stays perfectly organized all semester. You just need one that makes it easy to know <b>where something belongs</b> and easy to clean things up when you fall behind.</p></div>`,
+    "understand-closer"
+  );
+
   return body;
 }
 
