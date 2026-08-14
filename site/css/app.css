@@ -280,7 +280,7 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
 
 /* Calendar week mock */
 .calweek{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:16px 0}
-.calday{border:1px solid var(--border-hairline);border-radius:8px;background:var(--surface-card);min-height:120px;padding:8px}
+.calday{border:1px solid var(--border-hairline);border-radius:8px;background:var(--surface-card);min-height:120px;padding:8px;min-width:0}
 .calday .dh{font-family:var(--font-mono);font-size:10.5px;color:var(--muted-ink);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
 .calev{font-family:var(--font-tech);font-size:10.5px;padding:4px 6px;border-radius:4px;margin:4px 0;color:var(--ink-plum);line-height:1.2}
 .calev.cls{background:var(--neon-rose)}
@@ -302,4 +302,6 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
   .in{padding-left:16px;padding-right:16px}
   .pnrow{padding-left:16px;padding-right:16px}
   .c7grid{grid-template-columns:1fr}
+  /* five 1fr columns force a min-content overflow at 375px */
+  .calweek{grid-template-columns:repeat(2,1fr)}
 }

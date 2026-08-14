@@ -47,9 +47,10 @@ Publish the **`site/` folder** — not the repository root.
 **From the Git repo (auto-deploys on push):**
 
 1. In Netlify, choose *Add new site → Import an existing project* and pick the repository.
-2. Leave the build command empty.
-3. Set **Publish directory** to `site`.
-4. Deploy. Every push to `main` republishes automatically.
+2. Accept the defaults — `netlify.toml` in the repository root already sets the publish directory to `site` and leaves the build command empty. Nothing needs configuring in the dashboard.
+3. Deploy. Every push to `main` republishes automatically.
+
+Publishing `site` rather than the repository root also keeps `planning/`, `docs/` and `tools/` off the public host.
 
 ### Cloudflare Pages
 

@@ -1,0 +1,16 @@
+# Netlify configuration.
+#
+# The site is plain static files with no build step, and it uses hash routing
+# (#/03-projects), so there is nothing to compile and no redirect or rewrite
+# rules are needed. Publishing `site` — not the repo root — keeps planning/,
+# docs/ and tools/ off the public host.
+
+[build]
+  publish = "site"
+  command = ""
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"

@@ -28,15 +28,17 @@ Phase: **site regenerated from the Claude Design exports; awaiting owner review 
 - 2026-08-14 — Fixed the router bug where `closest("[data-route]")` matched the enclosing section, so every in-page click re-navigated and scrolled to top (and its `preventDefault` blocked `<details>` from opening).
 - 2026-08-14 — Section 00 header rebuilt from `site-copy-all-sections.md`: gold subtitle, full lede, labelled TL;DR.
 - 2026-08-14 — Added `site/js/reveal.js`: one subsection at a time per section, with a right-hand dot rail, a Continue button, and scroll/wheel advance. Off below 860px and on the toolkit.
+- 2026-08-14 — Pre-event pass: 60 assertions run three ways (local server, `file://`, served subpath) — all pass, no console errors.
+- 2026-08-14 — Fixed the one bug it found: the calendar week mock overflowed 375px (five 1fr columns hit their min-content floor). Now two columns below 640px, `min-width:0` on `.calday`.
+- 2026-08-14 — Added root `netlify.toml` (publish `site`, empty build command, nosniff + no-referrer headers) so a git-connected deploy needs no dashboard configuration.
 
 ## In progress
-- Owner is reviewing section by section. v1 is served at :8081 for comparison while v2 runs at :8080.
+- Host chosen: **Netlify**. Repo config is in place; the owner runs the connect step.
 
 ## Next up
-- Owner reviews the site locally (`site/index.html`, or `python3 -m http.server 8000` inside `site/`).
-- Commit the `site/` build and push.
-- Connect Netlify and/or Cloudflare Pages with publish directory `site` (no build command, no rewrite rules — hash routing).
+- Connect Netlify: *Add new site → Import an existing project* → pick the repo → accept the defaults (`netlify.toml` supplies them) → deploy.
 - Resolve the open content items: section 09 closer, Notion template URL, recording URL, presenter sign-off.
+- Root `README.md` (the outside view) — still deferred.
 
 ## Watching
 - Fonts load from Google Fonts CDN (as the `_ds` ships). Fine for MVP; self-host woff2 for production hardening if load speed on PH mobile data disappoints.
@@ -49,6 +51,7 @@ Phase: **site regenerated from the Claude Design exports; awaiting owner review 
 - Real screenshots for credibility slots — owner may supply later; slots will accept them.
 
 ## Known issues
+- Verification is an ad-hoc CDP script re-authored per session, not a committed suite — deliberate, since this repo has no test tooling.
 - The seven screenshot slots render as empty labelled placeholders, matching the export. Owner to supply images, or the v1 built mockups can be restored from the archive.
 - Section 09 has no section-closer box, matching the export.
 - Headings render Title Case because the export's CSS sets `text-transform:capitalize`, which the readme's sentence-case rule would not. Kept for parity with the export.
