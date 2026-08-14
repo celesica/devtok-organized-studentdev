@@ -27,7 +27,11 @@ inside `Toolkit.dc.html` rather than in its markup. The script evaluates those
 arrays, expands the `<sc-for>` loops, and writes `toolkit-body.html`,
 `toolkit-modal.html`, and `toolkit-prompts.json`, which `build.js` then inlines.
 
-`build.js` writes `site/index.html` and `site/css/app.css`.
+`build.js` writes `site/index.html` and `site/css/app.css`, and copies
+`planning/Cozy Desk Loop.mp4` to `site/assets/cozy-desk-loop.mp4` — the header
+footage. Copying rather than referencing `planning/` keeps `site/` a
+self-contained folder a static host can publish on its own. The build throws if
+the source file is missing.
 
 ## What the build converts
 
@@ -79,11 +83,17 @@ plain scrolling document. The toolkit has its own jump chips instead.
 ## The one deliberate divergence from the export
 
 Section 00's header is **not** taken from the export. The export had trimmed the
-gold subtitle, shortened the lede, and folded the TL;DR into a plain panel. The
-build replaces that block with `HERO` in `build.js`, whose wording comes from
+gold subtitle and folded the TL;DR into a plain panel. The build replaces that
+block with `HERO` in `build.js`, whose wording comes from
 `planning/site-copy-all-sections.md` — the authority for copy. If the header
 markup in the export ever changes, the replacement throws rather than silently
 doing nothing, so the mismatch surfaces at build time.
+
+`HERO` is also where the header video lives: a muted, looping, controlless
+`<video>` behind an angled plum wash (`.hero-wash`), which turns top-down below
+760px so the copy keeps a readable ground on a phone. The wash is CSS, not a
+treatment baked into the footage, so legibility does not depend on the file
+loading. There is no play/pause control by design — the loop always runs.
 
 Everything else in the guide still comes through verbatim.
 

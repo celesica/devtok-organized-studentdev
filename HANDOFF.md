@@ -9,6 +9,8 @@ Ran the pre-event verification pass on the built site and prepared the Netlify d
 
 The one real bug: the calendar week mock in section 04 overflowed at 375px (434px against a 375px viewport). Five `1fr` columns cannot go below their min-content width, and "Algorithms" alone is wider than a fifth of a phone screen. Fixed in `tools/build.js` — two columns below 640px plus `min-width:0` on `.calday` — and rebuilt.
 
+Then reworked the section 00 header to the owner's design: the lede paragraph is gone so the subhead is the only descriptive line, the meta reads `Prepped by: Jazzy · DevTok Pinas` (no date), and `planning/Cozy Desk Loop.mp4` now runs as a full-bleed looping background. The copy sits on an angled plum wash — near-opaque behind the text, clear by ~80% across so the desk stays visible — which turns top-down below 760px. No play control; the loop always runs. Autoplay confirmed on both `http` and `file://` with default autoplay policy (it is muted, so the policy allows it).
+
 ## State: working
 Site verified and committed. Host is decided (Netlify); the connect step is the owner's to run.
 
@@ -18,8 +20,11 @@ Connect Netlify: *Add new site → Import an existing project* → pick `celesic
 For a same-day fallback, <https://app.netlify.com/drop> takes the `site/` folder by drag-and-drop and returns a URL in seconds.
 
 ## Files touched, and why
-- `tools/build.js` — the 375px calendar fix. The generator, not `site/css/app.css`, because that file is generated.
-- `site/css/app.css` — regenerated; the only diff is those two rules.
+- `tools/build.js` — the 375px calendar fix, then the video header: the `HERO` block, the `.hero-band` / `.hero-vid` / `.hero-wash` rules, and a copy of the mp4 into `site/assets/`. The generator, not `site/index.html` or `site/css/app.css`, because those are generated.
+- `site/index.html`, `site/css/app.css`, `site/assets/cozy-desk-loop.mp4` — regenerated.
+- `planning/site-copy-all-sections.md` — dropped the lede paragraph and changed the meta line, so the copy doc still matches the site. The second edit ever made under `planning/`, and made on explicit instruction.
+- `planning/Cozy Desk Loop.mp4` — now tracked. It was sitting untracked; it is the header footage and the build reads it, so it belongs in the repo.
+- `tools/README.md` — documents the asset copy and the header video.
 - `netlify.toml` — new. Publish `site`, empty build command, `X-Content-Type-Options: nosniff` and `Referrer-Policy: no-referrer`.
 - `site/README.md` — the Netlify section now says to accept the defaults, since `netlify.toml` supplies them.
 

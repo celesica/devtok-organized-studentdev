@@ -30,6 +30,8 @@ Phase: **site regenerated from the Claude Design exports; awaiting owner review 
 - 2026-08-14 — Added `site/js/reveal.js`: one subsection at a time per section, with a right-hand dot rail, a Continue button, and scroll/wheel advance. Off below 860px and on the toolkit.
 - 2026-08-14 — Pre-event pass: 60 assertions run three ways (local server, `file://`, served subpath) — all pass, no console errors.
 - 2026-08-14 — Fixed the one bug it found: the calendar week mock overflowed 375px (five 1fr columns hit their min-content floor). Now two columns below 640px, `min-width:0` on `.calday`.
+- 2026-08-14 — Section 00 header reworked to the owner's design: one-line subhead only (the lede paragraph is gone), meta now `Prepped by: Jazzy · DevTok Pinas`, and the desk footage runs as a full-bleed looping background under an angled plum wash. No play control — it always loops.
+- 2026-08-14 — `build.js` now copies `planning/Cozy Desk Loop.mp4` into `site/assets/`, so `site/` stays self-contained; it throws if the source is missing.
 - 2026-08-14 — Added root `netlify.toml` (publish `site`, empty build command, nosniff + no-referrer headers) so a git-connected deploy needs no dashboard configuration.
 
 ## In progress
@@ -41,6 +43,7 @@ Phase: **site regenerated from the Claude Design exports; awaiting owner review 
 - Root `README.md` (the outside view) — still deferred.
 
 ## Watching
+- The header video is 2.5 MB and loads on first paint. Fine on a laptop and over Discord; on PH mobile data it is the heaviest thing on the site. If it drags, re-encode smaller or add a poster frame — the wash means the header reads without it either way.
 - Fonts load from Google Fonts CDN (as the `_ds` ships). Fine for MVP; self-host woff2 for production hardening if load speed on PH mobile data disappoints.
 - GitHub Pages free tier needs a public repo; the repo is private, so Netlify or Cloudflare are the viable hosts unless visibility changes.
 

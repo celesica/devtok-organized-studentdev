@@ -78,8 +78,13 @@ site/
 ├── js/
 │   ├── router.js     hash routing, tab state, keyboard nav
 │   └── components.js steppers, reveals, checklists, prompt modal, copy buttons
-└── assets/           empty — every visual is built in HTML/CSS, not an image
+└── assets/           cozy-desk-loop.mp4 — the header footage, copied in by the
+                      build. Every other visual is built in HTML/CSS.
 ```
+
+The header video is decoration: muted, looping, no controls, and hidden from
+assistive tech. The copy above it sits on a CSS plum wash, so the header still
+reads if the file is slow or never loads.
 
 Fonts load from Google Fonts, which is the only external request. To make the site fully self-contained, download the woff2 files and replace the `@import` lines in `css/_ds/tokens/fonts.css` with `@font-face` rules.
 

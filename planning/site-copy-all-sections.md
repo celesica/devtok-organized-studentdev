@@ -29,9 +29,7 @@
 # Get Organized as a Student Developer
 ### Build a Better System for Classes, Projects, and Your Coding Workspace
 
-This guide walks through how to set up an organization system for your school files, your coding projects, and the things you learn on your own. It's built for CS, IT, and engineering students who write code as part of their coursework.
-
-`August 2026 · Jazzy · DevTok Pinas`
+`Prepped by: Jazzy · DevTok Pinas`
 
 `[TLDR]`
 **TL;DR:** You don't need a complicated productivity system. You need four main folders, a clear rule for where each type of file goes, a calendar that actually reminds you, and a short routine for when things get messy. Everything here works whether you're starting a term, in the middle of one, or between them.

@@ -9,6 +9,15 @@ const OUT = "/Users/jazzyb/Documents/Development/devtok/student-dev-organized/si
 const guide = fs.readFileSync(P + "Student Dev Guide.dc.html", "utf8");
 const toolkit = fs.readFileSync(P + "Toolkit.dc.html", "utf8");
 
+/* ---------- 0. assets ---------- */
+/* The header footage. Copied out of planning/ rather than referenced there, so
+   site/ stays a self-contained folder that a static host can publish alone. */
+const HERO_VIDEO_SRC = P.replace(/Session website with tabs\/$/, "Cozy Desk Loop.mp4");
+const HERO_VIDEO = "assets/cozy-desk-loop.mp4";
+if (!fs.existsSync(HERO_VIDEO_SRC)) throw new Error("missing header video: " + HERO_VIDEO_SRC);
+fs.mkdirSync(OUT + "assets", { recursive: true });
+fs.copyFileSync(HERO_VIDEO_SRC, OUT + HERO_VIDEO);
+
 /* ---------- 1. styles ---------- */
 function styleOf(src) {
   const m = src.match(/<style>([\s\S]*?)<\/style>/);
@@ -119,15 +128,22 @@ const TAB_LABELS = [
 ];
 
 
-/* The document header the copy doc specifies: a gold subtitle, the full lede,
-   and a labelled TL;DR. The export had trimmed all three. Sourced from
-   planning/site-copy-all-sections.md, which is the authority for copy. */
-const HERO = `<div class="band"><div class="in">
+/* The document header the copy doc specifies: a gold subtitle, the meta line,
+   and a labelled TL;DR, over the looping desk footage. The export had trimmed
+   the first three. Sourced from planning/site-copy-all-sections.md, which is
+   the authority for copy.
+
+   The video is decoration, not content: muted, looping, autoplaying, with no
+   controls, and marked aria-hidden. Everything readable sits above it on the
+   plum wash, so the header still reads if the file never loads. */
+const HERO = `<div class="band hero-band">
+<video class="hero-vid" src="${HERO_VIDEO}" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1"></video>
+<div class="hero-wash" aria-hidden="true"></div>
+<div class="in hero-in">
 <div class="eyebrow"><span>Field guide</span></div>
 <h1 class="h1 hero-title">Get Organized as a Student Developer</h1>
 <p class="hero-sub">Build a Better System for Classes, Projects, and Your Coding Workspace</p>
-<p class="hero-lede">This guide walks through how to set up an organization system for your school files, your coding projects, and the things you learn on your own. It's built for CS, IT, and engineering students who write code as part of their coursework.</p>
-<p class="meta">August 2026 &middot; Jazzy &middot; DevTok Pinas</p>
+<p class="meta">Prepped by: Jazzy &middot; DevTok Pinas</p>
 <div class="tldr"><span class="k">TL;DR</span><p>You don't need a complicated productivity system. You need four main folders, a clear rule for where each type of file goes, a calendar that actually reminds you, and a short routine for when things get messy. Everything here works whether you're starting a term, in the middle of one, or between them.</p></div>
 </div></div>`;
 
@@ -252,9 +268,29 @@ main{padding-bottom:104px}
 .pnav.disabled{opacity:.3;pointer-events:none}
 
 /* ---- Document header (section 00) ---- */
+/* Full-bleed looping footage with the copy on an angled plum wash: near-opaque
+   behind the text, clear by ~78% across so the desk stays visible on the right,
+   and fading into the page ground at the foot. The wash is what makes the type
+   legible, so it is CSS rather than a treatment baked into the video. */
+.hero-band{position:relative;isolation:isolate;overflow:hidden;background:var(--plum-900)}
+.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none}
+.hero-wash{position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    linear-gradient(to top,var(--ink-plum) 0,rgba(20,13,26,0) 22%),
+    linear-gradient(100deg,rgba(13,8,18,.97) 0,rgba(13,8,18,.94) 46%,rgba(13,8,18,.8) 62%,rgba(20,13,26,.34) 80%,rgba(20,13,26,0) 100%)}
+.hero-in{position:relative;z-index:1;padding-top:64px;padding-bottom:72px;max-width:64ch}
 .hero-title{text-transform:none;font-size:clamp(34px,5.4vw,58px);line-height:1.08;margin:12px 0 10px}
 .hero-sub{font-family:var(--font-tech);font-weight:600;font-size:clamp(18px,2.6vw,26px);line-height:1.3;color:var(--amber-glow);margin:0 0 20px}
-.hero-lede{font-size:17.5px;color:var(--muted-ink);max-width:68ch;margin:0 0 18px}
+/* Narrow screens have no room for an angled wash — the footage would sit under
+   the copy the whole width. Switch to top-down so the type keeps its ground. */
+@media (max-width:760px){
+  .hero-wash{background:
+    linear-gradient(to top,var(--ink-plum) 0,rgba(20,13,26,0) 26%),
+    linear-gradient(to bottom,rgba(13,8,18,.42) 0,rgba(13,8,18,.9) 34%,rgba(13,8,18,.97) 100%)}
+  .hero-in{padding-top:180px;max-width:none}
+}
+/* Over footage the panel reads as glass rather than a card cut out of the page. */
+.hero-in .tldr{background:rgba(13,8,18,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .tldr{position:relative;overflow:hidden;border:1px solid var(--border-strong);border-radius:var(--radius-lg);background:var(--surface-card);padding:18px 24px 20px;margin:26px 0 0;box-shadow:var(--shadow-md),var(--shadow-inset-top)}
 .tldr::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-xp)}
 .tldr .k{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:.28em;color:var(--neon-rose)}
