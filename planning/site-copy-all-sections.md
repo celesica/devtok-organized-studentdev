@@ -31,18 +31,10 @@
 
 `Prepped by: Jazzy · DevTok Pinas`
 
-This guide walks you through a practical way to organize your school files, coding projects, self-learning, deadlines, and development workspace.
-
-It's built for CS, IT, engineering, and other students who write code as part of school or on their own. You don't need to be an advanced developer to use it, and you don't need to copy every part exactly.
-
-Use the system as a starting point, keep what works for you, and adjust it as your needs change.
+This guide walks you through a practical way to organize your school files, coding projects, self-learning, deadlines, and development workspace. It's built for CS, IT, engineering, and other students who write code as part of school or on their own. You don't need to be an advanced developer to use it, and you don't need to copy every part exactly. Use the system as a starting point, keep what works for you, and adjust it as your needs change.
 
 `[TLDR]`
-**TL;DR:** Having a simple system can save time, energy, and brainpower because you don't have to keep deciding where things go or trying to remember everything yourself.
-
-A good starting point is four main folders: **Studies, Development, Upskilling, and Career**. From there, you can use a few clear rules for where files go, keep important deadlines, use GitHub for code, and run a short reset whenever things start getting messy.
-
-You can set up the basic version today and improve it over time.
+**TL;DR:** Having a simple system can save time, energy, and brainpower because you don't have to keep deciding where things go or trying to remember everything yourself. A good starting point is four main folders: **Studies, Development, Upskilling, and Career**. From there, you can use a few clear rules for where files go, keep important deadlines, use GitHub for code, and run a short reset whenever things start getting messy. You can set up the basic version today and improve it over time.
 `[/TLDR]`
 
 ---

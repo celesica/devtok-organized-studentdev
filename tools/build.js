@@ -176,10 +176,8 @@ if(v&&window.matchMedia('(min-width:761px)').matches){v.src=v.dataset.src;}})();
 <h1 class="h1 hero-title">Get Organized as a <br class="hbr">Student Developer</h1>
 <p class="hero-sub">Build a Better System for Classes, Projects, and <br class="hbr">Your Coding Workspace</p>
 <p class="meta">Prepped by: Jazzy &middot; DevTok Pinas</p>
-<p class="hero-lede">This guide walks you through a practical way to organize your school files, coding projects, self-learning, deadlines, and development workspace.</p>
-<p class="hero-lede">It's built for CS, IT, engineering, and other students who write code as part of school or on their own. You don't need to be an advanced developer to use it, and you don't need to copy every part exactly.</p>
-<p class="hero-lede">Use the system as a starting point, keep what works for you, and adjust it as your needs change.</p>
-<div class="tldr"><span class="k">TL;DR</span><p>Having a simple system can save time, energy, and brainpower because you don't have to keep deciding where things go or trying to remember everything yourself.</p><p>A good starting point is four main folders: <b>Studies, Development, Upskilling, and Career</b>. From there, you can use a few clear rules for where files go, keep important deadlines, use GitHub for code, and run a short reset whenever things start getting messy.</p><p>You can set up the basic version today and improve it over time.</p></div>
+<p class="hero-lede">This guide walks you through a practical way to organize your school files, coding projects, self-learning, deadlines, and development workspace. It's built for CS, IT, engineering, and other students who write code as part of school or on their own. You don't need to be an advanced developer to use it, and you don't need to copy every part exactly. Use the system as a starting point, keep what works for you, and adjust it as your needs change.</p>
+<div class="tldr"><span class="k">TL;DR</span><p>Having a simple system can save time, energy, and brainpower because you don't have to keep deciding where things go or trying to remember everything yourself. A good starting point is four main folders: <b>Studies, Development, Upskilling, and Career</b>. From there, you can use a few clear rules for where files go, keep important deadlines, use GitHub for code, and run a short reset whenever things start getting messy. You can set up the basic version today and improve it over time.</p></div>
 </div></div>`;
 
 function sectionBody(label) {
