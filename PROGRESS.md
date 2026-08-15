@@ -3,7 +3,7 @@
 Phase: **generated site is live-quality; working through the sections with the owner, front to back.**
 
 ## Current phase
-`site/` is generated from the `.dc.html` exports by `tools/build.js`. On top of the export, the build applies owner-directed copy and interactive components section by section. **Sections 00 through 04 are through a full owner pass**; 05–09 still render the original export copy. Each rebuilt section is authored wholesale as a `SECTION_0N_BODY` constant returned from `sectionBody()`. Browser-verified after every change (DOM assertions + 375px no-overflow guard); no console errors.
+`site/` is generated from the `.dc.html` exports by `tools/build.js`. On top of the export, the build applies owner-directed copy and interactive components section by section. **Sections 00 through 05 are through a full owner pass**; 06–09 still render the original export copy. Each rebuilt section is authored wholesale as a `SECTION_0N_BODY` constant returned from `sectionBody()`. Browser-verified after every change (DOM assertions + 375px no-overflow guard); no console errors. All committed and pushed to `main`.
 
 The interactive vocabulary built across sections: branded folder trees (`ftree()`, native `<details>`, PDF/MD/py/txt/json/git/env file glyphs), the non-breaking-hyphen pass (`nbHyphenate()`), the numbered-list conversion (`numberedTableToOl()`), colour utilities (`.amber`, `.flit`, `.fdir`), the state-machine actions in `components.js` (`set` jump-to-value, `toggle` non-persistent done-state, `openv`/`openimg` enlarge modal with a shared `.vmstage`), a reusable `vdemo()` video-preview helper (desktop-guarded looping thumbnail → controls modal), and section-04's calendar palette (`--cal-*` vars, incl. owner-added Cobalt/Mint).
 
@@ -47,15 +47,17 @@ The interactive vocabulary built across sections: branded folder trees (`ftree()
 - 2026-08-14 — Added root `netlify.toml` (publish `site`, empty build command, nosniff + no-referrer headers) so a git-connected deploy needs no dashboard configuration.
 
 ## In progress
-- Section-by-section owner content pass. Done through **04**; **05 Protecting your work** is next.
+- Section-by-section owner content pass. Done through **05**; **06 Notion for notes and school** is next (owner has already dropped `planning/notion/*.png` screenshots for it).
 
-## Recently done (this session)
+## Recently done (sections 03–05)
 - **Section 03 rebuilt** (`SECTION_03_BODY`): clickable five-layer stack (rows jump via `set`, sticky sidebar on desktop), four expanded structure trees with designed file glyphs, "Inside a project" explorer, dashed "whole road" (DOCUMENT/DEPLOY/PORTFOLIO drawn dashed = "not covered today", still clickable), Layer-3 screen recording (`Opening a Folder in the IDE.mp4` → enlarge modal) + the real `warm-ide.png` screenshot for "open the project folder", GitHub mark, and a commit-history mock (latest-first, no "claude").
 - **Section 04 rebuilt** (`SECTION_04_BODY`): interactive colour palette (Jazzy's, incl. Cobalt/Mint), kept event-builder field reveal, prefix explorer, a Google-Calendar-style **sample week** (colour-coded `[LEC]`/`[LAB]`/`[QUIZ]`/`[EXAM]` events + toggleable task checkboxes, scrolls on mobile), and a "Label your class schedule.mp4" preview beside the Step-2 note → enlarge modal.
-- New assets copied by the build into `site/assets/`: `opening-a-folder.mp4` (9.7 MB), `label-your-class.mp4` (25 MB), `warm-ide.png` (0.9 MB). Sources live in `planning/`.
+- **Section 05 rebuilt** (`SECTION_05_BODY`): backup destinations (four clickable cards → what belongs where), the secret-key walkthrough (four clickable numbered steps, escalating status badge IN YOUR CODE → EXPOSED → STILL EXPOSED → SAFE, secret highlighted in each `.code` block), and a new `.gitignore` explorer (click an entry → why it's ignored). Prose: password manager (Bitwarden linked, biometrics), 2FA, school-vs-personal email + student-perks side note.
+- **General spacing rule** added (owner preference): any paragraph/sub-heading right after a `.wa-list` bullet/numbered list now gets 24px top separation everywhere.
+- New assets copied by the build into `site/assets/`: `opening-a-folder.mp4` (9.7 MB), `label-your-class.mp4` (25 MB), `warm-ide.png` (0.9 MB). Sources in `planning/`.
 
 ## Next up
-- Continue the owner content pass on sections **05–09** (each still on export copy), same interactive vocabulary.
+- Continue the owner content pass on sections **06–09** (each still on export copy), same interactive vocabulary. Section 06 (Notion) screenshots are already in `planning/notion/`.
 - Connect **Netlify** (host already decided): *Add new site → Import an existing project* → pick the repo → accept the defaults (`netlify.toml` supplies them) → deploy. This can happen any time; the site is deployable now.
 - Resolve the open content items: section 06 links (Notion template, recording URL), section 08 presenter sign-off, section 09 closer.
 - Root `README.md` (the outside view) — still deferred.
