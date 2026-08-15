@@ -3,50 +3,42 @@
 *Written 2026-08-14 on jazzyb's Mac. Overwritten every session — git history holds the older ones.*
 
 ## Where we stopped
-Ran the pre-event verification pass on the built site and prepared the Netlify deploy. The site itself needed one fix; everything else passed.
+Working through the guide with the owner, section by section, turning the export's copy into their voice and building interactive components as we go. **Sections 00 (Start), 01 (Folders), and 02 (School files) are through a full owner pass.** Sections 03–09 still render the original export copy, unchanged.
 
-60 assertions ran three ways — local server, `file://`, and a served subpath (`/site/index.html`) — and all 60 pass in each, with no console errors or uncaught exceptions. Covered: every one of the 11 routes showing exactly one view with its tab marked active, arrow-key and digit-key navigation, browser back, the 15 prompt buttons and the prompt modal, the 13 reset-checklist items writing to `localStorage` and surviving a reload, and no horizontal overflow at 375px.
-
-The one real bug: the calendar week mock in section 04 overflowed at 375px (434px against a 375px viewport). Five `1fr` columns cannot go below their min-content width, and "Algorithms" alone is wider than a fifth of a phone screen. Fixed in `tools/build.js` — two columns below 640px plus `min-width:0` on `.calday` — and rebuilt.
-
-Then reworked the section 00 header to the owner's design, iterating with them over screenshots. The subhead plus the original lede paragraph both stay; the meta reads `Prepped by: Jazzy · DevTok Pinas` (no date). `planning/Cozy Desk Loop.mp4` runs as a full-bleed looping background, and the copy is pinned to the **left** (not the document's centred column) so the laptop and lamp stay in frame on the right, faintly visible behind the text through an angled plum wash. No play control; the loop always runs. Autoplay confirmed on both `http` and `file://` (muted, so the policy allows it).
-
-A later pass tidied the header chrome: a full-width rose hairline now sits under the tab bar to separate the nav from the content, and the title/subhead break at fixed points on desktop via a desktop-only `<br class="hbr">` (with a leading space so the words don't fuse when the break is hidden on mobile) instead of reflowing with the container. I also briefly top-aligned the hero eyebrow to match the other sections, but the owner preferred the lower, roughly-centred group, so it was reverted — the hero keeps its 64/72 top/bottom padding.
-
-The Start page's "What this guide covers" list, previously a plain `.mono` table, now renders as the design system's numbered list (`.wa-list--ol`, rose mono numerals). `numberedTableToOl()` in `convert()` turns any `.tbl` whose every row is a mono numeral + one text cell into a `.wa-list--ol`; the filename-example tables (first cell like "fix", "final") have non-numeric first cells, so they stay tables.
-
-**Mobile keeps the pre-video header.** Below 760px there is no footage, the header uses the ordinary centred column, and the TL;DR is a solid card again — the original design before this change. The mp4 is not merely hidden: an inline `matchMedia('(min-width:761px)')` guard assigns its `src` only on desktop, so a phone reader downloads **0 bytes** of the 2.5 MB video (verified over the network at 375px). Desktop still fetches and plays it.
+Everything is committed and pushed to `main`; the tree is clean. The 60-assertion headless-Chrome check passes (it was re-run after every change this session), including the 375px no-overflow guard.
 
 ## State: working
-Site verified and committed. Host is decided (Netlify); the connect step is the owner's to run.
+Site is deployable right now. The section content pass is mid-flight (next is 03).
+
+## How the build works now (read this before editing copy)
+`tools/build.js` renders the `.dc.html` exports **and** applies owner-directed overrides on top. Section copy for 00–02 lives in `build.js`, not the exports:
+- **00 Start** — the `HERO` constant (title, subhead, meta, lede, TL;DR, the looping video header) plus `applyStartCopy()` (Why-I-think-this-matters, What-you'll-have, folder-mock caption, UNDERSTAND closer).
+- **01 Folders** — `applyFoldersCopy()`, with the tree/panel constants: `TREE_STUDIES/DEV/UPT/UPP/CAREER`, `UPSKILLING_PANEL`, `CAREER_PANEL`, `ORG_BAND`, plus notes and the two-question decision band.
+- **02 School** — rebuilt wholesale as `SECTION_02_BODY` (returned directly from `sectionBody`), with `TREE_SCHOOL` and the kept tap-to-reveal naming table.
+
+Every `swap()` throws if its export anchor is gone, so a changed export fails the build loudly instead of silently keeping stale copy. After any edit: `cd tools && node toolkit.js && node build.js`, then mirror the wording into `planning/site-copy-all-sections.md`.
+
+Shared build helpers, reusable for 03–09:
+- `ftree(nodes, label)` — interactive branded folder tree (native `<details>`, collapsed by default, Collapse | Expand toolbar handled by `texp`/`tcol` in `site/js/components.js`). Node forms: `[name]` folder-leaf, `[name, [kids]]` folder, `[name, "pdf"|"md"]` file (document glyph with an Ember/Lilac type tag).
+- `nbHyphenate()` — swaps intra-word hyphens for U+2011 so words like "self-learning" don't split; protects `<pre>/<script>/<style>/<table>` and tag attributes.
+- `numberedTableToOl()` — a `.tbl` whose rows are all mono numerals becomes the DS numbered list.
+- CSS colour utilities: `.amber` (main folder highlight), `.flit` (Lilac Signal, file/subfolder names), `.fdir` (Ember, bold folder names in explainers).
 
 ## The next action
-Connect Netlify: *Add new site → Import an existing project* → pick `celesica/devtok-organized-studentdev` → accept the defaults → deploy. `netlify.toml` at the repo root already sets publish `site` with an empty build command, so nothing needs configuring in the dashboard. No redirect or rewrite rules — the site uses hash routing.
+Continue the owner content pass on **section 03 Your coding projects**, then 04–09. Reuse the tree/colour vocabulary above. Keep re-running the headless check and mirroring copy into `planning/`.
 
-For a same-day fallback, <https://app.netlify.com/drop> takes the `site/` folder by drag-and-drop and returns a URL in seconds.
+Deploy is independent and can happen any time: Netlify → *Add new site → Import an existing project* → pick `celesica/devtok-organized-studentdev` → accept the defaults (`netlify.toml` at the repo root supplies publish `site`, empty build command, no rewrites) → deploy. Same-day fallback: drag the `site/` folder onto <https://app.netlify.com/drop>.
 
-## Files touched, and why
-- `tools/build.js` — the 375px calendar fix, then the video header: the `HERO` block, the `.hero-band` / `.hero-vid` / `.hero-wash` rules, and a copy of the mp4 into `site/assets/`. The generator, not `site/index.html` or `site/css/app.css`, because those are generated.
-- `site/index.html`, `site/css/app.css`, `site/assets/cozy-desk-loop.mp4` — regenerated.
-- `planning/site-copy-all-sections.md` — dropped the lede paragraph and changed the meta line, so the copy doc still matches the site. The second edit ever made under `planning/`, and made on explicit instruction.
-- `planning/Cozy Desk Loop.mp4` — now tracked. It was sitting untracked; it is the header footage and the build reads it, so it belongs in the repo.
-- `tools/README.md` — documents the asset copy and the header video.
-- `netlify.toml` — new. Publish `site`, empty build command, `X-Content-Type-Options: nosniff` and `Referrer-Policy: no-referrer`.
-- `site/README.md` — the Netlify section now says to accept the defaults, since `netlify.toml` supplies them.
-
-## Decisions made
-- Verification stays an ad-hoc script in the session scratchpad, not a committed suite. `CLAUDE.md` says there is no test tooling here and that inventing it is not the goal; re-authoring the script per session is the accepted cost.
-- `netlify.toml` lives at the repo root rather than being configured in the dashboard, so the deploy settings are reviewable in git.
-
-## Open questions needing me (owner)
-- Section 06 links (Notion template, previous session recording) still have no real URLs.
-- The presenter sign-off at the end of section 08 is unwritten in the copy doc, so it is absent from the site.
-- Section 09 has no closer box, matching the export.
-- The seven screenshot slots show built HTML mockups. Real screenshots can replace any of them by deleting that entry from `tools/mockups.js`.
+## Open questions needing the owner
+- Sections 03–09 copy is still the export's; the owner drives which sections change and how.
+- Section 06 links (Notion template, previous session recording) have no real URLs.
+- Section 08 presenter sign-off is unwritten; absent from the site.
+- Section 09 has no closer box (matches the export).
+- The screenshot slots render built HTML mockups; real screenshots can replace any by deleting that entry from `tools/mockups.js`.
 - Root `README.md` (the outside view of the repo) is still unwritten.
 
 ## Machine state
-- Branch `main`, tracking `origin/main` at `celesica/devtok-organized-studentdev` (private). Clean tree as of this commit.
-- Needs on a fresh machine: git, Node (for the build only), Python 3 (for local preview). The site itself needs nothing — it opens from `file://`.
-- Verification used headless Chrome over the DevTools Protocol at `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`, driven by a plain Node script with no dependencies (Node 26's global `WebSocket`).
-- Local preview during this session: `python3 -m http.server 8123` from `site/`, and `:8124` from the repo root for the subpath check.
+- Branch `main`, tracking `origin/main` at `celesica/devtok-organized-studentdev` (private). Clean tree.
+- Needs on a fresh machine: git, Node (for the build only), Python 3 (for local preview). The site itself opens from `file://` with nothing installed.
+- Local preview this session: `python3 -m http.server 8080 --directory site` (live) and `:8081` from `docs/history/site-v1-2026-08-14` (the archived v1). They run detached; stop with `pkill -f "http.server 808"`.
+- Verification is an ad-hoc headless-Chrome (DevTools Protocol) Node script in the session scratchpad — re-authored each session by design, since the repo has no test tooling. Chrome at `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`.

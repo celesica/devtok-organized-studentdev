@@ -1,9 +1,11 @@
 # Progress — Get Organized as a Student Developer
 
-Phase: **site regenerated from the Claude Design exports; awaiting owner review before deploy.**
+Phase: **generated site is live-quality; working through the sections with the owner, front to back.**
 
 ## Current phase
-`site/` is now generated from the `.dc.html` exports by `tools/build.js`, so it matches the owner's design and copy exactly. Verified in headless Chrome. Nothing is pushed — everything stays local until review.
+`site/` is generated from the `.dc.html` exports by `tools/build.js`. On top of the export, the build applies owner-directed copy and interactive components section by section. **Sections 00, 01, and 02 are through a full owner pass**; 03–09 still render the original export copy. All work is committed and pushed to `main`; the tree is clean. 60 headless-Chrome assertions pass after every change.
+
+The interactive vocabulary built this pass and reused across sections: branded folder trees (`ftree()`, native `<details>`, collapsed by default with a Collapse | Expand toolbar, PDF/MD file glyphs), the non-breaking-hyphen pass (`nbHyphenate()`), the numbered-list conversion (`numberedTableToOl()`), and colour utilities (`.amber`, `.flit` = Lilac Signal, `.fdir` = Ember).
 
 ## Done
 - 2026-08-14 — Read all planning inputs (brief, site copy, interactive components, toolkit, Warm Arcade `_ds`, `.dc.html` exports).
@@ -45,11 +47,12 @@ Phase: **site regenerated from the Claude Design exports; awaiting owner review 
 - 2026-08-14 — Added root `netlify.toml` (publish `site`, empty build command, nosniff + no-referrer headers) so a git-connected deploy needs no dashboard configuration.
 
 ## In progress
-- Host chosen: **Netlify**. Repo config is in place; the owner runs the connect step.
+- Section-by-section owner content pass. Done through **02**; **03 Your coding projects** is next.
 
 ## Next up
-- Connect Netlify: *Add new site → Import an existing project* → pick the repo → accept the defaults (`netlify.toml` supplies them) → deploy.
-- Resolve the open content items: section 09 closer, Notion template URL, recording URL, presenter sign-off.
+- Continue the owner content pass on sections **03–09** (each still on export copy), likely with the same interactive-tree / colour vocabulary.
+- Connect **Netlify** (host already decided): *Add new site → Import an existing project* → pick the repo → accept the defaults (`netlify.toml` supplies them) → deploy. This can happen any time; the site is deployable now.
+- Resolve the open content items: section 06 links (Notion template, recording URL), section 08 presenter sign-off, section 09 closer.
 - Root `README.md` (the outside view) — still deferred.
 
 ## Watching
