@@ -461,8 +461,11 @@ button.lrow:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .pfxcard-tag{display:inline-block;color:var(--ink-plum);border-radius:4px;padding:1px 7px;font-weight:700;margin-right:4px}
 .pfxcard-m{margin:6px 0 0;font-size:13.5px;color:var(--muted-ink)}
 
-/* the Step 2 closing row — note on the left, a video preview on the right */
+/* the Step 2 closing row — colour description + note stacked on the left, the
+   video preview on the right, so both sides carry weight */
 .labelrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);gap:20px;align-items:start;margin:16px 0}
+.labelrow-l{display:flex;flex-direction:column;gap:14px}
+.labelrow-l .swatch-detailwrap{margin-top:0}
 .labelrow .note{margin:0}
 .labelrow .vdemo{margin:0}
 @media (max-width:720px){.labelrow{grid-template-columns:1fr}}
