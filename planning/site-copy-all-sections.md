@@ -374,6 +374,7 @@ Studies/
 └── BS Computer Science/
     ├── Courses/
     │   ├── Y1T1/
+    │   ├── Y1T2/
     │   └── Y2T1/
     │       ├── Algorithms and Complexity/
     │       │   ├── lectures/

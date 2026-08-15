@@ -270,6 +270,7 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
 .note .np{display:block;margin-top:8px}
 .fdir{color:var(--ember);font-weight:700}
 .amber{color:var(--amber-glow)}
+.flit{color:var(--lilac-signal)}
 .ftree details{margin:0}
 .ftree ul.ftkids{list-style:none;margin:0 0 0 11px;padding:0 0 0 15px;border-left:1px solid var(--border-hairline)}
 .ftree ul.ftroot{margin:0;padding:0;border-left:none}
