@@ -3,7 +3,7 @@
 Phase: **generated site is live-quality; working through the sections with the owner, front to back.**
 
 ## Current phase
-`site/` is generated from the `.dc.html` exports by `tools/build.js`. On top of the export, the build applies owner-directed copy and interactive components section by section. **Sections 00 through 05 are through a full owner pass**; 06–09 still render the original export copy. Each rebuilt section is authored wholesale as a `SECTION_0N_BODY` constant returned from `sectionBody()`. Browser-verified after every change (DOM assertions + 375px no-overflow guard); no console errors. All committed and pushed to `main`.
+`site/` is generated from the `.dc.html` exports by `tools/build.js`. On top of the export, the build applies owner-directed copy and interactive components section by section. **Sections 00 through 06 are through a full owner pass**; 07–09 still render the original export copy. Each rebuilt section is authored wholesale as a `SECTION_0N_BODY` constant returned from `sectionBody()`. Browser-verified after every change (DOM assertions + 375px no-overflow guard); no console errors. All committed and pushed to `main`.
 
 The interactive vocabulary built across sections: branded folder trees (`ftree()`, native `<details>`, PDF/MD/py/txt/json/git/env file glyphs), the non-breaking-hyphen pass (`nbHyphenate()`), the numbered-list conversion (`numberedTableToOl()`), colour utilities (`.amber`, `.flit`, `.fdir`), the state-machine actions in `components.js` (`set` jump-to-value, `toggle` non-persistent done-state, `openv`/`openimg` enlarge modal with a shared `.vmstage`), a reusable `vdemo()` video-preview helper (desktop-guarded looping thumbnail → controls modal), and section-04's calendar palette (`--cal-*` vars, incl. owner-added Cobalt/Mint).
 
@@ -47,7 +47,11 @@ The interactive vocabulary built across sections: branded folder trees (`ftree()
 - 2026-08-14 — Added root `netlify.toml` (publish `site`, empty build command, nosniff + no-referrer headers) so a git-connected deploy needs no dashboard configuration.
 
 ## In progress
-- Section-by-section owner content pass. Done through **05**; **06 Notion for notes and school** is next (owner has already dropped `planning/notion/*.png` screenshots for it).
+- Section-by-section owner content pass. Done through **06**; **07 Setting up your coding workspace** is next (owner supplied the copy md and an Antigravity multi-project-workspace screenshot — the screenshot still needs saving into `planning/` before the build can wire it in).
+
+## Recently done (section 06)
+- **Section 06 rebuilt** (`SECTION_06_BODY`): the three real Notion screenshots (`planning/notion/*.png` → `site/assets/notion-*.png`) live inside one toggle **"Jazzy's Notion OS — school dashboard"**, each in its own fixed-height box that scrolls internally and opens full-size in a new tab (`target="_blank"`). When the toggle is open the card area (`.expb`) becomes a capped (64vh) scroll region with `overscroll-behavior:contain` and 34px side gutters, and the image boxes no longer contain their overscroll — so scrolling an image chains out to the next one, the summary stays put (close without scrolling up), and the page never moves; closed, normal page scroll resumes. Also: three "what stays elsewhere" routing cards, an Academia flow diagram (CSS arrows), a clickable six-database catalogue (group `c60`, reveal panels), a two-column start-now/add-later split, the real Academia template link (opens a new tab) + a text-only Discord recording pointer, and a chip row of alternatives. "What you can see from the main dashboard" band was cut per owner. The word **Notion** is ember-bold (`.nem`) throughout the running copy, headings left plain.
+- **Tag-spacing project rule** (owner): every `.wa-badge` keeps a firm 16px right margin — the old `.wa-badge:last-child{margin-right:0}` was stripping the gap whenever a text node (not an element) followed, so RECOMMENDED touched the sentence after it. Fix is global across all sections.
 
 ## Recently done (sections 03–05)
 - **Section 03 rebuilt** (`SECTION_03_BODY`): clickable five-layer stack (rows jump via `set`, sticky sidebar on desktop), four expanded structure trees with designed file glyphs, "Inside a project" explorer, dashed "whole road" (DOCUMENT/DEPLOY/PORTFOLIO drawn dashed = "not covered today", still clickable), Layer-3 screen recording (`Opening a Folder in the IDE.mp4` → enlarge modal) + the real `warm-ide.png` screenshot for "open the project folder", GitHub mark, and a commit-history mock (latest-first, no "claude").
@@ -57,9 +61,9 @@ The interactive vocabulary built across sections: branded folder trees (`ftree()
 - New assets copied by the build into `site/assets/`: `opening-a-folder.mp4` (9.7 MB), `label-your-class.mp4` (25 MB), `warm-ide.png` (0.9 MB). Sources in `planning/`.
 
 ## Next up
-- Continue the owner content pass on sections **06–09** (each still on export copy), same interactive vocabulary. Section 06 (Notion) screenshots are already in `planning/notion/`.
+- Continue the owner content pass on sections **07–09** (each still on export copy), same interactive vocabulary. Section 07 (Workspace) copy md is in Downloads; its multi-project-workspace screenshot (Antigravity, `ine (Workspace)` → `blood-labs-history-app` + `ine-coach-reports`) needs saving into `planning/` so the build can copy it into `site/assets/`.
 - Connect **Netlify** (host already decided): *Add new site → Import an existing project* → pick the repo → accept the defaults (`netlify.toml` supplies them) → deploy. This can happen any time; the site is deployable now.
-- Resolve the open content items: section 06 links (Notion template, recording URL), section 08 presenter sign-off, section 09 closer.
+- Resolve the open content items: section 08 presenter sign-off, section 09 closer. (Section 06's Academia template link is now real and wired; its walkthrough recording stays a text-only Discord pointer — no public URL.)
 - Root `README.md` (the outside view) — still deferred.
 
 ## Watching
@@ -79,7 +83,6 @@ The interactive vocabulary built across sections: branded folder trees (`ftree()
 - The seven screenshot slots render as empty labelled placeholders, matching the export. Owner to supply images, or the v1 built mockups can be restored from the archive.
 - Section 09 has no section-closer box, matching the export.
 - Headings render Title Case because the export's CSS sets `text-transform:capitalize`, which the readme's sentence-case rule would not. Kept for parity with the export.
-- Section 06 links (Notion template, previous session recording) have no real URLs yet.
 - The presenter sign-off at the end of section 08 is unwritten in the copy doc, so it is absent from the site.
 
 ## Settled — do not reopen without a new fact

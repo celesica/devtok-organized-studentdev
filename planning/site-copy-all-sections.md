@@ -1010,45 +1010,111 @@ Set up a password manager if you don't already have one, then check which import
 ---
 
 # SECTION 06
-## Notion for Notes and School Organization
+## Notion for notes and school
 
-**What this section covers:** Using Notion as a place to keep notes, track subjects, and see what's coming — with a template you can copy.
+**What this section covers:** Using Notion as a place for notes, links, progress, and information you want to see quickly.
 
-**Why it matters:** Your folders hold files and your calendar holds time. Notes and progress need somewhere too, and keeping them in scattered documents makes them hard to review before an exam.
-
-`[Badge] HOW I DO IT`
+**Why it matters:** Your folders answer **"Where is the file?"** and your calendar answers **"When is it happening?"** Notes and information you want to review need a home too.
 
 ---
 
 ### What a dashboard is for
 
-A dashboard shows you what needs attention. It doesn't store your files — your folders do that.
+A school dashboard can surface the information you want to see quickly.
 
-**What belongs in it**
-- Notes per subject
-- Current deadlines
-- Links to your LMS, class recordings, and drive folders
-- Progress on projects and courses
+**Useful things to keep visible:**
 
-**What doesn't**
-- Files. Link to them or keep them in your folders.
-- Anything you already track in your calendar.
+- Your current courses
+- Your weekly class schedule
+- Course modules or weekly topics
+- Lectures, assignments, quizzes, projects, and labs
+- Coursework status and progress
+- Instructor information
+- Room and building details
+- Links to your LMS
+- Links to your course folders
+- Semester or term information
+- Academic planning pages
+
+> **NOTE:** Your dashboard does not need to become another place where you store everything. Think of it as a **control panel** that connects you to the information and resources you use most often.
+
+**What can stay somewhere else:**
+
+- **School files** → Studies or your cloud storage
+- **Working code** → Development and GitHub
+- **Classes, deadlines, and notifications** → Google Calendar and Tasks
+
+Your folders can remain the source of truth for files. Your calendar can remain the source of truth for time, deadlines, and reminders. Notion gives you a useful **view** of your school information and progress.
 
 ---
 
-### The template
+### Jazzy's Notion OS
 
-`[Visual — Class C]` Jazzy's school Notion.
+This is the Notion system I used during my Computer Science degree. It became one of the tools that helped me a lot throughout my academic life, because I had one place where I could quickly see the school information I needed without digging through different folders, websites, and notes.
 
-The template includes:
-- A page per subject, with notes and links
-- A term overview
-- A simple deadline list
-- A place for course and certificate tracking
+`[Toggle: Jazzy's Notion OS — school dashboard]` — three real screenshots (Courses view, Academia homepage, Upskilling view). Each scrolls inside its own fixed box and opens full size in a new tab when clicked.
 
-`[Link]` Copy the template →
+`[/Toggle]`
 
-**How to use it:** duplicate it, rename the subjects to yours, and use it for one term before changing anything.
+> **NOTE:** You do not need to copy my entire setup. The point is to see how a dashboard can bring useful school information together in one place while your actual files, calendar, and code continue living in their proper systems.
+
+---
+
+### The Academia template
+
+The **Academia** template is the school organization system we built together during a previous **DevTok Pinas session**.
+
+- The session recording is available in our **Discord**
+- You can copy the template and use it as a starting point
+- You can also follow the recording if you want to understand how the system was built
+
+The Academia system is built around five connected school databases, plus a Contacts or People database for instructors and classmates.
+
+```text
+Year + Term → Courses → Modules → Coursework
+Courses ↔ Academic Schedule
+Courses / Schedule ↔ Contacts
+```
+
+Here's what each part is for (click a database on the site to reveal its details):
+
+- **Year + Term** — keeps track of each semester or term; connects your courses to the term they belong to; can include the semester timeline and intake.
+- **Courses** — one entry for each class; can include the course type, credits, instructor, status, and description; can link directly to your LMS course page; can link directly to your Google Drive or course folder; pulls in the course schedule, modules, and coursework.
+- **Academic Schedule** — keeps your recurring class time blocks; can include the day, time, lecture/lab type, room, location, and instructor; can be shown as a board grouped by day for a weekly timetable view.
+- **Modules** — breaks a course into smaller weekly or topic-based sections; connects each module to its course; holds the coursework that belongs to that module; can automatically show progress based on completed coursework.
+- **Coursework** — tracks the individual things you need to study or complete (lectures, assignments, quizzes, projects, and labs); lets you track whether something is not started, in progress, being reviewed, submitted, or completed.
+- **Contacts / People** — keeps instructor, classmate, or school contact information; can connect the same instructor to their courses and schedule instead of typing their information repeatedly.
+
+`[Link]` [Copy or view the Academia template →](https://ninth-potential-0e7.notion.site/ACADEMIA-39384ccf1fbf80b59e1bf157d8265c7b)
+
+`[Link]` Full Academia walkthrough — available in the DevTok Pinas Discord
+
+---
+
+### Start with the parts you actually need
+
+`[Badge] RECOMMENDED`
+
+If you copy the template, you do not need to fill out everything immediately.
+
+**Start with:**
+- Your current **Year + Term**
+- Your current **Courses**
+- Your regular **class schedule**
+- Your **LMS link** for each course
+- Your **course folder link** for each course
+- Your **instructors**, if useful
+
+**Add as the semester starts:**
+- Modules or weekly topics
+- Lectures
+- Assignments
+- Quizzes
+- Projects
+- Labs
+- Progress tracking
+
+> **NOTE:** Build the data as school gives it to you. You do not need to enter an entire semester's worth of coursework before classes even start.
 
 ---
 
@@ -1056,32 +1122,45 @@ The template includes:
 
 `[Badge] RECOMMENDED`
 
-- Start with fewer pages than you think you need
-- Add something only when you've missed it twice
-- If keeping it updated takes longer than the schoolwork it tracks, simplify it
+A few useful rules:
 
-**Note:** Systems with many linked databases usually get abandoned within a few weeks. A simple one you actually open beats a detailed one you don't.
+- Start with fewer views than you think you need.
+- Don't track something just because Notion allows you to.
+- Link to files instead of uploading another copy when the original already has a proper home.
+- Add properties or views when you notice a real need for them.
+- Remove or hide things you consistently ignore.
+- If updating Notion takes more time than the schoolwork it tracks, simplify it.
+
+> **NOTE:** The goal is not to maintain Notion. The goal is for Notion to make school easier to manage.
 
 ---
 
 ### Other options
 
-- **Obsidian** — works offline, files stay on your computer, better for long-term note-taking. Different enough that it deserves its own session.
-- **OneNote, Google Docs, or a notebook** — all fine. The tool matters far less than using one consistently.
+Notion is only one option. You could also use:
 
-`[Link]` Full walkthrough — recording from the previous Notion session →
+- **Obsidian**
+- **OneNote**
+- **Google Docs**
+- **Apple Notes**
+- A physical notebook
+
+The important part is having a place where you naturally expect your notes and school information to be.
 
 ---
 
 ## Key takeaways
 
-- A dashboard surfaces what needs attention; it doesn't store files.
-- Copy the template, rename the subjects, use it for a term before changing it.
-- Start small and add only what you've missed.
-- Obsidian and OneNote work too. Consistency matters more than the app.
+- Notion can complement your folders and calendar instead of replacing them.
+- A dashboard can give you one place to quickly see useful school information.
+- The Academia template connects **terms, courses, schedules, modules, coursework, and contacts**.
+- Course pages can keep important links and information close at hand.
+- Modules and coursework let you track schoolwork at a more detailed level.
+- You do not need to use every database, property, or view immediately.
+- You also do not need Notion specifically for this organization system to work.
 
 `[SectionCloser: COPY]`
-Duplicate the Notion template and add this term's subjects.
+Copy the Academia template, add your current term and courses, then fill in the rest as you actually need it.
 `[/SectionCloser]`
 
 ---

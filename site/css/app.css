@@ -243,8 +243,10 @@ main{padding-bottom:104px}
 .tldr p{font-size:16.5px;margin:10px 0 0}
 
 /* ---- Badges: pill tags, a step smaller, never touching their neighbours ---- */
-.wa-badge{border-radius:var(--radius-pill);font-size:calc(var(--fs-label) - 1px);padding:4px 13px;margin:2px 14px 6px 0;vertical-align:2px}
-.wa-badge:last-child{margin-right:0}
+.wa-badge{border-radius:var(--radius-pill);font-size:calc(var(--fs-label) - 1px);padding:4px 13px;margin:2px 16px 6px 0;vertical-align:2px}
+/* Project rule: a tag/badge always keeps clear space before the text or line
+   that follows it. A trailing text node is not an element, so :last-child would
+   otherwise strip the gap and let the badge touch the words after it. */
 
 /* ---- Section closer: lamp card, with the label in ember ---- */
 p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-badge:first-child){line-height:1.9}
@@ -627,8 +629,73 @@ button.lrow:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .imgslot{height:100%;min-height:220px;border:1px dashed var(--border-strong);border-radius:12px;background:var(--plum-900);display:flex;align-items:center;justify-content:center;padding:20px;text-align:center}
 .imgslot span{font-family:var(--font-tech);font-size:13px;color:var(--muted-ink);max-width:36ch}
 .tblwrap{overflow-x:auto}
+
+/* ---- Section 06: Notion ---- */
+/* "Notion" set as the section's focus word — ember and bold where it appears
+   in the running copy (headings stay plain, so the term stands out in text) */
+.nem{color:var(--ember);font-weight:700}
+/* Screenshot toggle — each shot scrolls inside its own fixed box; overscroll
+   containment keeps the page still while a tall screenshot is scrolled. Both
+   the image and the caption link open the full-size original in a new tab. */
+.nshots{margin:16px 0}
+/* When open, the card area becomes its own capped scroll region: the summary
+   above it stays put (opening no longer grows the page much), so the close
+   control sits where it was clicked — no scrolling the page up to reach it.
+   Overscroll containment stops the scroll from chaining out to the page.
+   The side padding leaves a gutter on each side of the images: the wheel lands
+   on the card area there, so you can always scroll to the next screenshot
+   instead of being trapped scrolling inside one image.
+   Collapsed, the toggle imposes nothing and the page scrolls normally. */
+.nshots[open] .expb{max-height:64vh;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding-left:34px;padding-right:34px}
+.nshot{margin:0 0 20px}
+.nshot:last-child{margin-bottom:2px}
+.nshot-cap{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 8px}
+.nshot-name{display:inline-flex;align-items:center;gap:9px;font-family:var(--font-tech);font-size:14px;color:var(--parchment)}
+.nshot-num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;font-size:12px;color:var(--neon-rose);background:var(--rose-a12);border:1px solid rgba(255,92,138,.4);border-radius:6px}
+.nshot-open{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-tech);font-size:12.5px;color:var(--neon-rose);text-decoration:none;white-space:nowrap}
+.nshot-open:hover{text-decoration:underline}
+.nshot-ext{width:9px;height:9px;border:1.5px solid currentColor;border-radius:2px;flex:0 0 auto;position:relative;top:1px}
+.nshot-box{height:440px;overflow:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--border-strong);border-radius:12px;background:var(--ink-plum);box-shadow:var(--shadow-md)}
+.nshot-box a{display:block}
+.nshot-box img{display:block;width:100%;height:auto}
+
+/* "What stays elsewhere" — routing cards mapping a thing to the system that owns it */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}
+.nstay{display:flex;flex-direction:column;gap:8px;background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:12px;padding:14px 16px}
+.nstay-k{font-family:var(--font-tech);font-size:14px;color:var(--parchment)}
+.nstay-arr{width:20px;height:2px;background:var(--border-strong);position:relative}
+.nstay-arr::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:2px solid var(--border-strong);border-right:2px solid var(--border-strong);transform:rotate(45deg)}
+.nstay-v{font-size:14px;color:var(--muted-ink)}
+
+/* Academia flow — the connected databases, arrows drawn in CSS (no glyph font) */
+.nflow{margin:16px 0;padding:18px;border:1px solid var(--border-hairline);border-radius:14px;background:var(--surface-card)}
+.nflow-chain{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.nflow-node{display:inline-flex;align-items:center;font-family:var(--font-tech);font-size:13.5px;color:var(--parchment);background:var(--ink-plum);border:1px solid var(--border-strong);border-radius:9px;padding:8px 13px}
+.nflow-arr{flex:0 0 auto;width:22px;height:2px;background:var(--ember);position:relative}
+.nflow-arr::after{content:"";position:absolute;right:0;top:-3px;width:7px;height:7px;border-top:2px solid var(--ember);border-right:2px solid var(--ember);transform:rotate(45deg)}
+.nflow-rels{display:flex;flex-direction:column;gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border-hairline)}
+.nflow-rel{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.nflow-rk{font-family:var(--font-tech);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-ink)}
+
+/* Real link cards — the template link opens a new tab; the recording is text-only */
+.nlinks{display:flex;flex-direction:column;gap:10px;margin:16px 0 2px}
+.nlink{display:flex;align-items:center;gap:14px;padding:13px 16px;border:1px solid var(--border-strong);border-radius:12px;background:var(--surface-card);text-decoration:none;color:inherit;transition:border-color 140ms,box-shadow 140ms}
+a.nlink:hover{border-color:var(--neon-rose);box-shadow:var(--glow-rose-soft)}
+a.nlink:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.nlink-k{flex:0 0 auto;font-family:var(--font-tech);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--neon-rose);width:78px}
+.nlink-t{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--parchment)}
+.nlink--muted{opacity:.72}
+.nlink--muted .nlink-k,.nlink--muted .nlink-t{color:var(--muted-ink)}
+
+/* Alternatives chip row */
+.chiprow{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
+.optchip{font-family:var(--font-tech);font-size:13px;color:var(--parchment);background:var(--surface-card);border:1px solid var(--border-strong);border-radius:999px;padding:7px 14px}
+
 @media (max-width:640px){
   .in{padding-left:16px;padding-right:16px}
+  .grid3{grid-template-columns:1fr}
+  .nshot-box{height:360px}
+  .nshots[open] .expb{padding-left:16px;padding-right:16px}
   .pnrow{padding-left:16px;padding-right:16px}
   .c7grid{grid-template-columns:1fr}
   /* the layer's question forces the single-column grid wider than the phone;
