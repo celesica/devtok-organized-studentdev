@@ -33,6 +33,23 @@ cd tools && node toolkit.js && node build.js
 
 Node is needed only to regenerate; the resulting `site/` folder then runs with nothing installed. There is no bundler, framework, npm, test suite, or linter — by design.
 
+## Tech stack
+
+| Layer | Choice |
+| --- | --- |
+| Markup, styling, logic | Vanilla **HTML, CSS, JavaScript** — no framework |
+| Design system | Warm Arcade `_ds` — CSS custom-property tokens + components |
+| Routing | Custom **hash router** (`site/js/router.js`) — works on any static host, no rewrite rules |
+| Interactivity | Hand-written `site/js/components.js` — steppers, reveals, persistent checklists, prompt modal, copy buttons |
+| Persistence | Browser **`localStorage`** (checklist progress only; no backend, no accounts, no analytics) |
+| Generator (dev-time only) | **Node.js** — `tools/build.js` + `tools/toolkit.js` render `site/` from the Claude Design exports + `planning/` copy |
+| Fonts | Google Fonts (the only external request) |
+| Local preview | **Python 3** `http.server`, or open `site/index.html` from `file://` |
+| Hosting | **Netlify** — static, Git-connected, auto-deploys on push to `main` |
+| Source control | **Git / GitHub** |
+
+No bundler, npm packages, framework, test suite, or linter — deliberate, so the deployed `site/` runs anywhere with nothing installed.
+
 ## Repository layout
 
 ```
