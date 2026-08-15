@@ -1167,44 +1167,46 @@ Copy the Academia template, add your current term and courses, then fill in the 
 ---
 
 # SECTION 07
-## Setting Up Your Coding Workspace
+## Setting up your coding workspace
 
-**What this section covers:** What a coding workspace is, and what to install so you can actually work.
+**What this section covers:** What a coding workspace includes and the basic tools you need to start working on projects.
 
-**Why it matters:** "Set up your workspace" gets said a lot without anyone explaining what it means. It's your editor, your tools, and your project folder working together.
+**Why it matters:** "Set up your development environment" can sound much more complicated than it actually is when you're starting.
 
 ---
 
 ### What a coding workspace is
 
-Three things, not one:
+Think of your workspace as three things working together (part 3 is this section's focus):
 
-1. **Where your code lives** — the project folder inside `Development/`
-2. **What you open it with** — your editor, with the folder open, not a file
-3. **What's installed** — the tools that let the code run
+1. **Where your code lives** — your project folder inside Development
+2. **What you open it with** — your editor or IDE, with the whole project folder open
+3. **What's installed** — the tools needed to run and work with the code
 
-Section 03 covered the first two. This section is the third.
+Section 03 covered the first two. This section focuses on the tools installed on your computer.
 
 ---
 
 ### What to install, by job
 
-`[Badge] RECOMMENDED` Install things because you need them, not because a list says every developer has them.
+`[Badge] RECOMMENDED` Install tools because you need them, not because every developer setup video lists them. On the site this is a **timing filter** — click Now / Soon / As needed / Later to see what belongs there; it opens on Now.
 
-| Job | Tool | When |
+| Job | Example tool | When |
 |---|---|---|
-| Write code | VS Code | Now |
+| Write code | VS Code or IntelliJ IDEA | Now |
 | Run your language | Python, Node.js, Java — whatever your classes use | Now |
 | Track changes | Git | Now |
-| Type commands | Terminal — built into VS Code | Now |
-| Install packages | pip, npm — comes with the language | Now |
+| Type commands | Terminal — built into VS Code and IntelliJ IDEA | Now |
+| Install packages | pip, npm — comes with the ecosystem | Now |
 | Format code | Prettier or Black | Soon |
-| Catch mistakes | ESLint, Pylint | Soon |
-| Test APIs | Postman or Thunder Client | When you build one |
-| Work with databases | DBeaver, TablePlus | When a class needs it |
-| Containers | Docker | Later, and only if required |
+| Check code quality | Built-in IDE inspections; ESLint or Pylint when your project uses them | As needed |
+| Test APIs | Postman — when you build or use an API | As needed |
+| Work with databases | DataGrip — when you need it | As needed |
+| Containers | Docker — later, if required | Later |
 
-**Note:** Everything in the "Now" row is free and takes one afternoon.
+These are only samples — there are many other tools out there, and over time you'll find what works best for you. You do not need every development tool installed on day one; start with what your current classes and projects actually use.
+
+> **NOTE:** Linters such as **ESLint** and **Pylint** are not automatically required for every student or project. Your editor or IDE already catches many syntax errors and common problems. Add a linter when your language, class, team, or project uses one for additional code-quality rules.
 
 ---
 
@@ -1212,36 +1214,72 @@ Section 03 covered the first two. This section is the third.
 
 `[Badge] TOOL-SPECIFIC`
 
-You don't need twenty-five VS Code extensions.
+The same rule applies to editor extensions. On the site, click one to see what it's for. Useful ones you may come across include:
 
-**Worth having early**
-- The language extension for what you're learning — Python, or the JavaScript pack
-- A formatter — Prettier
-- GitLens, if you want a clearer view of your project's history
+- **The extension for the language you're learning** — Python, Java, C/C++, or whatever your current class or project uses
+- **Prettier** — formats supported code consistently, especially common in web projects
+- **ESLint** — useful for JavaScript or TypeScript projects that use ESLint rules
+- **Live Server** — useful when working on simple HTML, CSS, and JavaScript projects locally
 
-**Add anything else only when you hit a specific problem it solves.** Extensions slow the editor down and most of them you'll never open.
+You do not need to install all of these. Before installing something, ask: **What problem is this extension solving for me?** If you don't have an answer yet, you probably don't need it yet.
+
+> **NOTE:** IntelliJ IDEA already includes many features that VS Code may add through extensions, such as code inspections, refactoring tools, language support, and project analysis. The exact plugins or extensions you need will depend on the IDE and language you're using.
+
+---
+
+### Another meaning of "workspace"
+
+Most of the time in this guide, **workspace** simply means the project and tools you currently have open for coding. But in editors and IDEs, **workspace** can also describe a setup where you manage **multiple projects together**.
+
+In VS Code, this is a **multi-root workspace** — you add multiple separate project folders or repositories to the same window (**File → Add Folder to Workspace**), then save the setup as a `.code-workspace` file so you can reopen the same group later. IntelliJ IDEA has the same idea through its **Multi-Project Workspace** plugin: related projects appear together in one IDE workspace, and you can work across them without constantly opening and closing separate windows. For example:
+
+```text
+Health-Tech.code-workspace
+├── blood-lab-repo/
+└── ine-coach-report-tool/
+```
+
+The projects stay separate — each remains its own project and Git repository. I might group them like this when:
+
+- The projects are related
+- A feature in one project connects to the other
+- I need to search or reference code across both projects
+- I'm actively working between both and don't want to keep switching windows
+
+`[Visual — Class C]` Jazzy's real multi-project workspace (`workspace.png`) — one window titled `ine (Workspace)` with `blood-labs-history-app` and `ine-coach-reports` open together.
+
+> **NOTE:** You do not need a multi-project workspace for normal assignments. It becomes useful when you are actively working on two or more separate projects that relate to each other.
 
 ---
 
 ### Keeping the workspace usable
 
-- Close projects you're not working on. One project open at a time.
-- Keep the terminal open at the project folder rather than typing `cd` repeatedly.
-- Delete leftover test files — `test.py`, `untitled1.js` — as you go.
-- If your editor is slow, it's usually extensions or a synced folder.
+A few simple habits:
 
-`[Visual — Class C]` VS Code with a project open, annotated: Explorer, Editor, Terminal, Source Control.
+- Open the project folder instead of random individual files.
+- Keep the terminal open at the project directory.
+- Close projects you aren't actively working on.
+- Delete leftover test files when you're done with them.
+- Remove extensions you no longer use.
+- If your editor becomes slow, check your extensions and whether the project is inside a synced folder.
+- Use a multi-project workspace only when the projects actually benefit from being open together.
+
+`[Visual — Class C]` A project open in the editor, showing the Explorer, editor, terminal, and Source Control (reuses `warm-ide.png`).
 
 ---
 
 ## Key takeaways
 
-- A workspace is your project folder, your editor with the folder open, and your installed tools.
-- Install the "Now" row first. It's one afternoon and it's free.
-- Add tools and extensions when a problem needs them, not in advance.
+- Your workspace is the project folder, editor or IDE, and development tools working together.
+- You only need a few tools to start.
+- Install the language and tools your current classes actually use.
+- Your editor or IDE already catches many coding problems; add linters when your project needs them.
+- Add extensions when they solve a specific problem.
+- VS Code can group related projects in a **multi-root workspace**.
+- IntelliJ IDEA can also manage related projects together in a **Multi-Project Workspace**.
 
 `[SectionCloser: DO]`
-Check you have the four essentials installed: editor, your language, Git, and a terminal you can reach.
+Check that you have the basics for your current classes: an editor or IDE, your required programming language, Git, and a working terminal.
 `[/SectionCloser]`
 
 ---

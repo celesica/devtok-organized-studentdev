@@ -32,6 +32,14 @@ const IDE_SHOT = "assets/warm-ide.png";
 if (!fs.existsSync(IDE_SHOT_SRC)) throw new Error("missing IDE screenshot: " + IDE_SHOT_SRC);
 fs.copyFileSync(IDE_SHOT_SRC, OUT + IDE_SHOT);
 
+/* Section 07 — a real screenshot of the owner's multi-project workspace
+   (Antigravity, similar to a VS Code multi-root workspace): one window titled
+   "ine (Workspace)" holding two separate project folders. Enlargeable. */
+const WS_SHOT_SRC = P.replace(/Session website with tabs\/$/, "workspace.png");
+const WS_SHOT = "assets/workspace.png";
+if (!fs.existsSync(WS_SHOT_SRC)) throw new Error("missing workspace screenshot: " + WS_SHOT_SRC);
+fs.copyFileSync(WS_SHOT_SRC, OUT + WS_SHOT);
+
 /* Section 04, Step 2 — a screen recording of labelling a class in the calendar,
    shown as a preview beside the note that opens enlarged in the modal. */
 const LABEL_VIDEO_SRC = P.replace(/Session website with tabs\/$/, "Label your class schedule.mp4");
@@ -252,6 +260,7 @@ function sectionBody(label) {
   if (label === "04 Your calendar and tasks") return nbHyphenate(SECTION_04_BODY);
   if (label === "05 Protecting your work") return nbHyphenate(SECTION_05_BODY);
   if (label === "06 Notion for notes and school") return nbHyphenate(SECTION_06_BODY);
+  if (label === "07 Setting up your coding workspace") return nbHyphenate(SECTION_07_BODY);
   const re = new RegExp('<section class="sec" data-screen-label="' + label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + '">([\\s\\S]*?)</section>');
   const m = guide.match(re);
   if (!m) throw new Error("section not found: " + label);
@@ -1468,6 +1477,152 @@ ${s06Dbs()}
 <div class="closer"><span class="k">COPY</span><p>Copy the Academia template, add your current term and courses, then fill in the rest as you actually need it.</p></div>
 </div></div>`;
 
+/* ---------- section 07: coding workspace ---------- */
+
+// The three parts of a workspace. Part 3 (installed tools) is this section's
+// focus, so it's marked.
+const s07Parts = () => `<div class="wsparts">
+<div class="wspart"><span class="wspart-n mono">1</span><span class="wspart-h">Where your code lives</span><p>Your project folder inside Development.</p></div>
+<div class="wspart"><span class="wspart-n mono">2</span><span class="wspart-h">What you open it with</span><p>Your editor or IDE, with the whole project folder open.</p></div>
+<div class="wspart wspart--focus"><span class="wspart-tag">This section</span><span class="wspart-n mono">3</span><span class="wspart-h">What's installed</span><p>The tools needed to run and work with the code.</p></div>
+</div>`;
+
+// "What to install, by job" — a when-to-install filter. Click a timing to see
+// which tools belong there; it opens on "Now", the set you actually start with.
+// group c70.
+const S07_INSTALL = [
+  ["now", "Now", [
+    ["Write code", "VS Code or IntelliJ IDEA"],
+    ["Run your language", "Python, Node.js, Java — whatever your classes use"],
+    ["Track changes", "Git"],
+    ["Type commands", "Terminal — built into VS Code and IntelliJ IDEA"],
+    ["Install packages", "pip, npm — comes with the ecosystem"],
+  ]],
+  ["soon", "Soon", [
+    ["Format code", "Prettier or Black"],
+  ]],
+  ["asneeded", "As needed", [
+    ["Check code quality", "Built-in IDE inspections; ESLint or Pylint when your project uses them"],
+    ["Test APIs", "Postman — when you build or use an API"],
+    ["Work with databases", "DataGrip — when you need it"],
+  ]],
+  ["later", "Later", [
+    ["Containers", "Docker — later, if required"],
+  ]],
+];
+function s07Install() {
+  const chips = S07_INSTALL.map(([v, label, items]) =>
+    `<button class="tchip" type="button" data-act="set" data-k="c70" data-v="${v}" data-st="c70" data-on="${v}" data-mode="eq">${label}<span class="tchip-n mono">${items.length}</span></button>`).join("");
+  const cards = S07_INSTALL.flatMap(([v, label, items]) => items.map(([job, tool]) =>
+    `<div class="instcard" data-st="c70" data-on="${v}" data-mode="eq"><span class="inst-job">${job}</span><span class="inst-tool">${tool}</span></div>`)).join("");
+  return `<div class="tchips" role="group" aria-label="Filter the tools by when to install them">${chips}</div>
+<div class="instgrid">${cards}</div>`;
+}
+
+// Editor extensions — a clickable catalogue (same reveal pattern as the section
+// 06 databases). group c71.
+const S07_EXT = [
+  ["lang", "Language extension", "Adds support for the language you're learning — Python, Java, C/C++, or whatever your current class or project uses."],
+  ["prettier", "Prettier", "Formats supported code consistently. Especially common in web projects."],
+  ["eslint", "ESLint", "Useful for JavaScript or TypeScript projects that use ESLint rules."],
+  ["liveserver", "Live Server", "Handy when working on simple HTML, CSS, and JavaScript projects locally."],
+];
+function s07Ext() {
+  const rows = S07_EXT.map(([v, name]) =>
+    `<button class="iprow" type="button" data-act="set" data-k="c71" data-v="${v}" data-st="c71" data-on="${v}" data-mode="eq"><span class="ftcaret ipcaret" aria-hidden="true"></span><span class="fname">${name}</span></button>`).join("");
+  const descs = S07_EXT.map(([v, name, desc]) =>
+    `<div class="ipd" data-st="c71" data-on="${v}" data-mode="eq"><span class="iph">${name}</span><p>${desc}</p></div>`).join("");
+  return `<p class="mut" style="font-size:14.5px;margin:2px 0 10px">Click an extension to see what it's for.</p>
+<div class="ipx"><div class="ipx-tree ftree"><div class="iprows">${rows}</div></div><div class="ipx-desc">${descs}</div></div>`;
+}
+
+// The owner's real multi-project workspace (workspace.png) — an enlargeable
+// preview, same pattern as warm-ide.png.
+const s07Workspace = () => `<figure class="wsfig">
+<button class="idethumb" type="button" data-act="openimg" data-isrc="${WS_SHOT}" data-mlabel="A multi-project workspace — one window titled ine (Workspace) with blood-labs-history-app and ine-coach-reports open together" aria-label="Enlarge the workspace screenshot">
+<img class="idethumb-img" src="${WS_SHOT}" alt="A multi-project workspace: one window titled ine (Workspace) with two separate project folders open together — blood-labs-history-app and ine-coach-reports." loading="lazy" decoding="async">
+<span class="vdemo-badge"><span class="vdemo-exp" aria-hidden="true"></span>Enlarge</span>
+</button>
+<figcaption class="cap"><span class="cap-tag">Example</span> — two related projects open together in one workspace.</figcaption>
+</figure>`;
+
+// The .code-workspace file that stores the grouping (illustrative names from the
+// copy), as a small expandable tree.
+const S07_WS_TREE = ftree([
+  ["Health-Tech.code-workspace", [
+    ["blood-lab-repo/"],
+    ["ine-coach-report-tool/"],
+  ]],
+], "Example .code-workspace file grouping two repositories", { open: true, bare: true });
+
+// The annotated editor screenshot reused from section 03 (warm-ide.png), shown
+// as an enlargeable preview for "keeping the workspace usable".
+const S07_IDE_SHOT = `<figure class="wsfig">
+<button class="idethumb" type="button" data-act="openimg" data-isrc="${IDE_SHOT}" data-mlabel="A project open in the editor — Explorer, editor, terminal and Source Control" aria-label="Enlarge the editor screenshot">
+<img class="idethumb-img" src="${IDE_SHOT}" alt="A project open in the editor: the Explorer file tree, the editor, a terminal at the project location, and the Source Control panel." loading="lazy" decoding="async">
+<span class="vdemo-badge"><span class="vdemo-exp" aria-hidden="true"></span>Enlarge</span>
+</button>
+<figcaption class="cap">One project open, with the Explorer, editor, terminal, and Source Control in view.</figcaption>
+</figure>`;
+
+const SECTION_07_BODY = `<div class="band"><div class="in">
+<div class="eyebrow"><span>07 · setting up your coding workspace</span><span class="lvl">GOING DEEPER</span></div>
+<h1 class="h1">Setting up your coding workspace</h1>
+<p class="cover"><b>What this section covers:</b> What a coding workspace includes and the basic tools you need to start working on projects.</p>
+<p class="cover"><b>Why it matters:</b> "Set up your development environment" can sound much more complicated than it actually is when you're starting.</p>
+</div></div><div class="band"><div class="in"><h2 class="h2">What a coding workspace is</h2>
+<p>Think of your workspace as three things working together:</p>
+${s07Parts()}
+<p>Section 03 covered the first two. This section focuses on the tools installed on your computer.</p>
+</div></div><div class="band"><div class="in"><h2 class="h2">What to install, by job</h2>
+<p><span class="wa-badge wa-badge--amber">RECOMMENDED</span> Install tools because you need them, not because every developer setup video lists them. <b>Pick a timing</b> to see what belongs there — start with <b>Now</b>.</p>
+${s07Install()}
+<p>These are only samples — there are many other tools out there, and over time you'll find what works best for you. You do not need every development tool installed on day one; start with what your current classes and projects actually use.</p>
+<div class="note"><span class="nl">NOTE</span>Linters such as <b>ESLint</b> and <b>Pylint</b> are not automatically required for every student or project. Your editor or IDE already catches many syntax errors and common problems. Add a linter when your language, class, team, or project uses one for additional code-quality rules.</div>
+</div></div><div class="band"><div class="in"><h2 class="h2">Extensions</h2>
+<p><span class="wa-badge wa-badge--lilac">TOOL-SPECIFIC</span> The same rule applies to editor extensions. Useful ones you may come across include:</p>
+${s07Ext()}
+<p>You do not need to install all of these. Before installing something, ask:</p>
+<div class="pn"><span class="k">ASK YOURSELF</span><p><b>What problem is this extension solving for me?</b> If you don't have an answer yet, you probably don't need it yet.</p></div>
+<div class="note"><span class="nl">NOTE</span>IntelliJ IDEA already includes many features that VS Code may add through extensions, such as code inspections, refactoring tools, language support, and project analysis. The exact plugins or extensions you need will depend on the IDE and language you're using.</div>
+</div></div><div class="band"><div class="in"><h2 class="h2">Another meaning of "workspace"</h2>
+<p>Most of the time in this guide, <b>workspace</b> simply means the project and tools you currently have open for coding. But in editors and IDEs, <b>workspace</b> can also describe a setup where you manage <b>multiple projects together</b>.</p>
+<p>In VS Code, this is a <b>multi-root workspace</b> — you add multiple separate project folders or repositories to the same window (<b>File → Add Folder to Workspace</b>), then save the setup as a <span class="mono flit">.code-workspace</span> file so you can reopen the same group later. IntelliJ IDEA has the same idea through its <b>Multi-Project Workspace</b> plugin: related projects appear together in one IDE workspace, and you can work across them without constantly opening and closing separate windows. For example:</p>
+${S07_WS_TREE}
+<p>The projects stay separate — each remains its own project and Git repository. I might group them like this when:</p>
+<ul class="wa-list wa-list--ul">
+<li>The projects are related</li>
+<li>A feature in one project connects to the other</li>
+<li>I need to search or reference code across both projects</li>
+<li>I'm actively working between both and don't want to keep switching windows</li>
+</ul>
+${s07Workspace()}
+<div class="note"><span class="nl">NOTE</span>You do not need a multi-project workspace for normal assignments. It becomes useful when you are actively working on two or more separate projects that relate to each other.</div>
+</div></div><div class="band"><div class="in"><h2 class="h2">Keeping the workspace usable</h2>
+<p>A few simple habits:</p>
+<ul class="wa-list wa-list--ul">
+<li>Open the project folder instead of random individual files.</li>
+<li>Keep the terminal open at the project directory.</li>
+<li>Close projects you aren't actively working on.</li>
+<li>Delete leftover test files when you're done with them.</li>
+<li>Remove extensions you no longer use.</li>
+<li>If your editor becomes slow, check your extensions and whether the project is inside a synced folder.</li>
+<li>Use a multi-project workspace only when the projects actually benefit from being open together.</li>
+</ul>
+${S07_IDE_SHOT}
+</div></div><div class="band"><div class="in"><h2 class="h2">Key takeaways</h2>
+<ul class="wa-list wa-list--ul">
+<li>Your workspace is the project folder, editor or IDE, and development tools working together.</li>
+<li>You only need a few tools to start.</li>
+<li>Install the language and tools your current classes actually use.</li>
+<li>Your editor or IDE already catches many coding problems; add linters when your project needs them.</li>
+<li>Add extensions when they solve a specific problem.</li>
+<li>VS Code can group related projects in a <b>multi-root workspace</b>.</li>
+<li>IntelliJ IDEA can also manage related projects together in a <b>Multi-Project Workspace</b>.</li>
+</ul>
+<div class="closer"><span class="k">DO</span><p>Check that you have the basics for your current classes: an editor or IDE, your required programming language, Git, and a working terminal.</p></div>
+</div></div>`;
+
 // Its own band now, sitting right after the four folders.
 const ORG_BAND = `<div class="band"><div class="in"><h2 class="h2">Where organization work goes</h2>
 <p><span class="wa-badge wa-badge--amber">RECOMMENDED</span></p>
@@ -2258,11 +2413,43 @@ a.nlink:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .chiprow{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
 .optchip{font-family:var(--font-tech);font-size:13px;color:var(--parchment);background:var(--surface-card);border:1px solid var(--border-strong);border-radius:999px;padding:7px 14px}
 
+/* ---- Section 07: coding workspace ---- */
+/* The three parts of a workspace; part 3 (installed tools) is the focus */
+.wsparts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.wspart{position:relative;background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:12px;padding:16px}
+.wspart--focus{border-color:var(--neon-rose);box-shadow:var(--glow-rose-soft)}
+.wspart-n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:13px;color:var(--neon-rose);background:var(--rose-a12);border:1px solid rgba(255,92,138,.4);border-radius:7px;margin-bottom:9px}
+.wspart-h{display:block;font-family:var(--font-tech);font-size:14.5px;color:var(--parchment);margin-bottom:5px}
+.wspart p{margin:0;font-size:14px;color:var(--muted-ink)}
+.wspart-tag{position:absolute;top:12px;right:12px;font-family:var(--font-tech);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--neon-rose)}
+
+/* Install-by-timing filter: chips select a group, cards reveal for the match */
+.tchips{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}
+.tchip{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-tech);font-size:13.5px;color:var(--muted-ink);background:var(--surface-card);border:1px solid var(--border-strong);border-radius:999px;padding:7px 15px;cursor:pointer;transition:color 120ms,border-color 120ms,background 120ms}
+.tchip:hover{color:var(--parchment)}
+.tchip:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.tchip.on{color:var(--parchment);border-color:var(--neon-rose);background:var(--rose-a12)}
+.tchip-n{font-size:11.5px;color:var(--muted-ink);background:var(--plum-900);border-radius:999px;padding:1px 7px}
+.tchip.on .tchip-n{color:var(--neon-rose)}
+.instgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:6px 0 4px}
+.instcard{display:none;flex-direction:column;gap:4px;background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:10px;padding:13px 15px}
+.instcard.on{display:flex}
+.inst-job{font-family:var(--font-tech);font-size:14px;color:var(--parchment)}
+.inst-tool{font-size:13.5px;color:var(--muted-ink)}
+
+/* Project rule: an image/figure keeps clear vertical space from the text around
+   it (above and below), and its caption sits clear of the image rather than
+   hugging it. Applied to every image-bearing figure, not just this one. */
+.wsfig,.vdemo,figure.shot{margin-top:26px;margin-bottom:26px}
+.wsfig .cap,figure.shot .cap{margin-top:14px}
+
 @media (max-width:640px){
   .in{padding-left:16px;padding-right:16px}
   .grid3{grid-template-columns:1fr}
   .nshot-box{height:360px}
   .nshots[open] .expb{padding-left:16px;padding-right:16px}
+  .wsparts{grid-template-columns:1fr}
+  .instgrid{grid-template-columns:1fr}
   .pnrow{padding-left:16px;padding-right:16px}
   .c7grid{grid-template-columns:1fr}
   /* the layer's question forces the single-column grid wider than the phone;

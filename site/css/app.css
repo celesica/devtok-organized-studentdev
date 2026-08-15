@@ -691,11 +691,43 @@ a.nlink:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .chiprow{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
 .optchip{font-family:var(--font-tech);font-size:13px;color:var(--parchment);background:var(--surface-card);border:1px solid var(--border-strong);border-radius:999px;padding:7px 14px}
 
+/* ---- Section 07: coding workspace ---- */
+/* The three parts of a workspace; part 3 (installed tools) is the focus */
+.wsparts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.wspart{position:relative;background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:12px;padding:16px}
+.wspart--focus{border-color:var(--neon-rose);box-shadow:var(--glow-rose-soft)}
+.wspart-n{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;font-size:13px;color:var(--neon-rose);background:var(--rose-a12);border:1px solid rgba(255,92,138,.4);border-radius:7px;margin-bottom:9px}
+.wspart-h{display:block;font-family:var(--font-tech);font-size:14.5px;color:var(--parchment);margin-bottom:5px}
+.wspart p{margin:0;font-size:14px;color:var(--muted-ink)}
+.wspart-tag{position:absolute;top:12px;right:12px;font-family:var(--font-tech);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--neon-rose)}
+
+/* Install-by-timing filter: chips select a group, cards reveal for the match */
+.tchips{display:flex;flex-wrap:wrap;gap:9px;margin:14px 0}
+.tchip{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-tech);font-size:13.5px;color:var(--muted-ink);background:var(--surface-card);border:1px solid var(--border-strong);border-radius:999px;padding:7px 15px;cursor:pointer;transition:color 120ms,border-color 120ms,background 120ms}
+.tchip:hover{color:var(--parchment)}
+.tchip:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.tchip.on{color:var(--parchment);border-color:var(--neon-rose);background:var(--rose-a12)}
+.tchip-n{font-size:11.5px;color:var(--muted-ink);background:var(--plum-900);border-radius:999px;padding:1px 7px}
+.tchip.on .tchip-n{color:var(--neon-rose)}
+.instgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:6px 0 4px}
+.instcard{display:none;flex-direction:column;gap:4px;background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:10px;padding:13px 15px}
+.instcard.on{display:flex}
+.inst-job{font-family:var(--font-tech);font-size:14px;color:var(--parchment)}
+.inst-tool{font-size:13.5px;color:var(--muted-ink)}
+
+/* Project rule: an image/figure keeps clear vertical space from the text around
+   it (above and below), and its caption sits clear of the image rather than
+   hugging it. Applied to every image-bearing figure, not just this one. */
+.wsfig,.vdemo,figure.shot{margin-top:26px;margin-bottom:26px}
+.wsfig .cap,figure.shot .cap{margin-top:14px}
+
 @media (max-width:640px){
   .in{padding-left:16px;padding-right:16px}
   .grid3{grid-template-columns:1fr}
   .nshot-box{height:360px}
   .nshots[open] .expb{padding-left:16px;padding-right:16px}
+  .wsparts{grid-template-columns:1fr}
+  .instgrid{grid-template-columns:1fr}
   .pnrow{padding-left:16px;padding-right:16px}
   .c7grid{grid-template-columns:1fr}
   /* the layer's question forces the single-column grid wider than the phone;

@@ -880,66 +880,79 @@ WEATHER_API_KEY = os.environ["WEATHER_API_KEY"]</pre></div>
 <div class="band"><div class="in">
 <div class="eyebrow"><span>07 · setting up your coding workspace</span><span class="lvl">GOING DEEPER</span></div>
 <h1 class="h1">Setting up your coding workspace</h1>
-<p class="cover"><b>What this covers:</b> what a coding workspace is, and what to install so you can actually work.</p>
-<p class="cover"><b>Why it matters:</b> "set up your workspace" gets said a lot without anyone explaining what it means. It's your editor, your tools, and your project folder working together.</p>
+<p class="cover"><b>What this section covers:</b> What a coding workspace includes and the basic tools you need to start working on projects.</p>
+<p class="cover"><b>Why it matters:</b> "Set up your development environment" can sound much more complicated than it actually is when you're starting.</p>
 </div></div><div class="band"><div class="in"><h2 class="h2">What a coding workspace is</h2>
-<ol class="wa-list wa-list--ol">
-<li><b>Where your code lives</b> — the project folder inside <span class="mono">Development/</span></li>
-<li><b>What you open it with</b> — your editor, with the folder open, not a file</li>
-<li><b>What's installed</b> — the tools that let the code run</li>
-</ol>
-<p>Section 03 covered the first two. This section is the third.</p>
-</div></div><div class="band"><div class="in"><h2 class="h2">What to install, by job</h2>
-<p><span class="wa-badge wa-badge--amber">RECOMMENDED</span> Install things because you need them, not because a list says every developer has them.</p>
-<div class="chiprow">
-<button class="chip" data-st="c18" data-on="now" data-mode="eq" data-k="c18" data-v="now" data-act="pick">Now</button>
-<button class="chip" data-st="c18" data-on="soon" data-mode="eq" data-k="c18" data-v="soon" data-act="pick">Soon</button>
-<button class="chip" data-st="c18" data-on="later" data-mode="eq" data-k="c18" data-v="later" data-act="pick">Later</button>
-<button class="chip" data-st="c18" data-on="all" data-mode="eq" data-k="c18" data-v="all" data-act="pick">All</button>
+<p>Think of your workspace as three things working together:</p>
+<div class="wsparts">
+<div class="wspart"><span class="wspart-n mono">1</span><span class="wspart-h">Where your code lives</span><p>Your project folder inside Development.</p></div>
+<div class="wspart"><span class="wspart-n mono">2</span><span class="wspart-h">What you open it with</span><p>Your editor or IDE, with the whole project folder open.</p></div>
+<div class="wspart wspart--focus"><span class="wspart-tag">This section</span><span class="wspart-n mono">3</span><span class="wspart-h">What's installed</span><p>The tools needed to run and work with the code.</p></div>
 </div>
-<table class="tbl"><thead><tr><th>Job</th><th>Tool</th><th>When</th></tr></thead><tbody>
-<tr  data-st="c18" data-on="now" data-mode="eq"><td>Write code</td><td>VS Code</td><td class="mono">NOW</td></tr>
-<tr  data-st="c18" data-on="now" data-mode="eq"><td>Run your language</td><td>Python, Node.js, Java — whatever your classes use</td><td class="mono">NOW</td></tr>
-<tr  data-st="c18" data-on="now" data-mode="eq"><td>Track changes</td><td>Git</td><td class="mono">NOW</td></tr>
-<tr  data-st="c18" data-on="now" data-mode="eq"><td>Type commands</td><td>Terminal — built into VS Code</td><td class="mono">NOW</td></tr>
-<tr  data-st="c18" data-on="now" data-mode="eq"><td>Install packages</td><td>pip, npm — comes with the language</td><td class="mono">NOW</td></tr>
-<tr  data-st="c18" data-on="soon" data-mode="eq"><td>Format code</td><td>Prettier or Black</td><td class="mono">SOON</td></tr>
-<tr  data-st="c18" data-on="soon" data-mode="eq"><td>Catch mistakes</td><td>ESLint, Pylint</td><td class="mono">SOON</td></tr>
-<tr  data-st="c18" data-on="later" data-mode="eq"><td>Test APIs</td><td>Postman or Thunder Client</td><td class="mono">LATER</td></tr>
-<tr  data-st="c18" data-on="later" data-mode="eq"><td>Work with databases</td><td>DBeaver, TablePlus</td><td class="mono">LATER</td></tr>
-<tr  data-st="c18" data-on="later" data-mode="eq"><td>Containers</td><td>Docker — only if required</td><td class="mono">LATER</td></tr>
-</tbody></table>
-<div class="note"><span class="nl">NOTE</span>Everything in the NOW rows is free and takes one afternoon.</div>
+<p>Section 03 covered the first two. This section focuses on the tools installed on your computer.</p>
+</div></div><div class="band"><div class="in"><h2 class="h2">What to install, by job</h2>
+<p><span class="wa-badge wa-badge--amber">RECOMMENDED</span> Install tools because you need them, not because every developer setup video lists them. <b>Pick a timing</b> to see what belongs there — start with <b>Now</b>.</p>
+<div class="tchips" role="group" aria-label="Filter the tools by when to install them"><button class="tchip" type="button" data-act="set" data-k="c70" data-v="now" data-st="c70" data-on="now" data-mode="eq">Now<span class="tchip-n mono">5</span></button><button class="tchip" type="button" data-act="set" data-k="c70" data-v="soon" data-st="c70" data-on="soon" data-mode="eq">Soon<span class="tchip-n mono">1</span></button><button class="tchip" type="button" data-act="set" data-k="c70" data-v="asneeded" data-st="c70" data-on="asneeded" data-mode="eq">As needed<span class="tchip-n mono">3</span></button><button class="tchip" type="button" data-act="set" data-k="c70" data-v="later" data-st="c70" data-on="later" data-mode="eq">Later<span class="tchip-n mono">1</span></button></div>
+<div class="instgrid"><div class="instcard" data-st="c70" data-on="now" data-mode="eq"><span class="inst-job">Write code</span><span class="inst-tool">VS Code or IntelliJ IDEA</span></div><div class="instcard" data-st="c70" data-on="now" data-mode="eq"><span class="inst-job">Run your language</span><span class="inst-tool">Python, Node.js, Java — whatever your classes use</span></div><div class="instcard" data-st="c70" data-on="now" data-mode="eq"><span class="inst-job">Track changes</span><span class="inst-tool">Git</span></div><div class="instcard" data-st="c70" data-on="now" data-mode="eq"><span class="inst-job">Type commands</span><span class="inst-tool">Terminal — built into VS Code and IntelliJ IDEA</span></div><div class="instcard" data-st="c70" data-on="now" data-mode="eq"><span class="inst-job">Install packages</span><span class="inst-tool">pip, npm — comes with the ecosystem</span></div><div class="instcard" data-st="c70" data-on="soon" data-mode="eq"><span class="inst-job">Format code</span><span class="inst-tool">Prettier or Black</span></div><div class="instcard" data-st="c70" data-on="asneeded" data-mode="eq"><span class="inst-job">Check code quality</span><span class="inst-tool">Built‑in IDE inspections; ESLint or Pylint when your project uses them</span></div><div class="instcard" data-st="c70" data-on="asneeded" data-mode="eq"><span class="inst-job">Test APIs</span><span class="inst-tool">Postman — when you build or use an API</span></div><div class="instcard" data-st="c70" data-on="asneeded" data-mode="eq"><span class="inst-job">Work with databases</span><span class="inst-tool">DataGrip — when you need it</span></div><div class="instcard" data-st="c70" data-on="later" data-mode="eq"><span class="inst-job">Containers</span><span class="inst-tool">Docker — later, if required</span></div></div>
+<p>These are only samples — there are many other tools out there, and over time you'll find what works best for you. You do not need every development tool installed on day one; start with what your current classes and projects actually use.</p>
+<div class="note"><span class="nl">NOTE</span>Linters such as <b>ESLint</b> and <b>Pylint</b> are not automatically required for every student or project. Your editor or IDE already catches many syntax errors and common problems. Add a linter when your language, class, team, or project uses one for additional code‑quality rules.</div>
 </div></div><div class="band"><div class="in"><h2 class="h2">Extensions</h2>
-<p><span class="wa-badge wa-badge--lilac">TOOL‑SPECIFIC</span> You don't need twenty‑five VS Code extensions.</p>
+<p><span class="wa-badge wa-badge--lilac">TOOL‑SPECIFIC</span> The same rule applies to editor extensions. Useful ones you may come across include:</p>
+<p class="mut" style="font-size:14.5px;margin:2px 0 10px">Click an extension to see what it's for.</p>
+<div class="ipx"><div class="ipx-tree ftree"><div class="iprows"><button class="iprow" type="button" data-act="set" data-k="c71" data-v="lang" data-st="c71" data-on="lang" data-mode="eq"><span class="ftcaret ipcaret" aria-hidden="true"></span><span class="fname">Language extension</span></button><button class="iprow" type="button" data-act="set" data-k="c71" data-v="prettier" data-st="c71" data-on="prettier" data-mode="eq"><span class="ftcaret ipcaret" aria-hidden="true"></span><span class="fname">Prettier</span></button><button class="iprow" type="button" data-act="set" data-k="c71" data-v="eslint" data-st="c71" data-on="eslint" data-mode="eq"><span class="ftcaret ipcaret" aria-hidden="true"></span><span class="fname">ESLint</span></button><button class="iprow" type="button" data-act="set" data-k="c71" data-v="liveserver" data-st="c71" data-on="liveserver" data-mode="eq"><span class="ftcaret ipcaret" aria-hidden="true"></span><span class="fname">Live Server</span></button></div></div><div class="ipx-desc"><div class="ipd" data-st="c71" data-on="lang" data-mode="eq"><span class="iph">Language extension</span><p>Adds support for the language you're learning — Python, Java, C/C++, or whatever your current class or project uses.</p></div><div class="ipd" data-st="c71" data-on="prettier" data-mode="eq"><span class="iph">Prettier</span><p>Formats supported code consistently. Especially common in web projects.</p></div><div class="ipd" data-st="c71" data-on="eslint" data-mode="eq"><span class="iph">ESLint</span><p>Useful for JavaScript or TypeScript projects that use ESLint rules.</p></div><div class="ipd" data-st="c71" data-on="liveserver" data-mode="eq"><span class="iph">Live Server</span><p>Handy when working on simple HTML, CSS, and JavaScript projects locally.</p></div></div></div>
+<p>You do not need to install all of these. Before installing something, ask:</p>
+<div class="pn"><span class="k">ASK YOURSELF</span><p><b>What problem is this extension solving for me?</b> If you don't have an answer yet, you probably don't need it yet.</p></div>
+<div class="note"><span class="nl">NOTE</span>IntelliJ IDEA already includes many features that VS Code may add through extensions, such as code inspections, refactoring tools, language support, and project analysis. The exact plugins or extensions you need will depend on the IDE and language you're using.</div>
+</div></div><div class="band"><div class="in"><h2 class="h2">Another meaning of "workspace"</h2>
+<p>Most of the time in this guide, <b>workspace</b> simply means the project and tools you currently have open for coding. But in editors and IDEs, <b>workspace</b> can also describe a setup where you manage <b>multiple projects together</b>.</p>
+<p>In VS Code, this is a <b>multi‑root workspace</b> — you add multiple separate project folders or repositories to the same window (<b>File → Add Folder to Workspace</b>), then save the setup as a <span class="mono flit">.code‑workspace</span> file so you can reopen the same group later. IntelliJ IDEA has the same idea through its <b>Multi‑Project Workspace</b> plugin: related projects appear together in one IDE workspace, and you can work across them without constantly opening and closing separate windows. For example:</p>
+<div class="ftree" role="group" aria-label="Example .code-workspace file grouping two repositories">
+<ul class="ftkids ftroot"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Health‑Tech.code‑workspace</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">blood‑lab‑repo/</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">ine‑coach‑report‑tool/</span></li></ul></details></li></ul>
+</div>
+<p>The projects stay separate — each remains its own project and Git repository. I might group them like this when:</p>
 <ul class="wa-list wa-list--ul">
-<li>The language extension for what you're learning — Python, or the JavaScript pack</li>
-<li>A formatter — Prettier</li>
-<li>GitLens, if you want a clearer view of your project's history</li>
+<li>The projects are related</li>
+<li>A feature in one project connects to the other</li>
+<li>I need to search or reference code across both projects</li>
+<li>I'm actively working between both and don't want to keep switching windows</li>
 </ul>
-<p><b>Add anything else only when you hit a specific problem it solves.</b> Extensions slow the editor down and most of them you'll never open.</p>
+<figure class="wsfig">
+<button class="idethumb" type="button" data-act="openimg" data-isrc="assets/workspace.png" data-mlabel="A multi-project workspace — one window titled ine (Workspace) with blood-labs-history-app and ine-coach-reports open together" aria-label="Enlarge the workspace screenshot">
+<img class="idethumb-img" src="assets/workspace.png" alt="A multi-project workspace: one window titled ine (Workspace) with two separate project folders open together — blood-labs-history-app and ine-coach-reports." loading="lazy" decoding="async">
+<span class="vdemo-badge"><span class="vdemo-exp" aria-hidden="true"></span>Enlarge</span>
+</button>
+<figcaption class="cap"><span class="cap-tag">Example</span> — two related projects open together in one workspace.</figcaption>
+</figure>
+<div class="note"><span class="nl">NOTE</span>You do not need a multi‑project workspace for normal assignments. It becomes useful when you are actively working on two or more separate projects that relate to each other.</div>
 </div></div><div class="band"><div class="in"><h2 class="h2">Keeping the workspace usable</h2>
+<p>A few simple habits:</p>
 <ul class="wa-list wa-list--ul">
-<li>Close projects you're not working on. One project open at a time.</li>
-<li>Keep the terminal open at the project folder rather than typing <span class="mono">cd</span> repeatedly.</li>
-<li>Delete leftover test files — <span class="mono">test.py</span>, <span class="mono">untitled1.js</span> — as you go.</li>
-<li>If your editor is slow, it's usually extensions or a synced folder.</li>
+<li>Open the project folder instead of random individual files.</li>
+<li>Keep the terminal open at the project directory.</li>
+<li>Close projects you aren't actively working on.</li>
+<li>Delete leftover test files when you're done with them.</li>
+<li>Remove extensions you no longer use.</li>
+<li>If your editor becomes slow, check your extensions and whether the project is inside a synced folder.</li>
+<li>Use a multi‑project workspace only when the projects actually benefit from being open together.</li>
 </ul>
-<figure class="shot"><div class="vsc" role="img" aria-label="VS Code with a project open, labelled Explorer, Editor, Terminal and Source Control">
-  <div class="vtop"><span>schedule‑tracker</span></div>
-  <div class="vmain">
-    <div class="vside"><span class="hot" style="top:6px;left:6px">Explorer</span><span class="hot" style="bottom:6px;left:6px">Source control</span><br>src/<br>README.md<br>requirements.txt<br><br><br>main</div>
-    <div class="vedit"><span class="hot" style="top:6px;left:6px">Editor</span><br><br>1  import calendar</div>
-  </div>
-  <div class="vterm"><span class="hot" style="top:-2px;left:6px">Terminal</span><br>$ python src/main.py</div>
-</div><figcaption class="cap">Label live: Explorer · Editor · Terminal · Source Control.</figcaption></figure>
+<figure class="wsfig">
+<button class="idethumb" type="button" data-act="openimg" data-isrc="assets/warm-ide.png" data-mlabel="A project open in the editor — Explorer, editor, terminal and Source Control" aria-label="Enlarge the editor screenshot">
+<img class="idethumb-img" src="assets/warm-ide.png" alt="A project open in the editor: the Explorer file tree, the editor, a terminal at the project location, and the Source Control panel." loading="lazy" decoding="async">
+<span class="vdemo-badge"><span class="vdemo-exp" aria-hidden="true"></span>Enlarge</span>
+</button>
+<figcaption class="cap">One project open, with the Explorer, editor, terminal, and Source Control in view.</figcaption>
+</figure>
 </div></div><div class="band"><div class="in"><h2 class="h2">Key takeaways</h2>
 <ul class="wa-list wa-list--ul">
-<li>A workspace is your project folder, your editor with the folder open, and your installed tools.</li>
-<li>Install the NOW rows first. It's one afternoon and it's free.</li>
-<li>Add tools and extensions when a problem needs them, not in advance.</li>
+<li>Your workspace is the project folder, editor or IDE, and development tools working together.</li>
+<li>You only need a few tools to start.</li>
+<li>Install the language and tools your current classes actually use.</li>
+<li>Your editor or IDE already catches many coding problems; add linters when your project needs them.</li>
+<li>Add extensions when they solve a specific problem.</li>
+<li>VS Code can group related projects in a <b>multi‑root workspace</b>.</li>
+<li>IntelliJ IDEA can also manage related projects together in a <b>Multi‑Project Workspace</b>.</li>
 </ul>
-<div class="closer"><span class="k">DO</span><p>Check you have the four essentials installed: editor, your language, Git, and a terminal you can reach.</p></div>
+<div class="closer"><span class="k">DO</span><p>Check that you have the basics for your current classes: an editor or IDE, your required programming language, Git, and a working terminal.</p></div>
 </div></div>
 </section>
 
