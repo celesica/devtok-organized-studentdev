@@ -270,46 +270,40 @@ This becomes especially useful once you start applying to several companies. You
 
 Layout notes: the folder-panel headings (Studies / Development / Upskilling / Career) render a step larger than a plain label; "Organizing your applications" is a smaller Lilac Signal sub-heading, preceded by a hairline separator.
 
+At the bottom of the four-folders section (a plain line, not a note): This system is specifically for your student-developer life. Personal files like finances, family documents, photos, and hobbies do not have to fit inside these four folders.
+
 ---
 
 ### Where organization work goes
 
+*(Its own section on the site, immediately after the four folders.)*
+
 `[Badge] RECOMMENDED`
 
-**School organizations** — your CS society, student council, a school club:
+**School organizations** — student council, a CS society, a campus club:
+- These are part of your school life, so keeping their documents under Studies gives them a clear home.
 
-```
-Studies/
-└── Organizations/
-    ├── computer-society/
-    └── student-council/
-```
+**Outside-school organizations** — community groups, volunteer work, professional organizations:
+- If the material is professional or something you may eventually use on your resume, Career can make sense.
+- If it's completely personal, it doesn't need to live inside this system.
 
-It's part of school life and tied to your school years, so it sits with Studies.
-
-**Outside-school organizations** — community groups, volunteer work, professional bodies:
-- If it's something you'd list on a resume, put it in `Career/`
-- If it's personal, keep it outside this system entirely
-
-**Organization work that involves code** — building the org's website, an event registration tool:
-- Goes in `Development/`, like all code
-- Same rule, no exception
-
-**Note:** This system covers your work as a student developer. Personal files — family, hobbies, finances — belong somewhere else. Don't force everything into these four folders.
+**Organization work involving code** — for example, an organization website or event registration tool:
+- Keep the working code under Development.
+- Keep the organization documents wherever they otherwise belong.
 
 ---
 
 ## How to decide where something goes
 
-Two questions, in order.
+Ask yourself two questions.
 
-> **1. Does it contain code?**
-> **Yes** → Development. Stop here.
+> **1. Am I actively writing code in this?**
+> Yes → Development
 >
-> **2. If not — what is it for?**
-> School requirement → Studies
-> Something you're learning from → Upskilling
-> Something you'll use after graduation → Career
+> **2. If not, what is this mainly for?**
+> - School requirement → Studies
+> - Learning outside school → Upskilling
+> - Internship, job, or professional use → Career
 
 | Situation | Where it goes |
 |---|---|
@@ -330,12 +324,12 @@ Two questions, in order.
 
 Common with assignments, capstones, and thesis work.
 
-- **The code** goes in Development
-- **The documents** — brief, requirements, forms, submission — go in Studies
+- Code → Development
+- Requirements, instructions, reports, forms, and submissions → Studies
 - Add a short text file in the Studies folder noting where the code is
 
 `[PresenterNote]`
-Keeping every line of code in one place is what made this work for me. Before that I had code in course folders, code on the Desktop, and code in Development, and I could never remember which. One location means one place to look.
+Keeping every line of code in one place is what made this work for me. Before that, I had code in course folders and code on different drives, and I had a hard time finding it when I tried to remember which one held what. One location means one place to look.
 `[/PresenterNote]`
 
 `[Interactive: WhereDoesThisGo]` Six tap-to-reveal examples.
@@ -344,14 +338,15 @@ Keeping every line of code in one place is what made this work for me. Before th
 
 ## Key takeaways
 
-- Four folders: Studies, Development, Upskilling, Career.
-- **Anything containing code goes in Development** — school, tutorials, personal, org work, all of it.
-- Upskilling by topic works better than by platform for most students.
-- School org files sit under Studies; resume-worthy org work goes in Career.
-- Personal life stays outside this system.
+- Four useful top-level folders are Studies, Development, Upskilling, and Career.
+- Studies holds formal school documents and requirements.
+- Working code goes under Development.
+- Upskilling holds learning material outside your curriculum.
+- Career holds things you'll need for internships and jobs.
+- Personal files don't need to fit inside this system.
 
 `[SectionCloser: DO]`
-Create the four folders now. It takes under a minute.
+Create the four main folders first. Build the folders inside them only as you actually need them.
 `[/SectionCloser]`
 
 ---
