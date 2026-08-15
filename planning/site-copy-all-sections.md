@@ -479,260 +479,418 @@ Set up the folders for your current term first. You don't need to reorganize you
 # SECTION 03
 ## Your Coding Projects
 
-**What this section covers:** The difference between a folder, a project, an editor workspace, and a repository — plus how much structure a project actually needs.
+**What this section covers:** The difference between a folder, a project, an editor workspace, Git, and GitHub — plus how much structure different kinds of projects actually need.
 
-**Why it matters:** These terms get used interchangeably, which makes tutorials and instructions confusing. Once you can tell them apart, most of that confusion goes away.
+**Why it matters:** These terms are often used together in classes, tutorials, and developer conversations. Understanding what each one does makes it easier to know where your code lives, what you should open, how changes are tracked, and how a project eventually gets shared.
 
-`[Visual — Class A6]` Five-layer stack. **Most important visual on the site.**
-
----
+`[Interactive: FiveLayerStack]` Five-layer stack. Click any layer to jump to it, or step through with Back / Next layer / Reset. Each layer answers one question and earns one word.
 
 ### Layer 1 — The folder
 
-A location on your computer where the files sit.
+**It answers:** Where do the files live?
 
-- A normal folder, like any other
-- It lives inside `Development/` — including for school work
-- Everything below is something added *to* this folder
+A folder is simply a location on your computer.
 
-**Note:** Don't put a coding project inside a synced folder like Google Drive, OneDrive, or Dropbox. Sync conflicts with the tools you'll use and can corrupt the project. On Windows, check whether Documents is syncing to OneDrive — it often is.
+- It holds the files that belong together.
+- In this system, coding folders live somewhere under `Development/`.
+- Everything below — the project, editor workspace, Git, and GitHub — builds on top of that folder.
+- Keeping coding work in one predictable location means you don't have to search Desktop, Downloads, and random directories every time.
 
----
+```text
+Development/
+└── school/
+    └── Y2T1/
+        └── algorithms-mp1/
+```
+
+**Note:** Avoid keeping active coding projects inside general synced folders such as Google Drive, OneDrive, or Dropbox. Sync services can conflict with project files and Git. On Windows, also check whether your Documents folder is automatically syncing to OneDrive.
 
 ### Layer 2 — The project
 
-The same folder, once it contains everything needed to run.
+**It answers:** What files belong to this piece of work?
 
-**A folder becomes a project when it has:**
-- **A README file** — plain text saying what this is and how to start it
-- **A dependency file** — `requirements.txt` for Python, `package.json` for JavaScript, listing what needs installing
-- **The code**, organized rather than loose
+A project is a folder containing everything needed to work on and run that piece of software.
 
-> **A project is a folder that knows how to run itself.**
+- A tiny project might contain only one file.
+- A larger project may include source code, tests, documentation, dependencies, and configuration.
+- The amount of structure should match what the project is for.
+- Keeping everything for one project together makes it easier to open, run, move, share, back up, and eventually put on GitHub.
 
-`[Visual — Class A]` Before/after tree.
+```text
+schedule-tracker/
+├── src/
+├── tests/
+├── README.md
+├── .gitignore
+├── .env.example
+└── requirements.txt
+```
 
----
+> A project is a folder that knows how to run itself.
 
 ### Layer 3 — Opening it in your editor
 
-When someone says "open the project in VS Code," they mean opening the **folder**, not a file.
+**It answers:** What should I actually open in VS Code or another editor?
 
-**Open a file** — a text editor with one document in it.
+When someone says **"open the project,"** they usually mean opening the **project folder**, not just one code file.
 
-**Open a folder** — you get:
-- The full file list in the sidebar
-- A terminal already pointed at the right location
-- Search across the whole project
-- Tools that can see how files relate
+`[Video: OpenFolderRecording]` A short screen recording of opening a folder in the editor — a looping preview (desktop only) that opens a modal with playback controls on click.
 
-`[Visual — Class C]` Side-by-side VS Code screenshots.
+`[Interactive: OpenFileVsFolder]` A toggle between "Open one file" (a small built editor mock) and "Open the project folder" (a real screenshot of the project open in the warm-themed editor — `assets/warm-ide.png` — shown small, click to enlarge in a modal).
 
-**Note:** This is the most common reason a beginner's screen doesn't match the tutorial. Use File → Open Folder.
+**Open one file** — one document. Your editor has limited context about the rest of the project.
 
----
+**Open the project folder** — the full file tree in the Explorer, project-wide search, a terminal at the project location, and Source Control that can see the repository.
+
+**Note:** If your screen looks completely different from the tutorial you're following, check whether you opened one file instead of the whole folder. Usually it's **File → Open Folder**.
 
 ### Layer 4 — Git
 
-A tool that records the history of your project as you work.
+**It answers:** How do I track changes without making `final-final-v2` copies?
 
-- Each meaningful change is a **commit** — a snapshot with a short description
-- You can return to any earlier version
-- It replaces keeping `final`, `final2`, `final-v3` copies
+Git records the history of your project as you work.
 
-`[Visual — Class A]`
+- A meaningful checkpoint is called a **commit**.
+- Each commit records what changed at that point.
+- You can review earlier versions without duplicating the entire project folder.
+- Git works locally on your computer.
+- It gives you a history you can understand and return to without creating duplicate project folders.
 
-| Instead of | Write |
+Instead of a pile of copies:
+
+```text
+project-final/
+project-final-2/
+project-final-real/
+project-final-real-v2/
+```
+
+you keep one project and create commits.
+
+| Instead of | Try |
 |---|---|
 | `fix` | `Initialize project structure` |
 | `fix2` | `Add login form` |
 | `asdf` | `Implement email validation` |
 | `final` | `Update installation instructions` |
 
----
+Commit messages don't need to sound impressive. They just need to tell you what changed.
+
+In your history, they read like this:
+
+`[Visual: CommitHistory]` A commit-history mock in the style of a repository's commits page, using the clear messages above (authored by the owner).
 
 ### Layer 5 — GitHub
 
-A website where your project's history is stored online.
+**It answers:** Where can the Git repository live online?
 
-- **Git** tracks changes on your computer
-- **GitHub** is where you upload that history so others can see it
-- Uploading is **pushing**; downloading someone else's project is **cloning**
+`[Visual: GitHub mark]` The GitHub logo, drawn inline as vector and tinted with a design-system colour.
 
-**Note:** GitHub is for code and the files around code. Not general cloud storage — your thesis PDF and lecture slides don't belong there.
+GitHub gives your Git repository a remote home.
+
+- **Git** tracks your project history.
+- **GitHub** stores and shares that repository online.
+- **Pushing** sends your local commits to GitHub.
+- **Cloning** downloads an existing repository to your computer.
+
+GitHub is useful for:
+
+- Keeping a remote copy of your code
+- Sharing projects and collaborating with teammates
+- Working across devices
+- Showing projects to other people when you choose to
+
+**Note:** GitHub is for code and the files that belong with that code. Lecture PDFs, school forms, and unrelated documents still belong in your regular folders.
+
+---
+
+## How much structure does a project need?
+
+Not every coding project needs the same folder structure. **Match the structure to what the project is for — small things stay small.**
+
+`[Interactive: StructureTrees]` Four tabs — Short exercise, Course assignment, Portfolio project, Team project — each an expanded folder tree with designed file glyphs.
+
+**Short exercise**
+
+```text
+rename-practice.py
+```
+
+One file is enough when you're practicing one small concept. It doesn't need folders, a README, or Git.
+
+**Course assignment**
+
+```text
+algorithms-mp1/
+├── main.py
+└── README.md
+```
+
+A folder keeps the assignment together. Add a README when there are instructions, setup notes, or context worth keeping.
+
+**Portfolio project**
+
+```text
+schedule-tracker/
+├── src/
+├── tests/
+├── README.md
+├── .gitignore
+├── .env.example
+└── requirements.txt
+```
+
+A project you expect other people to see should be easier for someone else to understand, install, and run.
+
+**Team project**
+
+```text
+capstone-app/
+├── src/
+├── tests/
+├── docs/
+├── README.md
+├── .gitignore
+├── .env.example
+└── package.json
+```
+
+Team projects usually need clearer setup instructions, shared documentation, dependencies, and a repository everyone can access.
 
 ---
 
-### How much structure a project needs
+## Inside a project
 
-Not every project needs the full setup.
+These are common files and folders you'll start seeing as projects get bigger. Not every project needs all of them.
 
-`[Visual — Class A]` Four trees, increasing structure.
+`[Interactive: InsideProject]` Click a file or folder to see what it is for.
 
-| Project | What it needs |
-|---|---|
-| A short exercise | One file. No folders, no README. |
-| A course assignment | One folder, README if there are instructions worth keeping |
-| A personal or portfolio project | Organized folders, README, `.gitignore`, dependency file, on GitHub |
-| A team project | All of the above, plus shared access (Section 09) |
+- **`src/`** — where the main source code usually lives, instead of keeping every code file loose in the project root.
+- **`tests/`** — automated tests or test files used to check that the code behaves as expected.
+- **`docs/`** — longer documentation, diagrams, technical notes, or other project documentation.
+- **`README.md`** — the first explanation of the project: what it does, how to set it up, and how to run it.
+- **`.gitignore`** — tells Git which files or folders should *not* be tracked, such as generated files, dependencies, local settings, or secrets.
+- **`.env`** — a local file that commonly stores environment variables such as API keys or database URLs. The real `.env` should not be committed.
+- **`.env.example`** — shows which environment variables the project expects, without including the real private values.
+- **`requirements.txt`** — a common Python dependency file, listing the packages the project needs so someone else can install the same ones.
+- **`package.json`** — commonly used in JavaScript / Node.js projects for dependencies, project metadata, and scripts.
 
-- Adding structure a project doesn't need makes it harder to work on
-- Start small. Adding structure later is easier than removing it
-- You're allowed to have a project that's one file
-
----
+The exact files depend on the language, framework, and project. Treat these as common conventions, not a universal tree every project has to copy.
 
 ### Moving work up a level
 
-When school or practice work turns out well:
+Sometimes a school assignment, tutorial project, or experiment turns out well enough that you want to keep developing it. You can make it more portfolio-ready by:
 
-- Move it from `Development/school/` or `learning/` into `personal/`
-- Add a README explaining what it does and how to run it
-- Put it on GitHub
-
-`[Badge] ADVANCED` This matters most at internship time. Work sitting in a term subfolder is work nobody will look at.
-
-`[Interactive: ProjectTree]` Clickable tree.
+- Moving or recreating it under `Development/personal/`
+- Cleaning up the folder structure
+- Adding a useful README and making setup instructions clear
+- Adding a `.gitignore` and removing secrets or local-only files
+- Putting the project on GitHub
+- Adding screenshots, links, or a project description to your Career material
 
 `[PresenterNote]`
-What helped me most was checking my own projects the way a stranger would: download it into an empty folder and try to run it using only the README. If that works, it's set up properly.
+I like to look at a project as if I were seeing it for the first time: could someone clone it into an empty folder, follow the README, install what they need, and run it? If yes, the project is probably in good shape. This matters especially when you start applying for internships or jobs — someone reviewing your GitHub should be able to understand what the project is and how it works without you beside them to explain every missing step.
 `[/PresenterNote]`
+
+---
+
+## The whole road
+
+A project can move through several stages, from the first idea to something you can show other people. Think of this as a **roadmap, not a requirement** — a short exercise may stop after a few stages, while a personal or capstone project may continue much further.
+
+Today covers the first half. Dashed stages are for later — the toolkit has more.
+
+`[Interactive: WholeRoad]` Ten clickable stages. IDEA → GITHUB are solid (covered today); DOCUMENT, DEPLOY, PORTFOLIO are drawn dashed and dimmed (not covered today, for later) — still clickable, and their revealed description carries a "Not covered today — for later" tag.
+
+```text
+IDEA → FOLDER → EDITOR → GIT → BUILD → COMMIT → GITHUB → [DOCUMENT] → [DEPLOY] → [PORTFOLIO]
+```
+
+- **IDEA** — decide what you want to build or practice
+- **FOLDER** — give the project a home
+- **EDITOR** — open the whole project and work on it
+- **GIT** — start tracking its history
+- **BUILD** — write, run, test, and improve the project
+- **COMMIT** — save meaningful checkpoints
+- **GITHUB** — push the repository online
+- **DOCUMENT** — explain the project and how to use it
+- **DEPLOY** — make the project available somewhere others can use or view it, when appropriate
+- **PORTFOLIO** — present the finished work as something worth showing
+
+Documentation, deployment, and portfolio presentation become more relevant as a project grows beyond a class exercise into something you want to share. Every stage is still clickable above if you're curious.
 
 ---
 
 ## Key takeaways
 
-- A folder is a location. A project is a folder containing everything needed to run.
-- "Open the project" means open the folder, not a file.
-- Git tracks changes locally. GitHub stores that history online.
-- Match structure to what the project is for. Small things stay small.
+- **A folder is a location. A project is a folder containing everything needed to run.**
+- "Open the project" usually means open the whole folder in your editor, not one file.
+- Git tracks changes locally. GitHub gives the repository a remote home online.
+- Common files like `README.md`, `.gitignore`, dependency files, and `.env.example` each solve a specific project need.
+- **Match structure to what the project is for. Small things stay small.**
 
 `[SectionCloser: UNDERSTAND]`
-Open one of your existing coding folders as a folder in your editor, and see what appears that didn't before.
+Open one of your existing coding folders as a **folder** in your editor, and see what appears that didn't before.
 `[/SectionCloser]`
 
 ---
 ---
 
 # SECTION 04
+
 ## Your Calendar and Tasks
 
-**What this section covers:** Setting up Google Calendar for your class schedule, deadlines, and everything else you're responsible for.
+**What this section covers:** Setting up a calendar for your class schedule, deadlines, meetings, and the work you need to finish.
 
-**Why it matters:** A printed schedule or a screenshot of your Canvas calendar tells you what's happening. It doesn't remind you, hold your meeting links, or update when something changes.
-
----
-
-### Why a calendar app instead of a printed schedule
-
-`[Badge] TOOL-SPECIFIC`
-
-- **It reminds you.** Notifications on your phone before class or a deadline.
-- **It holds the details.** Zoom or Meet links, room numbers, LMS links, professor names — inside the event, one tap away.
-- **It updates.** A room change or moved deadline is one edit, not a reprint.
-- **It's searchable.** Find when an exam was, months later.
-- **It's on every device.** Phone, laptop, browser.
-- **It repeats.** Set your class schedule once for the whole term.
-
-We'll use Google Calendar because it's free with any Google account and includes Tasks. Any calendar app with reminders works the same way.
+**Why it matters:** A printed schedule, screenshot, or LMS page can tell you what exists, but it doesn't always remind you at the right time or keep all the useful details in one place.
 
 ---
 
-### Step 1 — Make separate calendars
+### Why use a calendar app?
 
-Instead of putting everything in one calendar, create a few and give each its own color.
+A calendar app can do more than show your class schedule. It can:
 
-`[Badge] RECOMMENDED`
+- **Remind you** before classes and deadlines
+- **Hold details** like room numbers, meeting links, professor information, and LMS links
+- **Update easily** when something changes
+- **Repeat** recurring classes automatically
+- **Stay available** across your phone, laptop, and browser
+- **Notify you on your phone** — and let you add or edit events on the go, especially with the Google Calendar app
+- **Make old events searchable**
 
-- **Classes** — your recurring schedule
-- **Deadlines** — submissions, exams, defenses
-- **Org and events** — meetings, activities
-- **Personal** — work, family, rest
-
-**Why separate:** you can hide a whole calendar when you don't need it, and colors tell you what kind of day you're looking at before you read anything.
-
-**Note:** Google Calendar now supports custom colors rather than a fixed short list, so you can set specific colors per calendar and per event and they carry across to the mobile app.
-
----
-
-### Step 2 — Add your class schedule
-
-Add each class once as a **repeating event** for the whole term.
-
-**What to put in each class event:**
-- **Title** — subject code and name: `CS 3202 — Algorithms and Complexity`
-- **Time and repeat** — the weekly pattern, ending on the last day of term
-- **Location** — room number, or building and floor
-- **Video link** — the Zoom or Meet link, if the class is online or hybrid
-- **Description** — professor's name, section, LMS link, consultation hours
-- **Notification** — 30 minutes before, or enough time to get there
-
-**Note:** Putting the Zoom link inside the event is the single biggest reason to do this. You stop searching your email five minutes before class starts.
+`[Note]` This guide uses **Google Calendar** because it's widely available and includes Google Tasks, but you can use another calendar app if you prefer. `[/Note]`
 
 ---
 
-### Step 3 — Set up Tasks
+### Step 1 — Create your school calendar
 
-Calendar events are for things happening at a set time. Tasks are for work that needs doing.
+`[Badge] RECOMMENDED` If you haven't set up a calendar for school yet, create one main **School** calendar in Google Calendar.
 
-Google Tasks lists appear inside Calendar, and each list gets a color that shows on the day a task is due.
+1. On a computer, open **Google Calendar**.
+2. On the left side, find **Other calendars**.
+3. Click the **+** button.
+4. Choose **Create new calendar**.
+5. Name it something simple, such as **School**.
+6. Click **Create calendar**.
 
-**Suggested lists:**
-- **Assignments**
-- **Study and practice**
-- **Exams and quizzes**
-- **Group projects**
-- **Org work**
-- **Personal**
-
-**Note:** Tasks has no labels or tags, so lists are how you separate categories. Keep the number small — six is plenty.
+`[Note]` Your School calendar can hold classes, exams, student events, and study sessions. Keep a separate **Personal** calendar for non-school events if you like. You don't need a separate calendar for every class — keep them broad, then use **event titles and color labels** to make your week easy to scan. `[/Note]`
 
 ---
 
-### Step 4 — What actually goes in tasks
+### Step 2 — Create color labels
 
-Add things the day you hear about them, not the day they're due.
+Use **color labels** as a visual shortcut. Your event title should still tell you what something is, while the color helps you recognize it quickly across the whole week.
 
-| Task | Give it a date |
-|---|---|
-| Assignment | Two or three earlier dates, one per step |
-| Practice coding | A recurring slot, e.g. Tue and Thu evenings |
-| Quiz or exam review | Start three or four days ahead |
-| Group project work | Your own part, with your own date |
-| Org work | Whatever you committed to |
-| Rest and self-care | Yes, actually schedule it |
+- Give recurring classes a color based on their **course or course category**.
+- Keep the **same color for the lecture and lab of the same course**.
+- Use a stronger color for **quizzes, exams, and major project deadlines** so they stand out.
+- Use separate colors for self-study, student organizations, and personal time.
 
-**Break big things into steps.** An assignment due in two weeks becomes: outline it, build it, review it. Three tasks with three dates.
+`[Badge] SAMPLE PALETTE`
 
-**Note:** The due date shouldn't be the first time your system hears about an assignment.
+`[Interactive: ColorPalette]` Jazzy's calendar palette as clickable swatches — click one to see what it labels and why. (Cobalt Signal and Mint Signal are owner-added calendar hues, scoped to this section.)
+
+```text
+Major courses        → Wine           #7A2E48
+Minor / electives    → Lilac Signal   #C9A0F5
+Coding / self-study  → Cobalt Signal  #4F7CFF
+Org / student events → Mint Signal    #45C69A
+Self-care / personal → Deep Plum      #241533
+
+Quiz                  → Amber Glow     #FFB84D
+Exam                  → Neon Rose      #FF5C8A
+Major project         → Ember          #FF7A45
+```
+
+`[Note]` You don't have to use these exact assignments. The useful part is having a pattern you can recognize quickly — and keeping LEC and LAB of one course in the same color. `[/Note]`
+
+Useful label names might include: `Major Course — Wine`, `Minor / Elective — Lilac`, `Coding Practice — Blue`, `Org / Student Activity — Green`, `Self-Care — Plum`, `Quiz — Amber`, `Exam — Neon Rose`, `Major Project — Ember`.
 
 ---
 
-### Step 5 — Notifications
+### Step 3 — Add your class schedule
 
-- Classes — 30 minutes before
-- Deadlines — one day before *and* two hours before
-- Exams — three days before
-- Turn off anything you've started ignoring. Notifications you dismiss without reading are worse than none.
+Add each class once as a **repeating event** for the semester, saved to your **School** calendar.
 
-`[Visual — Class C]` Jazzy's calendar, one week view.
+`[Interactive: EventBuilder]` Build the event field by field — click **Add details** to reveal Location, Video link, Instructor & LMS, Color label, and Notification, each with why it's worth including.
+
+Useful information to include: title (activity type + subject code + name), time and repeat schedule, end date, location, video link, professor, LMS link, color label, and notification.
+
+#### Use short prefixes in your event titles
+
+`[Interactive: PrefixExplorer]` Tap a prefix to see an example title, its meaning, and its color.
+
+```text
+[LEC]  CS 3202 — Algorithms and Complexity
+[LAB]  CS 3202 — Algorithms and Complexity
+[QUIZ] CS 3202 — Quiz 2
+[EXAM] CS 3202 — Midterm Exam
+[HW]   CS 3202 — Assignment 3
+[PROJ] CS 3202 — Schedule Tracker Milestone
+```
+
+- **`[LEC]`** — lecture · **`[LAB]`** — laboratory · **`[QUIZ]`** — quiz · **`[EXAM]`** — major exam · **`[HW]`** — homework · **`[PROJ]`** — project or deadline
+
+`[Note]` Keep `[LEC]` and `[LAB]` for one course in the same color, and give `[QUIZ]`, `[EXAM]`, and major `[PROJ]` their own so they stand out. The prefix still works even when you color-code. `[/Note]`
+
+---
+
+### Step 4 — Set up Tasks
+
+**Events** are things happening at a particular time (`[LEC]` / `[LAB]` class, `[QUIZ]` / `[EXAM]`, org meeting, defense). **Tasks** are things you need to finish (`[HW]` Complete Assignment 3, `[PROJ]` Build login flow, review Chapter 4, practice coding).
+
+Suggested task lists: Assignments · Study and practice · Exams and quizzes · Group projects · Org work · Personal.
+
+`[Note]` Tasks appear with a **check mark**, so you can mark them done right from your calendar. You don't need every list — use the categories that actually help. `[/Note]`
+
+---
+
+### A sample week
+
+`[Visual: SampleWeek]` A Google-Calendar-style week view (its own section, not buried under notifications) using Jazzy's palette: color-coded classes with `[LEC]` / `[LAB]` / `[QUIZ]` / `[EXAM]` titles, plus tasks shown with circle checkboxes — done tasks are checked and struck through, and each task can be toggled. A colour legend sits below. Sample courses: CS 3202 (Wine), a GE elective (Lilac), coding practice (Cobalt), CS Society (Mint), self-care (Deep Plum), a MATH 101 quiz (Amber) and midterm (Rose), a Schedule Tracker milestone (Ember).
+
+---
+
+### Step 5 — Add work when you hear about it
+
+Add a responsibility when you **first hear about it**, not when it's almost due. Break bigger assignments into smaller steps so the due date isn't your only reminder to start.
+
+Instead of one task — `[PROJ] Finish software project — August 30` — create several: `[PROJ] Plan project structure`, `[PROJ] Build main feature`, `[PROJ] Test`, `[PROJ] Review and clean up`, `[PROJ] Submit`.
+
+`[Note]` Breaking the work into smaller tasks gives you several points to move a project forward. **The due date shouldn't be the first time your system reminds you an assignment exists.** `[/Note]`
+
+---
+
+### Step 6 — Notifications
+
+Set reminders before classes, deadlines, and exams based on how much preparation you need:
+
+- **Classes** — enough time to get ready and travel there
+- **Homework** — one day before, and again closer to submission
+- **Quizzes** — enough time to review beforehand
+- **Exams** — several days before, plus a reminder closer in
+- **Projects** — reminders for milestones, not only the final deadline
+- **Org meetings** — enough time to prepare or travel there
+
+`[Note]` The exact timing is personal. If you create so many notifications that you dismiss them automatically, reduce them. `[/Note]`
 
 `[PresenterNote]`
-The change that mattered most for me wasn't the color coding — it was putting the meeting link inside the event. Everything else is organization. That one is time you get back every single day.
+One thing that saves me a surprising amount of time is putting the meeting link directly inside the calendar event. I don't want to search my email, Messenger, Discord, or LMS five minutes before something starts.
 `[/PresenterNote]`
 
 ---
 
 ## Key takeaways
 
-- Separate calendars with distinct colors: classes, deadlines, org, personal.
-- Add classes once as repeating events, with room, link, professor, and LMS link inside.
-- Use Tasks lists for work; add things the day you hear about them.
-- Break large assignments into steps with their own dates.
-- Set reminders you'll actually respond to.
+- Keep important dates somewhere outside the LMS too.
+- Use one broad School calendar instead of creating a calendar for every subject.
+- Use clear title prefixes like `[LEC]`, `[LAB]`, `[QUIZ]`, `[EXAM]`, `[HW]`, and `[PROJ]`.
+- Add classes once as repeating events, with rooms, links, and instructor details inside.
+- Use color labels as a second visual cue; use Tasks for work you need to finish.
+- Add responsibilities when you first hear about them, and break big ones into smaller steps.
 
 `[SectionCloser: DO]`
-Add this term's full class schedule as repeating events, with the room and meeting link in each one.
+Add your current class schedule as repeating events, use `[LEC]` and `[LAB]` where applicable, and add the details you usually have to search for later.
 `[/SectionCloser]`
 
 ---

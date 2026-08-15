@@ -295,6 +295,13 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
 .ftree .fdoc::after{content:attr(data-ext);position:absolute;left:0;right:0;bottom:0;height:8px;line-height:8px;text-align:center;font-family:var(--font-mono);font-size:6.5px;font-weight:700;letter-spacing:.02em;color:var(--ink-plum)}
 .ftree .fdoc--pdf::after{background:var(--ember)}
 .ftree .fdoc--md::after{background:var(--lilac-signal)}
+/* Section 03 file types. The uppercase tag text carries the meaning, so colour
+   only groups them loosely: docs lilac, code amber, config/dotfiles rose. */
+.ftree .fdoc--txt::after{background:var(--lilac-signal)}
+.ftree .fdoc--py::after{background:var(--amber-glow)}
+.ftree .fdoc--json::after{background:var(--amber-glow);font-size:5.4px;letter-spacing:0}
+.ftree .fdoc--git::after{background:var(--neon-rose);color:var(--parchment)}
+.ftree .fdoc--env::after{background:var(--neon-rose);color:var(--parchment)}
 /* the folder-panel heading (Studies / Development / Upskilling / Career) reads
    a step larger than a plain .h3 label, to mark that it owns the subsection */
 .fpanel > .h3:first-child{font-size:15.5px}
@@ -307,6 +314,204 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
 .closer .k{color:var(--ember)}
 .closer::after{content:"";position:absolute;inset:0;pointer-events:none;background:var(--gradient-lamp)}
 .closer>*{position:relative;z-index:1}
+
+/* ---- Section 03: interactive pieces ---- */
+/* Grid children default to min-width:auto and refuse to shrink below their
+   content, bursting the track on a narrow phone. Let both columns shrink; the
+   inner elements handle their own overflow (tables wrap, trees scroll). */
+.c7grid>*{min-width:0}
+/* The layer list follows you down a long panel, so Next / a jump is always
+   reachable without scrolling back up. Sticky only where the two columns sit
+   side by side; on a phone it scrolls with the page. align-self:start keeps the
+   item from stretching, which sticky needs. */
+@media (min-width:761px){
+  .c7grid>div:first-child{position:sticky;top:74px;align-self:start;z-index:2}
+}
+/* Give a following section clear separation from the list above it */
+.secgap{margin-top:26px}
+/* Five-layer stack: the rows are buttons now (click a layer to jump straight to
+   it), so they need the button reset while keeping the .lrow look. A dim row
+   lifts on hover to show it is clickable; .on/.cur still win on the current one. */
+button.lrow{width:100%;font-family:inherit;color:inherit;background:none;cursor:pointer;text-align:left}
+button.lrow:hover{opacity:.7}
+button.lrow:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+/* the question each layer answers, called out above its explanation */
+.lask{margin:0 0 16px;padding:9px 14px;border-left:2px solid var(--ember);background:var(--parchment-a06);border-radius:0 8px 8px 0}
+.lask .k{display:block;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ember);margin-bottom:3px}
+.lask .q{font-family:var(--font-editorial);font-size:16px;color:var(--parchment)}
+
+/* Inside a project: a clickable file catalogue on the left, its description on
+   the right. The tree reuses .ftree chrome so the glyphs match the other trees. */
+.ipx{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:20px;margin:14px 0;align-items:start}
+@media(max-width:640px){.ipx{grid-template-columns:1fr}}
+.ipx-tree{margin:0}
+.iproot{font-size:13px;color:var(--parchment);margin:0 0 6px 2px}
+.iprows{margin-left:11px;padding-left:14px;border-left:1px solid var(--border-hairline)}
+.iprow{display:flex;align-items:center;gap:9px;width:100%;text-align:left;padding:5px 7px;border:1px solid transparent;border-radius:7px;background:none;color:inherit;font-family:inherit;cursor:pointer;white-space:nowrap;transition:background 120ms}
+.iprow:hover{background:var(--parchment-a06)}
+.iprow:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.iprow.on{background:var(--rose-a12);border-color:var(--neon-rose);box-shadow:var(--glow-rose-soft)}
+.ipcaret{visibility:hidden}
+.ipx-desc{border:1px solid var(--border-hairline);border-radius:12px;background:var(--surface-card);padding:16px 18px;min-height:104px}
+.ipd{display:none}
+.ipd.on{display:block}
+.ipd .iph{display:block;font-size:13.5px;color:var(--ember);margin-bottom:6px}
+.ipd p{margin:0;font-size:15px}
+
+/* The whole road: clickable stage chips joined by small arrows, with a single
+   description that swaps below. Wraps freely so it never overflows narrow screens. */
+.roadlegend{font-size:14.5px;margin:6px 0 12px}
+.road{display:flex;flex-wrap:wrap;align-items:center;gap:8px 5px;margin:8px 0 4px}
+.roadstage{font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;padding:7px 11px;border:1px solid rgba(255,92,138,.42);border-radius:8px;background:transparent;color:var(--parchment);cursor:pointer;transition:all 140ms var(--ease-standard)}
+.roadstage:hover{border-color:var(--neon-rose);background:var(--rose-a12);transform:translateY(-1px)}
+.roadstage:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.roadstage.on{color:var(--parchment);border-color:var(--neon-rose);background:var(--rose-a12);box-shadow:var(--glow-rose-soft)}
+/* Stages for later — not covered today. Dashed and dimmed, still clickable; the
+   dashed border is kept even when selected so the "for later" cue never drops. */
+.roadstage--later{border-style:dashed;border-color:rgba(255,92,138,.32);color:var(--muted-ink)}
+.roadstage--later:hover,.roadstage--later.on{border-color:var(--neon-rose);color:var(--parchment)}
+.roadarrow{flex:none;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid var(--wine)}
+.roadarrow--later{opacity:.5}
+.roaddesc{display:none}
+.roaddesc.on{display:block;border-left:3px solid var(--neon-rose);background:var(--rose-a12);border-radius:0 10px 10px 0;padding:12px 18px;margin:10px 0 0}
+.roaddesc-k{display:inline-block;font-size:11px;letter-spacing:.24em;color:var(--neon-rose);vertical-align:middle}
+.roadlater{display:inline-block;margin-left:10px;font-family:var(--font-mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-ink);border:1px dashed rgba(255,92,138,.45);border-radius:999px;padding:2px 9px;vertical-align:middle}
+.roaddesc p{margin:8px 0 0;font-size:15px}
+
+/* Layer 5 GitHub mark (inline vector, tinted with a token) */
+.ghlogo{color:var(--parchment);margin:0 0 12px;opacity:.92}
+.ghlogo svg{display:block}
+
+/* Layer 4 commit-history mock, styled like a repository's commits page */
+.ghc{border:1px solid var(--border-strong);border-radius:12px;background:var(--plum-900);box-shadow:var(--shadow-md);overflow:hidden;margin:14px 0}
+.ghc-head{display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--surface-card);border-bottom:1px solid var(--border-hairline)}
+.ghc-branch{display:inline-flex;align-items:center;gap:7px;font-family:var(--font-mono);font-size:12px;color:var(--parchment);border:1px solid var(--border-strong);border-radius:999px;padding:3px 12px}
+.ghc-branchi{width:9px;height:9px;border-radius:50%;border:2px solid var(--neon-rose);box-sizing:border-box}
+.ghc-headmeta{font-family:var(--font-mono);font-size:11.5px;color:var(--muted-ink)}
+.ghc-row{display:flex;align-items:center;gap:12px;padding:11px 16px;border-bottom:1px solid var(--border-hairline)}
+.ghc-row:last-child{border-bottom:none}
+.ghc-av{flex:none;width:22px;height:22px;border-radius:50%;background:var(--gradient-cta);box-shadow:var(--glow-rose-soft)}
+.ghc-main{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ghc-msg{font-family:var(--font-tech);font-size:14px;color:var(--parchment);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ghc-by{font-size:11.5px;color:var(--muted-ink)}
+.ghc-hash{margin-left:auto;flex:none;font-size:12px;color:var(--muted-ink);background:var(--parchment-a06);border-radius:6px;padding:3px 8px}
+
+/* Layer 3 screen-recording preview — a looping thumbnail that opens the modal */
+.vdemo{margin:16px 0}
+.vdemo .cap{margin-top:12px}
+.vdemo-thumb{position:relative;display:block;width:100%;max-width:440px;aspect-ratio:16/10;padding:0;border:1px solid var(--border-strong);border-radius:12px;overflow:hidden;background:var(--plum-900);cursor:pointer;box-shadow:var(--shadow-md);transition:border-color 140ms,box-shadow 140ms}
+.vdemo-thumb:hover{border-color:var(--neon-rose);box-shadow:var(--glow-rose-soft)}
+.vdemo-thumb:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.vdemo-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;background:var(--plum-900)}
+.vdemo-badge{position:absolute;right:10px;bottom:10px;display:inline-flex;align-items:center;gap:7px;font-family:var(--font-tech);font-size:12px;color:var(--parchment);background:rgba(13,8,18,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid var(--border-hairline);border-radius:999px;padding:5px 12px 5px 11px}
+.vdemo-play{width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid var(--neon-rose)}
+/* a centred play cue for phones, where the preview never loads */
+.vdemo-thumb::after{content:"";position:absolute;top:50%;left:50%;width:48px;height:48px;transform:translate(-50%,-50%);border-radius:50%;background:var(--rose-a12);border:1px solid rgba(255,92,138,.5);box-shadow:var(--glow-rose-soft)}
+.vdemo-thumb::before{content:"";position:absolute;top:50%;left:50%;z-index:1;transform:translate(-40%,-50%);width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:14px solid var(--neon-rose)}
+
+/* The Warm Arcade IDE screenshot — a clickable preview that opens the modal */
+.idethumb{position:relative;display:block;width:100%;max-width:480px;padding:0;border:1px solid var(--border-strong);border-radius:12px;overflow:hidden;background:var(--ink-plum);cursor:pointer;box-shadow:var(--shadow-md);transition:border-color 140ms,box-shadow 140ms}
+.idethumb:hover{border-color:var(--neon-rose);box-shadow:var(--glow-rose-soft)}
+.idethumb:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.idethumb-img{display:block;width:100%;height:auto}
+/* the "expand" cue used on still previews (a small bordered square) */
+.vdemo-exp{width:11px;height:11px;border:2px solid var(--neon-rose);border-radius:2px}
+
+/* Enlarge modal — reuses .modal/.mbox; the stage holds a video or an SVG */
+.vmbg{position:absolute;inset:0}
+.vmbox{position:relative;z-index:1;max-width:960px;width:100%;padding:0;background:var(--ink-plum);overflow:hidden}
+.vmstage{display:flex;align-items:center;justify-content:center;background:var(--ink-plum)}
+.vmstage video{display:block;width:100%;max-height:82vh;background:var(--ink-plum)}
+.vmstage img{display:block;width:100%;height:auto;max-height:82vh;object-fit:contain}
+.vmstage svg{display:block;width:100%;height:auto;max-height:82vh}
+.vmclose{position:absolute;top:12px;right:12px;z-index:2}
+
+/* ---- Section 04: calendar ---- */
+/* Calendar label colours from the md. Cobalt and Mint are owner-added calendar
+   hues (blue, green), scoped here rather than added to the design system. */
+:root{--cal-wine:#7A2E48;--cal-lilac:#C9A0F5;--cal-cobalt:#4F7CFF;--cal-mint:#45C69A;--cal-deepplum:#241533;--cal-amber:#FFB84D;--cal-rose:#FF5C8A;--cal-ember:#FF7A45}
+
+/* palette explorer: swatches + a detail card */
+.palgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(158px,1fr));gap:8px;margin:14px 0}
+.swatch{display:flex;align-items:center;gap:10px;flex-wrap:wrap;text-align:left;padding:9px 12px;border:1px solid var(--border-hairline);border-radius:10px;background:var(--parchment-a06);color:var(--parchment);cursor:pointer;transition:all 140ms var(--ease-standard)}
+.swatch:hover{border-color:var(--neon-rose)}
+.swatch:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.swatch.on{border-color:var(--neon-rose);background:var(--rose-a12);box-shadow:var(--glow-rose-soft)}
+.swatch-chip{flex:none;width:18px;height:18px;border-radius:5px;box-shadow:inset 0 0 0 1px rgba(246,237,227,.16)}
+.swatch-chip.lg{width:32px;height:32px;border-radius:8px}
+.swatch-name{font-family:var(--font-tech);font-size:13px}
+.swatch-cat{width:100%;font-size:11.5px;color:var(--muted-ink)}
+.swatch-detailwrap{border:1px solid var(--border-hairline);border-radius:12px;background:var(--surface-card);padding:14px 16px;min-height:96px;margin-top:10px}
+.swatch-detail{display:none;gap:14px;align-items:flex-start}
+.swatch-detail.on{display:flex}
+.swatch-dh{margin:0;font-size:15px}
+.swatch-hex{font-size:12px;color:var(--muted-ink);margin-left:8px}
+.swatch-dc{margin:2px 0 0;font-size:12.5px;color:var(--lilac-signal)}
+.swatch-why{margin:7px 0 0;font-size:14.5px}
+
+/* prefix explorer */
+.pfxrow{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.pfxchip{font-family:var(--font-mono);font-size:12px;padding:6px 12px;border:1px solid var(--pfx);border-radius:8px;background:transparent;color:var(--parchment);cursor:pointer;transition:all 140ms var(--ease-standard)}
+.pfxchip:hover{background:var(--rose-a12)}
+.pfxchip:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.pfxchip.on{background:var(--pfx);color:var(--ink-plum)}
+.pfxcard{display:none}
+.pfxcard.on{display:block;border-left:3px solid var(--neon-rose);background:var(--rose-a12);border-radius:0 10px 10px 0;padding:12px 16px;margin:2px 0 0}
+.pfxcard-ex{margin:0;font-size:14px;overflow-wrap:anywhere}
+.pfxcard-tag{display:inline-block;color:var(--ink-plum);border-radius:4px;padding:1px 7px;font-weight:700;margin-right:4px}
+.pfxcard-m{margin:6px 0 0;font-size:13.5px;color:var(--muted-ink)}
+
+/* the Step 2 closing row — note on the left, a video preview on the right */
+.labelrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,360px);gap:20px;align-items:start;margin:16px 0}
+.labelrow .note{margin:0}
+.labelrow .vdemo{margin:0}
+@media (max-width:720px){.labelrow{grid-template-columns:1fr}}
+
+/* event builder extras */
+.evr-swatch{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
+.s04-subh{margin-top:30px}
+.evtcard{background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:12px;padding:14px 16px}
+.evtcard .h3{margin-top:0}
+
+/* Google-Calendar-style sample week — a wide grid that scrolls on a phone */
+.gcalwrap{overflow-x:auto;margin:16px 0;border:1px solid var(--border-strong);border-radius:14px;background:var(--plum-900);box-shadow:var(--shadow-md),var(--shadow-inset-top)}
+.gcal{min-width:660px}
+.gcal-top{display:flex;align-items:baseline;gap:10px;padding:11px 16px;border-bottom:1px solid var(--border-hairline)}
+.gcal-toptitle{font-family:var(--font-tech);font-size:15px;color:var(--parchment)}
+.gcal-topsub{font-family:var(--font-mono);font-size:10.5px;color:var(--muted-ink);border:1px solid var(--border-hairline);border-radius:999px;padding:2px 10px}
+.gcal-grid{display:grid;grid-template-columns:52px repeat(5,minmax(116px,1fr))}
+.gcal-corner{border-bottom:1px solid var(--border-hairline)}
+.gcal-dh{text-align:center;padding:7px 4px;border-left:1px solid var(--border-hairline);border-bottom:1px solid var(--border-hairline)}
+.gcal-dh b{display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:.12em;color:var(--muted-ink)}
+.gcal-dh span{font-family:var(--font-tech);font-size:17px;color:var(--parchment)}
+.gcal-gutter{position:relative}
+.gcal-hr{font-family:var(--font-mono);font-size:9px;color:var(--muted-ink);text-align:right;padding:2px 6px 0 0;box-sizing:border-box}
+.gcal-col{position:relative;border-left:1px solid var(--border-hairline);background-image:repeating-linear-gradient(var(--border-hairline) 0 1px,transparent 1px 100%)}
+.gcal-ev{position:absolute;left:3px;right:3px;border-radius:6px;padding:4px 7px;overflow:hidden;font-family:var(--font-tech);box-shadow:0 1px 2px rgba(13,8,18,.35)}
+.gcal-ev-t{display:block;font-size:11px;line-height:1.2;font-weight:600;overflow:hidden}
+.gcal-pfx{font-family:var(--font-mono);opacity:.85}
+.gcal-ev-time{display:block;font-size:9px;opacity:.82;margin-top:1px}
+.gcal-ev--wine{background:var(--cal-wine);color:var(--parchment)}
+.gcal-ev--lilac{background:var(--cal-lilac);color:var(--ink-plum)}
+.gcal-ev--cobalt{background:var(--cal-cobalt);color:var(--parchment)}
+.gcal-ev--mint{background:var(--cal-mint);color:var(--ink-plum)}
+.gcal-ev--deepplum{background:var(--cal-deepplum);color:var(--parchment)}
+.gcal-ev--amber{background:var(--cal-amber);color:var(--ink-plum)}
+.gcal-ev--rose{background:var(--cal-rose);color:var(--parchment)}
+.gcal-ev--ember{background:var(--cal-ember);color:var(--ink-plum)}
+/* task chips: circle checkbox + title, struck through when done */
+.gcal-task{position:absolute;left:3px;right:3px;display:flex;align-items:center;gap:6px;padding:3px 7px;border:1px dashed var(--border-strong);border-radius:6px;background:var(--surface-card);color:var(--parchment);cursor:pointer;text-align:left;z-index:2}
+.gcal-task:hover{border-color:var(--neon-rose)}
+.gcal-task:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.gcal-check{flex:none;width:13px;height:13px;border:1.5px solid var(--muted-ink);border-radius:50%;position:relative;transition:background 120ms}
+.gcal-task-t{font-family:var(--font-tech);font-size:10.5px;line-height:1.15;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.gcal-task.done .gcal-check{background:var(--cal-mint);border-color:transparent}
+.gcal-task.done .gcal-check::after{content:"";position:absolute;left:4px;top:1px;width:3px;height:6px;border:solid var(--ink-plum);border-width:0 1.5px 1.5px 0;transform:rotate(45deg)}
+.gcal-task.done .gcal-task-t{text-decoration:line-through;color:var(--muted-ink)}
+/* colour legend under the week */
+.gcal-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:12px 2px 0;font-size:12px;color:var(--muted-ink)}
+.gcal-legend span{display:inline-flex;align-items:center;gap:6px}
+.gcal-legend i{flex:none;width:11px;height:11px;border-radius:3px}
 
 /* ---- Chrome-style tabs: folder shape, hairline dividers, flared feet ---- */
 /* A full-width rose hairline under the bar separates the nav from the section
@@ -396,6 +601,9 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
   .in{padding-left:16px;padding-right:16px}
   .pnrow{padding-left:16px;padding-right:16px}
   .c7grid{grid-template-columns:1fr}
+  /* the layer's question forces the single-column grid wider than the phone;
+     it is redundant here — each panel repeats it as the "It answers" callout */
+  .lrow .lq{display:none}
   /* five 1fr columns force a min-content overflow at 375px */
   .calweek{grid-template-columns:repeat(2,1fr)}
 }

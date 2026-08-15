@@ -20,6 +20,7 @@
 
   var state = {};        // group -> value (string or number)
   var checks = {};       // checklist id -> bool
+  var toggles = {};      // data-tk id -> bool (sample-calendar task done state)
   var CK_KEY = "sdev.reset.v1";
 
   function $all(sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); }
@@ -38,7 +39,8 @@
      step the design intended rather than on nothing:
        state={... sel:{c7:1,c12:0,c16:1,c18:'now',c10:'ex',c3:'topic'} ...}
      Groups absent here (c1, c4, c6, c9, c11, c15, c21) start unselected by design. */
-  var INITIAL = { c7: 1, c12: 0, c16: 1, c18: "now", c10: "ex", c3: "topic" };
+  var INITIAL = { c7: 1, c12: 0, c16: 1, c18: "now", c10: "ex", c3: "topic",
+                  c30: "ip3", c31: "idea", c32: "file", c40: "wine", c41: "LEC" };
 
   function applyDefaults() {
     Object.keys(INITIAL).forEach(function (k) { state[k] = INITIAL[k]; });
@@ -84,6 +86,11 @@
       } else {
         el.classList.toggle("on", on);
         if (mode === "gte-cur") el.classList.toggle("cur", isCur);
+        // a single-select control (pick/set, eq) reports its pressed state
+        var a = el.getAttribute("data-act");
+        if ((a === "pick" || a === "set") && mode !== "gte" && mode !== "gte-cur") {
+          el.setAttribute("aria-pressed", on ? "true" : "false");
+        }
       }
     });
 
@@ -122,6 +129,13 @@
     var total = $all("[data-ck]").length;
     var done = $all("[data-ck]").filter(function (el) { return !!checks[el.getAttribute("data-ck")]; }).length;
     $all("[data-ck-count]").forEach(function (el) { el.textContent = done + " / " + total; });
+
+    // sample-calendar tasks (non-persistent, seeded from data-done)
+    $all("[data-tk]").forEach(function (el) {
+      var on = !!toggles[el.getAttribute("data-tk")];
+      el.classList.toggle("done", on);
+      el.setAttribute("aria-pressed", on ? "true" : "false");
+    });
 
     // step buttons disable at their bounds
     $all("[data-act='nxt'][data-k][data-max]").forEach(function (b) {
@@ -169,6 +183,15 @@
     if (act === "pick") {
       var v = coerce(el.getAttribute("data-v"));
       state[k] = (String(state[k]) === String(v)) ? undefined : v;   // click again to clear
+      render(); return;
+    }
+    if (act === "set") {                                             // jump to a value, no toggle-off
+      state[k] = coerce(el.getAttribute("data-v"));
+      render(); return;
+    }
+    if (act === "toggle") {                                          // sample-calendar task done/undone
+      var tk = el.getAttribute("data-tk");
+      toggles[tk] = !toggles[tk];
       render(); return;
     }
     if (act === "rv") {                                              // multi-select reveal
@@ -230,6 +253,55 @@
     if (act === "openp") { openPrompt(el.getAttribute("data-id"), el); return; }
     if (act === "closep") { closePrompt(); return; }
     if (act === "closebg") { if (e.target === el) closePrompt(); return; }
+    if (act === "openv") { openVideo(el.getAttribute("data-vsrc"), el); return; }
+    if (act === "openimg") { openImg(el.getAttribute("data-isrc"), el, el.getAttribute("data-mlabel")); return; }
+    if (act === "closev") { closeVideo(); return; }
+  });
+
+  /* ---------- enlarge modal (video or SVG) ---------- */
+  var vmodalEl, vLastFocus;
+  function openStage(node, trigger, label) {
+    vmodalEl = document.getElementById("vmodal");
+    if (!vmodalEl || !node) return;
+    vLastFocus = trigger || document.activeElement;
+    var stage = vmodalEl.querySelector(".vmstage");
+    if (stage) { stage.innerHTML = ""; stage.appendChild(node); }
+    var box = vmodalEl.querySelector(".vmbox");
+    if (box && label) box.setAttribute("aria-label", label);
+    vmodalEl.removeAttribute("hidden");
+    var c = vmodalEl.querySelector(".vmclose");
+    if (c) c.focus();
+  }
+  function openVideo(src, trigger) {
+    if (!src) return;
+    var v = document.createElement("video");
+    v.setAttribute("controls", ""); v.setAttribute("playsinline", "");
+    v.setAttribute("src", src);
+    openStage(v, trigger, "Opening a folder in the editor");
+    var p = v.play(); if (p && p.catch) p.catch(function () {});
+  }
+  function openImg(src, trigger, label) {
+    if (!src) return;
+    var img = document.createElement("img");
+    img.setAttribute("src", src);
+    if (label) img.setAttribute("alt", label);
+    openStage(img, trigger, label || "Enlarged view");
+  }
+  function closeVideo() {
+    if (!vmodalEl) vmodalEl = document.getElementById("vmodal");
+    if (!vmodalEl) return;
+    var vid = vmodalEl.querySelector(".vmstage video");
+    if (vid) { vid.pause(); }
+    var stage = vmodalEl.querySelector(".vmstage");
+    if (stage) stage.innerHTML = "";                 // release the media
+    vmodalEl.setAttribute("hidden", "");
+    if (vLastFocus && vLastFocus.focus) vLastFocus.focus();
+  }
+  // Esc closes the video modal too
+  document.addEventListener("keydown", function (e) {
+    var m = document.getElementById("vmodal");
+    if (!m || m.hasAttribute("hidden")) return;
+    if (e.key === "Escape") closeVideo();
   });
 
   /* ---------- prompt modal ---------- */
@@ -277,10 +349,30 @@
   });
 
   /* ---------- init ---------- */
+  // Load looping preview videos on desktop only — phones never fetch the file,
+  // but the still card still opens the modal (which loads it on demand). A
+  // positive width test means an unknown/zero width defers rather than loads;
+  // load/resize retry so a viewport that settles to desktop still gets it.
+  function loadPreviews() {
+    if (window.innerWidth && window.innerWidth < 761) return;
+    if (!window.innerWidth) return;   // unknown width yet — wait for a real one
+    $all("video.vdemo-vid[data-src]").forEach(function (v) {
+      if (!v.getAttribute("src")) v.setAttribute("src", v.getAttribute("data-src"));
+    });
+  }
+
   function init() {
     loadChecks();
     loadPrompts();
     applyDefaults();
+    // seed sample-calendar task done-state from markup
+    $all("[data-tk][data-done]").forEach(function (el) {
+      var k = el.getAttribute("data-tk");
+      if (toggles[k] === undefined) toggles[k] = el.getAttribute("data-done") === "1";
+    });
+    loadPreviews();
+    window.addEventListener("load", loadPreviews);
+    window.addEventListener("resize", loadPreviews);
     render();
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
