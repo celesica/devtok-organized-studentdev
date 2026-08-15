@@ -21,7 +21,6 @@
   <a class="tab" role="tab" data-route="06-notion" href="#/06-notion"><span class="n">06</span>Notion</a>
   <a class="tab" role="tab" data-route="07-workspace" href="#/07-workspace"><span class="n">07</span>Workspace</a>
   <a class="tab" role="tab" data-route="08-reset" href="#/08-reset"><span class="n">08</span>Reset</a>
-  <a class="tab" role="tab" data-route="09-groups" href="#/09-groups"><span class="n">09</span>Groups</a>
   <a class="tab tk" role="tab" data-route="toolkit" href="#/toolkit">Toolkit</a>
 </nav>
 
@@ -949,8 +948,7 @@ WEATHER_API_KEY = os.environ["WEATHER_API_KEY"]</pre></div>
 <li>Install the language and tools your current classes actually use.</li>
 <li>Your editor or IDE already catches many coding problems; add linters when your project needs them.</li>
 <li>Add extensions when they solve a specific problem.</li>
-<li>VS Code can group related projects in a <b>multi‑root workspace</b>.</li>
-<li>IntelliJ IDEA can also manage related projects together in a <b>Multi‑Project Workspace</b>.</li>
+<li>IDEs can group related projects together — VS Code in a <b>multi‑root workspace</b>, and IntelliJ IDEA in a <b>Multi‑Project Workspace</b>.</li>
 </ul>
 <div class="closer"><span class="k">DO</span><p>Check that you have the basics for your current classes: an editor or IDE, your required programming language, Git, and a working terminal.</p></div>
 </div></div>
@@ -960,105 +958,40 @@ WEATHER_API_KEY = os.environ["WEATHER_API_KEY"]</pre></div>
 <div class="band"><div class="in">
 <div class="eyebrow"><span>08 · the 20‑minute reset</span><span class="lvl">FOUNDATION</span></div>
 <h1 class="h1">The 20‑minute reset</h1>
-<p class="cover"><b>What this covers:</b> a short routine for getting back on track when things have drifted.</p>
-<p class="cover"><b>Why it matters:</b> every system gets disorganized during exams and deadline weeks. That's expected. What matters is a way back that doesn't require rebuilding anything.</p>
+<p class="cover"><b>What this section covers:</b> A short routine for getting your system back under control when things start getting messy.</p>
+<p class="cover"><b>Why it matters:</b> Every system gets disorganized during exams, project weeks, and busy semesters. The important part isn't preventing that completely — it's having an easy way back.</p>
 </div></div><div class="band"><div class="in"><h2 class="h2">When to run it</h2>
+<p>Good times for a reset:</p>
 <ul class="wa-list wa-list--ul">
-<li>End of the week — pick a day and keep it</li>
+<li>At the end of the week</li>
 <li>After a heavy deadline week</li>
 <li>Before a new term starts</li>
+<li>Whenever Downloads, Desktop, tasks, or projects are clearly piling up</li>
 </ul>
-<p>On a schedule, not when you feel behind.</p>
+<div class="note"><span class="nl">NOTE</span>Doing it regularly is easier than waiting until everything feels unmanageable.</div>
 </div></div><div class="band"><div class="in"><h2 class="h2">The checklist</h2>
-<div class="panel" data-cw="1" style="padding:18px 14px">
-<pre data-cs="1" style="display:none">THE 20-MINUTE RESET
-Files: empty Downloads / clear Desktop / file loose documents
-School: check LMS / add new deadlines to calendar / look at week ahead
-Development: commit and push WIP / delete test files / archive finished projects
-Upskilling: file new saves / delete what you won't use
-Backups: confirm cloud sync running / nothing only on laptop</pre>
-<div class="ctl" style="margin:0 6px 10px"><span class="ctr" style="margin:0"><span data-ck-count></span> / 13 DONE</span>
-<span style="margin-left:auto;display:flex;gap:8px">
-<button class="wa-btn wa-btn--ghost wa-btn--sm" data-k="ck" data-act="copy">Copy</button>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-act="rck">Reset all</button></span>
+<p>Work top to bottom — each item is a small action, not a project. Tick them off as you go.</p>
+<div class="rchk" data-ckwrap>
+<div class="rchk-top"><span class="rchk-count"><span class="mono" data-ck-count></span> done</span><button class="rchk-reset" type="button" data-act="ckreset">Reset all</button></div>
+<p class="rchk-note">Your progress is saved in this browser, so the boxes stay checked when you come back. <b>Reset all</b> clears them.</p>
+<div class="rgroups"><div class="rgroup"><h3 class="rgroup-h">Files</h3><button class="ckrow" type="button" data-ck="f1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Empty or sort Downloads</span></button><button class="ckrow" type="button" data-ck="f2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Clear the Desktop</span></button><button class="ckrow" type="button" data-ck="f3" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Move loose documents into the correct term and subject folder</span></button></div><div class="rgroup"><h3 class="rgroup-h">School</h3><button class="ckrow" type="button" data-ck="s1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Open your LMS and check what's coming</span></button><button class="ckrow" type="button" data-ck="s2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Add newly announced deadlines to your calendar</span></button><button class="ckrow" type="button" data-ck="s3" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Look at the week ahead</span></button></div><div class="rgroup"><h3 class="rgroup-h">Development</h3><button class="ckrow" type="button" data-ck="d1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Commit work that should be committed</span></button><button class="ckrow" type="button" data-ck="d2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Push work that needs a remote copy</span></button><button class="ckrow" type="button" data-ck="d3" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Delete leftover test files</span></button></div><div class="rgroup"><h3 class="rgroup-h">Upskilling</h3><button class="ckrow" type="button" data-ck="u1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">File useful new resources</span></button><button class="ckrow" type="button" data-ck="u2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Delete things you realistically won't use</span></button></div><div class="rgroup"><h3 class="rgroup-h">Accounts and backups</h3><button class="ckrow" type="button" data-ck="b1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Confirm your cloud sync is working</span></button><button class="ckrow" type="button" data-ck="b2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Check whether anything important exists only on your laptop</span></button></div></div>
 </div>
-<p class="h3" style="margin:8px 10px 2px">Files</p>
-<button class="ckrow" data-ck="f1" data-id="f1" data-act="tck"><span class="ckbox"></span><span class="ckt">Empty or file everything in Downloads</span></button>
-<button class="ckrow" data-ck="f2" data-id="f2" data-act="tck"><span class="ckbox"></span><span class="ckt">Clear the Desktop</span></button>
-<button class="ckrow" data-ck="f3" data-id="f3" data-act="tck"><span class="ckbox"></span><span class="ckt">Put loose documents into the right term and subject folder</span></button>
-<p class="h3" style="margin:14px 10px 2px">School</p>
-<button class="ckrow" data-ck="s1" data-id="s1" data-act="tck"><span class="ckbox"></span><span class="ckt">Open your LMS and check what's coming</span></button>
-<button class="ckrow" data-ck="s2" data-id="s2" data-act="tck"><span class="ckbox"></span><span class="ckt">Add new deadlines to your calendar</span></button>
-<button class="ckrow" data-ck="s3" data-id="s3" data-act="tck"><span class="ckbox"></span><span class="ckt">Look at the week ahead</span></button>
-<p class="h3" style="margin:14px 10px 2px">Development</p>
-<button class="ckrow" data-ck="d1" data-id="d1" data-act="tck"><span class="ckbox"></span><span class="ckt">Commit and push anything you've been working on</span></button>
-<button class="ckrow" data-ck="d2" data-id="d2" data-act="tck"><span class="ckbox"></span><span class="ckt">Delete leftover test files</span></button>
-<button class="ckrow" data-ck="d3" data-id="d3" data-act="tck"><span class="ckbox"></span><span class="ckt">Move finished projects to archive/</span></button>
-<p class="h3" style="margin:14px 10px 2px">Upskilling</p>
-<button class="ckrow" data-ck="u1" data-id="u1" data-act="tck"><span class="ckbox"></span><span class="ckt">File anything new you saved</span></button>
-<button class="ckrow" data-ck="u2" data-id="u2" data-act="tck"><span class="ckbox"></span><span class="ckt">Delete resources you won't realistically use</span></button>
-<p class="h3" style="margin:14px 10px 2px">Accounts and backups</p>
-<button class="ckrow" data-ck="b1" data-id="b1" data-act="tck"><span class="ckbox"></span><span class="ckt">Confirm your cloud sync is actually running</span></button>
-<button class="ckrow" data-ck="b2" data-id="b2" data-act="tck"><span class="ckbox"></span><span class="ckt">Check nothing important exists only on your laptop</span></button>
-</div>
-<div class="note"><span class="nl">NOTE</span>Twenty minutes, not an afternoon. If it's taking longer, you're reorganizing rather than resetting.</div>
+<div class="note"><span class="nl">NOTE</span>The goal is not to redesign your entire organization system. It's simply to return things to the system you already built.</div>
+<p>If your reset starts turning into any of these, you're probably doing more than a reset:</p>
+<ul class="wa-list wa-list--ul">
+<li>Rebuilding Notion</li>
+<li>Changing every folder</li>
+<li>Renaming hundreds of old files</li>
+<li>Reorganizing your entire degree</li>
+</ul>
 </div></div><div class="band"><div class="in"><h2 class="h2">Key takeaways</h2>
 <ul class="wa-list wa-list--ul">
-<li>Run it weekly, on a set day.</li>
-<li>It's recovery, not maintenance.</li>
-<li>Every item is a small action, not a project.</li>
+<li>Expect the system to get messy sometimes.</li>
+<li>A reset gives you a predictable way back.</li>
+<li>Keep each action small.</li>
+<li>Don't rebuild the whole system every time you fall behind.</li>
 </ul>
-<div class="closer"><span class="k">COPY</span><p>The checklist is in the toolkit. Save it somewhere you'll see it weekly.</p></div>
-</div></div><div class="band"><div class="in"><h2 class="h2">Closing</h2>
-<p>You now have four folders, a structure for school files, an understanding of how coding projects work, a calendar that reminds you, and a routine for getting back on track.</p>
-<p>You don't need to set all of it up today. Start with the four folders and this term's subjects. Add the rest as you need it.</p>
-<p class="anchor">Your system doesn't need to stay perfect. It just needs to be easy to return to.</p>
-<p class="script">— Jazzy</p>
-</div></div>
-</section>
-
-<section class="view sec" data-route="09-groups" role="tabpanel" aria-label="09 Group projects">
-<div class="band"><div class="in">
-<div class="eyebrow"><span>09 · bonus — group projects</span><span class="lvl">GOING DEEPER</span></div>
-<h1 class="h1">Group projects and shared repositories</h1>
-<p><span class="wa-badge wa-badge--muted">ADVANCED</span> Reference material. Covered live only if there's time.</p>
-<p class="cover"><b>What this covers:</b> setting up a group project so everyone can work on it.</p>
-<p class="cover"><b>Why it matters:</b> most group project problems are setup problems, and they're much cheaper to fix in week one than the week before defense.</p>
-</div></div><div class="band"><div class="in"><h2 class="h2">What usually goes wrong</h2>
-<ul class="wa-list wa-list--ul">
-<li>The working version is on one person's laptop and they're unreachable</li>
-<li>The same file gets passed around in a group chat under different names</li>
-<li>A teammate can't get the project running, doesn't want to ask twice, and stops contributing</li>
-<li>The account holding everything belongs to someone who stops responding</li>
-</ul>
-</div></div><div class="band"><div class="in"><h2 class="h2">Setting it up</h2>
-<p>On day one, before anyone writes code:</p>
-<ol class="wa-list wa-list--ol">
-<li><b>One repository.</b> Everyone gets access immediately.</li>
-<li><b>One person listed as owner</b>, but everyone has full access, so nobody is blocked.</li>
-<li><b>Everyone downloads it and runs it once.</b> Fix problems now, while they're small.</li>
-<li><b>Write the README on day one.</b> It's how a teammate gets started without messaging you.</li>
-</ol>
-<div class="note"><span class="nl">NOTE</span>The teammate who can't get it running usually won't say so twice. Checking on day one prevents most uneven‑workload problems.</div>
-</div></div><div class="band"><div class="in"><h2 class="h2">Where a capstone lives</h2>
-<p class="mut" style="font-size:14px">Click each box — and the pointer file that joins them.</p>
-<div class="grid2">
-<button class="fcard" data-st="c21" data-on="dev" data-mode="eq" data-k="c21" data-v="dev" data-act="pick"><span class="ft">Development</span><span class="fd">The code, in the repository</span></button>
-<button class="fcard" data-st="c21" data-on="ptr" data-mode="eq" data-k="c21" data-v="ptr" data-act="pick"><span class="ft mono" style="font-size:14px">WHERE‑IS‑THE‑CODE.txt</span><span class="fd">The pointer file</span></button>
-<button class="fcard" data-st="c21" data-on="stu" data-mode="eq" data-k="c21" data-v="stu" data-act="pick"><span class="ft">Studies</span><span class="fd">The paperwork</span></button>
-</div>
-<div class="fpanel" data-st="c21" data-on="dev" data-mode="eq"><div class="note"><span class="nl">DEV</span>The repository: code, README, .gitignore, dependency file. Shared access for the whole team.</div></div>
-<div class="fpanel" data-st="c21" data-on="ptr" data-mode="eq"><div class="panel"><pre class="tree">Code lives at: github.com/team/capstone-app
-Maintained by all four of us.
-Ask Miguel for access.</pre></div><p class="mut" style="font-size:14.5px">A pointer is a legitimate organizational object — a short text file in Studies noting where the code is.</p></div>
-<div class="fpanel" data-st="c21" data-on="stu" data-mode="eq"><div class="note"><span class="nl">STUDIES</span>Requirements, forms, adviser feedback, defense slides — the written side of the capstone.</div></div>
-</div></div><div class="band"><div class="in"><h2 class="h2">Key takeaways</h2>
-<ul class="wa-list wa-list--ul">
-<li>Set up the shared repository on day one with access for everyone.</li>
-<li>Confirm every teammate can run it before real work starts.</li>
-<li>Capstone code goes in Development; paperwork goes in Studies, linked by a note.</li>
-</ul>
-<div class="closer"><span class="k">DO</span><p>If your group project has no shared repository yet, set one up today and get every teammate running it.</p></div>
+<div class="closer"><span class="k">COPY</span><p>Save the checklist somewhere easy to find and use it whenever you need to reset.</p></div>
 </div></div>
 </section>
 
@@ -1066,36 +999,232 @@ Ask Miguel for access.</pre></div><p class="mut" style="font-size:14.5px">A poin
 <div class="band"><div class="in">
 <p class="tkeyebrow">toolkit · reference library</p>
 <h1 class="tkh1">The toolkit</h1>
-<p>Everything reusable, in one tab. This is where you land months later wanting a template, a checklist, or a prompt — not a lesson. <b>Every item has a copy button.</b></p>
+<p>Everything reusable, in one tab. This is where you land months later wanting a prompt, a template, or a checklist — not a lesson. <b>Every item has a copy button.</b></p>
 <div class="tkchips">
-<button class="tkchip" data-j="jtpl" data-act="jump">Templates</button>
-<button class="tkchip" data-j="jchk" data-act="jump">Checklists</button>
-<button class="tkchip" data-j="jpr" data-act="jump">Prompts</button>
-<button class="tkchip" data-j="jgl" data-act="jump">Glossary</button>
-<button class="tkchip" data-j="jtools" data-act="jump">Tools</button>
+<button class="tkchip" type="button" data-j="jpr" data-act="jump">Prompts</button>
+<button class="tkchip" type="button" data-j="jtpl" data-act="jump">Templates</button>
+<button class="tkchip" type="button" data-j="jchk" data-act="jump">Checklists</button>
+</div>
+</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jpr">Prompts</h2>
+<p>A good prompt gives the AI enough context to help with <b>your actual setup</b> instead of generic advice. When useful, include your program and year, your classes and schedule, whether a course is major or minor, your folder tree, your OS, your editor or IDE, your language or framework, screenshots, and the exact error or assignment instructions.</p>
+<div class="note"><span class="nl">TIP</span>If you're trying to learn how to do something, say <b>"walk me through it step by step and explain what each step does."</b> You can also tell the AI not to write the code or do the work for you if you want to practice it yourself.</div>
+<p class="tkmut tkstar-note" style="font-size:14px;margin:18px 0 2px">If you only save a few, start with these — the prompts marked <span class="tkstar tkstar--inline"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.2l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.9 6.1 19.4l1.3-6.3L2.6 8.8l6.4-.7z"/></svg></span>.</p>
+<h3 class="tkh3">Term, calendar, and school setup</h3>
+<div class="tkgrid">
+<div class="tkcard tkcard--feat"><span class="tkstar" title="Featured — a good one to save first"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.2l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.9 6.1 19.4l1.3-6.3L2.6 8.8l6.4-.7z"/></svg></span>
+<p class="tt" style="margin:0"><b>P1</b> · Set up my whole term</p>
+<p class="uw"><b>Use this when:</b> a new semester is starting and you want one step-by-step setup plan.</p>
+<p class="pv">I'm a [year level] [program] student.</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P1" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard tkcard--feat"><span class="tkstar" title="Featured — a good one to save first"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.2l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.9 6.1 19.4l1.3-6.3L2.6 8.8l6.4-.7z"/></svg></span>
+<p class="tt" style="margin:0"><b>P2</b> · Organize my classes in Google Calendar</p>
+<p class="uw"><b>Use this when:</b> you have your class schedule and want to build the calendar properly instead of entering things randomly.</p>
+<p class="pv">I want to organize my school schedule in Google Calendar.</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P2" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P3</b> · Turn my syllabus into calendar entries and tasks</p>
+<p class="uw"><b>Use this when:</b> a professor gives you a syllabus or course outline full of dates.</p>
+<p class="pv">Here is my syllabus / course outline:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P3" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P4</b> · Event or task?</p>
+<p class="uw"><b>Use this when:</b> you're not sure whether something belongs on the calendar as an event or in Tasks.</p>
+<p class="pv">I'm organizing school in Google Calendar and Google Tasks.</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P4" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P5</b> · Set up my Academia Notion template</p>
+<p class="uw"><b>Use this when:</b> you've copied the DevTok Pinas Academia template and want to populate it without overbuilding it.</p>
+<p class="pv">I'm using the DevTok Pinas Academia Notion template.</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P5" data-act="openp">View prompt</button>
+</div>
+</div>
+
+<h3 class="tkh3">Files and organization</h3>
+<div class="tkgrid">
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P6</b> · Design a folder structure for my term</p>
+<p class="uw"><b>Use this when:</b> you're starting a term and want a structure that fits your actual subjects.</p>
+<p class="pv">I'm a [year level] [program] student. This term I'm taking:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P6" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P7</b> · Where should this go?</p>
+<p class="uw"><b>Use this when:</b> you're not sure which folder something belongs in.</p>
+<p class="pv">I organize my student files into four folders:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P7" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P8</b> · Review my folder structure</p>
+<p class="uw"><b>Use this when:</b> your folders feel cluttered but you're not sure why.</p>
+<p class="pv">Here's my current folder structure:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P8" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P9</b> · Help me clean Downloads and Desktop</p>
+<p class="uw"><b>Use this when:</b> both have quietly become storage.</p>
+<p class="pv">Here's what's currently in my Downloads and Desktop:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P9" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P10</b> · Rename these files consistently</p>
+<p class="uw"><b>Use this when:</b> your files are named things like `final-v2-real-final.pdf`.</p>
+<p class="pv">Here are my current filenames:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P10" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P11</b> · Give me a 20-minute reset</p>
+<p class="uw"><b>Use this when:</b> your whole system is getting messy and you need a small way back.</p>
+<p class="pv">My student organization system is getting messy.</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P11" data-act="openp">View prompt</button>
+</div>
+</div>
+
+<h3 class="tkh3">Projects and coding workspace</h3>
+<div class="tkgrid">
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P12</b> · Recommend a project structure</p>
+<p class="uw"><b>Use this when:</b> you're starting something and don't know how to lay it out.</p>
+<p class="pv">I'm building [describe the project] using [language/framework]…</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P12" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P13</b> · Help me plan a project</p>
+<p class="uw"><b>Use this when:</b> you have an idea but no plan.</p>
+<p class="pv">I want to build [describe the idea].</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P13" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard tkcard--feat"><span class="tkstar" title="Featured — a good one to save first"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.2l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.9 6.1 19.4l1.3-6.3L2.6 8.8l6.4-.7z"/></svg></span>
+<p class="tt" style="margin:0"><b>P14</b> · Break this assignment into steps</p>
+<p class="uw"><b>Use this when:</b> something is due and it feels too big to start.</p>
+<p class="pv">I have this assignment:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P14" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P15</b> · Set up my coding environment</p>
+<p class="uw"><b>Use this when:</b> a class tells you to “set up your development environment” and you're not sure what that means.</p>
+<p class="pv">I'm taking [class] and we'll be using:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P15" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P16</b> · Should these projects share one workspace?</p>
+<p class="uw"><b>Use this when:</b> you have related repositories and keep switching between windows.</p>
+<p class="pv">I have these separate projects / repositories:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P16" data-act="openp">View prompt</button>
+</div>
+</div>
+
+<h3 class="tkh3">Git, GitHub, and documentation</h3>
+<div class="tkgrid">
+<div class="tkcard tkcard--feat"><span class="tkstar" title="Featured — a good one to save first"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.2l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.9 6.1 19.4l1.3-6.3L2.6 8.8l6.4-.7z"/></svg></span>
+<p class="tt" style="margin:0"><b>P17</b> · Explain Git and GitHub using my project</p>
+<p class="uw"><b>Use this when:</b> clone, branch, commit, pull, and push all sound like random words.</p>
+<p class="pv">I'm new to Git and GitHub.</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P17" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P18</b> · Improve my commit message</p>
+<p class="uw"><b>Use this when:</b> you're about to write `fix` again.</p>
+<p class="pv">I changed:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P18" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P19</b> · What should Git ignore?</p>
+<p class="uw"><b>Use this when:</b> you're setting up a new project.</p>
+<p class="pv">I'm working on a [language/framework] project.</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P19" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P20</b> · Generate a README outline</p>
+<p class="uw"><b>Use this when:</b> your project has no documentation.</p>
+<p class="pv">Here's my project structure:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P20" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P21</b> · Set up a simple Git workflow for our capstone</p>
+<p class="uw"><b>Use this when:</b> your group is about to start coding together.</p>
+<p class="pv">We're a team of [number] students building:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P21" data-act="openp">View prompt</button>
+</div>
+</div>
+
+<h3 class="tkh3">Security and backups</h3>
+<div class="tkgrid">
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P22</b> · Check my API key and secret setup</p>
+<p class="uw"><b>Use this when:</b> a project uses an API key, database password, token, or other credential.</p>
+<p class="pv">My project uses these private values:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P22" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard tkcard--feat"><span class="tkstar" title="Featured — a good one to save first"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.2l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.9 6.1 19.4l1.3-6.3L2.6 8.8l6.4-.7z"/></svg></span>
+<p class="tt" style="margin:0"><b>P23</b> · Build a backup plan</p>
+<p class="uw"><b>Use this when:</b> you're not sure what would disappear if your laptop died today.</p>
+<p class="pv">Help me make a simple backup plan for my student files.</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P23" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P24</b> · Set up my password manager and account security</p>
+<p class="uw"><b>Use this when:</b> you're still reusing passwords or saving them manually.</p>
+<p class="pv">I want to improve the security of my student and developer</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P24" data-act="openp">View prompt</button>
+</div>
+</div>
+
+<h3 class="tkh3">Learning and understanding</h3>
+<div class="tkgrid">
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P25</b> · Explain this repository</p>
+<p class="uw"><b>Use this when:</b> you've opened someone else's project and can't find anything.</p>
+<p class="pv">Here's the file structure of a project I'm trying to understan…</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P25" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P26</b> · Help me understand this code</p>
+<p class="uw"><b>Use this when:</b> you need to understand something, not have it written for you.</p>
+<p class="pv">Here's some code I'm trying to understand:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P26" data-act="openp">View prompt</button>
+</div>
+<div class="tkcard">
+<p class="tt" style="margin:0"><b>P27</b> · Organize my learning resources</p>
+<p class="uw"><b>Use this when:</b> you've saved a lot and used almost none of it.</p>
+<p class="pv">Here's everything I've saved to learn from:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P27" data-act="openp">View prompt</button>
+</div>
+</div>
+
+<h3 class="tkh3">Self-check</h3>
+<div class="tkgrid">
+<div class="tkcard tkcard--feat"><span class="tkstar" title="Featured — a good one to save first"><svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.2l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.9 6.1 19.4l1.3-6.3L2.6 8.8l6.4-.7z"/></svg></span>
+<p class="tt" style="margin:0"><b>P28</b> · Audit my whole student-developer system</p>
+<p class="uw"><b>Use this when:</b> you've built a system but want to know where it may break during a busy semester.</p>
+<p class="pv">Here's how I currently organize my student-developer life:</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="P28" data-act="openp">View prompt</button>
+</div>
 </div>
 </div></div><div class="band"><div class="in"><h2 class="tkh2" id="jtpl">Templates</h2>
-<p class="tkmut" style="font-size:14.5px">Nine copyable structures. Adjust names to your program and language.</p>
-
-<div style="margin:22px 0">
-<p style="margin:0 0 2px"><span style="font-family:var(--font-tech);font-size:16px">T1 · Studies hierarchy — minimal</span> <span class="tkmono" style="color:var(--ember);margin-left:8px"></span></p>
-<p class="tkmut" style="font-size:14px;margin:2px 0 8px">For a first-year, or anyone who wants the smallest workable structure.</p>
-<div class="tkpanel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" data-k="t1" data-act="copy">Copy</button>
-<pre class="tktree" data-cs="1">Studies/
+<p class="tkmut" style="font-size:14.5px">Copyable structures. Open one, adjust the names to your program and language. The folder trees are interactive — click a folder to open or collapse it.</p>
+<div class="tkaccs">
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>T1</b> · Studies hierarchy — minimal</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body" data-cw="1"><div class="tkacc-bar"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" type="button" data-act="copy">Copy</button></div>
+<p class="tkmut" style="font-size:14px;margin:0 0 12px">For a first-year, or anyone who wants the smallest workable structure.</p><div class="ftree" role="group" aria-label="T1 Studies hierarchy — minimal template">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div><ul class="ftkids ftroot"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Studies</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">[Your Program]</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Courses</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y1T1</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">[Subject 1]</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">[Subject 2]</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">[Subject 3]</span></li></ul></details></li></ul></details></li></ul></details></li></ul></details></li></ul>
+</div>
+<pre data-cs="1" hidden aria-hidden="true">Studies/
 └── [Your Program]/
     └── Courses/
         └── Y1T1/
             ├── [Subject 1]/
             ├── [Subject 2]/
-            └── [Subject 3]/</pre></div>
+            └── [Subject 3]/</pre></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>T2</b> · Studies hierarchy — standard</span><span class="wa-badge wa-badge--amber">RECOMMENDED</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body" data-cw="1"><div class="tkacc-bar"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" type="button" data-act="copy">Copy</button></div>
+<div class="ftree" role="group" aria-label="T2 Studies hierarchy — standard template">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div><ul class="ftkids ftroot"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Studies</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">BS Computer Science</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Courses</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y1T1</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y1T2</span></li><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y2T1</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Algorithms and Complexity</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Life and Works of Rizal</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Software Engineering</span></li></ul></details></li></ul></details></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Curriculum</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Grade Slips</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Graduation Requirements</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Organizations</span></li></ul></details></li></ul></details></li></ul>
 </div>
-
-
-<div style="margin:22px 0">
-<p style="margin:0 0 2px"><span style="font-family:var(--font-tech);font-size:16px">T2 · Studies hierarchy — standard</span> <span class="tkmono" style="color:var(--ember);margin-left:8px">RECOMMENDED</span></p>
-<p class="tkmut" style="font-size:14px;margin:2px 0 8px"></p>
-<div class="tkpanel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" data-k="t2" data-act="copy">Copy</button>
-<pre class="tktree" data-cs="1">Studies/
+<pre data-cs="1" hidden aria-hidden="true">Studies/
 └── BS Computer Science/
     ├── Courses/
     │   ├── Y1T1/
@@ -1107,15 +1236,13 @@ Ask Miguel for access.</pre></div><p class="mut" style="font-size:14.5px">A poin
     ├── Curriculum/
     ├── Grade Slips/
     ├── Graduation Requirements/
-    └── Organizations/</pre></div>
-</div>
-
-
-<div style="margin:22px 0">
-<p style="margin:0 0 2px"><span style="font-family:var(--font-tech);font-size:16px">T3 · Studies hierarchy — detailed</span> <span class="tkmono" style="color:var(--ember);margin-left:8px"></span></p>
-<p class="tkmut" style="font-size:14px;margin:2px 0 8px">For upper years with thesis, OJT, and scholarship requirements. Thesis code goes in Development/ — this folder holds the documents.</p>
-<div class="tkpanel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" data-k="t3" data-act="copy">Copy</button>
-<pre class="tktree" data-cs="1">Studies/
+    └── Organizations/</pre></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>T3</b> · Studies hierarchy — detailed</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body" data-cw="1"><div class="tkacc-bar"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" type="button" data-act="copy">Copy</button></div>
+<p class="tkmut" style="font-size:14px;margin:0 0 12px">For upper years with thesis, OJT, and scholarship requirements.</p><div class="ftree" role="group" aria-label="T3 Studies hierarchy — detailed template">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div><ul class="ftkids ftroot"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Studies</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">BS Computer Science</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Courses</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y3T2</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Software Engineering</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">assignments</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">lectures</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">exams</span></li></ul></details></li></ul></details></li></ul></details></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Curriculum</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Grade Slips</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Graduation Requirements</span></li><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Thesis</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">proposal</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">adviser-feedback</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">defense</span></li></ul></details></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">OJT</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Scholarship and Aid</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Organizations</span></li></ul></details></li></ul></details></li></ul>
+</div><div class="note"><span class="nl">NOTE</span>Thesis <b>code</b> goes in <span class="mono">Development/</span>, not here. This folder holds the school documents.</div>
+<pre data-cs="1" hidden aria-hidden="true">Studies/
 └── BS Computer Science/
     ├── Courses/
     │   └── Y3T2/
@@ -1132,15 +1259,13 @@ Ask Miguel for access.</pre></div><p class="mut" style="font-size:14.5px">A poin
     │   └── defense/
     ├── OJT/
     ├── Scholarship and Aid/
-    └── Organizations/</pre></div>
-</div>
-
-
-<div style="margin:22px 0">
-<p style="margin:0 0 2px"><span style="font-family:var(--font-tech);font-size:16px">T4 · Development hierarchy</span> <span class="tkmono" style="color:var(--ember);margin-left:8px"></span></p>
-<p class="tkmut" style="font-size:14px;margin:2px 0 8px">school/ by term · learning/ course code · personal/ your projects · experiments/ things you are trying · archive/ stopped projects.</p>
-<div class="tkpanel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" data-k="t4" data-act="copy">Copy</button>
-<pre class="tktree" data-cs="1">Development/
+    └── Organizations/</pre></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>T4</b> · Development hierarchy</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body" data-cw="1"><div class="tkacc-bar"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" type="button" data-act="copy">Copy</button></div>
+<div class="ftree" role="group" aria-label="T4 Development hierarchy template">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div><ul class="ftkids ftroot"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Development</span></summary><ul class="ftkids"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">school</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y2T1</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Y2T2</span></li></ul></details></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">learning</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">personal</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">hackathons</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">experiments</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">archive</span></li></ul></details></li></ul>
+</div><ul class="wa-list wa-list--ul"><li><span class="mono fdir">school/</span> — code written for classes, by term</li><li><span class="mono fdir">learning/</span> — code written while following courses or tutorials</li><li><span class="mono fdir">personal/</span> — your own projects</li><li><span class="mono fdir">hackathons/</span> — hackathon projects</li><li><span class="mono fdir">experiments/</span> — small tests and ideas</li><li><span class="mono fdir">archive/</span> — projects you no longer actively work on, if you find an archive useful</li></ul><div class="note"><span class="nl">NOTE</span>You do not need every category immediately. Create the ones you actually use.</div>
+<pre data-cs="1" hidden aria-hidden="true">Development/
 ├── school/
 │   ├── Y2T1/
 │   └── Y2T2/
@@ -1148,588 +1273,143 @@ Ask Miguel for access.</pre></div><p class="mut" style="font-size:14.5px">A poin
 ├── personal/
 ├── hackathons/
 ├── experiments/
-└── archive/</pre></div>
+└── archive/</pre></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>T5</b> · Upskilling hierarchy — by topic</span><span class="wa-badge wa-badge--amber">RECOMMENDED</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body" data-cw="1"><div class="tkacc-bar"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" type="button" data-act="copy">Copy</button></div>
+<div class="ftree" role="group" aria-label="T5 Upskilling hierarchy — by topic template">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div><ul class="ftkids ftroot"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Upskilling</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">web-development</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">cloud</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">ai-and-data</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">design</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">certificates</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">resources</span></li></ul></details></li></ul>
 </div>
-
-
-<div style="margin:22px 0">
-<p style="margin:0 0 2px"><span style="font-family:var(--font-tech);font-size:16px">T5 · Upskilling — by topic</span> <span class="tkmono" style="color:var(--ember);margin-left:8px">RECOMMENDED</span></p>
-<p class="tkmut" style="font-size:14px;margin:2px 0 8px"></p>
-<div class="tkpanel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" data-k="t5" data-act="copy">Copy</button>
-<pre class="tktree" data-cs="1">Upskilling/
+<pre data-cs="1" hidden aria-hidden="true">Upskilling/
 ├── web-development/
 ├── cloud/
 ├── ai-and-data/
 ├── design/
 ├── certificates/
-└── resources/</pre></div>
-</div>
-
-
-<div style="margin:22px 0">
-<p style="margin:0 0 2px"><span style="font-family:var(--font-tech);font-size:16px">T5b · Upskilling — by platform</span> <span class="tkmono" style="color:var(--ember);margin-left:8px"></span></p>
-<p class="tkmut" style="font-size:14px;margin:2px 0 8px">Pick one. Mixing both is what makes things hard to find.</p>
-<div class="tkpanel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" data-k="t5b" data-act="copy">Copy</button>
-<pre class="tktree" data-cs="1">Upskilling/
+└── resources/</pre></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>T5b</b> · Upskilling hierarchy — by platform</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body" data-cw="1"><div class="tkacc-bar"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" type="button" data-act="copy">Copy</button></div>
+<div class="ftree" role="group" aria-label="T5b Upskilling hierarchy — by platform template">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div><ul class="ftkids ftroot"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Upskilling</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">coursera</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">udemy</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">youtube</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">freecodecamp</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">certificates</span></li></ul></details></li></ul>
+</div><div class="note"><span class="nl">NOTE</span>Pick one main approach. Mixing both everywhere is what makes things harder to find.</div>
+<pre data-cs="1" hidden aria-hidden="true">Upskilling/
 ├── coursera/
 ├── udemy/
 ├── youtube/
 ├── freecodecamp/
-└── certificates/</pre></div>
+└── certificates/</pre></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>T6</b> · Career hierarchy</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body" data-cw="1"><div class="tkacc-bar"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" type="button" data-act="copy">Copy</button></div>
+<div class="ftree" role="group" aria-label="T6 Career hierarchy template">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div><ul class="ftkids ftroot"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">Career</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">resume</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">certificates</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">portfolio</span></li><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">applications</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">[company-name]</span></li></ul></details></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">interview-prep</span></li></ul></details></li></ul>
 </div>
-
-
-<div style="margin:22px 0">
-<p style="margin:0 0 2px"><span style="font-family:var(--font-tech);font-size:16px">T6 · Career hierarchy</span> <span class="tkmono" style="color:var(--ember);margin-left:8px"></span></p>
-<p class="tkmut" style="font-size:14px;margin:2px 0 8px"></p>
-<div class="tkpanel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" data-k="t6" data-act="copy">Copy</button>
-<pre class="tktree" data-cs="1">Career/
+<pre data-cs="1" hidden aria-hidden="true">Career/
 ├── resume/
 ├── certificates/
 ├── portfolio/
 ├── applications/
 │   └── [company-name]/
-└── interview-prep/</pre></div>
-</div>
-
-
-<div style="margin:22px 0">
-<p style="margin:0 0 2px"><span style="font-family:var(--font-tech);font-size:16px">T7 · Project starter structure</span> <span class="tkmono" style="color:var(--ember);margin-left:8px"></span></p>
-<p class="tkmut" style="font-size:14px;margin:2px 0 8px">What is actually required: README.md, a dependency file, and .gitignore. Everything else depends on the project.</p>
-<div class="tkpanel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" data-k="t7" data-act="copy">Copy</button>
-<pre class="tktree" data-cs="1">project-name/
+└── interview-prep/</pre></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>T7</b> · Project starter structure</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body" data-cw="1"><div class="tkacc-bar"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" type="button" data-act="copy">Copy</button></div>
+<p class="tkmut" style="font-size:14px;margin:0 0 12px">Adjust to your language and framework. Not every project needs all of this.</p><div class="ftree" role="group" aria-label="T7 Project starter structure template">
+<div class="fttools"><button class="fttool" type="button" data-act="tcol">Collapse</button><span class="ftsep" aria-hidden="true">|</span><button class="fttool" type="button" data-act="texp">Expand</button></div><ul class="ftkids ftroot"><li><details class="ftfolder" open><summary class="ftrow"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">project-name</span></summary><ul class="ftkids"><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">src</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">tests</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">docs</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="fdoc fdoc--md" data-ext="MD" aria-hidden="true"></span><span class="fname">README.md</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="fdoc fdoc--git" data-ext="GIT" aria-hidden="true"></span><span class="fname">.gitignore</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="fdoc fdoc--env" data-ext="ENV" aria-hidden="true"></span><span class="fname">.env.example</span></li><li class="ftleaf"><span class="ftcaret" aria-hidden="true"></span><span class="fdoc fdoc--txt" data-ext="TXT" aria-hidden="true"></span><span class="fname">requirements.txt</span></li></ul></details></li></ul>
+</div><div class="note"><span class="nl">NOTE</span>Don't force a small exercise to look like a production app. Add structure as the project actually needs it. <span class="mono">requirements.txt</span> can be <span class="mono">package.json</span> for Node projects.</div>
+<pre data-cs="1" hidden aria-hidden="true">project-name/
 ├── src/
 ├── tests/
 ├── docs/
 ├── README.md
 ├── .gitignore
 ├── .env.example
-└── requirements.txt        (or package.json)</pre></div>
-</div>
-
-
-<div style="margin:22px 0">
-<p style="margin:0 0 2px"><span style="font-family:var(--font-tech);font-size:16px">T8 · README template</span> <span class="tkmono" style="color:var(--ember);margin-left:8px"></span></p>
-<p class="tkmut" style="font-size:14px;margin:2px 0 8px">The test: download your own project into an empty folder and set it up using only the README. If that works, it is done.</p>
-<div class="tkpanel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" data-k="t8" data-act="copy">Copy</button>
-<pre class="tktree" data-cs="1"># Project Name
+└── requirements.txt</pre></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>T8</b> · README template</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body"><div class="tkcodeblock" data-cw="1"><div class="tkcode-top"><span></span><button class="wa-btn wa-btn--ghost wa-btn--sm" type="button" data-act="copy">Copy code</button></div><pre class="tkcode" data-cs="1"># Project Name
 
 One sentence on what this does.
 
 ## What it does
-Two or three sentences. What problem it solves,
-or what it was built for.
+
+Two or three sentences. What problem it solves, or what
+it was built for.
 
 ## Requirements
+
 - Python 3.11 (or Node 20, etc.)
 - Anything else that must be installed first
 
 ## Setup
+
 1. Clone or download this repository
 2. Install dependencies:
    pip install -r requirements.txt
-3. Copy .env.example to .env and fill in your values
+3. Copy `.env.example` to `.env` and fill in your values
 4. Run it:
    python main.py
 
 ## Notes
-Anything a person would trip over.
+
+Anything a person would trip over. Known issues, things
+that aren't finished.
 
 ## Built with
-List the main tools or frameworks.</pre></div>
-</div>
 
-
-<div style="margin:22px 0">
-<p style="margin:0 0 2px"><span style="font-family:var(--font-tech);font-size:16px">T9 · .gitignore starters</span> <span class="tkmono" style="color:var(--ember);margin-left:8px"></span></p>
-<p class="tkmut" style="font-size:14px;margin:2px 0 8px">Always include .env — it is the file holding your keys.</p>
-<div class="tkpanel" data-cw="1"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" data-k="t9" data-act="copy">Copy</button>
-<pre class="tktree" data-cs="1"># Python
-__pycache__/
+List the main tools or frameworks.</pre></div><div class="note"><span class="nl">NOTE</span><b>The test:</b> clone or download your own project into an empty folder and set it up using only the README. If you can do that, someone else has a much better chance too.</div></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>T9</b> · .gitignore starters</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body"><div class="tkcodeblock" data-cw="1"><div class="tkcode-top"><span class="tkcode-lang">Python</span><button class="wa-btn wa-btn--ghost wa-btn--sm" type="button" data-act="copy">Copy code</button></div><pre class="tkcode" data-cs="1">__pycache__/
 *.pyc
 .venv/
 venv/
 .env
-.DS_Store
-
-# Node / JavaScript
-node_modules/
+.DS_Store</pre></div><div class="tkcodeblock" data-cw="1"><div class="tkcode-top"><span class="tkcode-lang">Node / JavaScript</span><button class="wa-btn wa-btn--ghost wa-btn--sm" type="button" data-act="copy">Copy code</button></div><pre class="tkcode" data-cs="1">node_modules/
 dist/
 build/
 .env
-.DS_Store
-
-# Java
-*.class
+.DS_Store</pre></div><div class="tkcodeblock" data-cw="1"><div class="tkcode-top"><span class="tkcode-lang">Java</span><button class="wa-btn wa-btn--ghost wa-btn--sm" type="button" data-act="copy">Copy code</button></div><pre class="tkcode" data-cs="1">*.class
 target/
 build/
 .env
-.DS_Store</pre></div>
+.DS_Store</pre></div><div class="note"><span class="nl">NOTE</span>Always keep <span class="mono">.env</span> out of Git when it contains real private values.</div></div></details>
 </div>
-
 </div></div><div class="band"><div class="in"><h2 class="tkh2" id="jchk">Checklists</h2>
-<p class="tkmut" style="font-size:14.5px">Five recurring routines plus the reset. These five only — checklist overload is how systems die.</p>
-<div class="tkgrid">
-
-<div class="tkcard" data-cw="1">
-<p class="tt" style="margin:0 0 8px">CL1 · Start of term</p>
-<button class="wa-btn wa-btn--ghost wa-btn--sm" style="float:right;margin-top:-34px" data-k="cl1" data-act="copy">Copy</button>
-
-<p class="tkh3" style="margin:12px 0 4px">Files</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Create this term's folder in Studies/Courses/</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Add a folder per subject</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Create this term's folder in Development/school/</div>
-
-
-
-<p class="tkh3" style="margin:12px 0 4px">Calendar</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Add each class as a repeating event for the whole term</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Put room, professor, meeting link, and LMS link in each event</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Add known exam and submission dates</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Set notifications</div>
-
-
-
-<p class="tkh3" style="margin:12px 0 4px">Accounts</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Confirm LMS access for every subject</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Bookmark each subject's LMS page</div>
-
-
-
-<p class="tkh3" style="margin:12px 0 4px">Notes</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Add this term's subjects to your notes tool</div>
-
-
+<p class="tkmut" style="font-size:14.5px">Recurring routines. Open one and tick items off — each checklist saves its own progress in this browser, and its <b>Reset all</b> clears only that list.</p>
+<div class="tkaccs">
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>CL1</b> · Start of term</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body">
+<div class="rchk" data-ckwrap>
+<div class="rchk-top"><span class="rchk-count"><span class="mono" data-ck-count></span> done</span><button class="rchk-reset" type="button" data-act="ckreset">Reset all</button></div>
+<div class="rgroups"><div class="rgroup"><h4 class="rgroup-h">Files</h4><button class="ckrow" type="button" data-ck="k1_0_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Create this term's folder in <span class="mono">Studies/Courses/</span></span></button><button class="ckrow" type="button" data-ck="k1_0_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Add a folder per subject</span></button><button class="ckrow" type="button" data-ck="k1_0_2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Create this term's folder in <span class="mono">Development/school/</span> if you have coding classes</span></button></div><div class="rgroup"><h4 class="rgroup-h">Calendar</h4><button class="ckrow" type="button" data-ck="k1_1_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Create or use a <span class="mono">School</span> calendar</span></button><button class="ckrow" type="button" data-ck="k1_1_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Add each class as a repeating event for the whole term</span></button><button class="ckrow" type="button" data-ck="k1_1_2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Set the correct end date for each recurring class</span></button><button class="ckrow" type="button" data-ck="k1_1_3" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Put room, instructor, meeting link, and LMS link in the event when useful</span></button><button class="ckrow" type="button" data-ck="k1_1_4" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Keep major/core courses visually consistent</span></button><button class="ckrow" type="button" data-ck="k1_1_5" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Keep minor/elective courses visually consistent in a different color family</span></button><button class="ckrow" type="button" data-ck="k1_1_6" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Give coding practice, self-care, and org activities their own consistent colors if you track them</span></button><button class="ckrow" type="button" data-ck="k1_1_7" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Add known exams and scheduled presentations as events</span></button><button class="ckrow" type="button" data-ck="k1_1_8" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Add assignments and work-to-finish as Tasks</span></button><button class="ckrow" type="button" data-ck="k1_1_9" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Set useful notifications before classes and deadlines</span></button></div><div class="rgroup"><h4 class="rgroup-h">Accounts and access</h4><button class="ckrow" type="button" data-ck="k1_2_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Confirm LMS access for every subject</span></button><button class="ckrow" type="button" data-ck="k1_2_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Bookmark or save each subject's LMS link</span></button><button class="ckrow" type="button" data-ck="k1_2_2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Check that your school email works</span></button><button class="ckrow" type="button" data-ck="k1_2_3" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Use your school email for student discounts or perks when appropriate</span></button></div><div class="rgroup"><h4 class="rgroup-h">Notes</h4><button class="ckrow" type="button" data-ck="k1_3_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Add this term and current subjects to your notes/dashboard</span></button></div></div>
+</div></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>CL2</b> · New project</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body">
+<div class="rchk" data-ckwrap>
+<div class="rchk-top"><span class="rchk-count"><span class="mono" data-ck-count></span> done</span><button class="rchk-reset" type="button" data-act="ckreset">Reset all</button></div>
+<div class="rgroups rgroups--full"><div class="rgroup"><button class="ckrow" type="button" data-ck="k2_0_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Give it a clear name</span></button><button class="ckrow" type="button" data-ck="k2_0_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Decide where it belongs in <span class="mono">Development/</span></span></button><button class="ckrow" type="button" data-ck="k2_0_2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Create the project folder</span></button><button class="ckrow" type="button" data-ck="k2_0_3" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Open the folder in your editor or IDE, not just one file</span></button><button class="ckrow" type="button" data-ck="k2_0_4" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Initialize Git when the project is worth tracking</span></button><button class="ckrow" type="button" data-ck="k2_0_5" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Add a <span class="mono">.gitignore</span> before committing generated/private files</span></button><button class="ckrow" type="button" data-ck="k2_0_6" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Create <span class="mono">README.md</span> when setup or context needs explaining</span></button><button class="ckrow" type="button" data-ck="k2_0_7" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Add the dependency file your ecosystem uses</span></button><button class="ckrow" type="button" data-ck="k2_0_8" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">If it uses secrets, create <span class="mono">.env</span>, <span class="mono">.env.example</span>, and make sure <span class="mono">.env</span> is ignored</span></button></div></div>
+</div></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>CL3</b> · Before pushing to GitHub</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body">
+<div class="rchk" data-ckwrap>
+<div class="rchk-top"><span class="rchk-count"><span class="mono" data-ck-count></span> done</span><button class="rchk-reset" type="button" data-act="ckreset">Reset all</button></div>
+<div class="rgroups rgroups--full"><div class="rgroup"><button class="ckrow" type="button" data-ck="k3_0_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">No real keys, passwords, tokens, or private credentials in the code</span></button><button class="ckrow" type="button" data-ck="k3_0_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt"><span class="mono">.env</span> is listed in <span class="mono">.gitignore</span></span></button><button class="ckrow" type="button" data-ck="k3_0_2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Dependency/build folders such as <span class="mono">node_modules/</span> are ignored when appropriate</span></button><button class="ckrow" type="button" data-ck="k3_0_3" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">README explains what the project is and how to run it</span></button><button class="ckrow" type="button" data-ck="k3_0_4" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Commit messages describe what changed</span></button><button class="ckrow" type="button" data-ck="k3_0_5" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">The project runs from the setup you documented</span></button></div></div>
+</div></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>CL4</b> · Project finish</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body">
+<div class="rchk" data-ckwrap>
+<div class="rchk-top"><span class="rchk-count"><span class="mono" data-ck-count></span> done</span><button class="rchk-reset" type="button" data-act="ckreset">Reset all</button></div>
+<div class="rgroups rgroups--full"><div class="rgroup"><button class="ckrow" type="button" data-ck="k4_0_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Delete leftover test or scratch files you no longer need</span></button><button class="ckrow" type="button" data-ck="k4_0_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Update the README to match what the project actually does now</span></button><button class="ckrow" type="button" data-ck="k4_0_2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Commit and push the final useful changes</span></button><button class="ckrow" type="button" data-ck="k4_0_3" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Add the deployment link to the README, if there is one</span></button><button class="ckrow" type="button" data-ck="k4_0_4" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Take screenshots if the project may be useful for your portfolio</span></button><button class="ckrow" type="button" data-ck="k4_0_5" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Write a few lines on what you learned or what you would improve</span></button><button class="ckrow" type="button" data-ck="k4_0_6" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">If it became portfolio-worthy, add its screenshots/details to <span class="mono">Career/portfolio/</span></span></button></div></div>
+</div></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>CL5</b> · Security and backups</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body">
+<div class="rchk" data-ckwrap>
+<div class="rchk-top"><span class="rchk-count"><span class="mono" data-ck-count></span> done</span><button class="rchk-reset" type="button" data-act="ckreset">Reset all</button></div>
+<div class="rgroups"><div class="rgroup"><h4 class="rgroup-h">Accounts</h4><button class="ckrow" type="button" data-ck="k5_0_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Set up a password manager</span></button><button class="ckrow" type="button" data-ck="k5_0_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Use unique passwords for important accounts</span></button><button class="ckrow" type="button" data-ck="k5_0_2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Turn on biometric unlock on supported devices if you want it</span></button><button class="ckrow" type="button" data-ck="k5_0_3" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Turn on two-factor authentication for email, GitHub, school portal, and other important accounts</span></button><button class="ckrow" type="button" data-ck="k5_0_4" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Save recovery codes somewhere safe</span></button><button class="ckrow" type="button" data-ck="k5_0_5" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Use a personal professional email for long-term professional accounts</span></button><button class="ckrow" type="button" data-ck="k5_0_6" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Use your school email for school services and eligible student perks</span></button></div><div class="rgroup"><h4 class="rgroup-h">Backups</h4><button class="ckrow" type="button" data-ck="k5_1_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt"><span class="mono">Studies/</span>, <span class="mono">Upskilling/</span>, and <span class="mono">Career/</span> have another copy in cloud storage</span></button><button class="ckrow" type="button" data-ck="k5_1_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Important files also have another copy on an external SSD or second drive when possible</span></button><button class="ckrow" type="button" data-ck="k5_1_2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Active coding repositories are not being worked on inside a general cloud-synced folder</span></button><button class="ckrow" type="button" data-ck="k5_1_3" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Important code is committed and pushed to GitHub</span></button><button class="ckrow" type="button" data-ck="k5_1_4" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Nothing important exists only on one device</span></button></div></div>
+</div></div></details>
+<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>CL6</b> · The 20-minute reset</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body">
+<div class="rchk" data-ckwrap>
+<div class="rchk-top"><span class="rchk-count"><span class="mono" data-ck-count></span> done</span><button class="rchk-reset" type="button" data-act="ckreset">Reset all</button></div>
+<div class="rgroups"><div class="rgroup"><h4 class="rgroup-h">Files</h4><button class="ckrow" type="button" data-ck="k6_0_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Empty or sort Downloads</span></button><button class="ckrow" type="button" data-ck="k6_0_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Clear the Desktop</span></button><button class="ckrow" type="button" data-ck="k6_0_2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Move loose documents into the correct term and subject folder</span></button></div><div class="rgroup"><h4 class="rgroup-h">School</h4><button class="ckrow" type="button" data-ck="k6_1_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Check your LMS for anything new</span></button><button class="ckrow" type="button" data-ck="k6_1_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Add newly announced deadlines to your calendar or Tasks</span></button><button class="ckrow" type="button" data-ck="k6_1_2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Look at the week ahead</span></button></div><div class="rgroup"><h4 class="rgroup-h">Development</h4><button class="ckrow" type="button" data-ck="k6_2_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Commit work that should be committed</span></button><button class="ckrow" type="button" data-ck="k6_2_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Push work that needs a remote copy</span></button><button class="ckrow" type="button" data-ck="k6_2_2" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Delete leftover test files</span></button></div><div class="rgroup"><h4 class="rgroup-h">Upskilling</h4><button class="ckrow" type="button" data-ck="k6_3_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">File useful new resources</span></button><button class="ckrow" type="button" data-ck="k6_3_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Delete things you realistically won't use</span></button></div><div class="rgroup"><h4 class="rgroup-h">Backups</h4><button class="ckrow" type="button" data-ck="k6_4_0" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Confirm cloud sync is working</span></button><button class="ckrow" type="button" data-ck="k6_4_1" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">Check whether anything important exists only on your laptop</span></button></div></div>
+</div></div></details>
 </div>
-
-
-<div class="tkcard" data-cw="1">
-<p class="tt" style="margin:0 0 8px">CL2 · New project</p>
-<button class="wa-btn wa-btn--ghost wa-btn--sm" style="float:right;margin-top:-34px" data-k="cl2" data-act="copy">Copy</button>
-
-<p class="tkh3" style="margin:12px 0 4px">Setup</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Give it a clear name — lowercase, dashes, no spaces</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Decide where it belongs in Development/</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Create the folder</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Open the folder in your editor, not a file</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Initialize Git</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Add a .gitignore before your first commit</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Create README.md</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Create the dependency file</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>If it uses keys, create .env and .env.example</div>
-
-
-</div>
-
-
-<div class="tkcard" data-cw="1">
-<p class="tt" style="margin:0 0 8px">CL3 · Before pushing to GitHub</p>
-<button class="wa-btn wa-btn--ghost wa-btn--sm" style="float:right;margin-top:-34px" data-k="cl3" data-act="copy">Copy</button>
-
-<p class="tkh3" style="margin:12px 0 4px">Check</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>No keys or passwords anywhere in the code</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>.env is listed in .gitignore</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>node_modules/ or equivalent is ignored</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>README explains what it is and how to run it</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Commit messages describe what changed</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>It runs from a fresh copy</div>
-
-
-</div>
-
-
-<div class="tkcard" data-cw="1">
-<p class="tt" style="margin:0 0 8px">CL4 · Project finish</p>
-<button class="wa-btn wa-btn--ghost wa-btn--sm" style="float:right;margin-top:-34px" data-k="cl4" data-act="copy">Copy</button>
-
-<p class="tkh3" style="margin:12px 0 4px">Wrap up</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Delete leftover test files</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Update the README to match what it actually does now</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Take screenshots for your portfolio</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Commit and push everything</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Add the deployment link to the README, if there is one</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Write two lines on what you learned</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Move it to personal/ if worth showing, or archive/ if done</div>
-
-
-</div>
-
-
-<div class="tkcard" data-cw="1">
-<p class="tt" style="margin:0 0 8px">CL5 · Security basics</p>
-<button class="wa-btn wa-btn--ghost wa-btn--sm" style="float:right;margin-top:-34px" data-k="cl5" data-act="copy">Copy</button>
-
-<p class="tkh3" style="margin:12px 0 4px">Once</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Set up a password manager</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Change your email password first</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Turn on two-factor auth: email, GitHub, school portal</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Save recovery codes somewhere offline</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Create a personal professional email</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Set it as recovery on GitHub and LinkedIn</div>
-
-
-
-<p class="tkh3" style="margin:12px 0 4px">Ongoing</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Studies, Upskilling, Career syncing to cloud storage</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Development NOT syncing to cloud storage</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Code pushed to GitHub</div>
-
-
-</div>
-
-
-<div class="tkcard" data-cw="1">
-<p class="tt" style="margin:0 0 8px">CL6 · The 20-minute reset</p>
-<button class="wa-btn wa-btn--ghost wa-btn--sm" style="float:right;margin-top:-34px" data-k="cl6" data-act="copy">Copy</button>
-
-<p class="tkh3" style="margin:12px 0 4px">Files</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Empty or file everything in Downloads</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Clear the Desktop</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>File loose documents into the right term and subject</div>
-
-
-
-<p class="tkh3" style="margin:12px 0 4px">School</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Check your LMS for anything new</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Add new deadlines to your calendar</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Look at the week ahead</div>
-
-
-
-<p class="tkh3" style="margin:12px 0 4px">Development</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Commit and push work in progress</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Delete leftover test files</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Move finished projects to archive/</div>
-
-
-
-<p class="tkh3" style="margin:12px 0 4px">Upskilling</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>File anything new you saved</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Delete what you won't realistically use</div>
-
-
-
-<p class="tkh3" style="margin:12px 0 4px">Backups</p>
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Confirm cloud sync is running</div>
-
-
-<div class="tkli" data-l="1"><span class="bx">[ ]</span>Check nothing important exists only on your laptop</div>
-
-
-</div>
-
-</div>
-</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jpr">Prompts</h2>
-<p class="tkmut" style="font-size:14.5px">Copy, replace the bracketed parts, paste into ChatGPT, Claude, or Gemini. Grouped by job.</p>
-
-<h3 class="tkh3">Organization</h3>
-<div class="tkgrid">
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P1 · Design a folder structure for my term</p>
-<p class="uw"><b>Use this when:</b> you're starting a term and want a structure that fits your actual subjects.</p>
-<p class="pv">I'm a [year level] [program] student. This term I'm taking:…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p1" data-act="openp">View prompt</button>
-</div>
-
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P2 · Where should this go?</p>
-<p class="uw"><b>Use this when:</b> you're not sure which folder something belongs in.</p>
-<p class="pv">I organize my files into four folders:…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p2" data-act="openp">View prompt</button>
-</div>
-
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P3 · Review my folder structure</p>
-<p class="uw"><b>Use this when:</b> your folders feel cluttered but you're not sure why.</p>
-<p class="pv">Here's my current folder structure:…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p3" data-act="openp">View prompt</button>
-</div>
-
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P4 · Help me clean Downloads and Desktop</p>
-<p class="uw"><b>Use this when:</b> both have become storage.</p>
-<p class="pv">Here's what's currently in my Downloads and Desktop:…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p4" data-act="openp">View prompt</button>
-</div>
-
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P5 · What should I archive?</p>
-<p class="uw"><b>Use this when:</b> your Development folder has too many projects.</p>
-<p class="pv">Here are the projects in my Development folder, with the…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p5" data-act="openp">View prompt</button>
-</div>
-
-</div>
-
-
-<h3 class="tkh3">Projects</h3>
-<div class="tkgrid">
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P6 · Recommend a project structure</p>
-<p class="uw"><b>Use this when:</b> you're starting something and don't know how to lay it out.</p>
-<p class="pv">I'm building [describe the project] using [language/framework].…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p6" data-act="openp">View prompt</button>
-</div>
-
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P7 · Help me plan a project</p>
-<p class="uw"><b>Use this when:</b> you have an idea but no plan.</p>
-<p class="pv">I want to build [describe the idea]. I know [languages you…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p7" data-act="openp">View prompt</button>
-</div>
-
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P8 · Break this assignment into steps</p>
-<p class="uw"><b>Use this when:</b> something is due and it's too big to start.</p>
-<p class="pv">I have this assignment: [paste the description]…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p8" data-act="openp">View prompt</button>
-</div>
-
-</div>
-
-
-<h3 class="tkh3">Git and documentation</h3>
-<div class="tkgrid">
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P9 · Generate a README outline</p>
-<p class="uw"><b>Use this when:</b> your project has no documentation.</p>
-<p class="pv">Here's my project structure:…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p9" data-act="openp">View prompt</button>
-</div>
-
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P10 · Improve my commit message</p>
-<p class="uw"><b>Use this when:</b> you're about to write "fix" again.</p>
-<p class="pv">I changed: [describe what you did]…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p10" data-act="openp">View prompt</button>
-</div>
-
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P11 · What should Git ignore?</p>
-<p class="uw"><b>Use this when:</b> you're setting up a new project.</p>
-<p class="pv">I'm working on a [language/framework] project.…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p11" data-act="openp">View prompt</button>
-</div>
-
-</div>
-
-
-<h3 class="tkh3">Learning</h3>
-<div class="tkgrid">
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P12 · Explain this repository</p>
-<p class="uw"><b>Use this when:</b> you've opened someone else's project and can't find anything.</p>
-<p class="pv">Here's the file structure of a project I'm trying to…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p12" data-act="openp">View prompt</button>
-</div>
-
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P13 · Help me understand this code</p>
-<p class="uw"><b>Use this when:</b> you need to understand something, not have it written for you.</p>
-<p class="pv">Here's some code I'm trying to understand:…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p13" data-act="openp">View prompt</button>
-</div>
-
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P14 · Organize my learning resources</p>
-<p class="uw"><b>Use this when:</b> you've saved a lot and used none of it.</p>
-<p class="pv">Here's everything I've saved to learn from:…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p14" data-act="openp">View prompt</button>
-</div>
-
-</div>
-
-
-<h3 class="tkh3">Self-check</h3>
-<div class="tkgrid">
-
-<div class="tkcard">
-<p class="tt" style="margin:0">P15 · Question my system</p>
-<p class="uw"><b>Use this when:</b> you want to know if your setup actually works.</p>
-<p class="pv">Here's how I currently organize my files:…</p>
-<button class="wa-btn wa-btn--secondary wa-btn--sm" data-id="p15" data-act="openp">View prompt</button>
-</div>
-
-</div>
-
-</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jgl">Glossary</h2>
-<p class="tkmut" style="font-size:14.5px">The twelve words, one sentence each. The link jumps to the section that teaches it.</p>
-<div>
-
-<div class="gterm"><span class="gt">Folder</span><span class="gd">A location on your computer where files sit. Nothing special about it.</span><a href="#/03-projects" class="tkmono" style="font-size:12px">03</a></div>
-
-
-<div class="gterm"><span class="gt">Project</span><span class="gd">A folder containing everything needed to run what's inside it: the code, a README, and a list of what must be installed.</span><a href="#/03-projects" class="tkmono" style="font-size:12px">03</a></div>
-
-
-<div class="gterm"><span class="gt">Workspace</span><span class="gd">What your editor shows when you open a whole project folder rather than a single file: the file tree, a terminal, and search across everything.</span><a href="#/07-workspace" class="tkmono" style="font-size:12px">07</a></div>
-
-
-<div class="gterm"><span class="gt">Repository (repo)</span><span class="gd">A project that Git is tracking. It holds the files and their history.</span><a href="#/03-projects" class="tkmono" style="font-size:12px">03</a></div>
-
-
-<div class="gterm"><span class="gt">Remote</span><span class="gd">A copy of your repository stored online, usually on GitHub.</span><a href="#/03-projects" class="tkmono" style="font-size:12px">03</a></div>
-
-
-<div class="gterm"><span class="gt">Git</span><span class="gd">The tool on your computer that records the history of your project as you work.</span><a href="#/03-projects" class="tkmono" style="font-size:12px">03</a></div>
-
-
-<div class="gterm"><span class="gt">GitHub</span><span class="gd">A website that stores Git repositories online so others can see them and work with you.</span><a href="#/03-projects" class="tkmono" style="font-size:12px">03</a></div>
-
-
-<div class="gterm"><span class="gt">Commit</span><span class="gd">One saved snapshot in your project's history, with a short description of what changed.</span><a href="#/03-projects" class="tkmono" style="font-size:12px">03</a></div>
-
-
-<div class="gterm"><span class="gt">Clone</span><span class="gd">Downloading a copy of a repository from GitHub to your computer.</span><a href="#/09-groups" class="tkmono" style="font-size:12px">09</a></div>
-
-
-<div class="gterm"><span class="gt">Push</span><span class="gd">Uploading your commits from your computer to GitHub.</span><a href="#/03-projects" class="tkmono" style="font-size:12px">03</a></div>
-
-
-<div class="gterm"><span class="gt">Terminal</span><span class="gd">The text window where you type commands instead of clicking. Built into VS Code.</span><a href="#/07-workspace" class="tkmono" style="font-size:12px">07</a></div>
-
-
-<div class="gterm"><span class="gt">Dependency</span><span class="gd">Something your project needs installed in order to run. Listed in requirements.txt or package.json.</span><a href="#/03-projects" class="tkmono" style="font-size:12px">03</a></div>
-
-</div>
-</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jtools">Tools to install</h2>
-<p><b>Install a tool because it solves a problem you currently have</b> — not because a listicle says every developer needs twenty-five extensions. Free and student-accessible only.</p>
-<h3 class="tkh3">Now — the four essentials</h3>
-<table class="tktbl"><thead><tr><th>Job</th><th>Tool</th><th>Notes</th></tr></thead><tbody>
-<tr><td>Write code</td><td>VS Code</td><td>Free, works everywhere</td></tr>
-<tr><td>Run your language</td><td>Python / Node.js / Java</td><td>Whatever your classes use</td></tr>
-<tr><td>Track changes</td><td>Git</td><td>Separate from GitHub</td></tr>
-<tr><td>Type commands</td><td>Terminal</td><td>Built into VS Code</td></tr>
-</tbody></table>
-<p class="tkmut" style="font-size:14px">One afternoon. All free.</p>
-<h3 class="tkh3">Soon</h3>
-<table class="tktbl"><tbody>
-<tr><td>Install packages</td><td>pip / npm — comes with your language</td></tr>
-<tr><td>Format code</td><td>Prettier, Black</td></tr>
-<tr><td>Catch mistakes</td><td>ESLint, Pylint</td></tr>
-<tr><td>Manage passwords</td><td>Bitwarden</td></tr>
-</tbody></table>
-<h3 class="tkh3">Later — when a project needs it</h3>
-<table class="tktbl"><tbody>
-<tr><td>Test APIs</td><td>Postman, Thunder Client</td></tr>
-<tr><td>Work with databases</td><td>DBeaver, TablePlus</td></tr>
-<tr><td>Containers</td><td>Docker</td></tr>
-<tr><td>Deploy</td><td>Vercel, Netlify, Render</td></tr>
-</tbody></table>
-<h3 class="tkh3">VS Code extensions</h3>
-<p>You don't need twenty-five.</p>
-<ul class="wa-list wa-list--ul">
-<li>The language extension for what you're learning</li>
-<li>Prettier, for formatting</li>
-<li>GitLens, for a clearer view of your project's history</li>
-</ul>
-<p><b>Everything else:</b> add it when you hit a problem it solves. Extensions slow the editor down, and most of them you'll never open.</p>
 </div></div>
 </section>
 
@@ -1765,7 +1445,7 @@ build/
   </div>
 </div>
 
-<script id="prompt-data" type="application/json">{"p1":{"t":"P1 · Design a folder structure for my term","uw":"you're starting a term and want a structure that fits your actual subjects.","b":"I'm a [year level] [program] student. This term I'm taking:\n[list your subjects].\n\nI already organize my files into four top-level folders:\nStudies (school documents), Development (all code),\nUpskilling (self-directed learning), Career (job materials).\n\nSuggest a folder structure for this term's school files.\nKeep it simple — don't create folders I won't use. Explain\nwhy each folder exists."},"p2":{"t":"P2 · Where should this go?","uw":"you're not sure which folder something belongs in.","b":"I organize my files into four folders:\n- Studies: school documents, requirements, submissions\n- Development: anything containing code, no exceptions\n- Upskilling: material I'm learning from\n- Career: things I'll use after graduation\n\nWhere should this go, and why: [describe the file or project]"},"p3":{"t":"P3 · Review my folder structure","uw":"your folders feel cluttered but you're not sure why.","b":"Here's my current folder structure:\n\n[paste your directory tree]\n\nPoint out: folders that overlap, folders that are empty or\nunused, anything filed in the wrong place, and anything\nthat's more nested than it needs to be. Suggest specific\nchanges, not general advice."},"p4":{"t":"P4 · Help me clean Downloads and Desktop","uw":"both have become storage.","b":"Here's what's currently in my Downloads and Desktop:\n\n[paste the file list]\n\nGroup these into categories and tell me where each group\nshould go. My folders are Studies, Development, Upskilling,\nand Career. Flag anything I can safely delete."},"p5":{"t":"P5 · What should I archive?","uw":"your Development folder has too many projects.","b":"Here are the projects in my Development folder, with the\nlast time I touched each one:\n\n[paste the list]\n\nWhich should I archive, which should I keep active, and\nwhich are worth cleaning up for a portfolio? Explain your\nreasoning for each."},"p6":{"t":"P6 · Recommend a project structure","uw":"you're starting something and don't know how to lay it out.","b":"I'm building [describe the project] using [language/framework].\nI'm a [beginner/intermediate] and working [alone/in a team of N].\n\nSuggest a folder structure. Keep it as simple as the project\nactually needs — don't add folders for things I'm not doing.\nExplain what each folder is for."},"p7":{"t":"P7 · Help me plan a project","uw":"you have an idea but no plan.","b":"I want to build [describe the idea]. I know [languages you\nknow] and I have about [time available].\n\nBreak this into stages, starting with the smallest version\nthat actually works. For each stage, tell me what I'd need\nto learn. Don't write the code — I want to build it myself."},"p8":{"t":"P8 · Break this assignment into steps","uw":"something is due and it's too big to start.","b":"I have this assignment: [paste the description]\n\nIt's due on [date] and today is [date].\n\nBreak it into three or four steps with suggested dates.\nAssume I can work on it a few hours a week alongside other\nsubjects."},"p9":{"t":"P9 · Generate a README outline","uw":"your project has no documentation.","b":"Here's my project structure:\n\n[paste the tree]\n\nIt's a [describe what it does] built with [tools].\n\nWrite a README outline with the sections it needs. Leave\nplaceholders for anything only I would know. Keep it short —\na student project, not a company product."},"p10":{"t":"P10 · Improve my commit message","uw":"you're about to write \"fix\" again.","b":"I changed: [describe what you did]\n\nWrite a commit message under 60 characters that says what\nchanged. Give me two options."},"p11":{"t":"P11 · What should Git ignore?","uw":"you're setting up a new project.","b":"I'm working on a [language/framework] project.\n\nWhat should be in my .gitignore, and why is each entry\nthere? Include anything related to keys or secrets."},"p12":{"t":"P12 · Explain this repository","uw":"you've opened someone else's project and can't find anything.","b":"Here's the file structure of a project I'm trying to\nunderstand:\n\n[paste the tree]\n\nExplain what each main folder is probably for, where the\ncode likely starts running, and which files I should read\nfirst. I'm a student and new to this kind of project."},"p13":{"t":"P13 · Help me understand this code","uw":"you need to understand something, not have it written for you.","b":"Here's some code I'm trying to understand:\n\n[paste the code]\n\nExplain what it does, step by step, in plain language.\nDon't rewrite or improve it — I want to understand what's\nalready there. Ask me questions if something depends on\ncontext you don't have."},"p14":{"t":"P14 · Organize my learning resources","uw":"you've saved a lot and used none of it.","b":"Here's everything I've saved to learn from:\n\n[paste your list of courses, bookmarks, playlists, PDFs]\n\nSort these into: learning now, reference, archive, and\ndelete. For anything you put in \"learning now,\" suggest an\norder. Be honest about what I'm realistically not going to\nget to."},"p15":{"t":"P15 · Question my system","uw":"you want to know if your setup actually works.","b":"Here's how I currently organize my files:\n\n[describe your structure]\n\nAsk me questions that would reveal whether this actually\nworks — especially about finding old files, deciding where\nnew things go, and what happens at the end of a term. Don't\ngive me advice yet, just ask."}}</script>
+<script id="prompt-data" type="application/json">{"P1":{"t":"Set up my whole term","uw":"a new semester is starting and you want one step-by-step setup plan.","b":"I'm a [year level] [program] student.\n\nHere are my classes this term:\n[paste classes]\n\nHere is my weekly schedule:\n[paste schedule]\n\nHere are the tools I already use:\n- Files: [Finder / File Explorer / other]\n- Calendar: [Google Calendar / other]\n- Notes: [Notion / Obsidian / OneNote / other]\n- Code editor or IDE: [VS Code / IntelliJ IDEA / other]\n\nHelp me set up my student-developer organization system for\nthis term.\n\nUse these categories:\n- Studies = school documents and requirements\n- Development = working code\n- Upskilling = learning outside my curriculum\n- Career = internship and job material\n\nGive me a step-by-step setup for:\n1. My term folders\n2. My class calendar\n3. Tasks and deadlines\n4. My notes/dashboard\n5. My Development folder for coding classes\n\nKeep it simple. Don't create folders, databases, calendars,\nor trackers unless they solve a real need."},"P2":{"t":"Organize my classes in Google Calendar","uw":"you have your class schedule and want to build the calendar properly instead of entering things randomly.","b":"I want to organize my school schedule in Google Calendar.\n\nHere are my classes and schedules:\n[paste each class, days, start/end time, room, and term dates]\n\nMajor/core courses:\n[list]\n\nMinor/elective courses:\n[list]\n\nI also want to schedule or track:\n- Coding practice\n- Self-care\n- School organizations / org work\n- [anything else]\n\nWalk me through the setup step by step using the current\nGoogle Calendar interface.\n\nMy preferences:\n- Use one School calendar for school if I don't already have one\n- Keep personal events separate if I want a separate personal calendar\n- Major/core courses should use the same color family\n- Minor/elective courses should use another color family\n- Coding practice, self-care, and org activities should each\n  be visually distinct\n- Classes should be repeating events that stop at the end of term\n- Assignments and things I need to finish should use Google Tasks\n  so they appear as tasks/check marks\n- Add useful notifications before classes and deadlines\n- Put room numbers, meeting links, instructor info, and LMS links\n  inside events when available\n\nTell me:\n1. What to create first\n2. What should be an event vs a task\n3. How to color-code or label everything\n4. How to set the recurring class schedule\n5. How to set notifications\n6. A final checklist so I can confirm I didn't miss anything\n\nDon't add extra Google Calendar features I didn't ask for."},"P3":{"t":"Turn my syllabus into calendar entries and tasks","uw":"a professor gives you a syllabus or course outline full of dates.","b":"Here is my syllabus / course outline:\n[paste it or attach it]\n\nExtract the dates that matter for my calendar.\n\nSeparate them into:\n- Events: classes, exams, presentations, meetings\n- Tasks: assignments, labs, readings, project deliverables,\n  or anything I need to complete\n\nFor each item, give me:\n- Title\n- Date\n- Time, if provided\n- Event or task\n- Suggested reminder\n- Any useful details I should put in the description\n\nDo not invent dates or requirements that are not in the\nsyllabus. Flag anything unclear so I can verify it."},"P4":{"t":"Event or task?","uw":"you're not sure whether something belongs on the calendar as an event or in Tasks.","b":"I'm organizing school in Google Calendar and Google Tasks.\n\nHere are the things I need to add:\n[paste list]\n\nFor each one, tell me whether it should be:\n- Calendar event\n- Task\n- Both, only if there is a good reason\n\nUse this rule:\n- Events = something happens at a specific time\n- Tasks = something I need to finish\n\nExplain any item that could reasonably go either way."},"P5":{"t":"Set up my Academia Notion template","uw":"you've copied the DevTok Pinas Academia template and want to populate it without overbuilding it.","b":"I'm using the DevTok Pinas Academia Notion template.\n\nHere are my current classes:\n[paste classes]\n\nHere is my term:\n[term name and start/end dates]\n\nHere is my weekly schedule:\n[paste schedule]\n\nHelp me fill in the template using its existing structure:\n- Year + Term\n- Courses\n- Academic Schedule\n- Modules\n- Coursework\n- Contacts / People\n\nTell me:\n1. What I should fill in now\n2. What I can wait to add until classes begin\n3. What links are useful to add to each course\n4. What information I should avoid duplicating because it\n   already lives in my folders or Google Calendar\n\nDo not redesign the template or add extra databases unless\nI specifically ask."},"P6":{"t":"Design a folder structure for my term","uw":"you're starting a term and want a structure that fits your actual subjects.","b":"I'm a [year level] [program] student. This term I'm taking:\n[list your subjects].\n\nI already organize my files into four top-level folders:\nStudies (school documents), Development (all working code),\nUpskilling (self-directed learning), Career (job materials).\n\nSuggest a folder structure for this term's school files.\nKeep it simple — don't create folders I won't use.\nExplain why each folder exists."},"P7":{"t":"Where should this go?","uw":"you're not sure which folder something belongs in.","b":"I organize my student files into four folders:\n- Studies: school documents, requirements, submissions\n- Development: working code and coding projects\n- Upskilling: material I'm learning from outside my curriculum\n- Career: internship, job, portfolio, and professional material\n\nWhere should this go, and why?\n[describe the file, folder, course, project, or resource]\n\nIf it contains both code and school documents, tell me how\nto split those pieces between the correct locations."},"P8":{"t":"Review my folder structure","uw":"your folders feel cluttered but you're not sure why.","b":"Here's my current folder structure:\n\n[paste your directory tree]\n\nReview it for:\n- Overlapping folders\n- Unnecessary nesting\n- Files or folders that appear to be in the wrong place\n- Categories that are too broad\n- Categories I probably don't need yet\n\nSuggest specific changes, not general advice.\n\nKeep the final structure easy enough to maintain during\nexam weeks."},"P9":{"t":"Help me clean Downloads and Desktop","uw":"both have quietly become storage.","b":"Here's what's currently in my Downloads and Desktop:\n\n[paste the file list]\n\nGroup these into categories and tell me where each group\nshould probably go.\n\nMy main folders are:\n- Studies\n- Development\n- Upskilling\n- Career\n\nAlso identify possible duplicates, installers, temporary\nfiles, or things that may no longer be useful.\n\nDo not tell me something is definitely safe to delete if\nyou can't know that from the filename alone. Flag it for\nme to review instead."},"P10":{"t":"Rename these files consistently","uw":"your files are named things like `final-v2-real-final.pdf`.","b":"Here are my current filenames:\n[paste filenames]\n\nRename them using simple, descriptive names.\n\nUse:\n- YYYY-MM-DD when the date matters\n- Clear subject or project names\n- Consistent capitalization and separators\n- Names that will still make sense months from now\n\nReturn:\nOld filename → Suggested filename\n\nDo not change file extensions."},"P11":{"t":"Give me a 20-minute reset","uw":"your whole system is getting messy and you need a small way back.","b":"My student organization system is getting messy.\n\nCurrent problems:\n[describe what is piling up — Downloads, Desktop, LMS,\ncalendar, coding projects, notes, etc.]\n\nI use:\n- Studies for school documents\n- Development for code\n- Upskilling for self-learning\n- Career for job material\n- Google Calendar / Tasks for time and deadlines\n- [Notion / Obsidian / other] for notes\n\nGive me a reset I can complete in about 20 minutes.\n\nPrioritize only the highest-value actions.\nDo not redesign my whole system or give me a giant cleanup project."},"P12":{"t":"Recommend a project structure","uw":"you're starting something and don't know how to lay it out.","b":"I'm building [describe the project] using [language/framework].\nI'm a [beginner/intermediate] and working [alone/in a team of N].\n\nSuggest a folder structure.\n\nKeep it as simple as the project actually needs.\nDon't add folders for things I'm not doing.\n\nExplain what each folder and important file is for."},"P13":{"t":"Help me plan a project","uw":"you have an idea but no plan.","b":"I want to build [describe the idea].\n\nI know:\n[languages/tools you know]\n\nI have about:\n[time available]\n\nBreak this into stages starting with the smallest version\nthat actually works.\n\nFor each stage:\n- Tell me what to build\n- Tell me what I may need to learn\n- Tell me how I can know that stage is working\n\nDon't write the code. I want to build it myself."},"P14":{"t":"Break this assignment into steps","uw":"something is due and it feels too big to start.","b":"I have this assignment:\n[paste the assignment description]\n\nIt's due on [date].\nToday is [date].\n\nBreak it into small, concrete steps with suggested dates.\n\nSeparate:\n- Understanding / planning\n- Building or writing\n- Testing / checking\n- Final submission\n\nAssume I have other classes and can only work on this for\n[time available] per day or week.\n\nStart with the smallest action I can do today."},"P15":{"t":"Set up my coding environment","uw":"a class tells you to “set up your development environment” and you're not sure what that means.","b":"I'm taking [class] and we'll be using:\n[language/framework/tools]\n\nMy computer is:\n[Windows/macOS/Linux]\n\nMy editor or IDE is:\n[VS Code / IntelliJ IDEA / other]\n\nTell me only what I actually need to install to get started.\n\nCover:\n- Editor or IDE\n- Programming language/runtime\n- Git\n- Terminal\n- Package manager, if needed\n- Formatter, if useful\n- Linter or code-quality tool only if this stack commonly\n  needs one\n- Postman only if I'll be working with APIs\n- DataGrip only if I'll be working directly with databases\n\nGive me the installation order and a simple way to verify\nthat each tool works."},"P16":{"t":"Should these projects share one workspace?","uw":"you have related repositories and keep switching between windows.","b":"I have these separate projects / repositories:\n\nProject A:\n[describe it]\n\nProject B:\n[describe it]\n\nHow they connect:\n[describe the shared feature, API, data flow, dependency, etc.]\n\nShould I keep them in separate editor windows or put them\ntogether in:\n- A VS Code multi-root workspace, or\n- An IntelliJ IDEA multi-project workspace\n\nExplain the tradeoff in plain language.\n\nIf one workspace makes sense, walk me through how to set\nit up without combining the repositories into one repo."},"P17":{"t":"Explain Git and GitHub using my project","uw":"clone, branch, commit, pull, and push all sound like random words.","b":"I'm new to Git and GitHub.\n\nMy project is:\n[describe the project]\n\nExplain these terms using my project as the example:\n- Repository / repo\n- Clone\n- main\n- Branch\n- Commit\n- Pull\n- Push\n- Pull Request / PR\n- Merge\n- Fork\n\nThen show me one simple workflow from:\nclone → branch → work → commit → push → PR → merge → pull\n\nKeep it beginner-friendly.\nDo not introduce advanced Git workflows yet."},"P18":{"t":"Improve my commit message","uw":"you're about to write `fix` again.","b":"I changed:\n[describe exactly what you changed]\n\nGive me three short Git commit message options that clearly\nsay what changed.\n\nPrefer specific messages such as:\n\"Add student login form\"\ninstead of vague messages such as:\n\"update\" or \"fix\""},"P19":{"t":"What should Git ignore?","uw":"you're setting up a new project.","b":"I'm working on a [language/framework] project.\n\nHere is my project structure:\n[paste tree if available]\n\nWhat should be in my .gitignore?\n\nExplain why each entry is ignored.\nInclude:\n- Dependency/build folders when relevant\n- Local environment files\n- .env or other files that may contain secrets\n- OS/editor-generated files only when appropriate\n\nKeep the list specific to my stack."},"P20":{"t":"Generate a README outline","uw":"your project has no documentation.","b":"Here's my project structure:\n\n[paste the tree]\n\nIt's a [describe what it does] built with [tools].\n\nWrite a short README outline for a student project.\n\nInclude only the sections it actually needs, such as:\n- What it does\n- Requirements\n- Setup\n- How to run it\n- Environment variables, if needed\n- Known limitations\n- Built with\n\nLeave placeholders for anything only I would know."},"P21":{"t":"Set up a simple Git workflow for our capstone","uw":"your group is about to start coding together.","b":"We're a team of [number] students building:\n[describe capstone / group project]\n\nTeam members and areas:\n- [Name] — [feature]\n- [Name] — [feature]\n- [Name] — [feature]\n- [Name] — [feature]\n\nGive us a simple beginner-friendly GitHub workflow.\n\nInclude:\n- One shared repository\n- What main means\n- Simple branch names for each feature\n- When to pull\n- When to commit\n- When to push\n- When to open a Pull Request\n- When a finished branch can be merged into main\n- Examples of good commit messages for our features\n\nKeep it basic. Do not introduce advanced branching models\nor detailed PR review policies."},"P22":{"t":"Check my API key and secret setup","uw":"a project uses an API key, database password, token, or other credential.","b":"My project uses these private values:\n[describe the types of keys/secrets — do NOT paste the real values]\n\nHere is my relevant project structure:\n[paste tree]\n\nHelp me check that I'm handling them safely.\n\nShow me where I should use:\n- .env\n- .env.example\n- .gitignore\n\nExplain what belongs in each file.\n\nAlso tell me how to check whether a secret was accidentally\ntracked by Git.\n\nDo not ask me to paste any real password, API key, token,\nor private credential."},"P23":{"t":"Build a backup plan","uw":"you're not sure what would disappear if your laptop died today.","b":"Help me make a simple backup plan for my student files.\n\nWhat I have:\n- Laptop: [device]\n- Cloud storage: [Google Drive / Dropbox / other]\n- External drive: [yes/no, type if known]\n- GitHub: [yes/no]\n\nMy important folders are:\n- Studies\n- Development\n- Upskilling\n- Career\n\nTell me what should live on:\n1. My laptop\n2. Cloud storage\n3. An external SSD or other second drive\n4. GitHub\n\nFor active coding repositories, avoid recommending that I\nwork directly inside a general cloud-synced folder.\n\nEnd with a short checklist for testing that my backups\nactually work."},"P24":{"t":"Set up my password manager and account security","uw":"you're still reusing passwords or saving them manually.","b":"I want to improve the security of my student and developer\naccounts.\n\nI'm considering:\n- Bitwarden\n- Google Password Manager\n- 1Password\n[remove options I don't use]\n\nWalk me through a basic setup.\n\nInclude:\n- Creating a strong master password if the manager uses one\n- Saving recovery information safely\n- Browser and phone setup\n- Unlock with biometrics such as Face ID or fingerprint\n- Unique passwords\n- Two-factor authentication\n- Recovery codes\n- Which accounts I should secure first\n\nPrioritize:\nemail, GitHub, school portal, cloud storage, and financial\naccounts.\n\nDo not ask me to paste any real passwords or recovery codes."},"P25":{"t":"Explain this repository","uw":"you've opened someone else's project and can't find anything.","b":"Here's the file structure of a project I'm trying to understand:\n\n[paste the tree]\n\nExplain:\n- What each main folder is probably for\n- Where the application likely starts\n- Which files I should read first\n- Where configuration and dependencies probably live\n\nI'm a student and new to this kind of project.\n\nSeparate what you can tell from the file structure from\nanything you're only inferring."},"P26":{"t":"Help me understand this code","uw":"you need to understand something, not have it written for you.","b":"Here's some code I'm trying to understand:\n\n[paste the code]\n\nExplain what it does step by step in plain language.\n\nDon't rewrite or improve it.\nI want to understand what's already there.\n\nExplain unfamiliar syntax or concepts when they appear."},"P27":{"t":"Organize my learning resources","uw":"you've saved a lot and used almost none of it.","b":"Here's everything I've saved to learn from:\n\n[paste your list of courses, bookmarks, playlists, PDFs]\n\nHelp me organize these into:\n- Learning now\n- Reference\n- Later\n- Remove / probably not useful\n\nFor \"Learning now,\" suggest a realistic order based on:\n[my current class / goal / project]\n\nKeep the active list small enough that I can actually use it."},"P28":{"t":"Audit my whole student-developer system","uw":"you've built a system but want to know where it may break during a busy semester.","b":"Here's how I currently organize my student-developer life:\n\nFiles:\n[describe folders]\n\nCalendar and tasks:\n[describe setup]\n\nNotes:\n[describe setup]\n\nCoding projects:\n[describe setup]\n\nBackups:\n[describe setup]\n\nGit/GitHub:\n[describe setup]\n\nReview this for:\n- Things stored in more than one place unnecessarily\n- Places where I may forget a deadline or file\n- Parts that require too much maintenance\n- Missing backups\n- Coding projects that are hard to find or reproduce\n- Anything that will become painful during exams or group projects\n\nGive me:\n1. What is already working\n2. The three highest-value fixes\n3. One next action I can do today\n\nDo not redesign everything if a small fix is enough."}}</script>
 
 <script src="js/router.js"></script>
 <script src="js/components.js"></script>

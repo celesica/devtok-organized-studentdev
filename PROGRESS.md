@@ -3,7 +3,7 @@
 Phase: **generated site is live-quality; working through the sections with the owner, front to back.**
 
 ## Current phase
-`site/` is generated from the `.dc.html` exports by `tools/build.js`. On top of the export, the build applies owner-directed copy and interactive components section by section. **Sections 00 through 07 are through a full owner pass**; 08–09 still render the original export copy. Each rebuilt section is authored wholesale as a `SECTION_0N_BODY` constant returned from `sectionBody()`. Browser-verified after every change (DOM assertions + 375px no-overflow guard); no console errors. All committed and pushed to `main`.
+`site/` is generated from the `.dc.html` exports by `tools/build.js`. On top of the export, the build applies owner-directed copy and interactive components section by section. **Sections 00 through 08 are through a full owner pass, and the Toolkit is rebuilt.** Section 09 (Group projects) was removed from the live tabs — the owner is doing it another time (its planning copy is kept). The guide routes are now 00–08 + the Toolkit tab (which sits right after 08). Each rebuilt section is authored wholesale as a `SECTION_0N_BODY` constant returned from `sectionBody()`. Browser/DOM-verified; no console errors. Committed and pushed to `main`.
 
 The interactive vocabulary built across sections: branded folder trees (`ftree()`, native `<details>`, PDF/MD/py/txt/json/git/env file glyphs), the non-breaking-hyphen pass (`nbHyphenate()`), the numbered-list conversion (`numberedTableToOl()`), colour utilities (`.amber`, `.flit`, `.fdir`), the state-machine actions in `components.js` (`set` jump-to-value, `toggle` non-persistent done-state, `openv`/`openimg` enlarge modal with a shared `.vmstage`), a reusable `vdemo()` video-preview helper (desktop-guarded looping thumbnail → controls modal), and section-04's calendar palette (`--cal-*` vars, incl. owner-added Cobalt/Mint).
 
@@ -47,7 +47,13 @@ The interactive vocabulary built across sections: branded folder trees (`ftree()
 - 2026-08-14 — Added root `netlify.toml` (publish `site`, empty build command, nosniff + no-referrer headers) so a git-connected deploy needs no dashboard configuration.
 
 ## In progress
-- Section-by-section owner content pass. Done through **07**; **08 The 20-minute reset** is next (still on export copy).
+- Content pass complete through **08** + Toolkit. Remaining: deploy (Netlify), root `README.md`, and section 09 (deferred by owner).
+
+## Recently done (section 08 + Toolkit)
+- **Section 08 rebuilt** (`SECTION_08_BODY`): the reset checklist is now the persistent `data-ck` checkbox mechanism (localStorage `sdev.reset.v1`, survives refresh) with an **X / N done** count and a **Reset all** (new `ckreset` action, scoped to the `[data-ckwrap]` wrapper). The per-count render is now scoped per-wrapper too, so multiple checklists don't share a tally.
+- **Toolkit rebuilt from `planning/toolkit.md`** (now the toolkit's source of truth — parsed by `toolkit.js`; templates/checklists are hand-structured in `toolkit-data.js`). **Prompts:** all 28, card+modal style kept, grouped, with an ember-glow **star** on the six featured cards (the old featured chip row was removed). The prompt modal is now a fixed-size window where only the body (`.mpre`) scrolls and it always opens at the top (focusing the button no longer scrolls it to the bottom). **Templates:** an accordion — folder trees use the interactive `ftree`; README and `.gitignore` render as code blocks with their own Copy-code buttons. **Checklists:** an accordion of persistent checkboxes, each with its own Reset all and count; multi-group lists pack as masonry columns, single-group lists fill full width. **Removed** the Glossary and Tools-to-install groups.
+- **Toolkit tab** restyled — lilac by default, ember when active, no divider — and **moved to sit right after 08** (removed the far-right `margin-left:auto` isolation, overriding the export rule). **Section 09 removed** from `ROUTES`/`TAB_LABELS`.
+- **Image-spacing project rule** (earlier): image figures keep clear vertical space from text; captions don't hug the image. Memory: `image-spacing-rule`.
 
 ## Recently done (section 07)
 - **Section 07 rebuilt** (`SECTION_07_BODY`): three-part "what a workspace is" cards (part 3 highlighted as the focus); an **install-by-timing filter** (chips Now/Soon/As needed/Later, group `c70`, opens on Now, cards reveal per timing) framed as samples ("there are many other tools out there, you'll find what works best for you"); a clickable **extensions catalogue** (group `c71`, 4 items — Error Lens dropped per owner); the "another meaning of workspace" band as **flowing prose** (VS Code multi-root + IntelliJ Multi-Project merged into one paragraph, no sub-sections) with the `.code-workspace` example tree; the owner's **real workspace screenshot** (`planning/workspace.png` → `site/assets/workspace.png`, enlargeable via `openimg`) showing `ine (Workspace)` with `blood-labs-history-app` + `ine-coach-reports`; and "keeping the workspace usable" habits + the `warm-ide.png` enlarge (the word "Screenshot" removed from its caption per owner — it's a themed IDE, not a real one).
@@ -65,7 +71,9 @@ The interactive vocabulary built across sections: branded folder trees (`ftree()
 - New assets copied by the build into `site/assets/`: `opening-a-folder.mp4` (9.7 MB), `label-your-class.mp4` (25 MB), `warm-ide.png` (0.9 MB). Sources in `planning/`.
 
 ## Next up
-- Continue the owner content pass on sections **08–09** (each still on export copy), same interactive vocabulary.
+- **Deploy to Netlify** (host decided): *Add new site → Import an existing project* → pick `celesica/devtok-organized-studentdev` → accept defaults (`netlify.toml` supplies publish `site/` + headers) → deploy. Needs the owner's Netlify auth.
+- Root **`README.md`** (the outside view of the repo).
+- **Section 09 (Group projects)** — deferred by owner to another session; add back to `ROUTES`/`TAB_LABELS` when built.
 - Connect **Netlify** (host already decided): *Add new site → Import an existing project* → pick the repo → accept the defaults (`netlify.toml` supplies them) → deploy. This can happen any time; the site is deployable now.
 - Resolve the open content items: section 08 presenter sign-off, section 09 closer. (Section 06's Academia template link is now real and wired; its walkthrough recording stays a text-only Discord pointer — no public URL.)
 - Root `README.md` (the outside view) — still deferred.
@@ -83,11 +91,10 @@ The interactive vocabulary built across sections: branded folder trees (`ftree()
 - Real screenshots for credibility slots — owner may supply later; slots will accept them.
 
 ## Known issues
-- Verification is an ad-hoc CDP script re-authored per session, not a committed suite — deliberate, since this repo has no test tooling.
-- The seven screenshot slots render as empty labelled placeholders, matching the export. Owner to supply images, or the v1 built mockups can be restored from the archive.
-- Section 09 has no section-closer box, matching the export.
+- Verification is an ad-hoc DOM-assertion pass re-authored per session, not a committed suite — deliberate, since this repo has no test tooling.
 - Headings render Title Case because the export's CSS sets `text-transform:capitalize`, which the readme's sentence-case rule would not. Kept for parity with the export.
-- The presenter sign-off at the end of section 08 is unwritten in the copy doc, so it is absent from the site.
+- The guide's overall closing / presenter sign-off lived in the old section-09 area; with 09 deferred, there is no site-wide closer after section 08. Revisit when 09 is built.
+- The in-app preview browser caches `app.css` hard — hard-reload (Cmd+Shift+R) after a rebuild.
 
 ## Settled — do not reopen without a new fact
 - Plain static HTML/CSS/JS, no framework, no build step.

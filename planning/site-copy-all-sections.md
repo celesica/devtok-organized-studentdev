@@ -1275,8 +1275,7 @@ A few simple habits:
 - Install the language and tools your current classes actually use.
 - Your editor or IDE already catches many coding problems; add linters when your project needs them.
 - Add extensions when they solve a specific problem.
-- VS Code can group related projects in a **multi-root workspace**.
-- IntelliJ IDEA can also manage related projects together in a **Multi-Project Workspace**.
+- IDEs can group related projects together — VS Code in a **multi-root workspace**, and IntelliJ IDEA in a **Multi-Project Workspace**.
 
 `[SectionCloser: DO]`
 Check that you have the basics for your current classes: an editor or IDE, your required programming language, Git, and a working terminal.
@@ -1286,65 +1285,76 @@ Check that you have the basics for your current classes: an editor or IDE, your 
 ---
 
 # SECTION 08
-## The 20-Minute Reset
+## The 20-minute reset
 
-**What this section covers:** A short routine for getting back on track when things have drifted.
+**What this section covers:** A short routine for getting your system back under control when things start getting messy.
 
-**Why it matters:** Every system gets disorganized during exams and deadline weeks. That's expected. What matters is a way back that doesn't require rebuilding anything.
+**Why it matters:** Every system gets disorganized during exams, project weeks, and busy semesters. The important part isn't preventing that completely — it's having an easy way back.
 
 ---
 
 ### When to run it
 
-- End of the week — pick a day and keep it
+Good times for a reset:
+
+- At the end of the week
 - After a heavy deadline week
 - Before a new term starts
+- Whenever Downloads, Desktop, tasks, or projects are clearly piling up
 
-On a schedule, not when you feel behind.
+> **NOTE:** Doing it regularly is easier than waiting until everything feels unmanageable.
 
 ---
 
 ### The checklist
 
-`[Interactive: ResetChecklist]`
+`[Interactive: ResetChecklist]` — persistent, interactive checkboxes (saved in the browser) with a **Reset all** and an X / N done count. Work top to bottom; each item is a small action.
 
 **Files**
-- Empty or file everything in Downloads
+- Empty or sort Downloads
 - Clear the Desktop
-- Put loose documents into the right term and subject folder
+- Move loose documents into the correct term and subject folder
 
 **School**
 - Open your LMS and check what's coming
-- Add new deadlines to your calendar
+- Add newly announced deadlines to your calendar
 - Look at the week ahead
 
 **Development**
-- Commit and push anything you've been working on
+- Commit work that should be committed
+- Push work that needs a remote copy
 - Delete leftover test files
-- Move finished projects to `archive/`
 
 **Upskilling**
-- File anything new you saved
-- Delete resources you won't realistically use
+- File useful new resources
+- Delete things you realistically won't use
 
 **Accounts and backups**
-- Confirm your cloud sync is actually running
-- Check nothing important exists only on your laptop
+- Confirm your cloud sync is working
+- Check whether anything important exists only on your laptop
 
 `[/Interactive]`
 
-**Note:** Twenty minutes, not an afternoon. If it's taking longer, you're reorganizing rather than resetting.
+> **NOTE:** The goal is not to redesign your entire organization system. It's simply to return things to the system you already built.
+
+If your reset starts turning into any of these, you're probably doing more than a reset:
+
+- Rebuilding Notion
+- Changing every folder
+- Renaming hundreds of old files
+- Reorganizing your entire degree
 
 ---
 
 ## Key takeaways
 
-- Run it weekly, on a set day.
-- It's recovery, not maintenance.
-- Every item is a small action, not a project.
+- Expect the system to get messy sometimes.
+- A reset gives you a predictable way back.
+- Keep each action small.
+- Don't rebuild the whole system every time you fall behind.
 
 `[SectionCloser: COPY]`
-The checklist is in the toolkit. Save it somewhere you'll see it weekly.
+Copy the checklist somewhere easy to find and use it whenever you need to reset.
 `[/SectionCloser]`
 
 ---

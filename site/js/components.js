@@ -128,9 +128,14 @@
       el.setAttribute("role", "checkbox");
       el.setAttribute("aria-checked", on ? "true" : "false");
     });
-    var total = $all("[data-ck]").length;
-    var done = $all("[data-ck]").filter(function (el) { return !!checks[el.getAttribute("data-ck")]; }).length;
-    $all("[data-ck-count]").forEach(function (el) { el.textContent = done + " / " + total; });
+    // each count reflects only its own checklist wrapper (falls back to the
+    // whole page when a count sits outside a [data-ckwrap])
+    $all("[data-ck-count]").forEach(function (el) {
+      var wrap = el.closest("[data-ckwrap]") || document;
+      var items = $all("[data-ck]", wrap);
+      var d = items.filter(function (x) { return !!checks[x.getAttribute("data-ck")]; }).length;
+      el.textContent = d + " / " + items.length;
+    });
 
     // sample-calendar tasks (non-persistent, seeded from data-done)
     $all("[data-tk]").forEach(function (el) {
@@ -223,6 +228,12 @@
     if (act === "tck") {
       var cid = el.getAttribute("data-ck");
       checks[cid] = !checks[cid]; saveChecks(); render(); return;
+    }
+    if (act === "ckreset") {
+      // clear the saved state for every checkbox in this checklist wrapper
+      var wrap = el.closest("[data-ckwrap]") || document;
+      $all("[data-ck]", wrap).forEach(function (x) { delete checks[x.getAttribute("data-ck")]; });
+      saveChecks(); render(); return;
     }
     if (act === "texp" || act === "tcol") {
       // open or close every folder in this tree at once
@@ -326,8 +337,12 @@
     var pre = box.querySelector(".mpre");
     if (pre) pre.textContent = p.b;
     modalEl.removeAttribute("hidden");
+    // always open at the top: reset both the box and the (scrollable) body, and
+    // focus the button without letting the browser scroll it into view
+    box.scrollTop = 0;
+    if (pre) pre.scrollTop = 0;
     var first = box.querySelector("button");
-    if (first) first.focus();
+    if (first) { try { first.focus({ preventScroll: true }); } catch (e) { first.focus(); } }
   }
   function closePrompt() {
     if (!modalEl) modalEl = document.getElementById("pmodal");

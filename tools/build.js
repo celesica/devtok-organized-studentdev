@@ -3,6 +3,7 @@
    site/js/components.js understands. Run from the scratchpad. */
 const fs = require("fs");
 const MOCKUPS = require("./mockups.js");
+const { TEMPLATES: TK_TEMPLATES, CHECKLISTS: TK_CHECKLISTS } = require("./toolkit-data.js");
 const P = "/Users/jazzyb/Documents/Development/devtok/student-dev-organized/planning/Session website with tabs/";
 const OUT = "/Users/jazzyb/Documents/Development/devtok/student-dev-organized/site/";
 
@@ -215,13 +216,12 @@ const ROUTES = [
   ["05-protecting", "05 Protecting your work"],
   ["06-notion", "06 Notion for notes and school"],
   ["07-workspace", "07 Setting up your coding workspace"],
-  ["08-reset", "08 The 20-minute reset"],
-  ["09-groups", "09 Group projects"]
+  ["08-reset", "08 The 20-minute reset"]
 ];
 const TAB_LABELS = [
   ["00", "Start"], ["01", "Folders"], ["02", "School"], ["03", "Projects"],
   ["04", "Calendar"], ["05", "Protect"], ["06", "Notion"], ["07", "Workspace"],
-  ["08", "Reset"], ["09", "Groups"]
+  ["08", "Reset"]
 ];
 
 
@@ -261,6 +261,7 @@ function sectionBody(label) {
   if (label === "05 Protecting your work") return nbHyphenate(SECTION_05_BODY);
   if (label === "06 Notion for notes and school") return nbHyphenate(SECTION_06_BODY);
   if (label === "07 Setting up your coding workspace") return nbHyphenate(SECTION_07_BODY);
+  if (label === "08 The 20-minute reset") return nbHyphenate(SECTION_08_BODY);
   const re = new RegExp('<section class="sec" data-screen-label="' + label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + '">([\\s\\S]*?)</section>');
   const m = guide.match(re);
   if (!m) throw new Error("section not found: " + label);
@@ -1617,10 +1618,86 @@ ${S07_IDE_SHOT}
 <li>Install the language and tools your current classes actually use.</li>
 <li>Your editor or IDE already catches many coding problems; add linters when your project needs them.</li>
 <li>Add extensions when they solve a specific problem.</li>
-<li>VS Code can group related projects in a <b>multi-root workspace</b>.</li>
-<li>IntelliJ IDEA can also manage related projects together in a <b>Multi-Project Workspace</b>.</li>
+<li>IDEs can group related projects together — VS Code in a <b>multi-root workspace</b>, and IntelliJ IDEA in a <b>Multi-Project Workspace</b>.</li>
 </ul>
 <div class="closer"><span class="k">DO</span><p>Check that you have the basics for your current classes: an editor or IDE, your required programming language, Git, and a working terminal.</p></div>
+</div></div>`;
+
+/* ---------- section 08: the 20-minute reset ---------- */
+
+// The reset checklist. Items use the persistent data-ck mechanism (saved to
+// localStorage under CK_KEY, survives refresh) with the export's ids so any
+// existing progress carries over. A "Reset all" button (data-act="ckreset")
+// clears just this checklist's saved state.
+const S08_CHECKS = [
+  ["Files", [
+    ["f1", "Empty or sort Downloads"],
+    ["f2", "Clear the Desktop"],
+    ["f3", "Move loose documents into the correct term and subject folder"],
+  ]],
+  ["School", [
+    ["s1", "Open your LMS and check what's coming"],
+    ["s2", "Add newly announced deadlines to your calendar"],
+    ["s3", "Look at the week ahead"],
+  ]],
+  ["Development", [
+    ["d1", "Commit work that should be committed"],
+    ["d2", "Push work that needs a remote copy"],
+    ["d3", "Delete leftover test files"],
+  ]],
+  ["Upskilling", [
+    ["u1", "File useful new resources"],
+    ["u2", "Delete things you realistically won't use"],
+  ]],
+  ["Accounts and backups", [
+    ["b1", "Confirm your cloud sync is working"],
+    ["b2", "Check whether anything important exists only on your laptop"],
+  ]],
+];
+function s08Checklist() {
+  const groups = S08_CHECKS.map(([cat, items]) =>
+    `<div class="rgroup"><h3 class="rgroup-h">${cat}</h3>${items.map(([id, txt]) =>
+      `<button class="ckrow" type="button" data-ck="${id}" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">${txt}</span></button>`).join("")}</div>`).join("");
+  return `<div class="rchk" data-ckwrap>
+<div class="rchk-top"><span class="rchk-count"><span class="mono" data-ck-count></span> done</span><button class="rchk-reset" type="button" data-act="ckreset">Reset all</button></div>
+<p class="rchk-note">Your progress is saved in this browser, so the boxes stay checked when you come back. <b>Reset all</b> clears them.</p>
+<div class="rgroups">${groups}</div>
+</div>`;
+}
+
+const SECTION_08_BODY = `<div class="band"><div class="in">
+<div class="eyebrow"><span>08 · the 20-minute reset</span><span class="lvl">FOUNDATION</span></div>
+<h1 class="h1">The 20-minute reset</h1>
+<p class="cover"><b>What this section covers:</b> A short routine for getting your system back under control when things start getting messy.</p>
+<p class="cover"><b>Why it matters:</b> Every system gets disorganized during exams, project weeks, and busy semesters. The important part isn't preventing that completely — it's having an easy way back.</p>
+</div></div><div class="band"><div class="in"><h2 class="h2">When to run it</h2>
+<p>Good times for a reset:</p>
+<ul class="wa-list wa-list--ul">
+<li>At the end of the week</li>
+<li>After a heavy deadline week</li>
+<li>Before a new term starts</li>
+<li>Whenever Downloads, Desktop, tasks, or projects are clearly piling up</li>
+</ul>
+<div class="note"><span class="nl">NOTE</span>Doing it regularly is easier than waiting until everything feels unmanageable.</div>
+</div></div><div class="band"><div class="in"><h2 class="h2">The checklist</h2>
+<p>Work top to bottom — each item is a small action, not a project. Tick them off as you go.</p>
+${s08Checklist()}
+<div class="note"><span class="nl">NOTE</span>The goal is not to redesign your entire organization system. It's simply to return things to the system you already built.</div>
+<p>If your reset starts turning into any of these, you're probably doing more than a reset:</p>
+<ul class="wa-list wa-list--ul">
+<li>Rebuilding Notion</li>
+<li>Changing every folder</li>
+<li>Renaming hundreds of old files</li>
+<li>Reorganizing your entire degree</li>
+</ul>
+</div></div><div class="band"><div class="in"><h2 class="h2">Key takeaways</h2>
+<ul class="wa-list wa-list--ul">
+<li>Expect the system to get messy sometimes.</li>
+<li>A reset gives you a predictable way back.</li>
+<li>Keep each action small.</li>
+<li>Don't rebuild the whole system every time you fall behind.</li>
+</ul>
+<div class="closer"><span class="k">COPY</span><p>Save the checklist somewhere easy to find and use it whenever you need to reset.</p></div>
 </div></div>`;
 
 // Its own band now, sitting right after the four folders.
@@ -1803,9 +1880,120 @@ ${TREE_STUDIES}`,
   return body;
 }
 
-// toolkit body: pre-expanded by toolkit.js (its content comes from data arrays)
+// toolkit body: rendered here from planning/toolkit.md (prompts, parsed by
+// toolkit.js) plus toolkit-data.js (templates + checklists). Prompts keep their
+// card+modal style; templates and checklists are accordions — templates use the
+// interactive folder tree, checklists use the persistent checkbox mechanism with
+// a per-list "Reset all".
+function tkEsc(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+// plain-text tree (├──/└──) generated from ftree nodes, for the Copy button
+function tkTreeText(roots) {
+  const lines = [];
+  const isFile = (n) => typeof n[1] === "string";
+  const kidsOf = (n) => (Array.isArray(n[1]) ? n[1] : null);
+  function walk(ns, prefix) {
+    ns.forEach((n, i) => {
+      const last = i === ns.length - 1;
+      lines.push(prefix + (last ? "└── " : "├── ") + n[0] + (isFile(n) ? "" : "/"));
+      const kids = kidsOf(n);
+      if (kids) walk(kids, prefix + (last ? "    " : "│   "));
+    });
+  }
+  roots.forEach((r) => {
+    lines.push(r[0] + (isFile(r) ? "" : "/"));
+    const kids = kidsOf(r);
+    if (kids) walk(kids, "");
+  });
+  return lines.join("\n");
+}
+function tkTemplate(t) {
+  const badge = t.recommended ? `<span class="wa-badge wa-badge--amber">RECOMMENDED</span>` : "";
+  const desc = t.desc ? `<p class="tkmut" style="font-size:14px;margin:0 0 12px">${t.desc}</p>` : "";
+  const bullets = t.bullets ? `<ul class="wa-list wa-list--ul">${t.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>` : "";
+  const note = t.note ? `<div class="note"><span class="nl">NOTE</span>${t.note}</div>` : "";
+  const head = `<summary class="tkacc-sum"><span class="tkacc-t"><b>${t.id}</b> · ${t.title}</span>${badge}<span class="tkacc-caret" aria-hidden="true"></span></summary>`;
+
+  // README and .gitignore render as real code blocks, each with its own copy
+  if (t.code) {
+    const blocks = t.code.map((c) =>
+      `<div class="tkcodeblock" data-cw="1"><div class="tkcode-top">${c.label ? `<span class="tkcode-lang">${c.label}</span>` : `<span></span>`}<button class="wa-btn wa-btn--ghost wa-btn--sm" type="button" data-act="copy">Copy code</button></div><pre class="tkcode" data-cs="1">${tkEsc(c.code)}</pre></div>`).join("");
+    return `<details class="tkacc">${head}
+<div class="tkacc-body">${desc}${blocks}${note}</div></details>`;
+  }
+
+  // folder trees: interactive ftree + a Copy that copies the plain-text tree
+  const copySrc = tkTreeText(t.nodes);
+  const content = ftree(t.nodes, t.id + " " + t.title + " template", { open: true });
+  return `<details class="tkacc">${head}
+<div class="tkacc-body" data-cw="1"><div class="tkacc-bar"><button class="wa-btn wa-btn--ghost wa-btn--sm tkcpy" type="button" data-act="copy">Copy</button></div>
+${desc}${content}${bullets}${note}
+<pre data-cs="1" hidden aria-hidden="true">${tkEsc(copySrc)}</pre></div></details>`;
+}
+function tkChecklistAcc(c) {
+  const n = c.id.replace(/[^0-9]/g, "");
+  const groups = c.groups.map(([cat, items], gi) => {
+    const rows = items.map((txt, ii) =>
+      `<button class="ckrow" type="button" data-ck="k${n}_${gi}_${ii}" data-act="tck"><span class="ckbox" aria-hidden="true"></span><span class="ckt">${txt}</span></button>`).join("");
+    return `<div class="rgroup">${cat ? `<h4 class="rgroup-h">${cat}</h4>` : ""}${rows}</div>`;
+  }).join("");
+  // a single-group checklist fills the full width (one column, one line per
+  // item); multi-group checklists pack their groups tightly (masonry columns)
+  const groupsCls = c.groups.length === 1 ? "rgroups rgroups--full" : "rgroups";
+  return `<details class="tkacc"><summary class="tkacc-sum"><span class="tkacc-t"><b>${c.id}</b> · ${c.title}</span><span class="tkacc-caret" aria-hidden="true"></span></summary>
+<div class="tkacc-body">
+<div class="rchk" data-ckwrap>
+<div class="rchk-top"><span class="rchk-count"><span class="mono" data-ck-count></span> done</span><button class="rchk-reset" type="button" data-act="ckreset">Reset all</button></div>
+<div class="${groupsCls}">${groups}</div>
+</div></div></details>`;
+}
+const TK_STAR = `<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M12 2.2l2.7 5.9 6.4.7-4.8 4.3 1.3 6.3L12 16.9 6.1 19.4l1.3-6.3L2.6 8.8l6.4-.7z"/></svg>`;
+function tkPromptCard(id, prompts, featured) {
+  const p = prompts[id];
+  const first = (p.b.split("\n").find((l) => l.trim()) || "").trim();
+  const pv = first.length > 62 ? first.slice(0, 62) + "…" : first;
+  const fav = featured.indexOf(id) !== -1;
+  const star = fav ? `<span class="tkstar" title="Featured — a good one to save first">${TK_STAR}</span>` : "";
+  return `<div class="tkcard${fav ? " tkcard--feat" : ""}">${star}
+<p class="tt" style="margin:0"><b>${id}</b> · ${p.t}</p>
+<p class="uw"><b>Use this when:</b> ${p.uw}</p>
+<p class="pv">${tkEsc(pv)}</p>
+<button class="wa-btn wa-btn--secondary wa-btn--sm" type="button" data-id="${id}" data-act="openp">View prompt</button>
+</div>`;
+}
 function toolkitBody() {
-  return fs.readFileSync(__dirname + "/toolkit-body.html", "utf8");
+  const cards = JSON.parse(fs.readFileSync(__dirname + "/toolkit-cards.json", "utf8"));
+  const prompts = JSON.parse(fs.readFileSync(__dirname + "/toolkit-prompts.json", "utf8"));
+
+  const promptGroups = cards.groups.map((g) =>
+    `<h3 class="tkh3">${g.name}</h3>\n<div class="tkgrid">\n${g.items.map((it) => tkPromptCard(it.id, prompts, cards.featured)).join("\n")}\n</div>`).join("\n\n");
+
+  return `<div class="band"><div class="in">
+<p class="tkeyebrow">toolkit · reference library</p>
+<h1 class="tkh1">The toolkit</h1>
+<p>Everything reusable, in one tab. This is where you land months later wanting a prompt, a template, or a checklist — not a lesson. <b>Every item has a copy button.</b></p>
+<div class="tkchips">
+<button class="tkchip" type="button" data-j="jpr" data-act="jump">Prompts</button>
+<button class="tkchip" type="button" data-j="jtpl" data-act="jump">Templates</button>
+<button class="tkchip" type="button" data-j="jchk" data-act="jump">Checklists</button>
+</div>
+</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jpr">Prompts</h2>
+<p>A good prompt gives the AI enough context to help with <b>your actual setup</b> instead of generic advice. When useful, include your program and year, your classes and schedule, whether a course is major or minor, your folder tree, your OS, your editor or IDE, your language or framework, screenshots, and the exact error or assignment instructions.</p>
+<div class="note"><span class="nl">TIP</span>If you're trying to learn how to do something, say <b>"walk me through it step by step and explain what each step does."</b> You can also tell the AI not to write the code or do the work for you if you want to practice it yourself.</div>
+<p class="tkmut tkstar-note" style="font-size:14px;margin:18px 0 2px">If you only save a few, start with these — the prompts marked <span class="tkstar tkstar--inline">${TK_STAR}</span>.</p>
+${promptGroups}
+</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jtpl">Templates</h2>
+<p class="tkmut" style="font-size:14.5px">Copyable structures. Open one, adjust the names to your program and language. The folder trees are interactive — click a folder to open or collapse it.</p>
+<div class="tkaccs">
+${TK_TEMPLATES.map(tkTemplate).join("\n")}
+</div>
+</div></div><div class="band"><div class="in"><h2 class="tkh2" id="jchk">Checklists</h2>
+<p class="tkmut" style="font-size:14.5px">Recurring routines. Open one and tick items off — each checklist saves its own progress in this browser, and its <b>Reset all</b> clears only that list.</p>
+<div class="tkaccs">
+${TK_CHECKLISTS.map(tkChecklistAcc).join("\n")}
+</div>
+</div></div>`;
 }
 function toolkitModal() {
   return fs.readFileSync(__dirname + "/toolkit-modal.html", "utf8");
@@ -2280,7 +2468,14 @@ button.lrow:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .tab[aria-selected="true"]::before,.tab[aria-selected="true"]::after{content:"";position:absolute;bottom:0;width:10px;height:10px;pointer-events:none}
 .tab[aria-selected="true"]::before{left:-10px;background:radial-gradient(circle at 0 0,transparent 9.5px,var(--rose-a12) 10px)}
 .tab[aria-selected="true"]::after{right:-10px;background:radial-gradient(circle at 100% 0,transparent 9.5px,var(--rose-a12) 10px)}
-.tab.tk{margin-left:auto;padding-left:20px}
+/* Toolkit sits right after 08 as a normal tab (no far-right isolation). Lilac by
+   default (its own colour, set apart from the guide tabs), ember when active, and
+   no neighbour-divider before it — the lilac fill already sets it apart. */
+.tab.tk{margin-left:2px;border-left:none;padding-left:16px;background-image:none;background-color:var(--lilac-a14);color:var(--lilac-signal);border-radius:9px 9px 0 0}
+.tab.tk:hover{background-color:var(--lilac-a18,var(--lilac-a14));color:var(--lilac-signal)}
+.tab.tk[aria-selected="true"]{background-color:var(--ember-a20);color:var(--ember)}
+.tab.tk[aria-selected="true"]::before{background:radial-gradient(circle at 0 0,transparent 9.5px,var(--ember-a20) 10px)}
+.tab.tk[aria-selected="true"]::after{background:radial-gradient(circle at 100% 0,transparent 9.5px,var(--ember-a20) 10px)}
 
 /* ---- Subsection rail: one dot per .band, fixed to the right edge ---- */
 .rail{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:16px;align-items:center;padding:14px 8px;border-radius:var(--radius-pill);background:rgba(20,13,26,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--border-hairline)}
@@ -2443,6 +2638,61 @@ a.nlink:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .wsfig,.vdemo,figure.shot{margin-top:26px;margin-bottom:26px}
 .wsfig .cap,figure.shot .cap{margin-top:14px}
 
+/* ---- Section 08: the 20-minute reset ---- */
+/* The checklist persists in localStorage via the shared data-ck mechanism;
+   "Reset all" (data-act="ckreset") clears just this wrapper's saved state. */
+.rchk{margin:16px 0;border:1px solid var(--border-hairline);border-radius:14px;background:var(--surface-card);padding:18px 20px}
+.rchk-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.rchk-count{font-family:var(--font-tech);font-size:13px;color:var(--muted-ink)}
+.rchk-count .mono{color:var(--parchment)}
+.rchk-reset{font-family:var(--font-tech);font-size:12.5px;color:var(--neon-rose);background:none;border:1px solid rgba(255,92,138,.4);border-radius:999px;padding:6px 14px;cursor:pointer;transition:background 120ms,border-color 120ms}
+.rchk-reset:hover{background:var(--rose-a12);border-color:var(--neon-rose)}
+.rchk-reset:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.rchk-note{margin:10px 0 16px;font-size:13px;color:var(--muted-ink)}
+/* Groups pack tightly into two masonry columns (short groups don't leave a gap
+   waiting for a tall neighbour); a single-group checklist fills the full width
+   as one column, so each item gets a full line. */
+.rgroups{column-count:2;column-gap:30px}
+.rgroups--full{column-count:1}
+.rgroups .rgroup{break-inside:avoid;margin:0 0 18px}
+.rgroups .rgroup:last-child{margin-bottom:0}
+.rgroup-h{font-family:var(--font-tech);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ember);margin:0 0 6px}
+
+/* ---- Toolkit: accordions + featured prompts ---- */
+.tkaccs{margin:16px 0 4px;border-top:1px solid var(--border-hairline)}
+.tkacc{border-bottom:1px solid var(--border-hairline)}
+.tkacc-sum{display:flex;align-items:center;gap:12px;cursor:pointer;list-style:none;padding:15px 4px;color:var(--parchment);transition:color 120ms}
+.tkacc-sum::-webkit-details-marker{display:none}
+.tkacc-sum:hover{color:var(--neon-rose)}
+.tkacc-sum:focus-visible{outline:none;box-shadow:var(--ring-focus);border-radius:6px}
+.tkacc-t{font-family:var(--font-tech);font-size:15.5px}
+.tkacc-t b{color:var(--ember);font-weight:700}
+.tkacc-caret{margin-left:auto;width:8px;height:8px;border-right:2px solid var(--muted-ink);border-bottom:2px solid var(--muted-ink);transform:rotate(45deg);transition:transform 150ms;flex:0 0 auto}
+.tkacc[open]>.tkacc-sum .tkacc-caret{transform:rotate(-135deg);border-color:var(--neon-rose)}
+.tkacc-body{padding:2px 4px 24px}
+.tkacc-bar{display:flex;justify-content:flex-end;margin-bottom:8px}
+.tkacc-body .ftree{margin-top:2px}
+/* featured-prompt star: ember with a soft glow */
+.tkstar{display:inline-flex;line-height:0}
+.tkstar svg{fill:var(--ember);filter:drop-shadow(0 0 5px rgba(255,122,69,.8))}
+.tkstar--inline{position:relative;top:3px;margin:0 1px}
+.tkcard--feat{position:relative;border-color:rgba(255,122,69,.4)}
+.tkcard--feat>.tkstar{position:absolute;top:13px;right:13px}
+.tkcard--feat .tt{padding-right:22px}
+/* README / .gitignore code blocks, each with its own copy */
+.tkcodeblock{margin:14px 0}
+.tkcode-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px;min-height:26px}
+.tkcode-lang{font-family:var(--font-tech);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ember)}
+.tkcode{font-family:var(--font-mono);font-size:13px;line-height:1.65;white-space:pre;overflow-x:auto;background:var(--plum-900);border:1px solid var(--border-hairline);border-radius:10px;padding:14px 16px;margin:0;color:var(--parchment)}
+
+/* Prompt modal: one consistent window size for every prompt. The box no longer
+   grows with the prompt or scrolls as a whole — the title, "use this when", and
+   the buttons stay fixed, and only the prompt body (.mpre) scrolls. */
+.mbox{max-height:none;height:min(80vh,600px);overflow:hidden;display:flex;flex-direction:column}
+.mbox>div[data-cw]{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+.mbox>div[data-cw]>.mpre{flex:1 1 auto;min-height:0;overflow:auto}
+.mbox>div[data-cw]>div{flex:0 0 auto}
+
 @media (max-width:640px){
   .in{padding-left:16px;padding-right:16px}
   .grid3{grid-template-columns:1fr}
@@ -2450,6 +2700,7 @@ a.nlink:focus-visible{outline:none;box-shadow:var(--ring-focus)}
   .nshots[open] .expb{padding-left:16px;padding-right:16px}
   .wsparts{grid-template-columns:1fr}
   .instgrid{grid-template-columns:1fr}
+  .rgroups{column-count:1}
   .pnrow{padding-left:16px;padding-right:16px}
   .c7grid{grid-template-columns:1fr}
   /* the layer's question forces the single-column grid wider than the phone;
