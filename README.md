@@ -1,5 +1,7 @@
 # Get Organized as a Student Developer
 
+**Live:** <https://devtok-organized-studentdev.netlify.app>
+
 A companion website for **DevTok Pinas** (Aug 2026) that **replaces a slide deck** during a live Discord screen-share, then lives on as a permanent, bookmarkable reference for student developers — primarily first-year Filipino CS/IT students.
 
 The motive: students are rarely taught *where their work lives*, so they lose files, coursework, and portfolio-ready projects. The site gives them four folders, a rule for what goes where, a calendar that reminds them, a notes/dashboard home, a workspace setup, and a reset routine. Success = it gets **bookmarked and forwarded**. It is deliberately **not** a landing page — nothing is sold; no funnel, CTA, testimonials, or pricing.
@@ -61,4 +63,4 @@ See [`site/README.md`](site/README.md) for step-by-step Netlify / Cloudflare Pag
 
 ## Status
 
-Sections 00–08 and the Toolkit are complete. Section 09 (Group projects) is planned for a later session. Next up: deploy to Netlify.
+Sections 00–08 and the Toolkit are complete and **deployed** (Netlify, auto-deploys on every push to `main`). Section 09 (Group projects) is planned for a later session.

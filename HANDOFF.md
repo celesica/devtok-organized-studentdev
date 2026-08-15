@@ -3,17 +3,15 @@
 *Written 2026-08-15 on jazzyb's Mac. Overwritten every session — git history holds the older ones.*
 
 ## Where we stopped
-The section-by-section content pass is **complete through section 08, and the Toolkit is rebuilt**. Section 09 (Group projects) was removed from the live tabs — the owner is building it another time; its planning copy is kept. The live guide is 00–08 with the **Toolkit tab sitting right after 08**.
+The section-by-section content pass is **complete through section 08, the Toolkit is rebuilt, and the site is deployed and live.** Section 09 (Group projects) was removed from the live tabs — the owner is building it another time; its planning copy is kept. The live guide is 00–08 with the **Toolkit tab sitting right after 08**.
 
-Everything is committed and pushed to `origin/main`. The remaining work is **deploy (Netlify)** and the root **`README.md`**.
+**Live:** <https://devtok-organized-studentdev.netlify.app> — Netlify, Git-connected, **auto-deploys on every push to `main`**. `netlify.toml` publishes `site/` with nosniff + no-referrer headers (verified applied). Everything is committed and pushed to `origin/main`. Root `README.md`, `site/README.md`, `tools/README.md`, and `CLAUDE.md` are all current.
 
-## The next actions
-1. **Netlify deploy.** `netlify.toml` is already in the repo (publish `site/`, empty build command, nosniff + no-referrer headers). The site is a no-build static folder. Deploy path: Netlify dashboard → *Add new site → Import an existing project* → GitHub → `celesica/devtok-organized-studentdev` → accept defaults (netlify.toml supplies them) → deploy. This needs the **owner's Netlify auth** — it can't be done headless here. If `netlify` CLI is installed and logged in, `netlify deploy --prod --dir=site` also works.
-2. **Root `README.md`** — the outside view of the repo (what it is, how to preview, how it's built, how to deploy). Deferred until now.
-3. **Section 09** — deferred by owner; when built, add its route back to `ROUTES` + `TAB_LABELS` in `build.js` and author `SECTION_09_BODY`.
+## The next action
+**Section 09 (Group projects)** — deferred by the owner; when built, add its route back to `ROUTES` + `TAB_LABELS` in `build.js` and author `SECTION_09_BODY`. Nothing else is outstanding. (Optional polish: friendlier Netlify subdomain; re-encode the two heavy recordings smaller when ffmpeg is available.)
 
 ## State: working
-Site is deployable right now (opens from `file://` and via `python3 -m http.server`). Tree is clean after the toolkit commit.
+Site is live and also runs locally from `file://` and via `python3 -m http.server`. Tree is clean.
 
 ## How the build works
 `node toolkit.js && node build.js` (run from `tools/`).

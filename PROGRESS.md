@@ -1,6 +1,6 @@
 # Progress — Get Organized as a Student Developer
 
-Phase: **generated site is live-quality; working through the sections with the owner, front to back.**
+Phase: **deployed and live.** Sections 00–08 + Toolkit are built and published at <https://devtok-organized-studentdev.netlify.app> (Netlify, auto-deploys on push to `main`). Section 09 deferred.
 
 ## Current phase
 `site/` is generated from the `.dc.html` exports by `tools/build.js`. On top of the export, the build applies owner-directed copy and interactive components section by section. **Sections 00 through 08 are through a full owner pass, and the Toolkit is rebuilt.** Section 09 (Group projects) was removed from the live tabs — the owner is doing it another time (its planning copy is kept). The guide routes are now 00–08 + the Toolkit tab (which sits right after 08). Each rebuilt section is authored wholesale as a `SECTION_0N_BODY` constant returned from `sectionBody()`. Browser/DOM-verified; no console errors. Committed and pushed to `main`.
@@ -71,9 +71,11 @@ The interactive vocabulary built across sections: branded folder trees (`ftree()
 - New assets copied by the build into `site/assets/`: `opening-a-folder.mp4` (9.7 MB), `label-your-class.mp4` (25 MB), `warm-ide.png` (0.9 MB). Sources in `planning/`.
 
 ## Next up
-- **Deploy to Netlify** (host decided): *Add new site → Import an existing project* → pick `celesica/devtok-organized-studentdev` → accept defaults (`netlify.toml` supplies publish `site/` + headers) → deploy. Needs the owner's Netlify auth.
-- Root **`README.md`** (the outside view of the repo).
-- **Section 09 (Group projects)** — deferred by owner to another session; add back to `ROUTES`/`TAB_LABELS` when built.
+- **Section 09 (Group projects)** — deferred by owner to another session; add back to `ROUTES`/`TAB_LABELS` and author `SECTION_09_BODY` when built.
+- Optional: rename the Netlify subdomain to something friendlier; re-encode the two heavy recordings smaller for faster PH-mobile loads (no ffmpeg this session).
+
+## Done — deploy
+- 2026-08-15 — Deployed to **Netlify** (Git-connected, auto-deploys on push to `main`): <https://devtok-organized-studentdev.netlify.app>. `netlify.toml` publishes `site/` with nosniff + no-referrer headers (verified live). Added root `README.md`; refreshed `site/README.md`, `tools/README.md`, `CLAUDE.md`.
 - Connect **Netlify** (host already decided): *Add new site → Import an existing project* → pick the repo → accept the defaults (`netlify.toml` supplies them) → deploy. This can happen any time; the site is deployable now.
 - Resolve the open content items: section 08 presenter sign-off, section 09 closer. (Section 06's Academia template link is now real and wired; its walkthrough recording stays a text-only Discord pointer — no public URL.)
 - Root `README.md` (the outside view) — still deferred.

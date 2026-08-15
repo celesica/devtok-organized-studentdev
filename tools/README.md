@@ -8,12 +8,14 @@ lost the next time anyone runs the build.
 
 | Source | What it provides |
 | --- | --- |
-| `planning/Session website with tabs/Student Dev Guide.dc.html` | the ten guide sections and the guide stylesheet |
-| `planning/Session website with tabs/Toolkit.dc.html` | the toolkit layout, its stylesheet, and its data arrays |
+| `planning/Session website with tabs/Student Dev Guide.dc.html` | the guide sections' base markup and the guide stylesheet (the build renders 00–08; 09 is deferred) |
+| `planning/Session website with tabs/Toolkit.dc.html` | the toolkit stylesheet and the prompt-modal shell only — its old `<sc-for>` layout and data arrays are no longer used |
+| `planning/toolkit.md` | **the toolkit's prompt content**, parsed by `toolkit.js` |
+| `tools/toolkit-data.js` | the toolkit's templates (as `ftree` node arrays) and checklists (grouped items) |
 
 `planning/Student Dev Guide.html` is the same design delivered as a
 self-extracting bundle. It is a convenient way to view the intended result in a
-browser; the two `.dc.html` files above are what the build actually reads.
+browser; the `.dc.html` files above are what the build actually reads.
 
 ## Running it
 
@@ -21,17 +23,20 @@ browser; the two `.dc.html` files above are what the build actually reads.
 cd tools && node toolkit.js && node build.js
 ```
 
-`toolkit.js` runs first and must not be skipped: the toolkit page is data-driven,
-so its templates, checklists, prompts, and glossary live in JavaScript arrays
-inside `Toolkit.dc.html` rather than in its markup. The script evaluates those
-arrays, expands the `<sc-for>` loops, and writes `toolkit-body.html`,
-`toolkit-modal.html`, and `toolkit-prompts.json`, which `build.js` then inlines.
+`toolkit.js` runs first and must not be skipped: it parses `planning/toolkit.md`
+into `toolkit-prompts.json` (id → title/use-when/body, for the modal) and
+`toolkit-cards.json` (prompt groups + the featured ids), and lifts the
+prompt-modal shell from `Toolkit.dc.html` into `toolkit-modal.html`. `build.js`
+then renders the whole toolkit body itself — prompt cards, template accordions
+(interactive `ftree` trees + code blocks), and checklist accordions — from those
+JSON files plus `toolkit-data.js`. (The Glossary and Tools-to-install groups were
+removed.)
 
-`build.js` writes `site/index.html` and `site/css/app.css`, and copies
-`planning/Cozy Desk Loop.mp4` to `site/assets/cozy-desk-loop.mp4` — the header
-footage. Copying rather than referencing `planning/` keeps `site/` a
-self-contained folder a static host can publish on its own. The build throws if
-the source file is missing.
+`build.js` writes `site/index.html` and `site/css/app.css`, and copies the real
+media in `planning/` into `site/assets/` (the header footage, two screen
+recordings, and the editor / Notion / workspace screenshots). Copying rather than
+referencing `planning/` keeps `site/` a self-contained folder a static host can
+publish on its own. The build throws if any declared source file is missing.
 
 ## What the build converts
 
@@ -105,6 +110,12 @@ Everything else in the guide still comes through verbatim.
 
 ## Editing content
 
-Change the wording in the matching `.dc.html`, then rerun the build. Keep
-`planning/site-copy-all-sections.md` and `planning/toolkit.md` in step with any
-copy change so the planning documents stay trustworthy.
+- **Guide sections 00–01:** patched over the export by `applyStartCopy()` /
+  `applyFoldersCopy()` in `build.js`.
+- **Guide sections 02–08:** authored wholesale as `SECTION_0N_BODY` constants in
+  `build.js` (the export copy for these is unused).
+- **Toolkit prompts:** edit `planning/toolkit.md` (parsed at build).
+- **Toolkit templates / checklists:** edit `tools/toolkit-data.js`.
+
+Rerun the build after any change. Keep `planning/site-copy-all-sections.md` in
+step with guide-copy changes so it stays a trustworthy mirror.
