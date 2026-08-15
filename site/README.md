@@ -4,8 +4,8 @@ A static companion site for the DevTok Pinas session (August 2026). It replaces 
 
 Two routes:
 
-- **The Guide** (`#/00-start` … `#/09-bonus`) — the nine live blocks, one section per tabbed view.
-- **The Toolkit** (`#/toolkit`) — templates, checklists, 15 AI prompts, a 12-word glossary, and tools by job.
+- **The Guide** (`#/00-start` … `#/08-reset`) — the live blocks, one section per tabbed view.
+- **The Toolkit** (`#/toolkit`) — 28 copyable AI prompts, folder-structure templates (interactive trees), and recurring checklists.
 
 ## Preview locally
 
@@ -78,8 +78,9 @@ site/
 ├── js/
 │   ├── router.js     hash routing, tab state, keyboard nav
 │   └── components.js steppers, reveals, checklists, prompt modal, copy buttons
-└── assets/           cozy-desk-loop.mp4 — the header footage, copied in by the
-                      build. Every other visual is built in HTML/CSS.
+└── assets/           real media copied in by the build: the header footage,
+                      a couple of screen recordings, and screenshots (editor,
+                      Notion, workspace). Most other visuals are built in HTML/CSS.
 ```
 
 The header video is decoration: muted, looping, no controls, and hidden from
