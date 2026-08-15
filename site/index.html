@@ -679,72 +679,90 @@ project-final-real-v2/</pre></div>
 <div class="band"><div class="in">
 <div class="eyebrow"><span>05 · protecting your work</span><span class="lvl">BUILDING</span></div>
 <h1 class="h1">Protecting your work</h1>
-<p class="cover"><b>What this covers:</b> password management, backing up your files, and keeping passwords out of your code.</p>
-<p class="cover"><b>Why it matters:</b> these are one‑afternoon setups that prevent problems which are difficult or impossible to reverse.</p>
+<p class="cover"><b>What this section covers:</b> Password management, backing up your files, and keeping private credentials out of your code.</p>
+<p class="cover"><b>Why it matters:</b> A few simple habits can prevent much bigger problems later — lost files, locked accounts, exposed passwords, or API keys accidentally pushed to GitHub.</p>
 </div></div><div class="band"><div class="in"><h2 class="h2">Use a password manager</h2>
-<p><span class="wa-badge wa-badge--amber">RECOMMENDED</span> Reusing one password across accounts means one leak exposes all of them. A password manager creates and remembers a different password for every account, so you only memorize one.</p>
-<p><b>Bitwarden</b> is free, works on every platform, and is what I use. 1Password and Proton Pass work the same way.</p>
-<ol class="wa-list wa-list--ol">
-<li>Create the account with a strong master password you can remember</li>
-<li>Save the recovery information somewhere offline</li>
-<li>Install the browser extension and the phone app</li>
-<li>Change your most important passwords first: email, GitHub, school portal, bank</li>
-</ol>
-<p><b>Turn on two‑factor authentication</b> for email, GitHub, and your school portal. Save the recovery codes somewhere that isn't the laptop they protect.</p>
-</div></div><div class="band"><div class="in"><h2 class="h2">Your school email</h2>
-<p>Your school email stops working after you graduate, and anything using it as the recovery address becomes hard to recover.</p>
+<p><span class="wa-badge wa-badge--amber">RECOMMENDED</span> A password manager helps you use a different, strong password for every account without having to memorize all of them.</p>
 <ul class="wa-list wa-list--ul">
-<li>Create a personal professional email now</li>
-<li>Use it for GitHub, LinkedIn, your portfolio, and anything you keep after school</li>
-<li>Keep the school email for school</li>
+<li><a href="https://bitwarden.com/" target="_blank" rel="noopener noreferrer"><b>Bitwarden</b></a> — free, with apps and browser extensions</li>
+<li><b>Google Password Manager</b> — built into Google accounts and Chrome</li>
+<li><b>1Password</b> — another popular option with cross‑device support</li>
 </ul>
-<div class="note"><span class="nl">NOTE</span>Ten minutes now, a real problem later.</div>
-</div></div><div class="band"><div class="in"><h2 class="h2">Backing up your files</h2>
-<p class="mut" style="font-size:14px">Three different jobs. Click each destination.</p>
+<p>A basic setup:</p>
+<ol class="wa-list wa-list--ol">
+<li>Create your password manager account.</li>
+<li>Choose a strong master password.</li>
+<li>Save your recovery information somewhere safe.</li>
+<li>Install the browser extension and phone app.</li>
+<li>Turn on <b>unlock with biometrics</b> so you can use Face ID, Touch ID, or your fingerprint when filling passwords.</li>
+<li>Start updating your most important accounts first.</li>
+</ol>
+<p><b>Accounts to prioritize:</b> Email · GitHub · School portal · Banking and financial accounts · Social media tied to your identity</p>
+<div class="note"><span class="nl">NOTE</span>Avoid reusing one password across accounts — let the manager generate long, unique ones. You usually don't need to type them yourself; the extension or app autofills them, and biometrics make it quick on devices that support Face ID, Touch ID, or fingerprint unlock.</div>
+</div></div><div class="band"><div class="in"><h2 class="h2">Turn on two‑factor authentication</h2>
+<p>Two‑factor authentication adds another step after your password. Prioritize it for accounts such as:</p>
+<ul class="wa-list wa-list--ul">
+<li>Email</li>
+<li>GitHub</li>
+<li>School portal</li>
+<li>Password manager</li>
+<li>Banking or financial accounts</li>
+</ul>
+<div class="note"><span class="nl">NOTE</span>Save your recovery codes somewhere secure and separate from the device they protect.</div>
+</div></div><div class="band"><div class="in"><h2 class="h2">Your school email</h2>
+<p>Use your school email for things connected directly to your student life:</p>
 <div class="grid2">
-<button class="fcard" data-st="c15" data-on="lap" data-mode="eq" data-k="c15" data-v="lap" data-act="pick"><span class="ft">Your laptop</span><span class="fd">The copy you work on</span></button>
-<button class="fcard" data-st="c15" data-on="cld" data-mode="eq" data-k="c15" data-v="cld" data-act="pick"><span class="ft">Cloud storage</span><span class="fd">A backup of your documents</span></button>
-<button class="fcard" data-st="c15" data-on="gh" data-mode="eq" data-k="c15" data-v="gh" data-act="pick"><span class="ft">GitHub</span><span class="fd">The history of your code</span></button>
+<div class="evtcard"><h3 class="h3">School email — for student life</h3><ul class="wa-list wa-list--ul"><li>School portals and services</li><li>Professor or instructor communication</li><li>School software and campus orgs</li><li>Student‑only registrations</li></ul></div>
+<div class="evtcard"><h3 class="h3">Personal professional email — to keep</h3><ul class="wa-list wa-list--ul"><li>GitHub and LinkedIn</li><li>Portfolio and job applications</li><li>Professional communities</li><li>Long‑term developer accounts</li></ul></div>
 </div>
-<div class="fpanel" data-st="c15" data-on="lap" data-mode="eq"><div class="note"><span class="nl">LAPTOP</span>All four folders live here — this is the working copy. If your only copy of something is on one device, it isn't backed up.</div></div>
-<div class="fpanel" data-st="c15" data-on="cld" data-mode="eq"><div class="note"><span class="nl">CLOUD</span>Sync <span class="mono">Studies/</span>, <span class="mono">Upskilling/</span>, and <span class="mono">Career/</span> to Google Drive or any cloud service. <b style="color:var(--neon-rose)">Do not sync Development/</b> — sync services conflict with the files Git creates and can corrupt a project. Code goes to GitHub, not cloud sync.</div></div>
-<div class="fpanel" data-st="c15" data-on="gh" data-mode="eq"><div class="note"><span class="nl">GITHUB</span>Holds your code's history — push your work and it's backed up properly. It is not a backup destination for arbitrary school documents.</div></div>
+<div class="pn"><span class="k">SIDE NOTE</span><p><b>Don't ignore your school email after setting up a personal one.</b> It can unlock <b>student discounts and perks</b> — software discounts, student subscriptions, and programs like the <b>GitHub Student Developer Pack</b>. Use it where student verification gives you a benefit, but don't make it the only recovery email for accounts you want to keep long‑term.</p></div>
+</div></div><div class="band"><div class="in"><h2 class="h2">Backing up your files</h2>
+<p>Your laptop should not be the only place an important file exists. A simple setup uses <b>different places for different jobs</b> — <b>click each destination</b>:</p>
+<div class="grid2 bkgrid"><button class="fcard" type="button" data-act="set" data-k="c51" data-v="laptop" data-st="c51" data-on="laptop" data-mode="eq"><span class="ft">Your laptop</span><span class="fd">The copy you work on</span></button><button class="fcard" type="button" data-act="set" data-k="c51" data-v="cloud" data-st="c51" data-on="cloud" data-mode="eq"><span class="ft">Cloud storage</span><span class="fd">Documents, synced</span></button><button class="fcard" type="button" data-act="set" data-k="c51" data-v="ssd" data-st="c51" data-on="ssd" data-mode="eq"><span class="ft">External drive</span><span class="fd">A second backup</span></button><button class="fcard" type="button" data-act="set" data-k="c51" data-v="github" data-st="c51" data-on="github" data-mode="eq"><span class="ft">GitHub</span><span class="fd">The history of your code</span></button></div><div class="fpanel" data-st="c51" data-on="laptop" data-mode="eq"><div class="bkdetail"><span class="bktag">WORKING COPY</span><p>The copy you actively work on — everything starts here.</p><ul class="wa-list wa-list--ul"><li>School files and notes</li><li>Projects and current documents</li></ul><p class="mut" style="font-size:14px">If your only copy of something lives on one device, it isn't backed up yet.</p></div></div><div class="fpanel" data-st="c51" data-on="cloud" data-mode="eq"><div class="bkdetail"><span class="bktag">DOCUMENTS</span><p>Use <b>Google Drive</b> or <b>Dropbox</b> for documents you want synced across devices. Good folders to back up here:</p><ul class="wa-list wa-list--ul"><li><span class="mono flit">Studies/</span></li><li><span class="mono flit">Upskilling/</span></li><li><span class="mono flit">Career/</span></li></ul><div class="note"><span class="nl">NOTE</span><b style="color:var(--neon-rose)">Don't sync Development/</b> — sync services conflict with the files Git creates and can corrupt a project. Code goes to GitHub, not cloud sync.</div></div></div><div class="fpanel" data-st="c51" data-on="ssd" data-mode="eq"><div class="bkdetail"><span class="bktag">EXTRA COPY</span><p>Keep another copy of important files on a separate <b>external SSD or hard drive</b>:</p><ul class="wa-list wa-list--ul"><li>Important school documents and certificates</li><li>Portfolio assets and resume files</li><li>Photos or screenshots you can't easily recreate</li></ul></div></div><div class="fpanel" data-st="c51" data-on="github" data-mode="eq"><div class="bkdetail"><span class="bktag">CODE</span><p>Use Git and GitHub for your coding projects. GitHub gives you:</p><ul class="wa-list wa-list--ul"><li>A remote copy of the repository</li><li>Version history</li><li>A place to collaborate</li><li>A way to restore or clone the project onto another computer</li></ul><p class="mut" style="font-size:14px">It's for code and the files around it — not arbitrary school documents.</p></div></div>
+<div class="note"><span class="nl">ASK YOURSELF</span>If your laptop stopped working today, what would you actually lose? Anything important that exists in only one place still needs another copy.</div>
 </div></div><div class="band"><div class="in"><h2 class="h2">Keys and passwords inside code</h2>
-<p>When a project connects to another service, that service gives you a <b>key</b> — effectively a password for your app. Click through what usually happens.</p>
-<div class="chiprow">
-<button class="chip" data-st="c16" data-on="1" data-mode="eq" data-k="c16" data-v="1" data-act="pick">1 · The key in code</button>
-<button class="chip" data-st="c16" data-on="2" data-mode="eq" data-k="c16" data-v="2" data-act="pick">2 · Pushed public</button>
-<button class="chip" data-st="c16" data-on="3" data-mode="eq" data-k="c16" data-v="3" data-act="pick">3 · Deleted — still there</button>
-<button class="chip" data-st="c16" data-on="4" data-mode="eq" data-k="c16" data-v="4" data-act="pick">4 · The fix</button>
-</div>
-<div class="fpanel" data-st="c16" data-on="1" data-mode="eq"><div class="panel"><pre class="code"><span class="cm"># schedule.py</span>
-API_KEY = <span class="bad">"sk_live_51x8mQ2kf93hd"</span>   <span class="cm"># it works, so it ships</span>
-weather = fetch(API_KEY, city)</pre></div><p class="mut" style="font-size:14.5px">The key gets pasted into the code, everything works, and nobody thinks about it again.</p></div>
-<div class="fpanel" data-st="c16" data-on="2" data-mode="eq"><div class="panel"><pre class="code"><span class="cm"># github.com/you/schedule-tracker — PUBLIC</span>
-API_KEY = <span class="bad">"sk_live_51x8mQ2kf93hd"</span></pre></div><p class="mut" style="font-size:14.5px">Public repositories are scanned automatically for keys, by bots, within minutes.</p></div>
-<div class="fpanel" data-st="c16" data-on="3" data-mode="eq"><div class="panel"><pre class="code"><span class="cm"># schedule.py — key deleted. Fixed?</span>
-API_KEY = os.environ["API_KEY"]
+<p>When a project connects to another service, that service may give you a <b>key</b> — effectively a password your app uses to access it. <b>Click through the four steps</b> to see what usually happens:</p>
+<div class="skrow"><button class="skstep" type="button" data-act="set" data-k="c50" data-v="1" data-st="c50" data-on="1" data-mode="eq"><span class="skn">1</span><span class="skl">In the code</span></button><button class="skstep" type="button" data-act="set" data-k="c50" data-v="2" data-st="c50" data-on="2" data-mode="eq"><span class="skn">2</span><span class="skl">Pushed public</span></button><button class="skstep" type="button" data-act="set" data-k="c50" data-v="3" data-st="c50" data-on="3" data-mode="eq"><span class="skn">3</span><span class="skl">Deleted — still there</span></button><button class="skstep" type="button" data-act="set" data-k="c50" data-v="4" data-st="c50" data-on="4" data-mode="eq"><span class="skn">4</span><span class="skl">The fix</span></button></div>
+<div class="fpanel" data-st="c50" data-on="1" data-mode="eq"><span class="sktag sktag--warn">IN YOUR CODE</span><div class="panel"><pre class="code"><span class="cm"># weather.py</span>
+WEATHER_API_KEY = <span class="bad">"weather_live_51x8mQ2kf93hd"</span>
+weather = fetch_weather(WEATHER_API_KEY, city)</pre></div>
+<p>A beginner‑friendly project might start like this. Everything works, so it's easy to forget the key is sitting directly inside the source code.</p>
+<div class="note"><span class="nl">NOTE</span>An API key, access token, or database password should be treated like a password.</div></div><div class="fpanel" data-st="c50" data-on="2" data-mode="eq"><span class="sktag sktag--bad">EXPOSED</span><div class="panel"><pre class="code"><span class="cm"># github.com/you/weather-dashboard — PUBLIC</span>
+WEATHER_API_KEY = <span class="bad">"weather_live_51x8mQ2kf93hd"</span></pre></div>
+<p>If that file is committed and pushed to GitHub, the secret goes with it.</p>
+<ul class="wa-list wa-list--ul"><li>Public repositories are scanned automatically for exposed keys — often by bots within minutes.</li><li>Anyone who finds the key may be able to use the service under your account.</li></ul></div><div class="fpanel" data-st="c50" data-on="3" data-mode="eq"><span class="sktag sktag--bad">STILL EXPOSED</span><div class="panel"><pre class="code"><span class="cm"># weather.py — key deleted. Fixed?</span>
+WEATHER_API_KEY = os.environ["WEATHER_API_KEY"]
 
 <span class="cm">$ git log</span>
-<span class="bad">a41f2c  Add API key      ← still in this commit</span></pre></div><p class="mut" style="font-size:14.5px"><b>Deleting the line later doesn't remove it — it's in the history.</b> This is the step nobody knows.</p></div>
-<div class="fpanel" data-st="c16" data-on="4" data-mode="eq"><div class="panel"><pre class="code"><span class="cm"># .env            — stays on your computer</span>
-API_KEY=sk_live_51x8mQ2kf93hd
+<span class="bad">a41f2c  Add weather API key    ← still in this commit</span></pre></div>
+<p>Changing the current file does <b>not</b> remove the secret from earlier commits.</p>
+<div class="note"><span class="nl">NOTE</span><b>Deleting the line later doesn't make the exposed key safe.</b> Git keeps previous versions.<span class="np">If a real secret was exposed, <b>revoke or rotate it</b> with the service provider — don't assume deleting the line fixed it.</span></div></div><div class="fpanel" data-st="c50" data-on="4" data-mode="eq"><span class="sktag sktag--good">SAFE</span><div class="panel"><pre class="code"><span class="cm"># .env — real values, stays on your computer</span>
+WEATHER_API_KEY=your-real-key-here
 
-<span class="cm"># .gitignore      — Git never tracks it</span>
+<span class="cm"># .gitignore — Git never tracks .env</span>
 .env
 
-<span class="cm"># .env.example    — teammates see what they need</span>
-API_KEY=</pre></div><p class="mut" style="font-size:14.5px">Keys go in <span class="mono">.env</span>, which is listed in <span class="mono">.gitignore</span>. Ship a blanked <span class="mono">.env.example</span> instead.</p></div>
-<div class="note"><span class="nl">NOTE</span><span class="mono">.gitignore</span> is also where generated folders like <span class="mono">node_modules</span> go. They're large, rebuildable, and don't belong in a repository.</div>
+<span class="cm"># .env.example — safe to commit, names only</span>
+WEATHER_API_KEY=</pre></div>
+<p>Your code reads the value from the environment instead of hard‑coding it:</p>
+<div class="panel"><pre class="code"><span class="cm">import os</span>
+WEATHER_API_KEY = os.environ["WEATHER_API_KEY"]</pre></div>
+<div class="note"><span class="nl">GOAL</span><b>Real secret</b> stays local · <b>variable name</b> gets documented · <span class="mono">.env</span> is ignored by Git · <span class="mono">.env.example</span> is safe to commit · an <b>exposed key</b> gets revoked or rotated.</div></div>
+</div></div><div class="band"><div class="in"><h2 class="h2">What .gitignore is for</h2>
+<p><span class="mono flit">.gitignore</span> tells Git which files and folders it should ignore — because they're private, generated automatically, large and reinstallable, specific to your computer, or just not useful to other people on the project.</p>
+<p class="mut" style="font-size:14.5px;margin:2px 0 10px">Click an entry to see why it's ignored.</p>
+<div class="ipx"><div class="ipx-tree ftree"><div class="iproot mono">.gitignore</div><div class="iprows"><button class="iprow" type="button" data-act="set" data-k="c52" data-v="env" data-st="c52" data-on="env" data-mode="eq"><span class="ftcaret ipcaret" aria-hidden="true"></span><span class="fdoc fdoc--env" data-ext="ENV" aria-hidden="true"></span><span class="fname">.env</span></button><button class="iprow" type="button" data-act="set" data-k="c52" data-v="node" data-st="c52" data-on="node" data-mode="eq"><span class="ftcaret ipcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">node_modules/</span></button><button class="iprow" type="button" data-act="set" data-k="c52" data-v="venv" data-st="c52" data-on="venv" data-mode="eq"><span class="ftcaret ipcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">.venv/</span></button><button class="iprow" type="button" data-act="set" data-k="c52" data-v="pycache" data-st="c52" data-on="pycache" data-mode="eq"><span class="ftcaret ipcaret" aria-hidden="true"></span><span class="ficon" aria-hidden="true"></span><span class="fname">__pycache__/</span></button><button class="iprow" type="button" data-act="set" data-k="c52" data-v="ds" data-st="c52" data-on="ds" data-mode="eq"><span class="ftcaret ipcaret" aria-hidden="true"></span><span class="fdoc fdoc--cfg" data-ext="CFG" aria-hidden="true"></span><span class="fname">.DS_Store</span></button></div></div><div class="ipx-desc"><div class="ipd" data-st="c52" data-on="env" data-mode="eq"><span class="iph mono">.env</span><p><b>Private</b> — it holds secrets like API keys and database URLs. It should never be committed.</p></div><div class="ipd" data-st="c52" data-on="node" data-mode="eq"><span class="iph mono">node_modules/</span><p><b>Large and reinstallable</b> — another developer rebuilds it from the project's dependency file.</p></div><div class="ipd" data-st="c52" data-on="venv" data-mode="eq"><span class="iph mono">.venv/</span><p><b>Specific to your computer</b> — a local Python virtual environment.</p></div><div class="ipd" data-st="c52" data-on="pycache" data-mode="eq"><span class="iph mono">__pycache__/</span><p><b>Generated automatically</b> — Python's compiled bytecode cache.</p></div><div class="ipd" data-st="c52" data-on="ds" data-mode="eq"><span class="iph mono">.DS_Store</span><p><b>Specific to your computer</b> — a macOS folder‑settings file that isn't useful to anyone else.</p></div></div></div>
+<div class="note"><span class="nl">NOTE</span>A dependency folder like <span class="mono">node_modules/</span> doesn't belong in GitHub — another developer can rebuild it from the project's dependency file.</div>
 </div></div><div class="band"><div class="in"><h2 class="h2">Key takeaways</h2>
 <ul class="wa-list wa-list--ul">
-<li>Use a password manager and a different password everywhere.</li>
-<li>Two‑factor authentication on email, GitHub, and school portal.</li>
-<li>Create a personal professional email before you graduate.</li>
-<li>Sync Studies, Upskilling, and Career to the cloud. Never sync Development.</li>
-<li>Code is backed up on GitHub. Keys go in <span class="mono">.env</span>, never in the code.</li>
+<li>Use a password manager and unique passwords for important accounts.</li>
+<li>Turn on <b>unlock with biometrics</b> for easier Face ID or fingerprint autofill.</li>
+<li>Use two‑factor authentication on important accounts.</li>
+<li>Keep your school email for school systems, student discounts, and perks; use a personal professional email for accounts you want to keep long‑term.</li>
+<li>Keep important files in more than one place — cloud for documents, a physical drive for an extra backup, and GitHub for code.</li>
+<li>Keep passwords and API keys out of your source code; use <span class="mono">.env</span>, <span class="mono">.env.example</span>, and <span class="mono">.gitignore</span> when a project needs private configuration.</li>
 </ul>
-<div class="closer"><span class="k">DO</span><p>Set up a password manager today and change your email password first.</p></div>
+<div class="closer"><span class="k">DO</span><p>Set up a password manager if you don't already have one, then check which important files would disappear if your laptop stopped working today.</p></div>
 </div></div>
 </section>
 

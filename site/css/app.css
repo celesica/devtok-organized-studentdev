@@ -329,6 +329,9 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
 }
 /* Give a following section clear separation from the list above it */
 .secgap{margin-top:26px}
+/* Owner preference: a line right after a bullet or numbered list always needs
+   clear space above it, so it reads as separate from the last bullet. */
+.in .wa-list + p,.in .wa-list + h3,.lpanel .wa-list + p,.fpanel .wa-list + p{margin-top:24px}
 /* Five-layer stack: the rows are buttons now (click a layer to jump straight to
    it), so they need the button reset while keeping the .lrow look. A dim row
    lifts on hover to show it is clickable; .on/.cur still win on the current one. */
@@ -515,6 +518,30 @@ button.lrow:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .gcal-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:12px 2px 0;font-size:12px;color:var(--muted-ink)}
 .gcal-legend span{display:inline-flex;align-items:center;gap:6px}
 .gcal-legend i{flex:none;width:11px;height:11px;border-radius:3px}
+
+/* ---- Section 05: protecting your work ---- */
+/* backup destinations */
+.bkgrid{grid-template-columns:repeat(4,1fr)}
+@media(max-width:820px){.bkgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.bkgrid{grid-template-columns:1fr}}
+.bkdetail{border:1px solid var(--border-hairline);border-radius:12px;background:var(--surface-card);padding:16px 18px;margin-top:2px}
+.bktag{display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;color:var(--ember);margin-bottom:8px}
+.bkdetail .note{margin:14px 0 0}
+/* secret-key walkthrough steps */
+.skrow{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.skstep{display:flex;align-items:center;gap:9px;padding:8px 13px 8px 9px;border:1px solid var(--border-hairline);border-radius:10px;background:var(--parchment-a06);color:var(--muted-ink);cursor:pointer;transition:all 140ms var(--ease-standard)}
+.skstep:hover{border-color:var(--neon-rose);color:var(--parchment)}
+.skstep:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+.skstep.on{border-color:var(--neon-rose);background:var(--rose-a12);color:var(--parchment);box-shadow:var(--glow-rose-soft)}
+.skn{flex:none;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;background:var(--wine);color:var(--parchment)}
+.skstep.on .skn{background:var(--gradient-cta)}
+.skl{font-family:var(--font-tech);font-size:12.5px}
+.sktag{display:inline-block;font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;padding:3px 11px;border-radius:999px;margin-bottom:12px}
+.sktag--warn{background:var(--parchment-a06);color:var(--muted-ink);border:1px solid var(--border-strong)}
+.sktag--bad{background:var(--neon-rose);color:var(--parchment)}
+.sktag--good{background:var(--cal-mint);color:var(--ink-plum)}
+/* a config-file glyph for the .gitignore explorer */
+.ftree .fdoc--cfg::after{background:var(--muted-ink);color:var(--parchment)}
 
 /* ---- Chrome-style tabs: folder shape, hairline dividers, flared feet ---- */
 /* A full-width rose hairline under the bar separates the nav from the section

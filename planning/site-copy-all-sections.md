@@ -897,96 +897,113 @@ Add your current class schedule as repeating events, use `[LEC]` and `[LAB]` whe
 ---
 
 # SECTION 05
+
 ## Protecting Your Work
 
-**What this section covers:** Password management, backing up your files, and keeping passwords out of your code.
+**What this section covers:** Password management, backing up your files, and keeping private credentials out of your code.
 
-**Why it matters:** These are one-afternoon setups that prevent problems which are difficult or impossible to reverse.
+**Why it matters:** A few simple habits can prevent much bigger problems later — lost files, locked accounts, exposed passwords, or API keys accidentally pushed to GitHub.
 
 ---
 
 ### Use a password manager
 
-`[Badge] RECOMMENDED`
+`[Badge] RECOMMENDED` A password manager helps you use a different, strong password for every account without having to memorize all of them.
 
-Reusing one password across accounts means one leak exposes all of them. A password manager creates and remembers a different password for every account, so you only memorize one.
+Good options include:
 
-**Bitwarden** is free, works on every platform, and is what I use. 1Password and Proton Pass work the same way.
+- [**Bitwarden**](https://bitwarden.com/) — free, with apps and browser extensions
+- **Google Password Manager** — built into Google accounts and Chrome
+- **1Password** — another popular option with cross-device support
 
-**What to do:**
-1. Create the account with a strong master password you can remember
-2. Save the recovery information somewhere offline
-3. Install the browser extension and the phone app
-4. Change your most important passwords first: email, GitHub, school portal, bank
+A basic setup:
 
-**Turn on two-factor authentication** for email, GitHub, and your school portal. Save the recovery codes somewhere that isn't the laptop they protect.
+1. Create your password manager account.
+2. Choose a strong master password.
+3. Save your recovery information somewhere safe.
+4. Install the browser extension and phone app.
+5. Turn on **unlock with biometrics** so you can use Face ID, Touch ID, or your fingerprint when filling passwords.
+6. Start updating your most important accounts first.
+
+Accounts to prioritize: Email · GitHub · School portal · Banking and financial accounts · Social media tied to your identity.
+
+`[Note]` Avoid reusing one password across accounts — let the manager generate long, unique ones. You usually don't need to type them yourself; the extension or app autofills them, and biometrics make it quick on devices with Face ID, Touch ID, or fingerprint unlock. `[/Note]`
+
+---
+
+### Turn on two-factor authentication
+
+Two-factor authentication adds another step after your password. Prioritize it for accounts such as: Email, GitHub, School portal, Password manager, Banking or financial accounts.
+
+`[Note]` Save your recovery codes somewhere secure and separate from the device they protect. `[/Note]`
 
 ---
 
 ### Your school email
 
-Your school email stops working after you graduate, and anything using it as the recovery address becomes hard to recover.
+Use your school email for things connected directly to your student life (school portals and services, professor communication, school software, campus orgs, student-only registrations). For accounts you expect to keep after graduation, use a personal professional email instead (GitHub, LinkedIn, portfolio, job applications, professional communities, long-term developer accounts).
 
-- Create a personal professional email now
-- Use it for GitHub, LinkedIn, your portfolio, and anything you keep after school
-- Keep the school email for school
-
-**Note:** Ten minutes now, a real problem later.
+`[SideNote]` **Don't ignore your school email after setting up a personal one.** It can unlock **student discounts and perks** — software discounts, student subscriptions, and programs like the **GitHub Student Developer Pack**. Use it where student verification gives you a benefit, but don't make it the only recovery email for accounts you want to keep long-term. `[/SideNote]`
 
 ---
 
 ### Backing up your files
 
-`[Visual — Class A13]` Three boxes: device, cloud, GitHub.
+Your laptop should not be the only place an important file exists.
 
-Three different jobs:
+`[Interactive: BackupDestinations]` Click each destination to see what belongs there:
 
-| Where | What it holds |
-|---|---|
-| **Your laptop** | The copy you work on |
-| **Cloud storage** | A backup of Studies, Upskilling, and Career |
-| **GitHub** | The history of your code |
+- **Your laptop** — the working copy: school files, notes, projects, current documents.
+- **Cloud storage** (Google Drive / Dropbox) — documents synced across devices: `Studies/`, `Upskilling/`, `Career/`. (Don't sync `Development/` — sync services conflict with Git and can corrupt a project.)
+- **Another physical drive** (external SSD / hard drive) — a second copy of important school documents, certificates, portfolio assets, resume files, and photos you can't recreate.
+- **GitHub** — for code: a remote copy, version history, collaboration, and a way to restore or clone onto another computer.
 
-**Sync these folders to Google Drive or any cloud service:**
-- `Studies/`
-- `Upskilling/`
-- `Career/`
-
-**Do not sync `Development/`.** Sync services conflict with the files Git creates and can corrupt a project. Code is backed up by pushing it to GitHub, which does the job properly.
-
-**Note:** If your only copy of something is on one device, it isn't backed up.
+`[Note]` If your laptop stopped working today, what would you actually lose? Anything important that exists in only one place still needs another copy. `[/Note]`
 
 ---
 
 ### Keys and passwords inside code
 
-When a project connects to another service, that service gives you a **key** — effectively a password for your app.
+When a project connects to another service, that service may give you a **key** — effectively a password your app uses to access it.
 
-**What usually happens:** the key gets pasted into the code, everything works, and the project goes onto GitHub with the key inside it.
+`[Interactive: SecretKeySteps]` Click through the four numbered steps. Each step carries a status badge — IN YOUR CODE, EXPOSED, STILL EXPOSED, SAFE:
 
-**Why that's a problem:**
-- Public repositories are scanned automatically for keys
-- Deleting the line later doesn't remove it — Git keeps the history
+1. **The key is pasted into the code** — a `WEATHER_API_KEY = "..."` sits directly in `weather.py`. An API key, token, or database password should be treated like a password.
+2. **The project is pushed to a public repository** — the secret goes with it. Public repos are scanned automatically for keys, often by bots within minutes.
+3. **You delete the key, but it's still in the history** — changing the current file doesn't remove the secret from earlier commits (`git log` still shows it). Deleting the line doesn't make it safe; **revoke or rotate** an exposed secret with the provider.
+4. **The fix: keep secrets outside your code** — real values in `.env` (ignored by `.gitignore`), a blanked `.env.example` that's safe to commit, and code that reads `os.environ["WEATHER_API_KEY"]`.
 
-**What to do instead:**
-- Put keys in a file called `.env`, which stays on your computer
-- Add `.env` to `.gitignore` — the list of files Git ignores
-- Include a `.env.example` with values blanked out, so teammates know what they need
+---
 
-**Note:** `.gitignore` is also where generated folders like `node_modules` go. They're large, rebuildable, and don't belong in a repository.
+### What `.gitignore` is for
+
+`.gitignore` tells Git which files and folders it should ignore — because they're private, generated automatically, large and reinstallable, specific to your computer, or not useful to other people on the project.
+
+`[Interactive: GitignoreExplorer]` Click an entry to see why it's ignored:
+
+```text
+.env            → private (secrets)
+node_modules/   → large and reinstallable
+.venv/          → specific to your computer
+__pycache__/    → generated automatically
+.DS_Store       → specific to your computer
+```
+
+`[Note]` A dependency folder like `node_modules/` doesn't belong in GitHub — another developer can rebuild it from the project's dependency file. `[/Note]`
 
 ---
 
 ## Key takeaways
 
-- Use a password manager and a different password everywhere.
-- Two-factor authentication on email, GitHub, and school portal.
-- Create a personal professional email before you graduate.
-- Sync Studies, Upskilling, and Career to the cloud. Never sync Development.
-- Code is backed up on GitHub. Keys go in `.env`, never in the code.
+- Use a password manager and unique passwords for important accounts.
+- Turn on **unlock with biometrics** for easier Face ID or fingerprint autofill.
+- Use two-factor authentication on important accounts.
+- Keep your school email for school systems, student discounts, and perks; use a personal professional email for accounts you want to keep long-term.
+- Keep important files in more than one place — cloud for documents, a physical drive for an extra backup, and GitHub for code.
+- Keep passwords and API keys out of your source code; use `.env`, `.env.example`, and `.gitignore` when a project needs private configuration.
 
 `[SectionCloser: DO]`
-Set up a password manager today and change your email password first.
+Set up a password manager if you don't already have one, then check which important files would disappear if your laptop stopped working today.
 `[/SectionCloser]`
 
 ---

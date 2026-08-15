@@ -40,7 +40,8 @@
        state={... sel:{c7:1,c12:0,c16:1,c18:'now',c10:'ex',c3:'topic'} ...}
      Groups absent here (c1, c4, c6, c9, c11, c15, c21) start unselected by design. */
   var INITIAL = { c7: 1, c12: 0, c16: 1, c18: "now", c10: "ex", c3: "topic",
-                  c30: "ip3", c31: "idea", c32: "file", c40: "wine", c41: "LEC" };
+                  c30: "ip3", c31: "idea", c32: "file", c40: "wine", c41: "LEC",
+                  c50: 1, c51: "laptop", c52: "env" };
 
   function applyDefaults() {
     Object.keys(INITIAL).forEach(function (k) { state[k] = INITIAL[k]; });
