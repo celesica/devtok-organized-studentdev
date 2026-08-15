@@ -293,8 +293,13 @@ p:has(> .wa-badge:first-child),li:has(> .wa-badge:first-child),.note:has(> .wa-b
 .ftree .fdoc::after{content:attr(data-ext);position:absolute;left:0;right:0;bottom:0;height:8px;line-height:8px;text-align:center;font-family:var(--font-mono);font-size:6.5px;font-weight:700;letter-spacing:.02em;color:var(--ink-plum)}
 .ftree .fdoc--pdf::after{background:var(--ember)}
 .ftree .fdoc--md::after{background:var(--lilac-signal)}
-/* a sub-heading inside a folder panel; second paragraph inside a side note */
-.fpanel .subh{font-size:19px;margin-top:26px}
+/* the folder-panel heading (Studies / Development / Upskilling / Career) reads
+   a step larger than a plain .h3 label, to mark that it owns the subsection */
+.fpanel > .h3:first-child{font-size:15.5px}
+/* the sub-heading below it is smaller and Lilac, since it nests under Career */
+.fpanel .subh{font-size:12px;color:var(--lilac-signal);margin:0 0 8px}
+/* a hairline separator between a panel's sections */
+.hr{height:1px;border:0;background:var(--border-hairline);margin:30px 0}
 .pn p + p{margin-top:10px}
 
 .closer .k{color:var(--ember)}

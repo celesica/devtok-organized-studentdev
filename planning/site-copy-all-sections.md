@@ -200,17 +200,19 @@ Upskilling/
 ```
 This works well if you usually remember **what you were learning first**, then where you learned it.
 
-**By source**
+**By platform** — interactive tree (platform, then topic nested inside):
 
 ```
 Upskilling/
 ├── coursera/
+│   ├── web-development/
+│   └── ai-and-data/
 ├── udemy/
 ├── youtube/
 ├── freecodecamp/
 └── certificates/
 ```
-This works if you usually remember **where you learned something first** — the platform or channel — more than the topic.
+This works if you usually remember **the platform you learned on first** — the topics then sit inside each one.
 
 **Note:** Pick a structure that feels natural to you and stay reasonably consistent. There isn't one correct setup. The goal is to make your learning materials easy to find later.
 
@@ -264,7 +266,9 @@ For each internship or job application, create a folder for the company or role.
 
 This becomes especially useful once you start applying to several companies. You can quickly see what you submitted, what the role originally asked for, and any notes you made along the way.
 
-`[SideNote]` **Prefer tracking applications visually?** You can also create an application tracker in Notion with fields like company, role, status, date applied, interview dates, and follow-up dates. You can attach or link the same job posting, resume, cover letter, and notes there while still keeping the actual files organized in your Career folder. `[/SideNote]`
+`[SideNote — one paragraph]` **Prefer tracking applications visually?** You can also create an application tracker in Notion with fields like company, role, status, date applied, interview dates, and follow-up dates. You can attach or link the same job posting, resume, cover letter, and notes there while still keeping the actual files organized in your Career folder. `[/SideNote]`
+
+Layout notes: the folder-panel headings (Studies / Development / Upskilling / Career) render a step larger than a plain label; "Organizing your applications" is a smaller Lilac Signal sub-heading, preceded by a hairline separator.
 
 ---
 
