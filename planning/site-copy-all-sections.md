@@ -355,17 +355,19 @@ Create the four main folders first. Build the folders inside them only as you ac
 # SECTION 02
 ## Organizing Your School Files
 
-**What this section covers:** A folder structure for coursework, a naming convention, and what to do if you already have years of files scattered around.
+**What this section covers:** A reusable folder structure for coursework, a simple naming convention, and what to do if you already have years of scattered files.
 
-**Why it matters:** School generates your highest volume of files, every term. A structure you set up once and reuse removes almost all the decisions.
+**Why it matters:** School produces a lot of files every term. Setting up a predictable structure once is easier than deciding where every lecture, assignment, and reviewer belongs later.
+
+*(Section rebuilt on the site from section-02-organizing-your-school-files.md. Two lines were deliberately dropped per owner instruction: "You don't necessarily need a separate archive process for school files." and the "Finished terms can stay where they are — no separate archive step needed." takeaway.)*
 
 ---
 
 ### The structure
 
-Program → Term → Subject. Keep the inside of each subject simple.
+A simple structure is **Program → Term → Subject**.
 
-`[Visual — Class A]` `[Badge] RECOMMENDED`
+`[Visual — interactive folder tree]` (branded, collapsible; subjects hold `lectures/`, `assignments/`, `exams/`)
 
 ```
 Studies/
@@ -374,83 +376,100 @@ Studies/
     │   ├── Y1T1/
     │   └── Y2T1/
     │       ├── Algorithms and Complexity/
+    │       │   ├── lectures/
+    │       │   ├── assignments/
+    │       │   └── exams/
     │       ├── Life and Works of Rizal/
+    │       │   ├── lectures/
+    │       │   ├── assignments/
+    │       │   └── exams/
     │       └── Software Engineering/
+    │           ├── lectures/
+    │           ├── assignments/
+    │           └── exams/
     ├── Curriculum/
     ├── Grade Slips/
     ├── Graduation Requirements/
     └── Organizations/
 ```
 
-- Use this if you don't already have something that works. Other arrangements are in the toolkit.
-- Most subjects only need a few folders inside. Don't create folders you aren't using.
-- Set it up once at the start of each term. It takes a few minutes.
+This works well because school naturally runs by term.
+
+Inside each subject, keep the structure as simple as you can:
+- Create subfolders like `lectures/`, `assignments/`, and `exams/` **only when they help you find things faster**.
+- If a subject only has a few files, it's completely fine to keep them directly inside the subject folder.
+- You don't need every subject to have the exact same subfolders.
+- The structure should make your files easier to find — **not give you more folders to maintain**.
 
 `[Expander: Term-first vs subject-first]`
-**Subject-first** (Program → Subject → Term) keeps one subject together across years. Useful if you retake subjects.
+**Term-first** keeps all of your subjects from one semester together. This is usually the easiest approach because your school year already works this way.
 
-**Term-first** works better for most students because school runs on terms, and because finished terms move out of your way on their own.
+**Subject-first** can make sense if you want to keep the same subject together across different terms, especially if you retake courses.
+
+Use whichever structure matches how you naturally look for files.
 `[/Expander]`
 
 ---
 
 ### Naming files
 
-`[Visual — Class A]`
+Name files based on what will still make sense when you look for them several months later.
 
-| Instead of | Use |
+`[Visual — tap-to-reveal table]`
+
+| Instead of | Try |
 |---|---|
 | `Assignment final v2.docx` | `2026-08-15-algorithms-assignment.docx` |
 | `Aug 15 notes` | `2026-08-15-lecture-notes.md` |
 | `stuff2` | `midterm-reviewer` |
 
-- **Dates: year-month-day.** `2026-08-15`. Files then sort in date order automatically.
-- **No spaces — use dashes.** `[Badge] CONVENTION` Spaces cause problems in the terminal and in code projects.
-- **Be descriptive.** The name should still make sense in six months.
+A few useful habits:
+- **Use dates as `YYYY-MM-DD`** when the date matters.
+- **Use descriptive names.** The filename should tell you what the file is.
+- **For coding projects and terminal work, avoid messy filenames.** Dashes or other consistent naming conventions are easier to work with.
+
+For example: `2026-08-15-algorithms-assignment.pdf`
+
+`[SectionCloser: GOAL]` Future You should be able to understand the filename without opening it.
 
 ---
 
 ### What happens at the end of a term
 
-Nothing. The term folder stays exactly where it is.
+- **Leave the finished term where it is.** It's already organized by semester, so there's no need to move everything again.
+- **Create the next term folder when a new semester starts** and begin using that one.
+- **Older coursework naturally moves out of the way** as you start working inside the new term.
+- **Keep previous terms accessible.** You may still want old notes, reviewers, assignments, or reference material later.
+- **Coding projects are different.** They don't always end on a semester schedule, so `Development/` can still have its own `archive/` for projects you're no longer actively working on.
 
-- You don't archive it, sort it, or clean it out
-- The only action is creating next term's folder
-- Old work stays where you'd naturally look for it
-
-**Why this works:** a degree is around twelve terms, so the list never gets long. Organizing by year and term means finished work moves out of your way without you doing anything.
-
-**Note:** Coding projects are different — they don't end on a schedule, which is why `Development/` keeps an `archive/` folder.
+The goal is to avoid creating an extra cleanup step at the end of every semester.
 
 ---
 
 ### If you already have years of scattered files
 
-`[Badge] RECOMMENDED`
+Don't feel like you need to reorganize everything you've ever saved before you can start.
 
-Don't reorganize everything at once. That usually takes longer than expected and gets abandoned halfway.
+A faster approach:
+1. Create a folder such as `_UNSORTED_2026-08`
+2. Move loose files into it
+3. Build the clean structure beside it
+4. Start using the new structure from now on
+5. When you need an old file, move it into the correct place then
 
-1. Create one folder named `_UNSORTED_2026-08`, with the date in the name.
-2. Move everything loose into it. Don't sort as you go.
-3. Build the new structure beside it, empty.
-4. Use the new structure from now on.
-5. When you need an old file, take it out and file it properly at that point.
-
-After a few months, most of what's left is material you never needed.
-
-**Note:** About ten minutes, not a weekend. The point is to stop the mess growing, not to fix the past.
+This gives you a clean starting point without turning organization into a weekend-long project.
 
 ---
 
 ## Key takeaways
 
-- Program → Term → Subject, set up once per term.
-- `YYYY-MM-DD` and no spaces so files sort themselves.
-- Finished terms stay where they are. No archiving step.
-- If you have a backlog, move it aside rather than reorganizing it.
+- Program → Term → Subject is a simple structure you can reuse.
+- Create subfolders only when they actually help.
+- Use descriptive filenames and `YYYY-MM-DD` when dates matter.
+- If your old files are already messy, separate the backlog and start clean.
 
 `[SectionCloser: DO]`
-Set up the folders for this term only, and move anything loose into a single dated unsorted folder.
+Set up the folders for your current term first. You don't need to reorganize your entire degree today.
 `[/SectionCloser]`
 
 ---
