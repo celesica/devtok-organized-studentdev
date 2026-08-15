@@ -2064,7 +2064,7 @@ ${toolkitModal()}
 
 <script src="js/router.js"></script>
 <script src="js/components.js"></script>
-<script src="js/reveal.js"></script>
+<script src="js/rail.js"></script>
 </body>
 </html>
 `;
@@ -2483,24 +2483,20 @@ button.lrow:focus-visible{outline:none;box-shadow:var(--ring-focus)}
 .raildot{position:relative;width:10px;height:10px;padding:0;border-radius:50%;border:1px solid var(--wine);background:transparent;cursor:pointer;transition:all 160ms var(--ease-standard)}
 .raildot.done{background:var(--wine);border-color:var(--wine)}
 .raildot.cur{width:12px;height:12px;background:var(--gradient-cta);border-color:transparent;box-shadow:var(--glow-rose-soft)}
-.raildot.locked{opacity:.35}
 .raildot:hover{border-color:var(--neon-rose)}
 .raillabel{position:absolute;right:22px;top:50%;transform:translateY(-50%);white-space:nowrap;font-family:var(--font-tech);font-size:12px;color:var(--parchment);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-sm);padding:5px 10px;opacity:0;pointer-events:none;transition:opacity 160ms var(--ease-standard);box-shadow:var(--shadow-md)}
 .raildot:hover .raillabel,.raildot:focus-visible .raillabel{opacity:1}
-.band[hidden]{display:none}
-/* Advance control: a glowing round arrow. The chevron is drawn from borders,
-   not set as a character or an icon asset. */
-.continue{display:flex;align-items:center;justify-content:center;width:46px;height:46px;margin:72px auto 8px;padding:0;border-radius:50%;cursor:pointer;background:var(--rose-a12);border:1px solid rgba(255,92,138,.5);box-shadow:var(--glow-rose-soft);transition:transform 160ms var(--ease-standard),box-shadow 160ms var(--ease-standard)}
-.continue:hover{transform:translateY(2px);box-shadow:var(--glow-rose)}
-.continue:active{transform:scale(var(--press-scale))}
-.continue .chev{width:12px;height:12px;margin-top:-4px;border-right:2px solid var(--neon-rose);border-bottom:2px solid var(--neon-rose);transform:rotate(45deg)}
-.continue{animation:contpulse 2.4s var(--ease-standard) infinite}
-@keyframes contpulse{
-  0%,100%{box-shadow:var(--glow-rose-soft)}
-  50%{box-shadow:var(--glow-rose)}
-}
-@media (prefers-reduced-motion:reduce){.continue{animation:none}}
 @media (max-width:860px){.rail{display:none}}
+
+/* Owner override: roomier top/bottom breathing space around each subsection.
+   The exports ship .band at 38/46px; the owner asked for 100px top and bottom
+   on every subsection. This wins because the extra block is concatenated after
+   the export CSS; the :first-child rule beats the export's 44px-top default.
+   The field-guide hero (the only .hero-band, section 00's title block) is left
+   at its original 44/46 padding — the owner asked to exclude it. */
+.band{padding:100px 0}
+.band:first-child{padding-top:100px}
+.band.hero-band{padding:44px 0 46px}
 
 /* built mockups that stand in for the export's screenshot slots */
 /* Faux file-manager window (built mockups, no images) */
